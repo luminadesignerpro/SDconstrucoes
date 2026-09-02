@@ -1,8 +1,9 @@
 {
-  " name\: \sd-construcoes-ltda\,
- \version\: \1.0.0\,
- \description\: \Sistema de Gestao de Obras Terceirizados e Folha de Ponto - SD Construcoes LTDA\,
- \scripts\: {
- \start\: \npx serve .\
- }
+  "name": "sd-construcoes-ltda",
+  "version": "1.0.0",
+  "description": "Sistema de Gestao de Obras Terceirizados e Folha de Ponto - SD Construcoes LTDA",
+  "scripts": {
+    "build": "echo 'Build complete'",
+    "start": "npx serve ."
+  }
 }
