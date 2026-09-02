@@ -848,6 +848,13 @@
           <span>Clientes & Obras</span>
         </div>
       </li>
+      <li class="nav-item" id="nav-vendedores" onclick="goNav('vendedores')">
+        <div class="nav-item-left">
+          <span class="nav-item-icon">👔</span>
+          <span>Cadastro de Vendedores</span>
+        </div>
+        <span class="nav-badge" style="background:rgba(234,179,8,0.18); color:#facc15; border:1px solid rgba(234,179,8,0.3);" id="badge-vend-count">3</span>
+      </li>
       <li class="nav-item" id="nav-contratos" onclick="goNav('contratos')">
         <div class="nav-item-left">
           <span class="nav-item-icon">📄</span>
@@ -1083,6 +1090,20 @@
           <div class="grid-1">
             <div class="form-group"><label>Endereço da Obra</label><input id="o-end" placeholder="Rua, número, complemento" /></div>
           </div>
+          <div class="grid-2" style="margin-top:6px;">
+            <div class="form-group">
+              <label style="color:#facc15; font-weight:800;">👔 Vendedor / Consultor Comercial</label>
+              <select id="o-vendedor" onchange="atualizarComissaoVendedorOrcamento()" style="background:#070c18; border:1.5px solid rgba(250,204,21,0.4); color:#fff; font-weight:700; padding:12px; border-radius:10px;">
+                <option value="Samuel Dantas">Samuel Dantas (Gerente Comercial - 5%)</option>
+                <option value="Carlos Eduardo">Carlos Eduardo (Consultor Técnico - 4%)</option>
+                <option value="Mariana Souza">Mariana Souza (Executiva de Vendas - 4.5%)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Comissão Estimada do Vendedor</label>
+              <input id="o-comissao" readonly value="5%" style="background:#04070f; color:#facc15; font-weight:800; padding:12px;" />
+            </div>
+          </div>
         </div>
 
         <!-- Tabela de Itens -->
@@ -1191,15 +1212,15 @@
             <table class="data-table">
               <thead>
                 <tr>
-                  <th style="min-width:220px;">MATERIAL / INSUMO</th>
-                  <th style="width:120px;">CATEGORIA</th>
-                  <th style="width:65px; text-align:center;">QTD</th>
-                  <th style="width:110px;">UNIDADE</th>
-                  <th style="width:105px;">V. UNIT.(R$)</th>
-                  <th style="width:110px;">TOTAL (R$)</th>
-                  <th style="width:160px;">QUEM FORNECE / PAGA</th>
-                  <th style="width:140px;">STATUS</th>
-                  <th style="width:50px; text-align:center;"></th>
+                  <th style="width:24%;">MATERIAL / INSUMO</th>
+                  <th style="width:12%;">CATEGORIA</th>
+                  <th style="width:8%; text-align:center;">QTD</th>
+                  <th style="width:13%;">UNIDADE</th>
+                  <th style="width:9%;">V. UNIT.(R$)</th>
+                  <th style="width:10%; text-align:right;">TOTAL (R$)</th>
+                  <th style="width:12%;">QUEM FORNECE / PAGA</th>
+                  <th style="width:9%;">STATUS</th>
+                  <th style="width:3%; text-align:center;"></th>
                 </tr>
               </thead>
               <tbody id="lista-materiais-linhas"></tbody>
@@ -1498,13 +1519,18 @@
       <!-- ══════════════════════════════════════════════ -->
       <section id="view-historico" class="panel-view">
         <div class="glass-card">
-          <div class="glass-card-title">
-            <span>Histórico de Ordens de Serviço e Terceirizados</span>
-            <span class="badge-count" id="hist-total-count">0 registros</span>
+          <div class="glass-card-title" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span>Histórico de Ordens de Serviço e Terceirizados</span>
+              <span class="badge-count" id="hist-total-count">0 registros</span>
+            </div>
+            <button class="btn-action-gold" onclick="imprimirRelatorioCompleto()" style="padding:8px 16px; font-size:12.5px; display:flex; align-items:center; gap:6px;">
+              📊 Imprimir Relatório Completo
+            </button>
           </div>
 
           <div class="grid-1">
-            <input id="busca-hist" placeholder="🔍 Pesquisar por cliente, terceirizado ou número de O.S..." oninput="renderHist()" style="padding:12px; background:#060a14; border:1px solid var(--border); border-radius:8px; color:#fff;" />
+            <input id="busca-hist" placeholder="🔍 Pesquisar por cliente, vendedor, terceirizado ou número de O.S..." oninput="renderHist()" style="padding:12px; background:#060a14; border:1px solid var(--border); border-radius:8px; color:#fff;" />
           </div>
 
           <div id="hist-list-container" style="margin-top:16px;"></div>
@@ -1557,6 +1583,72 @@
         <div class="glass-card">
           <div class="glass-card-title">Clientes Cadastrados</div>
           <div id="cli-list-container"></div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════ -->
+      <!-- VIEW: CADASTRO DE VENDEDORES -->
+      <!-- ══════════════════════════════════════════════ -->
+      <section id="view-vendedores" class="panel-view">
+        <div class="glass-card" style="border-color: rgba(234,179,8,0.4);">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:18px;">
+            <div>
+              <h2 style="font-family:var(--font-display); font-size:22px; font-weight:800; color:#facc15; display:flex; align-items:center; gap:8px;">
+                👔 Cadastro de Vendedores & Consultores Comerciais
+              </h2>
+              <p style="font-size:13px; color:var(--text-muted); margin-top:2px;">
+                Gerencie sua equipe de vendas, comissões por orçamento fechado e acompanhamento de propostas.
+              </p>
+            </div>
+            <button class="btn-action-secondary" onclick="limparFormVendedor()">
+              🔄 Limpar Formulário
+            </button>
+          </div>
+
+          <div class="grid-2">
+            <div class="form-group">
+              <label>Nome Completo do Vendedor</label>
+              <input id="vend-nome" placeholder="Ex: Samuel Dantas" />
+            </div>
+            <div class="form-group">
+              <label>WhatsApp / Contato Direto</label>
+              <input id="vend-tel" placeholder="(85) 99611-9824" />
+            </div>
+          </div>
+          <div class="grid-3">
+            <div class="form-group">
+              <label>Cargo / Função</label>
+              <input id="vend-cargo" placeholder="Ex: Gerente Comercial / Consultor de Obras" />
+            </div>
+            <div class="form-group">
+              <label>Comissão Padrão (%)</label>
+              <input id="vend-comissao" type="number" step="0.5" placeholder="5" value="5" />
+            </div>
+            <div class="form-group">
+              <label>Status do Vendedor</label>
+              <select id="vend-status">
+                <option value="Ativo">✅ Ativo na Empresa</option>
+                <option value="Inativo">⏸️ Inativo / Licença</option>
+              </select>
+            </div>
+          </div>
+          <div class="grid-1" style="margin-top:4px;">
+            <div class="form-group">
+              <label>Observações Comerciais / Metas</label>
+              <input id="vend-obs" placeholder="Ex: Responsável por obras comerciais e residenciais de alto padrão..." />
+            </div>
+          </div>
+          <button class="btn-action-gold" onclick="salvarVendedor()" style="margin-top:10px;">
+            💾 Salvar Cadastro do Vendedor
+          </button>
+        </div>
+
+        <div class="glass-card">
+          <div class="glass-card-title">
+            <span>👔 Equipe de Vendedores Cadastrados</span>
+            <span class="badge-count" id="vend-total-count">0 vendedores</span>
+          </div>
+          <div id="vend-list-container" style="margin-top:14px;"></div>
         </div>
       </section>
 
@@ -1780,6 +1872,7 @@ const K = {
   terceirizados: 'sdc_terceirizados',
   products: 'sdc_produtos',
   users: 'sdc_users',
+  vendedores: 'sdc_vendedores',
   nextNum: 'sdc_next_num',
   nextTerc: 'sdc_next_terc'
 };
@@ -1791,6 +1884,7 @@ let clientes = [];
 let produtos = [];
 let ordens = [];
 let terceirizados = [];
+let vendedores = [];
 let users = [];
 let proxNum = 1;
 let proxTerc = 1;
@@ -1798,7 +1892,114 @@ let formaAtual = 'À vista';
 let itemId = 0;
 let editandoOs = null;
 let editandoTerc = null;
+let editandoVend = null;
 let modalTarget = 'orcamento';
+
+const VENDEDORES_INICIAIS = [
+  { id: 1, nome: 'Samuel Dantas', tel: '(85) 99611-9824', cargo: 'Gerente Comercial', comissao: 5, status: 'Ativo', obs: 'Obras de alto padrão e condomínios' },
+  { id: 2, nome: 'Carlos Eduardo', tel: '(85) 98888-1111', cargo: 'Consultor de Obras', comissao: 4, status: 'Ativo', obs: 'Reformas e reformas residenciais' },
+  { id: 3, nome: 'Mariana Souza', tel: '(85) 98777-2222', cargo: 'Executiva de Vendas', comissao: 4.5, status: 'Ativo', obs: 'Prospecção corporativa e comercial' }
+];
+
+// Notificação suave na tela sem travar a navegação (substitui alerts intrusivos)
+function showToast(msg, icon='✅') {
+  let container = document.getElementById('toast-container');
+  if (!container) {
+    container = document.createElement('div');
+    container.id = 'toast-container';
+    container.style.cssText = 'position: fixed; top: 24px; right: 24px; z-index: 999999; display: flex; flex-direction: column; gap: 10px; pointer-events: none;';
+    document.body.appendChild(container);
+  }
+  const toast = document.createElement('div');
+  toast.style.cssText = `
+    background: rgba(13, 20, 36, 0.96);
+    border: 1.5px solid rgba(245, 179, 0, 0.7);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(245, 179, 0, 0.25);
+    color: #fff;
+    padding: 14px 22px;
+    border-radius: 12px;
+    font-family: var(--font);
+    font-size: 13.5px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transform: translateX(120%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: auto;
+    backdrop-filter: blur(12px);
+  `;
+  toast.innerHTML = `<span style="font-size:18px;">${icon}</span> <span>${msg}</span>`;
+  container.appendChild(toast);
+  requestAnimationFrame(() => {
+    toast.style.transform = 'translateX(0)';
+  });
+  setTimeout(() => {
+    toast.style.transform = 'translateX(120%)';
+    setTimeout(() => toast.remove(), 350);
+  }, 2500);
+}
+
+// Limpa valor ao clicar se for zero/padrão ou seleciona o texto para sobrescrever direto
+function handleInputFocus(el) {
+  if (el.readOnly) return;
+  const val = el.value.trim();
+  if (val === '0' || val === '0,00' || val === '0.00' || val === '1,00' || val === '1') {
+    el.value = '';
+  } else {
+    el.select();
+  }
+}
+
+// Ao clicar Enter passa automaticamente para o próximo campo da tabela
+function handleTableNav(e, el) {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    const tr = el.closest('tr');
+    if (!tr) return;
+    const inputs = Array.from(tr.querySelectorAll('input:not([readonly]), select'));
+    const currIdx = inputs.indexOf(el);
+
+    if (currIdx !== -1 && currIdx < inputs.length - 1) {
+      inputs[currIdx + 1].focus();
+      handleInputFocus(inputs[currIdx + 1]);
+    } else {
+      const nextTr = tr.nextElementSibling;
+      if (nextTr) {
+        const nextInputs = nextTr.querySelectorAll('input:not([readonly]), select');
+        if (nextInputs.length > 0) {
+          nextInputs[0].focus();
+          handleInputFocus(nextInputs[0]);
+        }
+      } else {
+        const tbody = tr.closest('tbody');
+        if (tbody && tbody.id === 'itens-lista') {
+          addItem();
+          setTimeout(() => {
+            const allRows = document.querySelectorAll('#itens-lista tr');
+            const lastRow = allRows[allRows.length - 1];
+            const firstIn = lastRow?.querySelector('input');
+            if (firstIn) {
+              firstIn.focus();
+              handleInputFocus(firstIn);
+            }
+          }, 40);
+        } else if (tbody && tbody.id === 'lista-materiais-linhas') {
+          addLinhaMaterial();
+          setTimeout(() => {
+            const allRows = document.querySelectorAll('#lista-materiais-linhas tr');
+            const lastRow = allRows[allRows.length - 1];
+            const firstIn = lastRow?.querySelector('input');
+            if (firstIn) {
+              firstIn.focus();
+              handleInputFocus(firstIn);
+            }
+          }, 40);
+        }
+      }
+    }
+  }
+}
 
 const PRODUTOS_INICIAIS = [
   { id: 1, nome: 'Alvenaria de Vedação / Bloco Cerâmico', cat: 'Alvenaria', vm2: 65, vunit: 0 },
@@ -1820,6 +2021,9 @@ window.addEventListener('DOMContentLoaded', () => {
   ]);
   save(K.clients, clientes);
 
+  vendedores = load(K.vendedores, VENDEDORES_INICIAIS);
+  save(K.vendedores, vendedores);
+
   produtos = load(K.products, PRODUTOS_INICIAIS);
   save(K.products, produtos);
 
@@ -1834,6 +2038,8 @@ window.addEventListener('DOMContentLoaded', () => {
   updateDisplays();
   renderDashboard();
   renderCli();
+  renderVendedores();
+  carregarSelectVendedores();
   renderProdutos();
   renderHist();
   renderUsuarios();
@@ -1889,6 +2095,7 @@ function goNav(viewId) {
     historico: ['Histórico de O.S.', 'Acompanhamento completo de ordens de serviço e serviços executados'],
     produtos: ['Produtos & Serviços', 'Catálogo de preços e serviços da construção civil'],
     clientes: ['Clientes & Obras', 'Cadastro e localização das obras'],
+    vendedores: ['Cadastro de Vendedores', 'Gerenciamento da equipe comercial, metas e comissões por orçamento'],
     contratos: ['Gerador de Contratos', 'Geração de minutas formais para clientes e prestadores terceirizados'],
     usuarios: ['Equipe & Usuários', 'Gerenciamento de acessos do sistema']
   };
@@ -1908,6 +2115,7 @@ function goNav(viewId) {
 
   if (viewId === 'dashboard') renderDashboard();
   if (viewId === 'historico') renderHist();
+  if (viewId === 'vendedores') renderVendedores();
   if (viewId === 'contratos') renderSelectContratos();
   if (viewId === 'whats-pdf') carregarDadosParaPdf();
   if (viewId === 'materiais' && document.querySelectorAll('#lista-materiais-linhas tr').length === 0) {
@@ -2188,16 +2396,16 @@ function addItem(desc='', qtd='1', cor='', alt='', larg='', vm2='', vunit='', ac
   const tr = document.createElement('tr');
   tr.id = 'item-' + id;
   tr.innerHTML = `
-    <td style="text-align:center"><input type="text" value="${qtd}" oninput="calcRow(${id})" style="text-align:center;"></td>
-    <td><input value="${desc}" placeholder="Descrição do serviço/material..."></td>
-    <td><input value="${cor}" placeholder="Ex: Padrão"></td>
-    <td><input type="text" placeholder="1,00" value="${alt}" oninput="calcRow(${id})"></td>
-    <td><input type="text" placeholder="1,00" value="${larg}" oninput="calcRow(${id})"></td>
+    <td style="text-align:center"><input type="text" value="${qtd}" onfocus="handleInputFocus(this)" onkeydown="handleTableNav(event, this)" oninput="calcRow(${id})" style="text-align:center; font-weight:700;"></td>
+    <td><input value="${desc}" placeholder="Descrição do serviço/material..." onfocus="handleInputFocus(this)" onkeydown="handleTableNav(event, this)"></td>
+    <td><input value="${cor}" placeholder="Ex: Padrão" onfocus="handleInputFocus(this)" onkeydown="handleTableNav(event, this)"></td>
+    <td><input type="text" placeholder="1,00" value="${alt}" onfocus="handleInputFocus(this)" onkeydown="handleTableNav(event, this)" oninput="calcRow(${id})"></td>
+    <td><input type="text" placeholder="1,00" value="${larg}" onfocus="handleInputFocus(this)" onkeydown="handleTableNav(event, this)" oninput="calcRow(${id})"></td>
     <td><input type="text" readonly placeholder="0,00 m²" style="background:#04070f; color:var(--gold-light); font-weight:700;"></td>
-    <td><input type="text" placeholder="0,00" value="${vm2}" oninput="calcRow(${id})"></td>
-    <td><input type="text" placeholder="0,00" value="${vunit}" oninput="calcRow(${id})"></td>
-    <td><input value="${acab}" placeholder="Obs/Acab"></td>
-    <td><input type="text" readonly placeholder="R$ 0,00" style="background:#04070f; color:var(--gold-light); font-weight:800;"></td>
+    <td><input type="text" placeholder="0,00" value="${vm2}" onfocus="handleInputFocus(this)" onkeydown="handleTableNav(event, this)" oninput="calcRow(${id})"></td>
+    <td><input type="text" placeholder="0,00" value="${vunit}" onfocus="handleInputFocus(this)" onkeydown="handleTableNav(event, this)" oninput="calcRow(${id})"></td>
+    <td><input value="${acab}" placeholder="Obs/Acab" onfocus="handleInputFocus(this)" onkeydown="handleTableNav(event, this)"></td>
+    <td><input type="text" readonly placeholder="R$ 0,00" style="background:#04070f; color:var(--gold-light); font-weight:800; text-align:right;"></td>
     <td style="text-align:center;">
       <button class="tbl-btn-del" onclick="delRow(${id})">✕</button>
     </td>
@@ -2286,9 +2494,9 @@ function addLinhaMaterial(item='', cat='Básico', qtd='1', un='Unidade', vunit='
   const tr = document.createElement('tr');
   tr.id = 'mat-item-' + id;
   tr.innerHTML = `
-    <td><input value="${item}" placeholder="Ex: Cimento CP II 50kg" oninput="calcLinhaMaterial(${id})"></td>
+    <td><input value="${item}" placeholder="Ex: Cimento CP II 50kg" onfocus="handleInputFocus(this)" onkeydown="handleTableNav(event, this)" oninput="calcLinhaMaterial(${id})" style="width:100%; height:38px; padding:6px 10px; border-radius:8px; background:#060a14; color:#fff; border:1px solid var(--border);"></td>
     <td>
-      <select onchange="calcLinhaMaterial(${id})">
+      <select onchange="calcLinhaMaterial(${id})" style="width:100%; height:38px; padding:6px 8px; border-radius:8px; background:#060a14; color:#fff; border:1px solid var(--border);">
         <option value="Básico" ${cat==='Básico'?'selected':''}>Básico</option>
         <option value="Estrutura" ${cat==='Estrutura'?'selected':''}>Estrutura</option>
         <option value="Alvenaria" ${cat==='Alvenaria'?'selected':''}>Alvenaria</option>
@@ -2298,9 +2506,9 @@ function addLinhaMaterial(item='', cat='Básico', qtd='1', un='Unidade', vunit='
         <option value="Acabamento" ${cat==='Acabamento'?'selected':''}>Acabamento</option>
       </select>
     </td>
-    <td style="text-align:center;"><input type="text" value="${qtd}" oninput="calcLinhaMaterial(${id})" style="text-align:center;"></td>
+    <td style="text-align:center;"><input type="text" value="${qtd}" onfocus="handleInputFocus(this)" onkeydown="handleTableNav(event, this)" oninput="calcLinhaMaterial(${id})" style="width:100%; height:38px; text-align:center; font-weight:700; border-radius:8px; background:#060a14; color:#fff; border:1px solid var(--border);"></td>
     <td>
-      <select onchange="calcLinhaMaterial(${id})">
+      <select onchange="calcLinhaMaterial(${id})" style="width:100%; height:38px; padding:6px 8px; border-radius:8px; background:#060a14; color:#fff; border:1px solid var(--border);">
         <option value="Saco 50kg" ${un==='Saco 50kg'?'selected':''}>Saco 50kg</option>
         <option value="Metro (m³)" ${un==='Metro (m³)'?'selected':''}>Metro (m³)</option>
         <option value="Milheiro" ${un==='Milheiro'?'selected':''}>Milheiro</option>
@@ -2313,23 +2521,23 @@ function addLinhaMaterial(item='', cat='Básico', qtd='1', un='Unidade', vunit='
         <option value="Unidade" ${un==='Unidade'?'selected':''}>Unidade</option>
       </select>
     </td>
-    <td><input type="text" value="${vunit}" placeholder="0,00" oninput="calcLinhaMaterial(${id})"></td>
-    <td><input type="text" readonly placeholder="R$ 0,00" style="background:#04070f; color:var(--gold-light); font-weight:800;"></td>
+    <td><input type="text" value="${vunit}" placeholder="0,00" onfocus="handleInputFocus(this)" onkeydown="handleTableNav(event, this)" oninput="calcLinhaMaterial(${id})" style="width:100%; height:38px; padding:6px 10px; border-radius:8px; background:#060a14; color:#fff; border:1px solid var(--border);"></td>
+    <td><input type="text" readonly placeholder="R$ 0,00" style="width:100%; height:38px; padding:6px 8px; border-radius:8px; background:#030712; color:var(--gold-light); font-weight:800; border:1px solid rgba(245,179,0,0.25); text-align:right;"></td>
     <td>
-      <select onchange="calcLinhaMaterial(${id})">
+      <select onchange="calcLinhaMaterial(${id})" style="width:100%; height:38px; padding:6px 8px; border-radius:8px; background:#060a14; color:#fff; border:1px solid var(--border);">
         <option value="Cliente Compra" ${resp==='Cliente Compra'?'selected':''}>👤 Cliente Compra</option>
         <option value="Construtora Fornece" ${resp==='Construtora Fornece'?'selected':''}>🏗️ Construtora Fornece</option>
       </select>
     </td>
     <td>
-      <select onchange="calcLinhaMaterial(${id})">
+      <select onchange="calcLinhaMaterial(${id})" style="width:100%; height:38px; padding:6px 8px; border-radius:8px; background:#060a14; color:#fff; border:1px solid var(--border);">
         <option value="Pendente" ${status==='Pendente'?'selected':''}>⏳ Pendente</option>
         <option value="Comprado" ${status==='Comprado'?'selected':''}>🛒 Comprado</option>
         <option value="Entregue na Obra" ${status==='Entregue na Obra'?'selected':''}>🚚 Entregue</option>
       </select>
     </td>
     <td style="text-align:center;">
-      <button class="tbl-btn-del" onclick="delLinhaMaterial(${id})">✕</button>
+      <button class="tbl-btn-del" onclick="delLinhaMaterial(${id})" style="height:36px; width:36px; border-radius:8px; font-size:14px;">✕</button>
     </td>
   `;
   document.getElementById('lista-materiais-linhas').appendChild(tr);
@@ -2425,7 +2633,7 @@ function selForma(btn, f) {
 
 function salvarOrdem() {
   const nome = document.getElementById('o-nome').value.trim();
-  if (!nome) { alert('Informe o nome do cliente.'); return; }
+  if (!nome) { showToast('Informe o nome do cliente antes de salvar.', '⚠️'); return; }
 
   const itens = [];
   document.querySelectorAll('#itens-lista tr').forEach(tr => {
@@ -2456,6 +2664,8 @@ function salvarOrdem() {
       bairro: document.getElementById('o-bairro').value,
       end: document.getElementById('o-end').value
     },
+    vendedor: document.getElementById('o-vendedor')?.value || 'Samuel Dantas',
+    comissao: document.getElementById('o-comissao')?.value || '5%',
     itens: itens,
     total: document.getElementById('total').textContent,
     forma: document.getElementById('forma-outro').value || formaAtual,
@@ -2478,7 +2688,7 @@ function salvarOrdem() {
   updateDisplays();
   renderDashboard();
   renderHist();
-  alert(`✅ Ordem de Serviço ${novaOs.numero} salva com sucesso!`);
+  showToast(`Ordem de Serviço ${novaOs.numero} salva com sucesso!`, '💾');
 }
 
 function enviarWhatsApp() {
@@ -2486,7 +2696,7 @@ function enviarWhatsApp() {
   let cleanTel = telInput.replace(/\D/g, '');
 
   if (!cleanTel) {
-    alert('⚠️ Digite o número de WhatsApp do cliente no campo "WhatsApp / Tel" antes de enviar.');
+    showToast('Digite o WhatsApp do cliente antes de enviar.', '⚠️');
     document.getElementById('o-tel')?.focus();
     return;
   }
@@ -2519,7 +2729,7 @@ function puxarDadosDoOrcamentoAtual() {
     document.getElementById('t-contr-valor-cliente').value = totOrc.replace('R$', '').trim();
     calcularMargemTerc();
   }
-  alert('✅ Dados do cliente puxados com sucesso!');
+  showToast('Dados do cliente puxados com sucesso!', '⚡');
 }
 
 function calcularMargemTerc() {
@@ -2536,7 +2746,7 @@ function calcularMargemTerc() {
 function salvarServicoTerceirizado() {
   const cliNome = document.getElementById('t-cli-nome').value;
   const tercNome = document.getElementById('t-contr-nome').value;
-  if (!cliNome || !tercNome) { alert('Preencha os dados do cliente e do prestador terceirizado.'); return; }
+  if (!cliNome || !tercNome) { showToast('Preencha os dados do cliente e do prestador terceirizado.', '⚠️'); return; }
 
   const terc = {
     numero: editandoTerc || ('#TERC-' + String(proxTerc).padStart(4, '0')),
@@ -2576,7 +2786,7 @@ function salvarServicoTerceirizado() {
   updateDisplays();
   renderDashboard();
   renderHist();
-  alert(`✅ Registro Terceirizado ${terc.numero} salvo com sucesso!`);
+  showToast(`Registro Terceirizado ${terc.numero} salvo com sucesso!`, '🤝');
 }
 
 function enviarWhatsAppTerceirizado() {
@@ -2603,7 +2813,7 @@ function enviarPdfDiretoWhatsAppTerceirizado() {
   let cleanTel = telInput.replace(/\D/g, '');
 
   if (!cleanTel) {
-    alert('⚠️ Digite o número de WhatsApp do contratado no campo correspondente antes de enviar.');
+    showToast('⚠️ Digite o número de WhatsApp do contratado no campo correspondente antes de enviar.', '⚠️');
     document.getElementById('t-contr-tel')?.focus();
     return;
   }
@@ -2684,7 +2894,12 @@ function renderHist() {
   const div = document.getElementById('hist-list-container');
   const q = (document.getElementById('busca-hist')?.value || '').toLowerCase();
   const all = [...ordens.map(o=>({...o, type:'obra'})), ...terceirizados.map(t=>({...t, type:'terc'}))];
-  const filtered = all.filter(r => (r.numero||'').toLowerCase().includes(q) || (r.cliente?.nome||'').toLowerCase().includes(q) || (r.contratado?.nome||'').toLowerCase().includes(q));
+  const filtered = all.filter(r => 
+    (r.numero||'').toLowerCase().includes(q) || 
+    (r.cliente?.nome||'').toLowerCase().includes(q) || 
+    (r.vendedor||'').toLowerCase().includes(q) ||
+    (r.contratado?.nome||'').toLowerCase().includes(q)
+  );
 
   document.getElementById('hist-total-count').textContent = filtered.length + ' registros';
   if (filtered.length === 0) {
@@ -2693,22 +2908,89 @@ function renderHist() {
   }
 
   div.innerHTML = filtered.map(r => `
-    <div class="record-card">
+    <div class="record-card" style="padding:14px 18px; margin-bottom:10px;">
       <div>
         <div style="display:flex; align-items:center; gap:8px;">
-          <strong style="color:var(--gold-light);">${r.numero}</strong>
-          <span class="rec-tag ${r.type==='obra'?'tag-obra':'tag-terc'}">${r.type==='obra'?'Obra':'Terceirizado'}</span>
-          <span style="font-size:11px; color:var(--text-muted);">${r.data}</span>
+          <strong style="color:var(--gold-light); font-size:15px;">${r.numero}</strong>
+          <span class="rec-tag ${r.type==='obra'?'tag-obra':'tag-terc'}">${r.type==='obra'?'Orçamento Obra':'Serviço Terceirizado'}</span>
+          <span style="font-size:11.5px; color:var(--text-muted);">${r.data}</span>
         </div>
-        <div style="font-size:14px; color:#fff; font-weight:700; margin-top:4px;">👤 Cliente: ${r.cliente?.nome || ''}</div>
-        ${r.type==='terc'?`<div style="font-size:12px; color:#60a5fa;">👷‍♂️ Contratado: ${r.contratado?.nome} (${r.contratado?.especialidade})</div>`:''}
+        <div style="font-size:14.5px; color:#fff; font-weight:700; margin-top:4px;">👤 Cliente: ${r.cliente?.nome || 'Não informado'}</div>
+        ${r.type==='obra' ? `<div style="font-size:13px; color:#facc15; font-weight:600; margin-top:2px;">👔 Vendedor: <strong>${r.vendedor || 'Samuel Dantas'}</strong> (${r.comissao || '5%'})</div>` : ''}
+        ${r.type==='terc' ? `<div style="font-size:12.5px; color:#60a5fa; margin-top:2px;">👷‍♂️ Contratado: <strong>${r.contratado?.nome}</strong> (${r.contratado?.especialidade})</div>` : ''}
       </div>
-      <div style="display:flex; align-items:center; gap:12px;">
-        <span style="font-size:16px; font-weight:800; color:var(--gold-light);">${r.type==='obra'?r.total:formatMoney(r.contratado?.valorPago)}</span>
-        <button class="btn-action-secondary" style="padding:6px 10px; font-size:11px;" onclick="excluirReg('${r.numero}', '${r.type}')">🗑️</button>
+      <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
+        <span style="font-size:17px; font-weight:900; color:var(--gold-light); margin-right:6px;">${r.type==='obra'?r.total:formatMoney(r.contratado?.valorPago)}</span>
+        <button class="btn-action-gold" style="padding:6px 12px; font-size:12px; font-weight:800;" onclick="editarRegistro('${r.numero}', '${r.type}')">✏️ Editar</button>
+        <button class="btn-dark-pdf" style="padding:6px 12px; font-size:12px; font-weight:800;" onclick="imprimirRegistroIndividual('${r.numero}', '${r.type}')">🖨️ Imprimir</button>
+        <button class="btn-action-secondary" style="padding:6px 10px; font-size:12px;" onclick="excluirReg('${r.numero}', '${r.type}')" title="Excluir">🗑️</button>
       </div>
     </div>
   `).join('');
+}
+
+function editarRegistro(num, type) {
+  if (type === 'obra') {
+    const o = ordens.find(x => x.numero === num);
+    if (!o) return;
+    editandoOs = o.numero;
+    document.getElementById('orc-num-tag').textContent = o.numero;
+    document.getElementById('o-nome').value = o.cliente?.nome || '';
+    document.getElementById('o-cnpj').value = o.cliente?.cnpj || '';
+    document.getElementById('o-tel').value = o.cliente?.tel || '';
+    document.getElementById('o-bairro').value = o.cliente?.bairro || '';
+    document.getElementById('o-end').value = o.cliente?.end || '';
+    if (document.getElementById('o-vendedor')) document.getElementById('o-vendedor').value = o.vendedor || 'Samuel Dantas';
+    if (document.getElementById('o-comissao')) document.getElementById('o-comissao').value = o.comissao || '5%';
+    document.getElementById('forma-outro').value = o.forma || '';
+    document.getElementById('o-prazo').value = o.prazo || '';
+    document.getElementById('o-garantia').value = o.garantia || '';
+    document.getElementById('o-obs').value = o.obs || '';
+
+    document.getElementById('itens-lista').innerHTML = '';
+    if (o.itens && o.itens.length > 0) {
+      o.itens.forEach(it => addItem(it.desc, it.qtd, it.cor, it.alt, it.larg, it.vm2, it.vunit, it.acab));
+    } else {
+      addItem();
+    }
+    goNav('orcamento');
+    showToast(`Editando Orçamento ${num}`, '✏️');
+  } else {
+    const t = terceirizados.find(x => x.numero === num);
+    if (!t) return;
+    editandoTerc = t.numero;
+    document.getElementById('t-cli-nome').value = t.cliente?.nome || '';
+    document.getElementById('t-cli-cnpj').value = t.cliente?.cnpj || '';
+    document.getElementById('t-cli-tel').value = t.cliente?.tel || '';
+    document.getElementById('t-cli-bairro').value = t.cliente?.bairro || '';
+    document.getElementById('t-cli-end').value = t.cliente?.end || '';
+
+    document.getElementById('t-contr-nome').value = t.contratado?.nome || '';
+    document.getElementById('t-contr-cnpj').value = t.contratado?.cnpj || '';
+    document.getElementById('t-contr-tel').value = t.contratado?.tel || '';
+    document.getElementById('t-contr-especialidade').value = t.contratado?.especialidade || 'Alvenaria / Estrutura';
+    document.getElementById('t-contr-escopo').value = t.contratado?.escopo || '';
+    document.getElementById('t-contr-valor-pago').value = t.contratado?.valorPago || '';
+    document.getElementById('t-contr-valor-cliente').value = t.contratado?.valorCliente || '';
+    document.getElementById('t-contr-prazo').value = t.contratado?.prazo || '';
+    document.getElementById('t-contr-pagamento').value = t.contratado?.pagamento || '';
+    document.getElementById('t-contr-obs').value = t.contratado?.obs || '';
+    calcularMargemTerc();
+    goNav('terceirizado');
+    showToast(`Editando Terceirizado ${num}`, '✏️');
+  }
+}
+
+function imprimirRegistroIndividual(num, type) {
+  editarRegistro(num, type);
+  setTimeout(() => {
+    if (type === 'terc') carregarDadosParaPdf();
+    window.print();
+  }, 350);
+}
+
+function imprimirRelatorioCompleto() {
+  window.print();
 }
 
 function excluirReg(num, type) {
@@ -2720,7 +3002,136 @@ function excluirReg(num, type) {
     updateDisplays();
     renderDashboard();
     renderHist();
+    showToast(`Registro ${num} excluído.`, '🗑️');
   }
+}
+
+// ══════════════════════════════════════════════
+//  CADASTRO E GESTÃO DE VENDEDORES
+// ══════════════════════════════════════════════
+function carregarSelectVendedores() {
+  const sel = document.getElementById('o-vendedor');
+  if (!sel) return;
+  const currVal = sel.value;
+  sel.innerHTML = vendedores.map(v => `
+    <option value="${v.nome}" data-comissao="${v.comissao}">${v.nome} (${v.cargo} - ${v.comissao}%)</option>
+  `).join('');
+  if (currVal) sel.value = currVal;
+  atualizarComissaoVendedorOrcamento();
+  const badge = document.getElementById('badge-vend-count');
+  if (badge) badge.textContent = vendedores.length;
+}
+
+function atualizarComissaoVendedorOrcamento() {
+  const sel = document.getElementById('o-vendedor');
+  if (!sel) return;
+  const opt = sel.options[sel.selectedIndex];
+  const comissao = opt?.dataset?.comissao || '5';
+  const inp = document.getElementById('o-comissao');
+  if (inp) inp.value = comissao + '%';
+}
+
+function renderVendedores() {
+  const div = document.getElementById('vend-list-container');
+  if (!div) return;
+  document.getElementById('vend-total-count').textContent = vendedores.length + ' vendedores';
+  if (vendedores.length === 0) {
+    div.innerHTML = '<div style="text-align:center; padding:20px; color:var(--text-muted)">Nenhum vendedor cadastrado ainda.</div>';
+    return;
+  }
+  div.innerHTML = vendedores.map(v => `
+    <div class="record-card" style="padding:14px 18px; margin-bottom:10px;">
+      <div>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <strong style="color:#facc15; font-size:16px;">👔 ${v.nome}</strong>
+          <span class="rec-tag tag-obra">${v.status || 'Ativo'}</span>
+        </div>
+        <div style="font-size:13px; color:#fff; margin-top:4px;">
+          💼 <strong>Cargo:</strong> ${v.cargo} | 📱 <strong>WhatsApp:</strong> ${v.tel || 'Não informado'}
+        </div>
+        ${v.obs ? `<div style="font-size:12px; color:var(--text-muted); margin-top:2px;">📝 ${v.obs}</div>` : ''}
+      </div>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <span style="font-size:15px; font-weight:800; color:var(--gold-light);">Comissão: ${v.comissao}%</span>
+        <button class="btn-action-gold" style="padding:6px 12px; font-size:11.5px;" onclick="editarVendedor(${v.id})">✏️ Editar</button>
+        <button class="btn-action-secondary" style="padding:6px 10px; font-size:11.5px;" onclick="excluirVendedor(${v.id})">🗑️</button>
+      </div>
+    </div>
+  `).join('');
+  carregarSelectVendedores();
+}
+
+function salvarVendedor() {
+  const nome = document.getElementById('vend-nome').value.trim();
+  const tel = document.getElementById('vend-tel').value.trim();
+  const cargo = document.getElementById('vend-cargo').value.trim() || 'Consultor Comercial';
+  const comissao = parseFloat(document.getElementById('vend-comissao').value) || 5;
+  const status = document.getElementById('vend-status').value;
+  const obs = document.getElementById('vend-obs').value.trim();
+
+  if (!nome) {
+    showToast('Informe o nome do vendedor', '⚠️');
+    document.getElementById('vend-nome').focus();
+    return;
+  }
+
+  if (editandoVend) {
+    const idx = vendedores.findIndex(v => v.id === editandoVend);
+    if (idx !== -1) {
+      vendedores[idx] = { id: editandoVend, nome, tel, cargo, comissao, status, obs };
+    }
+    editandoVend = null;
+    showToast('Vendedor atualizado com sucesso!', '👔');
+  } else {
+    const novoVend = {
+      id: Date.now(),
+      nome,
+      tel,
+      cargo,
+      comissao,
+      status,
+      obs
+    };
+    vendedores.push(novoVend);
+    showToast('Vendedor cadastrado com sucesso!', '👔');
+  }
+
+  save(K.vendedores, vendedores);
+  renderVendedores();
+  limparFormVendedor();
+}
+
+function editarVendedor(id) {
+  const v = vendedores.find(x => x.id === id);
+  if (!v) return;
+  editandoVend = v.id;
+  document.getElementById('vend-nome').value = v.nome;
+  document.getElementById('vend-tel').value = v.tel || '';
+  document.getElementById('vend-cargo').value = v.cargo || '';
+  document.getElementById('vend-comissao').value = v.comissao || 5;
+  document.getElementById('vend-status').value = v.status || 'Ativo';
+  document.getElementById('vend-obs').value = v.obs || '';
+  showToast(`Editando vendedor: ${v.nome}`, '✏️');
+  document.getElementById('vend-nome').focus();
+}
+
+function excluirVendedor(id) {
+  if (confirm('Deseja realmente excluir este vendedor?')) {
+    vendedores = vendedores.filter(v => v.id !== id);
+    save(K.vendedores, vendedores);
+    renderVendedores();
+    showToast('Vendedor removido.', '🗑️');
+  }
+}
+
+function limparFormVendedor() {
+  editandoVend = null;
+  document.getElementById('vend-nome').value = '';
+  document.getElementById('vend-tel').value = '';
+  document.getElementById('vend-cargo').value = '';
+  document.getElementById('vend-comissao').value = '5';
+  document.getElementById('vend-status').value = 'Ativo';
+  document.getElementById('vend-obs').value = '';
 }
 
 function renderCli() {
@@ -2743,13 +3154,14 @@ function salvarCliente() {
   clientes.unshift({ id: Date.now(), nome, cnpj: document.getElementById('c-cnpj').value, tel: document.getElementById('c-tel').value, bairro: document.getElementById('c-bairro').value, end: document.getElementById('c-end').value });
   save(K.clients, clientes);
   renderCli();
-  alert('✅ Cliente cadastrado!');
+  showToast('Cliente cadastrado com sucesso!', '👤');
 }
 
 function excluirCli(id) {
   clientes = clientes.filter(c => c.id !== id);
   save(K.clients, clientes);
   renderCli();
+  showToast('Cliente excluído.', '🗑️');
 }
 
 function abrirModalCliente(target) {
@@ -2781,7 +3193,7 @@ function selCliModal(id) {
     document.getElementById('mat-cli-nome').value = c.nome;
     document.getElementById('mat-cli-tel').value = c.tel || '';
     document.getElementById('mat-cli-end').value = (c.end || '') + (c.bairro ? ' - ' + c.bairro : '');
-  } else {
+  } else if (modalTarget === 'terceirizado') {
     document.getElementById('t-cli-nome').value = c.nome;
     document.getElementById('t-cli-cnpj').value = c.cnpj || '';
     document.getElementById('t-cli-tel').value = c.tel || '';
@@ -2793,15 +3205,27 @@ function selCliModal(id) {
 
 function renderProdutos() {
   const div = document.getElementById('prod-list-container');
+  if (!div) return;
   div.innerHTML = produtos.map(p => `
     <div class="record-card">
       <div>
         <strong>📦 ${p.nome}</strong>
         <div style="font-size:12px; color:var(--text-muted);">Categoria: ${p.cat} · ${p.vm2 ? 'R$ '+p.vm2+'/m²' : 'R$ '+p.vunit+' un'}</div>
       </div>
-      <button class="btn-action-secondary" style="padding:6px 12px; font-size:12px;" onclick="excluirProd(${p.id})">🗑️</button>
+      <div style="display:flex; align-items:center; gap:8px;">
+        <button class="btn-action-gold" style="padding:5px 12px; font-size:11px;" onclick="usarProduto(${p.id})">+ Usar</button>
+        <button class="btn-action-secondary" style="padding:5px 10px; font-size:11px;" onclick="excluirProd(${p.id})">🗑️</button>
+      </div>
     </div>
   `).join('');
+}
+
+function usarProduto(id) {
+  const p = produtos.find(x => x.id === id);
+  if (!p) return;
+  addItem(p.nome, '1', 'Padrão', '1.00', '1.00', p.vm2 > 0 ? String(p.vm2) : '', p.vunit > 0 ? String(p.vunit) : '', 'Acabado');
+  goNav('orcamento');
+  showToast(`Item "${p.nome}" inserido no orçamento!`, '🔧');
 }
 
 function salvarProduto() {
@@ -2810,13 +3234,14 @@ function salvarProduto() {
   produtos.unshift({ id: Date.now(), nome, cat: document.getElementById('p-cat').value || 'Geral', vm2: parseNum(document.getElementById('p-vm2').value), vunit: parseNum(document.getElementById('p-vunit').value) });
   save(K.products, produtos);
   renderProdutos();
-  alert('✅ Produto salvo no catálogo!');
+  showToast('Produto salvo no catálogo com sucesso!', '📦');
 }
 
 function excluirProd(id) {
   produtos = produtos.filter(p => p.id !== id);
   save(K.products, produtos);
   renderProdutos();
+  showToast('Produto removido.', '🗑️');
 }
 
 function renderSelectContratos() {
@@ -2832,16 +3257,16 @@ function renderSelectContratos() {
 
 function gerarContratoFormal() {
   const num = document.getElementById('sel-orc-contrato').value;
-  if (!num) { alert('Selecione uma O.S. na lista.'); return; }
+  if (!num) { showToast('Selecione uma O.S. na lista.', '⚠️'); return; }
   const tipo = document.getElementById('sel-tipo-contrato').value;
   let txt = '';
 
   if (tipo === 'cliente') {
     const o = ordens.find(x => x.numero === num);
-    txt = `CONTRATO DE PRESTAÇÃO DE SERVIÇOS DE CONSTRUÇÃO CIVIL E REFORMA\nCONTRATADA: SD CONSTRUÇÃO PRO (Itaitinga - CE)\nCONTRATANTE: ${(o.cliente?.nome||'').toUpperCase()}\nENDEREÇO: ${o.cliente?.end||''}\n\nOBJETO: Execução dos serviços da O.S. ${o.numero}\nVALOR TOTAL: ${o.total} (${o.forma})\nPRAZO: ${o.prazo||'30 dias'}\nGARANTIA: ${o.garantia||'5 anos'}\n\nItaitinga - CE, ${o.data}\n\n_________________________      _________________________\n   SD CONSTRUÇÃO PRO                  CLIENTE`;
+    txt = `CONTRATO DE PRESTAÇÃO DE SERVIÇOS DE CONSTRUÇÃO CIVIL E REFORMA\nCONTRATADA: SD CONSTRUÇÕES LTDA (Itaitinga - CE)\nCONTRATANTE: ${(o?.cliente?.nome||'').toUpperCase()}\nVENDEDOR: ${(o?.vendedor||'Samuel Dantas').toUpperCase()}\nENDEREÇO DA OBRA: ${o?.cliente?.end||''}\n\nOBJETO: Execução dos serviços descritos na O.S. ${o?.numero||''}\nVALOR TOTAL: ${o?.total||'R$ 0,00'} (${o?.forma||'À vista'})\nPRAZO: ${o?.prazo||'30 dias úteis'}\nGARANTIA: ${o?.garantia||'5 anos estrutural'}\n\nItaitinga - CE, ${o?.data||''}\n\n_________________________      _________________________\n   SD CONSTRUÇÕES LTDA                   CLIENTE`;
   } else {
     const t = terceirizados.find(x => x.numero === num);
-    txt = `CONTRATO DE SUBCONTRATAÇÃO E SERVIÇO TERCEIRIZADO\nCONTRATANTE: SD CONSTRUÇÃO PRO\nPRESTADOR TERCEIRIZADO: ${(t.contratado?.nome||'').toUpperCase()} (${t.contratado?.especialidade})\nOBRA / CLIENTE FINAL: ${t.cliente?.nome||''}\n\nESCOPO: ${t.contratado?.escopo||''}\nVALOR ACORDADO: R$ ${t.contratado?.valorPago}\nPAGAMENTO: ${t.contratado?.pagamento||'Medição'}\nPRAZO: ${t.contratado?.prazo||'Conforme cronograma'}\n\nItaitinga - CE, ${t.data}\n\n_________________________      _________________________\n   SD CONSTRUÇÃO PRO                 PRESTADOR TERCEIRIZADO`;
+    txt = `CONTRATO DE SUBCONTRATAÇÃO E SERVIÇO TERCEIRIZADO\nCONTRATANTE: SD CONSTRUÇÕES LTDA\nPRESTADOR TERCEIRIZADO: ${(t?.contratado?.nome||'').toUpperCase()} (${t?.contratado?.especialidade||''})\nOBRA / CLIENTE FINAL: ${t?.cliente?.nome||''}\n\nESCOPO: ${t?.contratado?.escopo||''}\nVALOR ACORDADO: R$ ${t?.contratado?.valorPago||'0,00'}\nPAGAMENTO: ${t?.contratado?.pagamento||'Medição'}\nPRAZO: ${t?.contratado?.prazo||'Conforme cronograma'}\n\nItaitinga - CE, ${t?.data||''}\n\n_________________________      _________________________\n   SD CONSTRUÇÕES LTDA            PRESTADOR TERCEIRIZADO`;
   }
 
   document.getElementById('txt-contrato-preview').textContent = txt;
@@ -2849,7 +3274,7 @@ function gerarContratoFormal() {
 }
 
 function copiarContrato() {
-  navigator.clipboard.writeText(document.getElementById('txt-contrato-preview').textContent).then(() => alert('📋 Contrato copiado!'));
+  navigator.clipboard.writeText(document.getElementById('txt-contrato-preview').textContent).then(() => showToast('Contrato copiado para a área de transferência!', '📋'));
 }
 
 function salvarUsuario() {
@@ -2857,8 +3282,9 @@ function salvarUsuario() {
   const nome = document.getElementById('u-nome').value;
   if (!login || !nome) return;
   users.push({ login, nome, role: document.getElementById('u-role').value });
+  save(K.users, users);
   renderUsuarios();
-  alert('✅ Usuário salvo!');
+  showToast('Usuário cadastrado com sucesso!', '👤');
 }
 
 function renderUsuarios() {
