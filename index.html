@@ -1139,8 +1139,8 @@
           </div>
 
           <div class="grid-3">
-            <button class="btn-green-whats" onclick="enviarWhatsApp()">📱 Enviar WhatsApp</button>
-            <button class="btn-dark-pdf" onclick="window.print()">📄 Imprimir / PDF</button>
+            <button class="btn-green-whats" onclick="enviarWhatsApp()">📄 Enviar SÓ o PDF no WhatsApp (Sem Texto)</button>
+            <button class="btn-dark-pdf" onclick="window.print()">🖨️ Imprimir / PDF</button>
             <button class="btn-gold-save" id="btn-salvar-os" onclick="salvarOrdem()">✅ Salvar Ordem de Serviço</button>
           </div>
         </div>
@@ -2100,41 +2100,26 @@ function atualizarTotaisPonto() {
 }
 
 function enviarWhatsAppReciboPonto() {
-  const nome = document.getElementById('func-nome').value || 'Funcionário';
-  const cargo = document.getElementById('func-cargo').value;
-  const tel = document.getElementById('func-tel').value;
-  const diaria = document.getElementById('func-diaria').value;
-  const vHora = document.getElementById('func-v-hora').value;
-  const vHoraExtra = document.getElementById('func-v-hora-extra').value;
-  const obs = document.getElementById('ponto-obs').value;
+  const tel = document.getElementById('func-tel')?.value || '';
+  let cleanTel = tel.replace(/\D/g, '');
 
-  let msg = `*SD CONSTRUÇÕES LTDA*\n`;
-  msg += `*EXTRATO DE PONTO & HORAS EXTRAS*\n\n`;
-  msg += `👷‍♂️ *Funcionário:* ${nome}\n`;
-  msg += `🔨 *Função:* ${cargo}\n`;
-  msg += `💰 *Diária:* R$ ${diaria} | *Hora do Dia:* ${vHora} | *Hora Extra:* ${vHoraExtra}\n\n`;
-  msg += `📅 *RESUMO SEMANAL:*\n`;
+  if (!cleanTel) {
+    alert('⚠️ Digite o número de WhatsApp do funcionário.');
+    document.getElementById('func-tel')?.focus();
+    return;
+  }
 
-  dadosPontoSemanal.forEach(d => {
-    let sit = d.status;
-    let extraTxt = d.horasExtras > 0 ? ` (+${d.horasExtras}h extra)` : '';
-    msg += `• *${d.dia}:* ${sit}${extraTxt}\n`;
-  });
+  if (!cleanTel.startsWith('55') && (cleanTel.length === 10 || cleanTel.length === 11)) {
+    cleanTel = '55' + cleanTel;
+  }
 
-  msg += `\n📊 *TOTAIS:*\n`;
-  msg += `• *Dias Trabalhados:* ${document.getElementById('ponto-dias-trab').textContent}\n`;
-  msg += `• *Faltas:* ${document.getElementById('ponto-total-faltas').textContent}\n`;
-  msg += `• *Horas Extras:* ${document.getElementById('ponto-total-he').textContent}\n`;
-  msg += `💵 *TOTAL LÍQUIDO A RECEBER:* ${document.getElementById('ponto-total-liquido').textContent}\n\n`;
+  // 1. Gera / salva em PDF
+  window.print();
 
-  if (obs) msg += `📝 *Obs:* ${obs}\n\n`;
-  msg += `_SD Construções Ltda · Gestão de Obras & Pessoal_`;
-
-  const cleanTel = tel.replace(/\D/g, '');
-  const url = cleanTel.length >= 10
-    ? `https://wa.me/55${cleanTel}?text=${encodeURIComponent(msg)}`
-    : `https://wa.me/?text=${encodeURIComponent(msg)}`;
-  window.open(url, '_blank');
+  // 2. Abre direto para o número digitado sem mensagem escrita
+  setTimeout(() => {
+    window.open(`https://wa.me/${cleanTel}`, '_blank');
+  }, 400);
 }
 
 function imprimirPdfPonto() {
@@ -2497,11 +2482,26 @@ function salvarOrdem() {
 }
 
 function enviarWhatsApp() {
-  const nome = document.getElementById('o-nome').value;
-  const tot = document.getElementById('total').textContent;
-  const num = document.getElementById('orc-num-tag').textContent;
-  let msg = `*SD CONSTRUÇÃO PRO*\n*ORÇAMENTO DE OBRA:* ${num}\n*Cliente:* ${nome}\n*Total:* ${tot}\n\n_Agradecemos a preferência!_`;
-  window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, '_blank');
+  const telInput = document.getElementById('o-tel')?.value || '';
+  let cleanTel = telInput.replace(/\D/g, '');
+
+  if (!cleanTel) {
+    alert('⚠️ Digite o número de WhatsApp do cliente no campo "WhatsApp / Tel" antes de enviar.');
+    document.getElementById('o-tel')?.focus();
+    return;
+  }
+
+  if (!cleanTel.startsWith('55') && (cleanTel.length === 10 || cleanTel.length === 11)) {
+    cleanTel = '55' + cleanTel;
+  }
+
+  // 1. Aciona o diálogo do navegador para gerar/salvar o PDF oficial
+  window.print();
+
+  // 2. Abre direto para o número digitado SEM mensagem escrita (conforme solicitado)
+  setTimeout(() => {
+    window.open(`https://wa.me/${cleanTel}`, '_blank');
+  }, 400);
 }
 
 // ══════════════════════════════════════════════
