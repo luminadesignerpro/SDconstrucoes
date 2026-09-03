@@ -2080,6 +2080,7 @@ window.addEventListener('DOMContentLoaded', () => {
   renderHist();
   renderUsuarios();
   renderListasMatSalvas();
+  gerarTabelaPontoSemanal();
 
   addItem('Alvenaria de Vedação / Bloco Cerâmico', '1', 'Padrão', '2.80', '6.00', '65', '', 'Acabado');
 });
@@ -2159,7 +2160,9 @@ function goNav(viewId) {
     adicionarKitBasicoObra();
   }
   if (viewId === 'funcionarios') {
-    recalcularValoresHoraFunc();
+    if (document.querySelectorAll('#tabela-ponto-linhas tr').length === 0) {
+      gerarTabelaPontoSemanal();
+    }
   }
 }
 
@@ -2324,10 +2327,13 @@ function recalcularValoresHoraFunc() {
     }
 
     // Atualiza as colunas de valor hora na tabela semanal
-    document.querySelectorAll('.col-ponto-vhora').forEach(el => el.value = formatMoney(vHora));
-    document.querySelectorAll('.col-ponto-vhe').forEach(el => el.value = formatMoney(vHoraExtra));
-
-    atualizarTotaisPonto();
+    if (document.querySelectorAll('#tabela-ponto-linhas tr').length === 0) {
+      gerarTabelaPontoSemanal();
+    } else {
+      document.querySelectorAll('.col-ponto-vhora').forEach(el => el.value = formatMoney(vHora));
+      document.querySelectorAll('.col-ponto-vhe').forEach(el => el.value = formatMoney(vHoraExtra));
+      atualizarTotaisPonto();
+    }
   }
 }
 
