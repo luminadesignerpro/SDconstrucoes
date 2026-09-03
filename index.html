@@ -1756,19 +1756,19 @@
           <div class="grid-4" style="margin-top:10px;">
             <div class="form-group">
               <label>Valor da Diária (R$)</label>
-              <input id="func-diaria" value="160,00" onfocus="handleInputFocus(this)" oninput="recalcularValoresHoraFunc()" onblur="formatarCampoValorHora(this)" />
+              <input id="func-diaria" value="160,00" onfocus="limparAoFocar(this)" oninput="recalcularValoresHoraFunc()" onblur="formatarCampoDiaria(this)" placeholder="160,00" />
             </div>
             <div class="form-group">
               <label>Jornada Normal (Horas/Dia)</label>
-              <input id="func-horas-dia" value="8" type="number" onfocus="handleInputFocus(this)" oninput="recalcularValoresHoraFunc()" />
+              <input id="func-horas-dia" value="8" type="number" onfocus="limparAoFocar(this)" oninput="recalcularValoresHoraFunc()" onblur="restaurarJornadaSeVazio(this)" placeholder="8" />
             </div>
             <div class="form-group">
               <label>Valor da Hora Normal (R$)</label>
-              <input id="func-v-hora" value="R$ 20,00" onfocus="handleInputFocus(this)" oninput="recalcularPorHoraNormal()" onblur="formatarCampoValorHora(this)" placeholder="0,00" style="color:#60a5fa; font-weight:800;" />
+              <input id="func-v-hora" value="R$ 20,00" onfocus="limparAoFocar(this)" oninput="recalcularPorHoraNormal()" onblur="formatarCampoValorHora(this)" placeholder="20,00" style="color:#60a5fa; font-weight:800;" />
             </div>
             <div class="form-group">
               <label>Valor da Hora Extra (R$)</label>
-              <input id="func-v-hora-extra" value="R$ 30,00" onfocus="handleInputFocus(this)" oninput="recalcularPorHoraExtra()" onblur="formatarCampoValorHora(this)" placeholder="0,00" style="color:var(--gold-light); font-weight:800;" />
+              <input id="func-v-hora-extra" value="R$ 30,00" onfocus="limparAoFocar(this)" oninput="recalcularPorHoraExtra()" onblur="formatarCampoValorHora(this)" placeholder="30,00" style="color:var(--gold-light); font-weight:800;" />
             </div>
           </div>
         </div>
@@ -2206,83 +2206,129 @@ let dadosPontoSemanal = [
   { dia: 'Domingo', entrada: '', saida: '', status: 'Folga / DSR', horasExtras: 0 }
 ];
 
+// Limpa o campo imediatamente ao focar para facilitar a digitação sem precisar apagar
+function limparAoFocar(el) {
+  if (el.readOnly) return;
+  if (el.value && el.value.trim() !== '') {
+    el.dataset.prev = el.value.trim();
+  }
+  el.value = '';
+}
+
 function formatarCampoValorHora(el) {
   const v = parseNum(el?.value);
   if (v > 0) {
     el.value = formatMoney(v);
+    el.dataset.prev = el.value;
+  } else if (el?.dataset?.prev) {
+    el.value = el.dataset.prev;
   }
 }
 
-// Recalcula Diária e Hora Extra quando o usuário digita na HORA NORMAL
+function formatarCampoDiaria(el) {
+  const v = parseNum(el?.value);
+  if (v > 0) {
+    el.value = v.toFixed(2).replace('.', ',');
+    el.dataset.prev = el.value;
+  } else if (el?.dataset?.prev) {
+    el.value = el.dataset.prev;
+  }
+}
+
+function restaurarJornadaSeVazio(el) {
+  const v = parseInt(el?.value, 10);
+  if (isNaN(v) || v <= 0) {
+    el.value = el?.dataset?.prev || '8';
+  }
+  recalcularValoresHoraFunc();
+}
+
+// Recalcula Diária e Hora Extra quando o usuário digita na HORA NORMAL (ex: 20,00 -> Diária 160,00)
 function recalcularPorHoraNormal() {
-  const vHora = parseNum(document.getElementById('func-v-hora')?.value);
+  const vHoraInput = document.getElementById('func-v-hora');
+  const vHora = parseNum(vHoraInput?.value);
   const horasDia = parseNum(document.getElementById('func-horas-dia')?.value) || 8;
-  const diaria = vHora * horasDia;
-  const vHoraExtra = vHora * 1.5;
 
-  const elDiaria = document.getElementById('func-diaria');
-  if (elDiaria && document.activeElement !== elDiaria) {
-    elDiaria.value = diaria.toFixed(2).replace('.', ',');
+  if (vHora > 0) {
+    const diaria = vHora * horasDia;
+    const vHoraExtra = vHora * 1.5;
+
+    const elDiaria = document.getElementById('func-diaria');
+    if (elDiaria) {
+      elDiaria.value = diaria.toFixed(2).replace('.', ',');
+      elDiaria.dataset.prev = elDiaria.value;
+    }
+
+    const elHE = document.getElementById('func-v-hora-extra');
+    if (elHE && document.activeElement !== elHE) {
+      elHE.value = formatMoney(vHoraExtra);
+      elHE.dataset.prev = elHE.value;
+    }
+
+    // Atualiza as colunas de valor hora na tabela semanal
+    document.querySelectorAll('.col-ponto-vhora').forEach(el => el.value = formatMoney(vHora));
+    document.querySelectorAll('.col-ponto-vhe').forEach(el => el.value = formatMoney(vHoraExtra));
+
+    atualizarTotaisPonto();
   }
-
-  const elHE = document.getElementById('func-v-hora-extra');
-  if (elHE && document.activeElement !== elHE) {
-    elHE.value = formatMoney(vHoraExtra);
-  }
-
-  // Atualiza as colunas de valor hora na tabela semanal
-  document.querySelectorAll('.col-ponto-vhora').forEach(el => el.value = formatMoney(vHora));
-  document.querySelectorAll('.col-ponto-vhe').forEach(el => el.value = formatMoney(vHoraExtra));
-
-  atualizarTotaisPonto();
 }
 
 // Recalcula Hora Normal e Diária quando o usuário digita na HORA EXTRA
 function recalcularPorHoraExtra() {
   const vHoraExtra = parseNum(document.getElementById('func-v-hora-extra')?.value);
   const horasDia = parseNum(document.getElementById('func-horas-dia')?.value) || 8;
-  const vHora = vHoraExtra / 1.5;
-  const diaria = vHora * horasDia;
 
-  const elDiaria = document.getElementById('func-diaria');
-  if (elDiaria && document.activeElement !== elDiaria) {
-    elDiaria.value = diaria.toFixed(2).replace('.', ',');
+  if (vHoraExtra > 0) {
+    const vHora = vHoraExtra / 1.5;
+    const diaria = vHora * horasDia;
+
+    const elDiaria = document.getElementById('func-diaria');
+    if (elDiaria) {
+      elDiaria.value = diaria.toFixed(2).replace('.', ',');
+      elDiaria.dataset.prev = elDiaria.value;
+    }
+
+    const elHora = document.getElementById('func-v-hora');
+    if (elHora && document.activeElement !== elHora) {
+      elHora.value = formatMoney(vHora);
+      elHora.dataset.prev = elHora.value;
+    }
+
+    // Atualiza as colunas de valor hora na tabela semanal
+    document.querySelectorAll('.col-ponto-vhora').forEach(el => el.value = formatMoney(vHora));
+    document.querySelectorAll('.col-ponto-vhe').forEach(el => el.value = formatMoney(vHoraExtra));
+
+    atualizarTotaisPonto();
   }
-
-  const elHora = document.getElementById('func-v-hora');
-  if (elHora && document.activeElement !== elHora) {
-    elHora.value = formatMoney(vHora);
-  }
-
-  // Atualiza as colunas de valor hora na tabela semanal
-  document.querySelectorAll('.col-ponto-vhora').forEach(el => el.value = formatMoney(vHora));
-  document.querySelectorAll('.col-ponto-vhe').forEach(el => el.value = formatMoney(vHoraExtra));
-
-  atualizarTotaisPonto();
 }
 
 // Recalcula Hora Normal e Hora Extra quando o usuário digita na DIÁRIA ou na JORNADA
 function recalcularValoresHoraFunc() {
   const diaria = parseNum(document.getElementById('func-diaria')?.value) || 0;
   const horasDia = parseNum(document.getElementById('func-horas-dia')?.value) || 8;
-  const vHora = horasDia > 0 ? (diaria / horasDia) : 0;
-  const vHoraExtra = vHora * 1.5; // Adicional de 50% de hora extra
 
-  const elHora = document.getElementById('func-v-hora');
-  if (elHora && document.activeElement !== elHora) {
-    elHora.value = formatMoney(vHora);
+  if (diaria > 0) {
+    const vHora = horasDia > 0 ? (diaria / horasDia) : 0;
+    const vHoraExtra = vHora * 1.5; // Adicional de 50% de hora extra
+
+    const elHora = document.getElementById('func-v-hora');
+    if (elHora && document.activeElement !== elHora) {
+      elHora.value = formatMoney(vHora);
+      elHora.dataset.prev = elHora.value;
+    }
+
+    const elHE = document.getElementById('func-v-hora-extra');
+    if (elHE && document.activeElement !== elHE) {
+      elHE.value = formatMoney(vHoraExtra);
+      elHE.dataset.prev = elHE.value;
+    }
+
+    // Atualiza as colunas de valor hora na tabela semanal
+    document.querySelectorAll('.col-ponto-vhora').forEach(el => el.value = formatMoney(vHora));
+    document.querySelectorAll('.col-ponto-vhe').forEach(el => el.value = formatMoney(vHoraExtra));
+
+    atualizarTotaisPonto();
   }
-
-  const elHE = document.getElementById('func-v-hora-extra');
-  if (elHE && document.activeElement !== elHE) {
-    elHE.value = formatMoney(vHoraExtra);
-  }
-
-  // Atualiza as colunas de valor hora na tabela semanal
-  document.querySelectorAll('.col-ponto-vhora').forEach(el => el.value = formatMoney(vHora));
-  document.querySelectorAll('.col-ponto-vhe').forEach(el => el.value = formatMoney(vHoraExtra));
-
-  atualizarTotaisPonto();
 }
 
 function sugerirDiariaPorCargo() {
