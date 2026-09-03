@@ -1787,7 +1787,7 @@
                   <th style="min-width:120px;">DIA DA SEMANA</th>
                   <th style="width:105px;">ENTRADA</th>
                   <th style="width:105px;">SAÍDA</th>
-                  <th style="width:95px; text-align:center; color:#34d399;">HORAS TRAB.</th>
+                  <th style="width:130px; text-align:center; color:#34d399;">HORAS TRAB. (H : MIN)</th>
                   <th style="min-width:175px;">SITUAÇÃO / FALTA</th>
                   <th style="width:80px; text-align:center;">H. EXTRA</th>
                   <th style="width:105px;">V. HORA</th>
@@ -2242,6 +2242,15 @@ function carregarExemploFuncionario() {
   document.getElementById('func-tel').value = '(85) 99888-7777';
   document.getElementById('func-diaria').value = '160,00';
   document.getElementById('func-horas-dia').value = '8';
+  dadosPontoSemanal = [
+    { dia: 'Segunda-feira', entrada: '07:00', saida: '17:00', status: 'Presente', horasExtras: 0 },
+    { dia: 'Terça-feira', entrada: '07:00', saida: '19:00', status: 'Presente', horasExtras: 2 },
+    { dia: 'Quarta-feira', entrada: '07:00', saida: '17:00', status: 'Presente', horasExtras: 0 },
+    { dia: 'Quinta-feira', entrada: '', saida: '', status: 'Falta - Doente', horasExtras: 0 },
+    { dia: 'Sexta-feira', entrada: '07:00', saida: '17:00', status: 'Presente', horasExtras: 0 },
+    { dia: 'Sábado', entrada: '07:00', saida: '12:00', status: 'Presente', horasExtras: 0 },
+    { dia: 'Domingo', entrada: '', saida: '', status: 'Folga / DSR', horasExtras: 0 }
+  ];
   recalcularValoresHoraFunc();
 }
 
@@ -2250,6 +2259,7 @@ function calcularHorasTrabalhadas(entrada, saida) {
   if (!entrada || !saida) return 0;
   const [hE, mE] = entrada.split(':').map(Number);
   const [hS, mS] = saida.split(':').map(Number);
+  if (isNaN(hE) || isNaN(mE) || isNaN(hS) || isNaN(mS)) return 0;
   const minEntrada = hE * 60 + mE;
   let minSaida = hS * 60 + mS;
   // Se saída for antes da entrada (virada de meia-noite)
@@ -2259,8 +2269,10 @@ function calcularHorasTrabalhadas(entrada, saida) {
 
 // Formata horas decimais em "Xh YYmin"
 function formatarHoras(hDecimal) {
+  if (hDecimal <= 0) return '0h 00min';
   const h = Math.floor(hDecimal);
   const min = Math.round((hDecimal - h) * 60);
+  if (min >= 60) return `${h + 1}h 00min`;
   return `${h}h ${String(min).padStart(2,'0')}min`;
 }
 
@@ -2277,12 +2289,19 @@ function gerarTabelaPontoSemanal() {
   const vHoraExtra = vHoraExtraField > 0 ? vHoraExtraField : (vHora * 1.5);
 
   tbody.innerHTML = dadosPontoSemanal.map((d, i) => {
-    const horasTrab = calcularHorasTrabalhadas(d.entrada, d.saida);
-    const horasNormais = Math.min(horasTrab, horasDia);
-    const horasExtraAuto = Math.max(0, horasTrab - horasDia);
-    const horasExtraFinal = d.horasExtras > 0 ? d.horasExtras : horasExtraAuto;
-    const horasTrabStr = horasTrab > 0 ? formatarHoras(horasTrab) : '--';
-    const corHoras = horasTrab > horasDia ? '#facc15' : (horasTrab > 0 ? '#34d399' : 'var(--text-muted)');
+    // Horas trabalhadas: se o usuário digitou manualmente ou calculadas de entrada/saída
+    let horasDec = (d.horasTrabManual !== null && d.horasTrabManual !== undefined)
+      ? d.horasTrabManual
+      : calcularHorasTrabalhadas(d.entrada, d.saida);
+
+    let hTrab = Math.floor(horasDec);
+    let mTrab = Math.round((horasDec - hTrab) * 60);
+    if (mTrab >= 60) { hTrab++; mTrab = 0; }
+
+    const horasExtraAuto = Math.max(0, horasDec - horasDia);
+    const horasExtraFinal = (d.horasExtrasManual !== null && d.horasExtrasManual !== undefined)
+      ? d.horasExtrasManual
+      : (d.horasExtras > 0 ? d.horasExtras : horasExtraAuto);
 
     return `
       <tr id="ponto-linha-${i}">
@@ -2290,7 +2309,23 @@ function gerarTabelaPontoSemanal() {
         <td><input type="time" value="${d.entrada}" onchange="atualizarLinhaPonto(${i}, 'entrada', this.value)" style="padding:6px; border-radius:6px; background:#060a14; color:#fff; border:1px solid var(--border);"></td>
         <td><input type="time" value="${d.saida}" onchange="atualizarLinhaPonto(${i}, 'saida', this.value)" style="padding:6px; border-radius:6px; background:#060a14; color:#fff; border:1px solid var(--border);"></td>
         <td style="text-align:center;">
-          <span id="ponto-horas-${i}" style="font-weight:800; font-size:13px; color:${corHoras};">${horasTrabStr}</span>
+          <div style="display:inline-flex; align-items:center; justify-content:center; gap:3px; background:#04070f; border:1.5px solid rgba(52,211,153,0.35); border-radius:8px; padding:4px 6px;" title="Clique para digitar as horas e minutos trabalhados">
+            <input type="number" min="0" max="24" value="${hTrab}" id="ponto-h-${i}"
+              placeholder="00"
+              onfocus="handleInputFocus(this)"
+              oninput="atualizarHorasTrabalhadasManual(${i}, 'horas', this.value)"
+              title="Digite a Hora trabalhada"
+              style="width:36px; text-align:center; padding:2px 0; border:none; background:transparent; color:#34d399; font-weight:800; font-size:13.5px; outline:none;">
+            <span style="color:#34d399; font-size:11px; font-weight:800;">h</span>
+            <span style="color:var(--text-muted); font-size:12px; font-weight:700;">:</span>
+            <input type="number" min="0" max="59" step="1" value="${String(mTrab).padStart(2,'0')}" id="ponto-m-${i}"
+              placeholder="00"
+              onfocus="handleInputFocus(this)"
+              oninput="atualizarHorasTrabalhadasManual(${i}, 'minutos', this.value)"
+              title="Digite o Minuto trabalhado"
+              style="width:36px; text-align:center; padding:2px 0; border:none; background:transparent; color:#34d399; font-weight:800; font-size:13.5px; outline:none;">
+            <span style="color:#34d399; font-size:11px; font-weight:800;">m</span>
+          </div>
         </td>
         <td>
           <select onchange="atualizarLinhaPonto(${i}, 'status', this.value)" style="padding:6px; border-radius:6px; background:#060a14; color:#fff; border:1px solid var(--border); width:100%;">
@@ -2301,7 +2336,7 @@ function gerarTabelaPontoSemanal() {
           </select>
         </td>
         <td style="text-align:center;">
-          <input type="number" min="0" max="10" step="0.5" value="${d.horasExtras}" oninput="atualizarLinhaPonto(${i}, 'horasExtras', this.value)" style="width:65px; text-align:center; padding:6px; border-radius:6px; background:#060a14; color:var(--gold-light); font-weight:800; border:1px solid var(--border);">
+          <input type="number" min="0" max="24" step="0.5" id="ponto-he-${i}" value="${horasExtraFinal > 0 ? Number(horasExtraFinal.toFixed(2)) : 0}" onfocus="handleInputFocus(this)" oninput="atualizarLinhaPonto(${i}, 'horasExtras', this.value)" style="width:65px; text-align:center; padding:6px; border-radius:6px; background:#060a14; color:var(--gold-light); font-weight:800; border:1px solid var(--border);">
         </td>
         <td><input type="text" readonly value="${formatMoney(vHora)}" style="background:#04070f; color:#60a5fa; font-weight:700; border:none;"></td>
         <td><input type="text" readonly value="${formatMoney(vHoraExtra)}" style="background:#04070f; color:var(--gold-light); font-weight:700; border:none;"></td>
@@ -2315,13 +2350,54 @@ function gerarTabelaPontoSemanal() {
   atualizarTotaisPonto();
 }
 
+function atualizarHorasTrabalhadasManual(index, tipo, valor) {
+  const d = dadosPontoSemanal[index];
+  let horasDec = (d.horasTrabManual !== null && d.horasTrabManual !== undefined)
+    ? d.horasTrabManual
+    : calcularHorasTrabalhadas(d.entrada, d.saida);
+
+  let hAtual = Math.floor(horasDec);
+  let mAtual = Math.round((horasDec - hAtual) * 60);
+  if (mAtual >= 60) { hAtual++; mAtual = 0; }
+
+  if (tipo === 'horas') {
+    hAtual = parseInt(valor, 10);
+    if (isNaN(hAtual) || hAtual < 0) hAtual = 0;
+    if (hAtual > 24) hAtual = 24;
+  } else if (tipo === 'minutos') {
+    mAtual = parseInt(valor, 10);
+    if (isNaN(mAtual) || mAtual < 0) mAtual = 0;
+    if (mAtual > 59) mAtual = 59;
+  }
+
+  d.horasTrabManual = hAtual + (mAtual / 60);
+
+  // Auto-calcula hora extra se ultrapassar jornada normal
+  const horasDia = parseNum(document.getElementById('func-horas-dia')?.value) || 8;
+  if (d.horasTrabManual > horasDia) {
+    d.horasExtras = Number((d.horasTrabManual - horasDia).toFixed(2));
+    d.horasExtrasManual = null;
+  } else {
+    d.horasExtras = 0;
+    d.horasExtrasManual = null;
+  }
+
+  atualizarTotaisPonto();
+}
+
 function atualizarLinhaPonto(index, campo, valor) {
   if (campo === 'horasExtras') {
-    dadosPontoSemanal[index].horasExtras = parseFloat(valor) || 0;
-  } else {
-    dadosPontoSemanal[index][campo] = valor;
+    dadosPontoSemanal[index].horasExtrasManual = parseFloat(valor) || 0;
+    dadosPontoSemanal[index].horasExtras = dadosPontoSemanal[index].horasExtrasManual;
+    atualizarTotaisPonto();
+    return;
   }
-  // Recria a tabela para atualizar as horas calculadas visualmente
+
+  dadosPontoSemanal[index][campo] = valor;
+  if (campo === 'entrada' || campo === 'saida') {
+    dadosPontoSemanal[index].horasTrabManual = null;
+    dadosPontoSemanal[index].horasExtrasManual = null;
+  }
   gerarTabelaPontoSemanal();
 }
 
@@ -2343,20 +2419,24 @@ function atualizarTotaisPonto() {
 
   dadosPontoSemanal.forEach((d, i) => {
     let subtotalDia = 0;
-    const horasTrab = calcularHorasTrabalhadas(d.entrada, d.saida);
-    // Horas extras: manual se digitado, auto se calculado por entrada/saída
+    const horasTrab = (d.horasTrabManual !== null && d.horasTrabManual !== undefined)
+      ? d.horasTrabManual
+      : calcularHorasTrabalhadas(d.entrada, d.saida);
+
+    // Horas extras: manual se digitado pelo usuário, senão calculado automaticamente
     const horasExtraAuto = Math.max(0, horasTrab - horasDia);
-    const he = d.horasExtras > 0 ? d.horasExtras : (horasTrab > 0 ? horasExtraAuto : 0);
+    const he = (d.horasExtrasManual !== null && d.horasExtrasManual !== undefined)
+      ? d.horasExtrasManual
+      : (d.horasExtras > 0 ? d.horasExtras : (horasTrab > 0 ? horasExtraAuto : 0));
     const valorHE = he * vHoraExtra;
 
     if (d.status === 'Presente') {
       diasTrabalhados++;
       if (horasTrab > 0) {
-        // Calcula por horas reais: horas normais × valor/hora + extras × valor extra
+        // Calcula por horas reais: horas normais * valor/hora + extras * valor extra
         const horasNormais = Math.min(horasTrab, horasDia);
         subtotalDia = (horasNormais * vHora) + valorHE;
       } else {
-        // Sem horário registrado: usa a diária cheia
         subtotalDia = diaria + valorHE;
       }
       totalHorasExtras += he;
@@ -2364,7 +2444,7 @@ function atualizarTotaisPonto() {
       totalHorasTrab += horasTrab > 0 ? horasTrab : horasDia;
     } else if (d.status === 'Falta - Doente') {
       faltas++;
-      subtotalDia = diaria; // Atestado: paga diária integral
+      subtotalDia = diaria; // Atestado médico
     } else if (d.status === 'Falta Injustificada') {
       faltas++;
       subtotalDia = 0;
@@ -2376,6 +2456,12 @@ function atualizarTotaisPonto() {
 
     const elSub = document.getElementById('ponto-subtotal-' + i);
     if (elSub) elSub.value = formatMoney(subtotalDia);
+
+    // Atualiza campo de hora extra da linha caso não esteja sendo editado no momento
+    const elHe = document.getElementById('ponto-he-' + i);
+    if (elHe && document.activeElement !== elHe) {
+      elHe.value = he > 0 ? Number(he.toFixed(2)) : 0;
+    }
   });
 
   const elTrab = document.getElementById('ponto-dias-trab');
