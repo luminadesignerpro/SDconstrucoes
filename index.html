@@ -1662,6 +1662,18 @@
           </div>
           <div id="vend-list-container" style="margin-top:14px;"></div>
         </div>
+
+        <!-- ══ RELATÓRIO DE COMISSÃO POR VENDEDOR ══ -->
+        <div class="glass-card" style="border-color: rgba(234,179,8,0.4);">
+          <div class="glass-card-title" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="color:#facc15;">💰 Relatório de Comissões por Vendedor</span>
+              <span class="badge-count" style="border-color:rgba(234,179,8,0.4); color:#facc15; background:rgba(234,179,8,0.12);" id="rel-com-periodo">Todas as O.S.</span>
+            </div>
+            <button class="btn-action-secondary" style="padding:7px 14px; font-size:12px;" onclick="renderRelatorioComissao()">🔄 Atualizar</button>
+          </div>
+          <div id="rel-comissao-container" style="margin-top:14px;"></div>
+        </div>
       </section>
 
       <!-- ══════════════════════════════════════════════ -->
@@ -1752,11 +1764,11 @@
             </div>
             <div class="form-group">
               <label>Valor da Hora Normal (R$)</label>
-              <input id="func-v-hora" value="R$ 20,00" readonly style="background:#04070f; color:#60a5fa; font-weight:800;" />
+              <input id="func-v-hora" value="R$ 20,00" oninput="atualizarTotaisPonto()" placeholder="R$ 20,00" style="color:#60a5fa; font-weight:800;" />
             </div>
             <div class="form-group">
               <label>Valor da Hora Extra (R$)</label>
-              <input id="func-v-hora-extra" value="R$ 30,00" readonly style="background:#04070f; color:var(--gold-light); font-weight:800;" />
+              <input id="func-v-hora-extra" value="R$ 30,00" oninput="atualizarTotaisPonto()" placeholder="R$ 30,00" style="color:var(--gold-light); font-weight:800;" />
             </div>
           </div>
         </div>
@@ -2277,9 +2289,13 @@ function atualizarLinhaPonto(index, campo, valor) {
 
 function atualizarTotaisPonto() {
   const diaria = parseNum(document.getElementById('func-diaria')?.value) || 160;
+  // Lê valor da hora do campo (pode ter sido editado manualmente)
+  const vHoraField = parseNum(document.getElementById('func-v-hora')?.value);
+  const vHoraExtraField = parseNum(document.getElementById('func-v-hora-extra')?.value);
   const horasDia = parseNum(document.getElementById('func-horas-dia')?.value) || 8;
-  const vHora = horasDia > 0 ? (diaria / horasDia) : 20;
-  const vHoraExtra = vHora * 1.5;
+  const vHoraCalc = horasDia > 0 ? (diaria / horasDia) : 20;
+  const vHora = vHoraField > 0 ? vHoraField : vHoraCalc;
+  const vHoraExtra = vHoraExtraField > 0 ? vHoraExtraField : (vHora * 1.5);
 
   let totalLiquido = 0;
   let diasTrabalhados = 0;
@@ -2845,6 +2861,7 @@ function salvarOrdem() {
   updateDisplays();
   renderDashboard();
   renderHist();
+  renderRelatorioComissao();
   showToast(`Ordem de Serviço ${novaOs.numero} salva com sucesso!`, '💾');
 }
 
@@ -3216,6 +3233,110 @@ function renderVendedores() {
     </div>
   `).join('');
   carregarSelectVendedores();
+  renderRelatorioComissao();
+}
+
+// ══════════════════════════════════════════════
+//  RELATÓRIO DE COMISSÕES POR VENDEDOR
+// ══════════════════════════════════════════════
+function renderRelatorioComissao() {
+  const div = document.getElementById('rel-comissao-container');
+  if (!div) return;
+
+  if (vendedores.length === 0) {
+    div.innerHTML = '<div style="text-align:center; padding:20px; color:var(--text-muted); font-size:13px;">Nenhum vendedor cadastrado ainda.</div>';
+    return;
+  }
+
+  // Calcula comissão de cada vendedor com base nas ordens salvas
+  const relatorio = vendedores.map(v => {
+    const ordensVend = ordens.filter(o => (o.vendedor || '') === v.nome);
+    const totalVendido = ordensVend.reduce((acc, o) => acc + parseNum(o.total), 0);
+    const percComissao = parseFloat(v.comissao) || 0;
+    const valorComissao = totalVendido * (percComissao / 100);
+    return { ...v, ordensVend, totalVendido, valorComissao };
+  });
+
+  const totalGeralComissoes = relatorio.reduce((a, r) => a + r.valorComissao, 0);
+
+  div.innerHTML = relatorio.map(r => `
+    <div class="record-card" style="padding:16px 20px; margin-bottom:12px; border-color:rgba(234,179,8,0.3);">
+      <div style="flex:1;">
+        <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:8px;">
+          <strong style="color:#facc15; font-size:15px;">👔 ${r.nome}</strong>
+          <span class="rec-tag tag-obra" style="font-size:10.5px;">${r.cargo}</span>
+          <span class="rec-tag" style="background:rgba(234,179,8,0.12); color:#facc15; border:1px solid rgba(234,179,8,0.3); font-size:10.5px;">${r.comissao}% comissão</span>
+          ${r.status === 'Inativo' ? '<span class="rec-tag" style="background:rgba(239,68,68,0.12); color:#f87171; border:1px solid rgba(239,68,68,0.3);">Inativo</span>' : ''}
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px,1fr)); gap:12px; margin-bottom:10px;">
+          <div style="background:#060a14; border:1px solid rgba(255,255,255,0.06); border-radius:10px; padding:12px 14px;">
+            <div style="font-size:11px; font-weight:700; text-transform:uppercase; color:var(--text-muted); margin-bottom:4px;">O.S. Fechadas</div>
+            <div style="font-size:20px; font-weight:900; color:#60a5fa;">${r.ordensVend.length}</div>
+          </div>
+          <div style="background:#060a14; border:1px solid rgba(255,255,255,0.06); border-radius:10px; padding:12px 14px;">
+            <div style="font-size:11px; font-weight:700; text-transform:uppercase; color:var(--text-muted); margin-bottom:4px;">Total Vendido</div>
+            <div style="font-size:20px; font-weight:900; color:#fff;">${formatMoney(r.totalVendido)}</div>
+          </div>
+          <div style="background:linear-gradient(135deg,rgba(245,179,0,0.12),rgba(245,179,0,0.06)); border:1px solid rgba(245,179,0,0.3); border-radius:10px; padding:12px 14px;">
+            <div style="font-size:11px; font-weight:700; text-transform:uppercase; color:var(--gold-light); margin-bottom:4px;">💰 Comissão a Pagar</div>
+            <div style="font-size:22px; font-weight:900; color:var(--gold-light);">${formatMoney(r.valorComissao)}</div>
+          </div>
+        </div>
+        ${r.ordensVend.length > 0 ? `
+        <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">
+          📄 O.S.: ${r.ordensVend.map(o => `<span style="color:#facc15; font-weight:700;">${o.numero}</span> (${o.total})`).join(' · ')}
+        </div>` : '<div style="font-size:12px; color:var(--text-muted);">Nenhuma O.S. atribuída ainda.</div>'}
+      </div>
+      <div style="display:flex; flex-direction:column; gap:8px; margin-left:16px; min-width:140px;">
+        <button class="btn-action-gold" style="padding:9px 14px; font-size:12px; font-weight:800; white-space:nowrap;" onclick="passarAdiante('${r.nome}', '${r.tel || ''}', '${formatMoney(r.valorComissao)}', '${r.ordensVend.length}', '${formatMoney(r.totalVendido)}')">
+          🚀 Passar Adiante
+        </button>
+        <button class="btn-dark-pdf" style="padding:9px 14px; font-size:12px;" onclick="imprimirRelComissao('${r.nome}', '${formatMoney(r.valorComissao)}')">
+          🖨️ Imprimir
+        </button>
+      </div>
+    </div>
+  `).join('');
+
+  // Rodapé com total geral
+  div.innerHTML += `
+    <div style="background:linear-gradient(135deg,rgba(245,179,0,0.15),rgba(245,179,0,0.05)); border:1.5px solid rgba(245,179,0,0.4); border-radius:12px; padding:16px 20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:4px;">
+      <div style="font-size:13px; font-weight:800; color:#fff;">📊 Total Geral de Comissões (${relatorio.filter(r => r.status !== 'Inativo').length} vendedores ativos)</div>
+      <div style="font-size:24px; font-weight:900; color:var(--gold-light);">${formatMoney(totalGeralComissoes)}</div>
+    </div>
+  `;
+}
+
+function passarAdiante(nome, tel, comissao, qtdOs, totalVendido) {
+  const msg = [
+    '*SD CONSTRUÇÕES LTDA* 🏗️',
+    '*RELATÓRIO DE COMISSÃO INDIVIDUAL*',
+    '',
+    `👔 *Vendedor/Consultor:* ${nome}`,
+    `📄 *O.S. Fechadas no Período:* ${qtdOs}`,
+    `💵 *Total Vendido:* ${totalVendido}`,
+    `💰 *Comissão a Receber:* ${comissao}`,
+    '',
+    '_Verifique os detalhes junto ao departamento financeiro._',
+    '_SD Construções Ltda · Itaitinga - CE · (85) 99611-9824_'
+  ].join('\n');
+
+  let cleanTel = (tel || '').replace(/\D/g, '');
+  if (cleanTel && !cleanTel.startsWith('55') && (cleanTel.length === 10 || cleanTel.length === 11)) {
+    cleanTel = '55' + cleanTel;
+  }
+
+  const url = cleanTel
+    ? `https://wa.me/${cleanTel}?text=${encodeURIComponent(msg)}`
+    : `https://wa.me/?text=${encodeURIComponent(msg)}`;
+
+  window.open(url, '_blank');
+  showToast(`Relatório de comissão enviado para ${nome}!`, '🚀');
+}
+
+function imprimirRelComissao(nome, comissao) {
+  showToast(`Imprimindo relatório de ${nome}...`, '🖨️');
+  setTimeout(() => window.print(), 300);
 }
 
 function salvarVendedor() {
@@ -3255,6 +3376,7 @@ function salvarVendedor() {
 
   save(K.vendedores, vendedores);
   renderVendedores();
+  renderRelatorioComissao();
   limparFormVendedor();
 }
 
