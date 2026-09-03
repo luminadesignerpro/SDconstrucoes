@@ -1784,14 +1784,15 @@
             <table class="data-table">
               <thead>
                 <tr>
-                  <th style="min-width:130px;">DIA DA SEMANA</th>
-                  <th style="width:115px;">ENTRADA</th>
-                  <th style="width:115px;">SAÍDA</th>
-                  <th style="min-width:190px;">SITUAÇÃO / FALTA</th>
-                  <th style="width:90px; text-align:center;">H. EXTRA (QTD)</th>
-                  <th style="width:110px;">V. HORA DIA</th>
-                  <th style="width:110px;">V. HORA EXTRA</th>
-                  <th style="width:125px; text-align:right;">TOTAL DIA (R$)</th>
+                  <th style="min-width:120px;">DIA DA SEMANA</th>
+                  <th style="width:105px;">ENTRADA</th>
+                  <th style="width:105px;">SAÍDA</th>
+                  <th style="width:95px; text-align:center; color:#34d399;">HORAS TRAB.</th>
+                  <th style="min-width:175px;">SITUAÇÃO / FALTA</th>
+                  <th style="width:80px; text-align:center;">H. EXTRA</th>
+                  <th style="width:105px;">V. HORA</th>
+                  <th style="width:105px;">V. H. EXTRA</th>
+                  <th style="width:120px; text-align:right;">TOTAL DIA (R$)</th>
                 </tr>
               </thead>
               <tbody id="tabela-ponto-linhas">
@@ -1801,10 +1802,14 @@
           </div>
 
           <!-- RESUMO DO PONTO DA SEMANA -->
-          <div class="margin-stat-box" style="margin-top:18px; grid-template-columns: repeat(4, 1fr);">
+          <div class="margin-stat-box" style="margin-top:18px; grid-template-columns: repeat(5, 1fr);">
             <div>
               <div class="margin-item-lbl">Dias Trabalhados</div>
               <div class="margin-item-val" style="color:#60a5fa;" id="ponto-dias-trab">5 dias</div>
+            </div>
+            <div>
+              <div class="margin-item-lbl" style="color:#34d399;">Total Horas Trabalhadas</div>
+              <div class="margin-item-val" style="color:#34d399;" id="ponto-total-horas">0h 00min</div>
             </div>
             <div>
               <div class="margin-item-lbl" style="color:#f87171;">Faltas (Doente / Injust.)</div>
@@ -2240,21 +2245,53 @@ function carregarExemploFuncionario() {
   recalcularValoresHoraFunc();
 }
 
+// Calcula a diferença em horas entre dois horários no formato HH:MM
+function calcularHorasTrabalhadas(entrada, saida) {
+  if (!entrada || !saida) return 0;
+  const [hE, mE] = entrada.split(':').map(Number);
+  const [hS, mS] = saida.split(':').map(Number);
+  const minEntrada = hE * 60 + mE;
+  let minSaida = hS * 60 + mS;
+  // Se saída for antes da entrada (virada de meia-noite)
+  if (minSaida < minEntrada) minSaida += 24 * 60;
+  return (minSaida - minEntrada) / 60;
+}
+
+// Formata horas decimais em "Xh YYmin"
+function formatarHoras(hDecimal) {
+  const h = Math.floor(hDecimal);
+  const min = Math.round((hDecimal - h) * 60);
+  return `${h}h ${String(min).padStart(2,'0')}min`;
+}
+
 function gerarTabelaPontoSemanal() {
   const tbody = document.getElementById('tabela-ponto-linhas');
   if (!tbody) return;
 
-  const diaria = parseNum(document.getElementById('func-diaria')?.value) || 160;
   const horasDia = parseNum(document.getElementById('func-horas-dia')?.value) || 8;
-  const vHora = horasDia > 0 ? (diaria / horasDia) : 20;
-  const vHoraExtra = vHora * 1.5;
+  const vHoraField = parseNum(document.getElementById('func-v-hora')?.value);
+  const vHoraExtraField = parseNum(document.getElementById('func-v-hora-extra')?.value);
+  const diaria = parseNum(document.getElementById('func-diaria')?.value) || 160;
+  const vHoraCalc = horasDia > 0 ? (diaria / horasDia) : 20;
+  const vHora = vHoraField > 0 ? vHoraField : vHoraCalc;
+  const vHoraExtra = vHoraExtraField > 0 ? vHoraExtraField : (vHora * 1.5);
 
   tbody.innerHTML = dadosPontoSemanal.map((d, i) => {
+    const horasTrab = calcularHorasTrabalhadas(d.entrada, d.saida);
+    const horasNormais = Math.min(horasTrab, horasDia);
+    const horasExtraAuto = Math.max(0, horasTrab - horasDia);
+    const horasExtraFinal = d.horasExtras > 0 ? d.horasExtras : horasExtraAuto;
+    const horasTrabStr = horasTrab > 0 ? formatarHoras(horasTrab) : '--';
+    const corHoras = horasTrab > horasDia ? '#facc15' : (horasTrab > 0 ? '#34d399' : 'var(--text-muted)');
+
     return `
       <tr id="ponto-linha-${i}">
         <td><strong>${d.dia}</strong></td>
         <td><input type="time" value="${d.entrada}" onchange="atualizarLinhaPonto(${i}, 'entrada', this.value)" style="padding:6px; border-radius:6px; background:#060a14; color:#fff; border:1px solid var(--border);"></td>
         <td><input type="time" value="${d.saida}" onchange="atualizarLinhaPonto(${i}, 'saida', this.value)" style="padding:6px; border-radius:6px; background:#060a14; color:#fff; border:1px solid var(--border);"></td>
+        <td style="text-align:center;">
+          <span id="ponto-horas-${i}" style="font-weight:800; font-size:13px; color:${corHoras};">${horasTrabStr}</span>
+        </td>
         <td>
           <select onchange="atualizarLinhaPonto(${i}, 'status', this.value)" style="padding:6px; border-radius:6px; background:#060a14; color:#fff; border:1px solid var(--border); width:100%;">
             <option value="Presente" ${d.status==='Presente'?'selected':''}>✅ Presente (Normal)</option>
@@ -2284,12 +2321,12 @@ function atualizarLinhaPonto(index, campo, valor) {
   } else {
     dadosPontoSemanal[index][campo] = valor;
   }
-  atualizarTotaisPonto();
+  // Recria a tabela para atualizar as horas calculadas visualmente
+  gerarTabelaPontoSemanal();
 }
 
 function atualizarTotaisPonto() {
   const diaria = parseNum(document.getElementById('func-diaria')?.value) || 160;
-  // Lê valor da hora do campo (pode ter sido editado manualmente)
   const vHoraField = parseNum(document.getElementById('func-v-hora')?.value);
   const vHoraExtraField = parseNum(document.getElementById('func-v-hora-extra')?.value);
   const horasDia = parseNum(document.getElementById('func-horas-dia')?.value) || 8;
@@ -2302,27 +2339,36 @@ function atualizarTotaisPonto() {
   let faltas = 0;
   let totalHorasExtras = 0;
   let totalValorHE = 0;
+  let totalHorasTrab = 0;
 
   dadosPontoSemanal.forEach((d, i) => {
     let subtotalDia = 0;
-    const he = parseFloat(d.horasExtras) || 0;
+    const horasTrab = calcularHorasTrabalhadas(d.entrada, d.saida);
+    // Horas extras: manual se digitado, auto se calculado por entrada/saída
+    const horasExtraAuto = Math.max(0, horasTrab - horasDia);
+    const he = d.horasExtras > 0 ? d.horasExtras : (horasTrab > 0 ? horasExtraAuto : 0);
     const valorHE = he * vHoraExtra;
 
     if (d.status === 'Presente') {
       diasTrabalhados++;
-      subtotalDia = diaria + valorHE;
+      if (horasTrab > 0) {
+        // Calcula por horas reais: horas normais × valor/hora + extras × valor extra
+        const horasNormais = Math.min(horasTrab, horasDia);
+        subtotalDia = (horasNormais * vHora) + valorHE;
+      } else {
+        // Sem horário registrado: usa a diária cheia
+        subtotalDia = diaria + valorHE;
+      }
       totalHorasExtras += he;
       totalValorHE += valorHE;
+      totalHorasTrab += horasTrab > 0 ? horasTrab : horasDia;
     } else if (d.status === 'Falta - Doente') {
       faltas++;
-      // Falta abonada por doença / atestado médico: paga a diária integral
-      subtotalDia = diaria;
+      subtotalDia = diaria; // Atestado: paga diária integral
     } else if (d.status === 'Falta Injustificada') {
       faltas++;
-      // Falta não justificada: desconta o dia integral (R$ 0,00)
       subtotalDia = 0;
     } else if (d.status === 'Folga / DSR') {
-      // Dia de descanso
       subtotalDia = 0;
     }
 
@@ -2333,13 +2379,15 @@ function atualizarTotaisPonto() {
   });
 
   const elTrab = document.getElementById('ponto-dias-trab');
+  const elHorasTot = document.getElementById('ponto-total-horas');
   const elFaltas = document.getElementById('ponto-total-faltas');
   const elHe = document.getElementById('ponto-total-he');
   const elLiq = document.getElementById('ponto-total-liquido');
 
   if (elTrab) elTrab.textContent = diasTrabalhados + ' dias';
+  if (elHorasTot) elHorasTot.textContent = formatarHoras(totalHorasTrab);
   if (elFaltas) elFaltas.textContent = faltas + ' faltas';
-  if (elHe) elHe.textContent = `${totalHorasExtras}h (${formatMoney(totalValorHE)})`;
+  if (elHe) elHe.textContent = `${formatarHoras(totalHorasExtras)} (${formatMoney(totalValorHE)})`;
   if (elLiq) elLiq.textContent = formatMoney(totalLiquido);
 }
 
