@@ -1272,6 +1272,18 @@
             </button>
           </div>
         </div>
+
+        <!-- ══ LISTAS DE MATERIAIS SALVAS ══ -->
+        <div class="glass-card" style="border-color: rgba(249,115,22,0.3);">
+          <div class="glass-card-title" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="color:#fb923c;">📂 Listas de Materiais Salvas</span>
+              <span class="badge-count" style="border-color:rgba(249,115,22,0.4); color:#fb923c; background:rgba(249,115,22,0.12);" id="mat-saved-count">0 listas salvas</span>
+            </div>
+            <button class="btn-action-secondary" style="padding:7px 14px; font-size:12px;" onclick="renderListasMatSalvas()">🔄 Atualizar</button>
+          </div>
+          <div id="mat-saved-list" style="margin-top:12px;"></div>
+        </div>
       </section>
 
       <!-- ══════════════════════════════════════════════ -->
@@ -1873,8 +1885,10 @@ const K = {
   products: 'sdc_produtos',
   users: 'sdc_users',
   vendedores: 'sdc_vendedores',
+  materiais: 'sdc_listas_materiais',
   nextNum: 'sdc_next_num',
-  nextTerc: 'sdc_next_terc'
+  nextTerc: 'sdc_next_terc',
+  nextMat: 'sdc_next_mat'
 };
 
 function load(k, d=[]) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } }
@@ -1885,14 +1899,17 @@ let produtos = [];
 let ordens = [];
 let terceirizados = [];
 let vendedores = [];
+let listasMatSalvas = [];
 let users = [];
 let proxNum = 1;
 let proxTerc = 1;
+let proxMat = 1;
 let formaAtual = 'À vista';
 let itemId = 0;
 let editandoOs = null;
 let editandoTerc = null;
 let editandoVend = null;
+let editandoMat = null;
 let modalTarget = 'orcamento';
 
 const VENDEDORES_INICIAIS = [
@@ -2029,8 +2046,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
   ordens = load(K.orders, []);
   terceirizados = load(K.terceirizados, []);
+  listasMatSalvas = load(K.materiais, []);
   proxNum = parseInt(localStorage.getItem(K.nextNum) || '1', 10);
   proxTerc = parseInt(localStorage.getItem(K.nextTerc) || '1', 10);
+  proxMat = parseInt(localStorage.getItem(K.nextMat) || '1', 10);
 
   // Set today date
   document.getElementById('data-atual-top').textContent = new Date().toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -2043,6 +2062,7 @@ window.addEventListener('DOMContentLoaded', () => {
   renderProdutos();
   renderHist();
   renderUsuarios();
+  renderListasMatSalvas();
 
   addItem('Alvenaria de Vedação / Bloco Cerâmico', '1', 'Padrão', '2.80', '6.00', '65', '', 'Acabado');
 });
@@ -2621,7 +2641,144 @@ function imprimirPdfMateriais() {
 }
 
 function salvarListaMateriais() {
-  alert('✅ Lista de Materiais da Obra salva com sucesso!');
+  const nomeCliente = document.getElementById('mat-cli-nome').value.trim();
+  if (!nomeCliente) {
+    showToast('Informe o nome do cliente antes de salvar.', '⚠️');
+    document.getElementById('mat-cli-nome').focus();
+    return;
+  }
+
+  const itens = [];
+  document.querySelectorAll('#lista-materiais-linhas tr').forEach(tr => {
+    const ins = tr.querySelectorAll('input');
+    const sels = tr.querySelectorAll('select');
+    const nomeItem = ins[0]?.value?.trim();
+    if (nomeItem) {
+      itens.push({
+        item: nomeItem,
+        cat: sels[0]?.value || 'Básico',
+        qtd: ins[1]?.value || '1',
+        un: sels[1]?.value || 'Unidade',
+        vunit: ins[2]?.value || '0',
+        total: ins[3]?.value || 'R$ 0,00',
+        resp: sels[2]?.value || 'Cliente Compra',
+        status: sels[3]?.value || 'Pendente'
+      });
+    }
+  });
+
+  if (itens.length === 0) {
+    showToast('Adicione ao menos um material antes de salvar.', '⚠️');
+    return;
+  }
+
+  const numero = editandoMat || ('#MAT-' + String(proxMat).padStart(4, '0'));
+
+  const novaLista = {
+    numero,
+    data: new Date().toLocaleDateString('pt-BR'),
+    cliente: {
+      nome: nomeCliente,
+      tel: document.getElementById('mat-cli-tel').value,
+      end: document.getElementById('mat-cli-end').value
+    },
+    obs: document.getElementById('mat-obs').value,
+    itens,
+    totalGeral: document.getElementById('mat-sum-total').textContent,
+    totalCliente: document.getElementById('mat-sum-cliente').textContent,
+    totalConstrutora: document.getElementById('mat-sum-construtora').textContent
+  };
+
+  if (editandoMat) {
+    const idx = listasMatSalvas.findIndex(m => m.numero === editandoMat);
+    if (idx !== -1) listasMatSalvas[idx] = novaLista;
+    editandoMat = null;
+    showToast(`Lista de Materiais ${numero} atualizada com sucesso!`, '💾');
+  } else {
+    listasMatSalvas.unshift(novaLista);
+    proxMat++;
+    localStorage.setItem(K.nextMat, proxMat);
+    showToast(`Lista de Materiais ${numero} salva com sucesso!`, '💾');
+  }
+
+  save(K.materiais, listasMatSalvas);
+  renderListasMatSalvas();
+}
+
+function renderListasMatSalvas() {
+  const div = document.getElementById('mat-saved-list');
+  if (!div) return;
+
+  const badge = document.getElementById('badge-mat-count');
+  if (badge) badge.textContent = listasMatSalvas.length;
+
+  document.getElementById('mat-saved-count').textContent = listasMatSalvas.length + ' listas salvas';
+
+  if (listasMatSalvas.length === 0) {
+    div.innerHTML = '<div style="text-align:center; padding:24px; color:var(--text-muted); font-size:13px;">🧱 Nenhuma lista de materiais salva ainda. Preencha os dados acima e clique em "Salvar Lista de Materiais da Obra".</div>';
+    return;
+  }
+
+  div.innerHTML = listasMatSalvas.map(m => `
+    <div class="record-card" style="padding:14px 18px; margin-bottom:10px; border-color:rgba(249,115,22,0.25);">
+      <div style="flex:1;">
+        <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:6px;">
+          <strong style="color:#fb923c; font-size:15px;">${m.numero}</strong>
+          <span class="rec-tag" style="background:rgba(249,115,22,0.15); color:#fb923c; border:1px solid rgba(249,115,22,0.3);">Lista de Materiais</span>
+          <span style="font-size:11.5px; color:var(--text-muted);">${m.data}</span>
+        </div>
+        <div style="font-size:14.5px; color:#fff; font-weight:700;">👤 ${m.cliente?.nome || 'Não informado'}</div>
+        ${m.cliente?.tel ? `<div style="font-size:12.5px; color:#60a5fa; margin-top:2px;">📱 ${m.cliente.tel}</div>` : ''}
+        ${m.cliente?.end ? `<div style="font-size:12px; color:var(--text-muted); margin-top:1px;">📍 ${m.cliente.end}</div>` : ''}
+        <div style="display:flex; gap:16px; margin-top:8px; flex-wrap:wrap;">
+          <span style="font-size:12px; color:var(--gold-light); font-weight:700;">💰 Total: ${m.totalGeral || 'R$ 0,00'}</span>
+          <span style="font-size:12px; color:#fb923c;">👤 Cliente: ${m.totalCliente || 'R$ 0,00'}</span>
+          <span style="font-size:12px; color:var(--text-muted);">📦 ${m.itens?.length || 0} itens</span>
+        </div>
+        ${m.obs ? `<div style="font-size:11.5px; color:var(--text-muted); margin-top:4px; font-style:italic;">📝 ${m.obs}</div>` : ''}
+      </div>
+      <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-left:12px;">
+        <button class="btn-action-gold" style="padding:7px 14px; font-size:12px; font-weight:800;" onclick="carregarListaMat('${m.numero}')">✏️ Carregar / Editar</button>
+        <button class="btn-dark-pdf" style="padding:7px 12px; font-size:12px;" onclick="imprimirListaMat('${m.numero}')">🖨️ Imprimir</button>
+        <button class="btn-action-secondary" style="padding:7px 10px; font-size:12px;" onclick="excluirListaMat('${m.numero}')" title="Excluir">🗑️</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function carregarListaMat(numero) {
+  const m = listasMatSalvas.find(x => x.numero === numero);
+  if (!m) return;
+
+  editandoMat = m.numero;
+  document.getElementById('mat-cli-nome').value = m.cliente?.nome || '';
+  document.getElementById('mat-cli-tel').value = m.cliente?.tel || '';
+  document.getElementById('mat-cli-end').value = m.cliente?.end || '';
+  document.getElementById('mat-obs').value = m.obs || '';
+
+  document.getElementById('lista-materiais-linhas').innerHTML = '';
+  if (m.itens && m.itens.length > 0) {
+    m.itens.forEach(it => addLinhaMaterial(it.item, it.cat, it.qtd, it.un, it.vunit, it.resp, it.status));
+  } else {
+    addLinhaMaterial();
+  }
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  showToast(`Lista ${numero} carregada para edição!`, '✏️');
+}
+
+function imprimirListaMat(numero) {
+  carregarListaMat(numero);
+  setTimeout(() => window.print(), 350);
+}
+
+function excluirListaMat(numero) {
+  if (confirm(`Deseja excluir a lista ${numero}?`)) {
+    listasMatSalvas = listasMatSalvas.filter(m => m.numero !== numero);
+    save(K.materiais, listasMatSalvas);
+    renderListasMatSalvas();
+    showToast(`Lista ${numero} excluída.`, '🗑️');
+  }
 }
 
 function selForma(btn, f) {
