@@ -774,7 +774,1225 @@
       .kpi-grid { grid-template-columns: 1fr; }
       .grid-2, .grid-3 { grid-template-columns: 1fr; }
     }
+
+    /* ════ ESTILOS MODERNOS DO PAINEL PONTO & FUNCIONÁRIOS (IMAGE 1 & 2) ════ */
+    .ponto-hero-card {
+      background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.16) 0%, rgba(9, 14, 28, 0.96) 80%);
+      border: 1.5px solid rgba(59, 130, 246, 0.35);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      text-align: center;
+      margin-bottom: 22px;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5), 0 0 25px rgba(59, 130, 246, 0.15);
+      position: relative;
+    }
+    .ponto-clock-date {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #60a5fa;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .ponto-clock-time {
+      font-family: var(--font-display);
+      font-size: 58px;
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: 0.04em;
+      line-height: 1.1;
+      text-shadow: 0 0 25px rgba(96, 165, 250, 0.65), 0 0 50px rgba(59, 130, 246, 0.3);
+      margin-bottom: 18px;
+    }
+    .ponto-select-wrapper {
+      max-width: 580px;
+      margin: 0 auto 24px;
+      position: relative;
+    }
+    .ponto-select-colab {
+      width: 100%;
+      background: #080d1a;
+      border: 1.5px solid rgba(59, 130, 246, 0.5);
+      color: #ffffff;
+      font-family: var(--font);
+      font-size: 15px;
+      font-weight: 700;
+      padding: 13px 20px;
+      border-radius: 12px;
+      outline: none;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+      cursor: pointer;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .ponto-select-colab:focus {
+      border-color: #60a5fa;
+      box-shadow: 0 0 20px rgba(96, 165, 250, 0.4);
+    }
+    .ponto-punch-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    .ponto-punch-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 18px 20px;
+      border-radius: 14px;
+      font-family: var(--font);
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      border: none;
+      outline: none;
+      user-select: none;
+    }
+    .ponto-punch-btn:hover {
+      transform: translateY(-3px);
+    }
+    .ponto-punch-btn:active {
+      transform: scale(0.97);
+    }
+    .punch-btn-entrada {
+      background: linear-gradient(135deg, rgba(5, 150, 105, 0.95), rgba(16, 185, 129, 0.9));
+      color: #ffffff;
+      box-shadow: 0 8px 22px rgba(16, 185, 129, 0.35);
+      border: 1.5px solid rgba(52, 211, 153, 0.5);
+    }
+    .punch-btn-entrada:hover {
+      box-shadow: 0 12px 28px rgba(16, 185, 129, 0.55);
+    }
+    .punch-btn-almoco-saida {
+      background: linear-gradient(135deg, rgba(180, 83, 9, 0.95), rgba(217, 119, 6, 0.9));
+      color: #ffffff;
+      box-shadow: 0 8px 22px rgba(217, 119, 6, 0.35);
+      border: 1.5px solid rgba(251, 191, 36, 0.5);
+    }
+    .punch-btn-almoco-saida:hover {
+      box-shadow: 0 12px 28px rgba(217, 119, 6, 0.55);
+    }
+    .punch-btn-almoco-volta {
+      background: linear-gradient(135deg, rgba(15, 118, 110, 0.95), rgba(13, 148, 136, 0.9));
+      color: #ffffff;
+      box-shadow: 0 8px 22px rgba(13, 148, 136, 0.35);
+      border: 1.5px solid rgba(45, 212, 191, 0.5);
+    }
+    .punch-btn-almoco-volta:hover {
+      box-shadow: 0 12px 28px rgba(13, 148, 136, 0.55);
+    }
+    .punch-btn-saida-final {
+      background: linear-gradient(135deg, rgba(153, 27, 27, 0.95), rgba(220, 38, 38, 0.9));
+      color: #ffffff;
+      box-shadow: 0 8px 22px rgba(220, 38, 38, 0.35);
+      border: 1.5px solid rgba(248, 113, 113, 0.5);
+    }
+    .punch-btn-saida-final:hover {
+      box-shadow: 0 12px 28px rgba(220, 38, 38, 0.55);
+    }
+    .btn-novo-func {
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      color: #ffffff;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      padding: 9px 18px;
+      border-radius: 9px;
+      font-size: 13.5px;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+      box-shadow: 0 4px 15px rgba(2, 132, 199, 0.35);
+    }
+    .btn-novo-func:hover {
+      background: linear-gradient(135deg, #0369a1, #0284c7);
+      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.5);
+      transform: translateY(-1px);
+    }
+    .badge-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+    }
+    .status-presente {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.35);
+    }
+    .status-almoco {
+      background: rgba(245, 158, 11, 0.15);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.35);
+    }
+    .status-finalizado {
+      background: rgba(59, 130, 246, 0.15);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.35);
+    }
+    .status-ausente {
+      background: rgba(239, 68, 68, 0.15);
+      color: #f87171;
+      border: 1px solid rgba(239, 68, 68, 0.35);
+    }
+    .btn-tbl-action {
+      background: #0d1424;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.15s;
+    }
+    .btn-tbl-action:hover {
+      color: #fff;
+      border-color: #60a5fa;
+      background: rgba(59, 130, 246, 0.18);
+    }
+    .btn-tbl-action.btn-tbl-del:hover {
+      color: #f87171;
+      border-color: #ef4444;
+      background: rgba(239, 68, 68, 0.18);
+    }
+    .btn-tbl-action.btn-tbl-print:hover {
+      color: #ffd447;
+      border-color: var(--gold);
+      background: rgba(245, 179, 0, 0.18);
+    }
+    .colab-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      border: 1.5px solid rgba(59, 130, 246, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 13px;
+      color: #60a5fa;
+      flex-shrink: 0;
+    }
+    .period-btn {
+      background: #080d1a;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .period-btn.active, .period-btn:hover {
+      background: #0284c7;
+      color: #fff;
+      border-color: #38bdf8;
+    }
+    @media (max-width: 820px) {
+      .ponto-punch-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .ponto-clock-time {
+        font-size: 42px;
+      }
+    }
+    @media (max-width: 520px) {
+      .ponto-punch-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  
+    /* ESTILOS MODERNOS DO PONTO ELETRÔNICO (IMAGENS 1 E 2) */
+    .ponto-clock-card {
+      background: radial-gradient(circle at 50% 0%, rgba(6, 182, 212, 0.15) 0%, rgba(12, 19, 36, 0.95) 75%);
+      border: 1px solid rgba(6, 182, 212, 0.35);
+      border-radius: 16px;
+      box-shadow: 0 0 25px rgba(6, 182, 212, 0.1);
+      text-align: center;
+      padding: 32px 24px;
+      margin-bottom: 24px;
+    }
+    .live-digital-clock {
+      font-family: 'Outfit', monospace;
+      font-size: 3.4rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 2px;
+      text-shadow: 0 0 24px rgba(6, 182, 212, 0.6);
+      margin: 10px 0 16px 0;
+    }
+    .live-date-str {
+      font-size: 0.95rem;
+      color: #38bdf8;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+    }
+    .ponto-actions-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .btn-ponto-action {
+      min-width: 140px;
+      padding: 12px 18px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+    }
+    .btn-ponto-action svg, .btn-ponto-action i {
+      width: 22px;
+      height: 22px;
+    }
+    .btn-ponto-entrada {
+      background: rgba(16, 185, 129, 0.15);
+      border-color: rgba(16, 185, 129, 0.4);
+      color: #34d399;
+    }
+    .btn-ponto-entrada:hover {
+      background: #10b981;
+      color: #070b14;
+      box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+      transform: translateY(-2px);
+    }
+    .btn-ponto-almoco {
+      background: rgba(245, 158, 11, 0.15);
+      border-color: rgba(245, 158, 11, 0.4);
+      color: #fbbf24;
+    }
+    .btn-ponto-almoco:hover {
+      background: #f59e0b;
+      color: #070b14;
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+      transform: translateY(-2px);
+    }
+    .btn-ponto-saida {
+      background: rgba(244, 63, 94, 0.15);
+      border-color: rgba(244, 63, 94, 0.4);
+      color: #fb7185;
+    }
+    .btn-ponto-saida:hover {
+      background: #f43f5e;
+      color: #fff;
+      box-shadow: 0 0 20px rgba(244, 63, 94, 0.4);
+      transform: translateY(-2px);
+    }
+    .btn-ponto-falta {
+      background: rgba(239, 68, 68, 0.15);
+      border-color: rgba(239, 68, 68, 0.4);
+      color: #f87171;
+    }
+    .btn-ponto-falta:hover {
+      background: #ef4444;
+      color: #fff;
+      box-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+      transform: translateY(-2px);
+    }
+    .btn-ponto-falta-doente {
+      background: rgba(168, 85, 247, 0.15);
+      border-color: rgba(168, 85, 247, 0.4);
+      color: #c084fc;
+    }
+    .btn-ponto-falta-doente:hover {
+      background: #a855f7;
+      color: #fff;
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+      transform: translateY(-2px);
+    }
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      font-size: 0.76rem;
+      font-weight: 600;
+    }
+    .status-presente {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #34d399;
+    }
+    .status-almoco {
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      color: #fbbf24;
+    }
+    .status-folga {
+      background: rgba(14, 165, 233, 0.15);
+      border: 1px solid rgba(14, 165, 233, 0.4);
+      color: #38bdf8;
+    }
+    .status-falta {
+      background: rgba(244, 63, 94, 0.15);
+      border: 1px solid rgba(244, 63, 94, 0.4);
+      color: #fb7185;
+    }
+    .status-falta-doente {
+      background: rgba(168, 85, 247, 0.15);
+      border: 1px solid rgba(168, 85, 247, 0.4);
+      color: #c084fc;
+    }
+    .status-select {
+      cursor: pointer;
+      background-color: rgba(15, 23, 42, 0.85);
+      border-radius: 9999px;
+      padding: 5px 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      outline: none;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+    }
+    .status-select:hover, .status-select:focus {
+      filter: brightness(1.2);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    }
+    .status-select option {
+      background-color: #0c1324;
+      color: #e2e8f0;
+      padding: 8px 12px;
+    }
+    .btn-icon-tbl {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #cbd5e1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .btn-icon-tbl:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: scale(1.05);
+    }
+    .badge-blue-pill {
+      background: rgba(59, 130, 246, 0.18);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      padding: 6px 14px;
+      font-size: 12.5px;
+      font-weight: 700;
+      border-radius: 8px;
+    }
+
   </style>
+  <script src="https://unpkg.com/lucide@latest">
+// ════════════════════════════════════════════════════════════════════
+// MÓDULO DE PONTO ELETRÔNICO & FUNCIONÁRIOS (IMAGENS 1 E 2)
+// ════════════════════════════════════════════════════════════════════
+const STORAGE_KEYS_PONTO = {
+  EMPLOYEES: 'sdc_funcionarios_v2',
+  LOGS: 'sdc_ponto_logs_v2'
+};
+
+const DEFAULT_EMPLOYEES_PONTO = [
+  {
+    id: 'emp-samuel',
+    name: 'samuel',
+    role: 'gerente',
+    dept: '-',
+    hours: '40h/sem',
+    salary: 0,
+    phone: '(85) 99611-9824',
+    email: 'samuel@sdconstrucoes.com.br',
+    status: 'presente'
+  },
+  {
+    id: 'emp-davi',
+    name: 'davi',
+    role: 'gerente',
+    dept: '-',
+    hours: '40h/sem',
+    salary: 5000,
+    phone: '(85) 99888-7777',
+    email: 'davi@sdconstrucoes.com.br',
+    status: 'folga'
+  }
+];
+
+const DEFAULT_LOGS_PONTO = [
+  {
+    id: 'pt-davi-demo',
+    empId: 'emp-davi',
+    empName: 'davi',
+    date: '2026-09-06',
+    in1: '--:--',
+    out1: '--:--',
+    in2: '11:42',
+    out2: '11:43',
+    total: '00h 01m',
+    status: 'Completo'
+  },
+  {
+    id: 'pt-samuel-demo',
+    empId: 'emp-samuel',
+    empName: 'samuel',
+    date: '2026-09-06',
+    in1: '12:01',
+    out1: '12:01',
+    in2: '12:01',
+    out2: '12:01',
+    total: '00h 01m',
+    status: 'Completo'
+  }
+];
+
+const PontoModule = {
+  clockTimer: null,
+
+  init() {
+    this.startDigitalClock();
+    this.renderEmployeesTable();
+    this.renderPontoHistoryTable();
+    this.populateEmployeeSelect();
+    this.updateStats();
+    if (window.lucide) {
+      try { lucide.createIcons(); } catch(e){}
+    }
+  },
+
+  setPeriodo(btn, periodo) {
+    document.querySelectorAll('#view-funcionarios .period-btn').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+    showToast('Filtro de período alterado para ' + periodo, '📅');
+  },
+
+  startDigitalClock() {
+    const clockEl = document.getElementById('ponto-live-clock');
+    const dateEl = document.getElementById('ponto-live-date');
+    if (!clockEl) return;
+
+    if (this.clockTimer) clearInterval(this.clockTimer);
+
+    const tick = () => {
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2, '0');
+      const m = String(now.getMinutes()).padStart(2, '0');
+      const s = String(now.getSeconds()).padStart(2, '0');
+      clockEl.textContent = `${h}:${m}:${s}`;
+
+      if (dateEl) {
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        dateEl.textContent = now.toLocaleDateString('pt-BR', options).toUpperCase();
+      }
+    };
+
+    tick();
+    this.clockTimer = setInterval(tick, 1000);
+  },
+
+  getEmployees() {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEYS_PONTO.EMPLOYEES);
+      if (saved) return JSON.parse(saved);
+    } catch(e){}
+    localStorage.setItem(STORAGE_KEYS_PONTO.EMPLOYEES, JSON.stringify(DEFAULT_EMPLOYEES_PONTO));
+    return DEFAULT_EMPLOYEES_PONTO;
+  },
+
+  saveEmployees(list) {
+    localStorage.setItem(STORAGE_KEYS_PONTO.EMPLOYEES, JSON.stringify(list));
+    this.renderEmployeesTable();
+    this.populateEmployeeSelect();
+    this.updateStats();
+  },
+
+  getPontoLogs() {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEYS_PONTO.LOGS);
+      if (saved) return JSON.parse(saved);
+    } catch(e){}
+    localStorage.setItem(STORAGE_KEYS_PONTO.LOGS, JSON.stringify(DEFAULT_LOGS_PONTO));
+    return DEFAULT_LOGS_PONTO;
+  },
+
+  savePontoLogs(list) {
+    localStorage.setItem(STORAGE_KEYS_PONTO.LOGS, JSON.stringify(list));
+    this.renderPontoHistoryTable();
+    this.updateStats();
+  },
+
+  populateEmployeeSelect() {
+    const selects = ['select-ponto-emp', 'select-filter-ponto-emp'];
+    const emps = this.getEmployees();
+    selects.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const currentVal = el.value;
+      let opts = id.includes('filter') ? '<option value="all">Todos os Funcionários</option>' : '<option value="">Selecione o Funcionário...</option>';
+      emps.forEach(emp => {
+        opts += `<option value="${emp.id}">${emp.name} (${emp.dept || '-'} - ${emp.role})</option>`;
+      });
+      el.innerHTML = opts;
+      if (currentVal) el.value = currentVal;
+    });
+
+    const mainSelect = document.getElementById('select-ponto-emp');
+    if (mainSelect && !mainSelect.value && emps.length > 0) {
+      mainSelect.value = emps[0].id;
+    }
+  },
+
+  timeToMinutes(timeStr) {
+    if (!timeStr || timeStr === '--:--' || timeStr === 'FALTA' || timeStr === 'ATESTADO') return null;
+    const parts = timeStr.split(':');
+    if (parts.length < 2) return null;
+    const h = parseInt(parts[0], 10);
+    const m = parseInt(parts[1], 10);
+    if (isNaN(h) || isNaN(m)) return null;
+    return h * 60 + m;
+  },
+
+  calculateWorkedMinutes(in1, out1, in2, out2) {
+    const tIn1 = this.timeToMinutes(in1);
+    const tOut1 = this.timeToMinutes(out1);
+    const tIn2 = this.timeToMinutes(in2);
+    const tOut2 = this.timeToMinutes(out2);
+
+    let totalMinutes = 0;
+
+    // Período 1 (Manhã)
+    if (tIn1 !== null && tOut1 !== null && tOut1 >= tIn1) {
+      totalMinutes += (tOut1 - tIn1);
+    }
+    // Período 2 (Tarde)
+    if (tIn2 !== null && tOut2 !== null && tOut2 >= tIn2) {
+      totalMinutes += (tOut2 - tIn2);
+    }
+    // Caso bateu apenas Entrada 1 e Saída Final
+    if (tIn1 !== null && tOut2 !== null && tOut1 === null && tIn2 === null && tOut2 >= tIn1) {
+      totalMinutes = (tOut2 - tIn1);
+    }
+    // Caso bateu apenas Volta Almoço e Saída Final (exemplo davi na Imagem 2)
+    if (tIn1 === null && tOut1 === null && tIn2 !== null && tOut2 !== null && tOut2 >= tIn2) {
+      totalMinutes = (tOut2 - tIn2);
+    }
+    // Caso horários iguais (ex: 12:01 em todos)
+    if (totalMinutes === 0 && tIn1 !== null && tOut2 !== null) {
+      totalMinutes = 1; // 1 minuto demonstrativo
+    }
+
+    return totalMinutes;
+  },
+
+  formatMinutesToHM(minutes) {
+    if (!minutes || minutes <= 0) return '00h 00m';
+    const h = Math.floor(minutes / 60);
+    const m = minutes % 60;
+    return `${String(h).padStart(2, '0')}h ${String(m).padStart(2, '0')}m`;
+  },
+
+  getMonthlyHoursDivisor(hoursStr) {
+    if (!hoursStr) return 200;
+    const num = parseInt(String(hoursStr).replace(/D/g, ''), 10);
+    if (!num || isNaN(num)) return 200;
+    if (num === 44) return 220;
+    if (num === 40) return 200;
+    if (num === 36) return 180;
+    if (num === 30) return 150;
+    if (num === 20) return 100;
+    return num * 5;
+  },
+
+  calculateSalaryValue(salary, hoursStr, workedMinutes) {
+    const sal = parseFloat(salary) || 0;
+    const divisor = this.getMonthlyHoursDivisor(hoursStr);
+    const valorHora = divisor > 0 ? (sal / divisor) : 0;
+    const valorMinuto = valorHora / 60;
+    const valorTrabalhado = (workedMinutes || 0) * valorMinuto;
+
+    return {
+      valorHora,
+      valorTrabalhado,
+      divisor
+    };
+  },
+
+  formatMoney(num) {
+    return (num || 0).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  },
+
+  renderEmployeesTable() {
+    const tbody = document.getElementById('tbody-employees');
+    if (!tbody) return;
+
+    const emps = this.getEmployees();
+    if (!emps.length) {
+      tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding: 24px; color: var(--text-muted);">Nenhum funcionário cadastrado.</td></tr>';
+      return;
+    }
+
+    const statusOptions = [
+      { val: 'presente', label: 'Presente', class: 'status-presente' },
+      { val: 'almoco', label: 'Em Almoço', class: 'status-almoco' },
+      { val: 'folga', label: 'Folga', class: 'status-folga' },
+      { val: 'falta', label: 'Falta', class: 'status-falta' },
+      { val: 'falta_doente', label: 'Falta Doente', class: 'status-falta-doente' }
+    ];
+
+    tbody.innerHTML = emps.map(emp => {
+      const currentStatus = statusOptions.find(s => s.val === emp.status) || statusOptions[0];
+      const statusClass = currentStatus.class;
+      const { valorHora } = this.calculateSalaryValue(emp.salary, emp.hours, 0);
+
+      return `
+        <tr>
+          <td>
+            <div style="font-weight: 700; color: #fff; font-size: 14px;">${emp.name}</div>
+            <div style="font-size: 11.5px; color: var(--text-muted); margin-top:2px;">${emp.email || ''} ${emp.phone ? '• ' + emp.phone : ''}</div>
+          </td>
+          <td><span style="color: #38bdf8; font-weight: 600; font-size: 13.5px;">${emp.role}</span></td>
+          <td style="color: var(--text-muted); font-size: 13px;">${emp.dept || '-'}</td>
+          <td style="color: #fff; font-size: 13px;">${emp.hours || '40h/sem'}</td>
+          <td>
+            <div style="font-weight: 700; color: #fff; font-size: 13.5px;">${this.formatMoney(emp.salary)}</div>
+            <div style="font-size: 11px; color: #34d399; font-weight: 600;">${this.formatMoney(valorHora)}/h</div>
+          </td>
+          <td style="text-align:center;">
+            <select class="status-select ${statusClass}" onchange="PontoModule.setStatus('${emp.id}', this.value)" title="Alterar status de presença">
+              ${statusOptions.map(opt => `<option value="${opt.val}" ${emp.status === opt.val ? 'selected' : ''}>● ${opt.label}</option>`).join('')}
+            </select>
+          </td>
+          <td style="text-align:center;">
+            <div style="display: flex; gap: 6px; justify-content:center;">
+              <button class="btn-icon-tbl" onclick="PontoModule.openEditModal('${emp.id}')" title="Editar Funcionário" style="color: #38bdf8;">
+                <i data-lucide="edit" style="width:16px; height:16px;"></i>
+              </button>
+              <button class="btn-icon-tbl" onclick="PontoModule.toggleStatus('${emp.id}')" title="Alternar Status">
+                <i data-lucide="refresh-cw" style="width:16px; height:16px;"></i>
+              </button>
+              <button class="btn-icon-tbl" onclick="PontoModule.deleteEmployee('${emp.id}')" title="Remover" style="color: #f43f5e;">
+                <i data-lucide="trash-2" style="width:16px; height:16px;"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+      `;
+    }).join('');
+
+    if (window.lucide) {
+      try { lucide.createIcons(); } catch(e){}
+    }
+  },
+
+  renderPontoHistoryTable() {
+    const tbody = document.getElementById('tbody-ponto-logs');
+    if (!tbody) return;
+
+    const filterEmp = document.getElementById('select-filter-ponto-emp')?.value || 'all';
+    let logs = this.getPontoLogs();
+    const emps = this.getEmployees();
+
+    if (filterEmp !== 'all') {
+      logs = logs.filter(l => l.empId === filterEmp);
+    }
+
+    if (!logs.length) {
+      tbody.innerHTML = '<tr><td colspan="9" style="text-align:center; padding: 24px; color: var(--text-muted);">Nenhum registro de ponto encontrado.</td></tr>';
+      return;
+    }
+
+    tbody.innerHTML = logs.map(log => {
+      let in1Display = `<span style="color: #34d399; font-weight: 600;">${log.in1 || '--:--'}</span>`;
+      
+      const emp = emps.find(e => e.id === log.empId || e.name === log.empName);
+      const sal = emp ? emp.salary : 0;
+      const hoursStr = emp ? emp.hours : '40h/sem';
+      const workedMins = this.calculateWorkedMinutes(log.in1, log.out1, log.in2, log.out2);
+      const { valorHora, valorTrabalhado } = this.calculateSalaryValue(sal, hoursStr, workedMins);
+
+      let tempoDisplay = '';
+      let valorDisplay = '';
+
+      if (log.status === 'Falta' || log.in1 === 'FALTA') {
+        in1Display = `<span class="status-pill status-falta" style="font-size: 0.74rem; padding: 2px 8px;"><i data-lucide="user-x" style="width: 12px; height: 12px;"></i> FALTA</span>`;
+        tempoDisplay = `<span class="status-pill status-falta" style="font-size: 0.74rem; padding: 2px 8px;">00h 00m (Falta)</span>`;
+        valorDisplay = `<span style="color: #f43f5e; font-weight: 700;">R$ 0,00</span> <span style="font-size: 0.72rem; color: #f43f5e;">(Desconto)</span>`;
+      } else if (log.status === 'Falta Doente' || log.in1 === 'ATESTADO') {
+        in1Display = `<span class="status-pill status-falta-doente" style="font-size: 0.74rem; padding: 2px 8px;"><i data-lucide="activity" style="width: 12px; height: 12px;"></i> ATESTADO</span>`;
+        tempoDisplay = `<span class="status-pill status-falta-doente" style="font-size: 0.74rem; padding: 2px 8px;">Atestado Médico</span>`;
+        const valorAbonado = valorHora * 8;
+        valorDisplay = `<span style="color: #c084fc; font-weight: 700;">${this.formatMoney(valorAbonado)}</span> <span style="font-size: 0.72rem; color: #c084fc;">(Abonado)</span>`;
+      } else if (workedMins > 0) {
+        tempoDisplay = `<span class="badge-count" style="font-size: 0.82rem; padding: 3px 10px; background: rgba(6, 182, 212, 0.15); border: 1px solid rgba(6,182,212,0.4); color: #38bdf8; font-weight: 700; border-radius:9999px;">${this.formatMinutesToHM(workedMins)}</span>`;
+        valorDisplay = `<div><b style="color: #34d399; font-size: 0.9rem;">${this.formatMoney(valorTrabalhado)}</b><div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 500;">(${this.formatMoney(valorHora)}/h)</div></div>`;
+      } else {
+        const fallbackLabel = (log.total && log.total !== '08:00 (Concluído)') ? log.total : 'Em andamento';
+        tempoDisplay = `<span class="badge-count" style="font-size: 0.8rem; padding: 2px 10px; border-radius:9999px;">${fallbackLabel}</span>`;
+        valorDisplay = `<span style="color: var(--text-muted); font-size: 0.78rem;">Calculando... (${this.formatMoney(valorHora)}/h)</span>`;
+      }
+
+      // Se o funcionário tiver salário zero (como samuel na imagem)
+      if (sal === 0 && workedMins > 0) {
+        valorDisplay = `<span style="color: var(--text-muted); font-size: 0.78rem;">Calculando... (${this.formatMoney(0)}/h)</span>`;
+      }
+
+      const parts = (log.date || '').split('-');
+      const dataFmt = parts.length === 3 ? `${parts[2]}/${parts[1]}/${parts[0]}` : log.date;
+
+      return `
+        <tr>
+          <td><b style="color:#fff; font-size:13.5px;">${log.empName}</b></td>
+          <td style="color:var(--text-muted); font-size:13px;">${dataFmt}</td>
+          <td>${in1Display}</td>
+          <td><span style="color: #fbbf24; font-weight:600;">${log.out1 || '--:--'}</span></td>
+          <td><span style="color: #38bdf8; font-weight:600;">${log.in2 || '--:--'}</span></td>
+          <td><span style="color: #fb7185; font-weight:600;">${log.out2 || '--:--'}</span></td>
+          <td>${tempoDisplay}</td>
+          <td>${valorDisplay}</td>
+          <td style="text-align:center;">
+            <div style="display: flex; gap: 6px; justify-content:center;">
+              <button class="btn-icon-tbl" onclick="PontoModule.sendWhatsApp('${log.id}')" title="Enviar Comprovante no WhatsApp" style="color: #25d366;">
+                <i data-lucide="message-circle" style="width:16px; height:16px;"></i>
+              </button>
+              <button class="btn-icon-tbl" onclick="PontoModule.openEditPontoModal('${log.id}')" title="Editar Registro de Ponto" style="color: #38bdf8;">
+                <i data-lucide="edit" style="width:16px; height:16px;"></i>
+              </button>
+              <button class="btn-icon-tbl" onclick="PontoModule.deletePontoLog('${log.id}')" title="Excluir Registro de Ponto" style="color: #f43f5e;">
+                <i data-lucide="trash-2" style="width:16px; height:16px;"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+      `;
+    }).join('');
+
+    if (window.lucide) {
+      try { lucide.createIcons(); } catch(e){}
+    }
+  },
+
+  registerPontoAction(actionType) {
+    const empSelect = document.getElementById('select-ponto-emp');
+    if (!empSelect || !empSelect.value) {
+      showToast('Selecione um funcionário antes de registrar a ação!', '⚠️');
+      return;
+    }
+
+    const empId = empSelect.value;
+    const emps = this.getEmployees();
+    const emp = emps.find(e => e.id === empId);
+    if (!emp) return;
+
+    const now = new Date();
+    const timeStr = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+    const todayStr = now.toISOString().split('T')[0];
+
+    const logs = this.getPontoLogs();
+    let todayLog = logs.find(l => l.empId === empId && l.date === todayStr);
+
+    if (!todayLog) {
+      todayLog = {
+        id: 'pt-' + Date.now(),
+        empId: emp.id,
+        empName: emp.name,
+        date: todayStr,
+        in1: '--:--',
+        out1: '--:--',
+        in2: '--:--',
+        out2: '--:--',
+        total: 'Em andamento',
+        status: 'Em aberto'
+      };
+      logs.unshift(todayLog);
+    }
+
+    if (actionType === 'in1') {
+      todayLog.in1 = timeStr;
+      emp.status = 'presente';
+      showToast(`Ponto: Entrada 1 registrada às ${timeStr} para ${emp.name}!`, '🟢');
+    } else if (actionType === 'out1') {
+      todayLog.out1 = timeStr;
+      emp.status = 'almoco';
+      const workedMins = this.calculateWorkedMinutes(todayLog.in1, todayLog.out1, todayLog.in2, todayLog.out2);
+      todayLog.total = this.formatMinutesToHM(workedMins);
+      showToast(`Ponto: Saída Almoço registrada às ${timeStr} para ${emp.name}!`, '☕');
+    } else if (actionType === 'in2') {
+      todayLog.in2 = timeStr;
+      emp.status = 'presente';
+      showToast(`Ponto: Retorno Almoço registrado às ${timeStr} para ${emp.name}!`, '▶️');
+    } else if (actionType === 'out2') {
+      todayLog.out2 = timeStr;
+      emp.status = 'folga';
+      const workedMins = this.calculateWorkedMinutes(todayLog.in1, todayLog.out1, todayLog.in2, todayLog.out2);
+      const formattedTime = this.formatMinutesToHM(workedMins);
+      const { valorTrabalhado } = this.calculateSalaryValue(emp.salary, emp.hours, workedMins);
+      todayLog.total = `${formattedTime} (Concluído)`;
+      todayLog.status = 'Completo';
+      todayLog.workedMinutes = workedMins;
+      todayLog.valorTrabalhado = valorTrabalhado;
+      showToast(`Ponto: Saída Final às ${timeStr} (${emp.name})! Tempo: ${formattedTime}`, '🏁');
+    } else if (actionType === 'falta') {
+      todayLog.in1 = 'FALTA';
+      todayLog.out1 = '--:--';
+      todayLog.in2 = '--:--';
+      todayLog.out2 = '--:--';
+      todayLog.total = '00:00 (Falta)';
+      todayLog.status = 'Falta';
+      emp.status = 'falta';
+      showToast(`Falta registrada para ${emp.name}!`, '❌');
+    } else if (actionType === 'falta_doente') {
+      todayLog.in1 = 'ATESTADO';
+      todayLog.out1 = '--:--';
+      todayLog.in2 = '--:--';
+      todayLog.out2 = '--:--';
+      todayLog.total = 'Justificada (Atestado)';
+      todayLog.status = 'Falta Doente';
+      emp.status = 'falta_doente';
+      showToast(`Falta Doente (Atestado) registrada para ${emp.name}!`, '🩺');
+    }
+
+    this.saveEmployees(emps);
+    this.savePontoLogs(logs);
+  },
+
+  toggleStatus(empId) {
+    const emps = this.getEmployees();
+    const emp = emps.find(e => e.id === empId);
+    if (!emp) return;
+
+    const cycle = ['presente', 'almoco', 'folga', 'falta', 'falta_doente'];
+    const idx = cycle.indexOf(emp.status);
+    const nextStatus = idx === -1 ? 'presente' : cycle[(idx + 1) % cycle.length];
+    this.setStatus(empId, nextStatus);
+  },
+
+  setStatus(empId, newStatus) {
+    const emps = this.getEmployees();
+    const emp = emps.find(e => e.id === empId);
+    if (!emp) return;
+
+    emp.status = newStatus;
+    this.saveEmployees(emps);
+
+    const labels = {
+      presente: 'Presente',
+      almoco: 'Em Almoço',
+      folga: 'Folga',
+      falta: 'Falta',
+      falta_doente: 'Falta Doente'
+    };
+    showToast(`Status de ${emp.name} alterado para ${labels[newStatus] || newStatus}!`, 'ℹ️');
+
+    if (newStatus === 'falta' || newStatus === 'falta_doente') {
+      const now = new Date();
+      const todayStr = now.toISOString().split('T')[0];
+      const logs = this.getPontoLogs();
+      let todayLog = logs.find(l => l.empId === empId && l.date === todayStr);
+
+      if (!todayLog) {
+        todayLog = {
+          id: 'pt-' + Date.now(),
+          empId: emp.id,
+          empName: emp.name,
+          date: todayStr
+        };
+        logs.unshift(todayLog);
+      }
+
+      if (newStatus === 'falta') {
+        todayLog.in1 = 'FALTA';
+        todayLog.out1 = '--:--';
+        todayLog.in2 = '--:--';
+        todayLog.out2 = '--:--';
+        todayLog.total = '00:00 (Falta)';
+        todayLog.status = 'Falta';
+      } else {
+        todayLog.in1 = 'ATESTADO';
+        todayLog.out1 = '--:--';
+        todayLog.in2 = '--:--';
+        todayLog.out2 = '--:--';
+        todayLog.total = 'Justificada (Atestado)';
+        todayLog.status = 'Falta Doente';
+      }
+      this.savePontoLogs(logs);
+    }
+  },
+
+  deleteEmployee(id) {
+    // Exclusão direta sem confirmação
+    let emps = this.getEmployees();
+    emps = emps.filter(e => e.id !== id);
+    this.saveEmployees(emps);
+    showToast('Funcionário excluído com sucesso.', '🗑️');
+  },
+
+  openNewEmployeeModal() {
+    document.getElementById('form-new-employee')?.reset();
+    document.getElementById('modal-new-employee').style.display = 'flex';
+  },
+
+  addNewEmployee(e) {
+    e.preventDefault();
+    const form = e.target;
+    const name = form['emp-name'].value.trim();
+    const role = form['emp-role'].value.trim();
+    const dept = form['emp-dept'].value.trim() || '-';
+    const hours = form['emp-hours'].value.trim() || '40h/sem';
+    const salary = parseFloat(form['emp-salary'].value) || 0;
+    const phone = form['emp-phone'].value.trim();
+    const email = form['emp-email'].value.trim();
+    const status = form['emp-status']?.value || 'presente';
+
+    if (!name || !role) {
+      showToast('Preencha os campos obrigatórios!', '⚠️');
+      return;
+    }
+
+    const newEmp = {
+      id: 'emp-' + Date.now(),
+      name,
+      role,
+      dept,
+      hours,
+      salary,
+      phone,
+      email,
+      status
+    };
+
+    const emps = this.getEmployees();
+    emps.push(newEmp);
+    this.saveEmployees(emps);
+
+    this.closeModal('modal-new-employee');
+    form.reset();
+    showToast(`Funcionário ${name} cadastrado com sucesso!`, '👷');
+  },
+
+  openEditModal(empId) {
+    const emps = this.getEmployees();
+    const emp = emps.find(e => e.id === empId);
+    if (!emp) return;
+
+    document.getElementById('edit-emp-id').value = emp.id;
+    document.getElementById('edit-emp-name').value = emp.name || '';
+    document.getElementById('edit-emp-role').value = emp.role || '';
+    document.getElementById('edit-emp-dept').value = emp.dept || '';
+    document.getElementById('edit-emp-hours').value = emp.hours || '40h/sem';
+    document.getElementById('edit-emp-salary').value = emp.salary || 0;
+    document.getElementById('edit-emp-phone').value = emp.phone || '';
+    document.getElementById('edit-emp-email').value = emp.email || '';
+    document.getElementById('edit-emp-status').value = emp.status || 'presente';
+
+    document.getElementById('modal-edit-employee').style.display = 'flex';
+  },
+
+  updateEmployee(e) {
+    e.preventDefault();
+    const form = e.target;
+    const id = form['edit-emp-id'].value;
+    const name = form['edit-emp-name'].value.trim();
+    const role = form['edit-emp-role'].value.trim();
+    const dept = form['edit-emp-dept'].value.trim() || '-';
+    const hours = form['edit-emp-hours'].value.trim() || '40h/sem';
+    const salary = parseFloat(form['edit-emp-salary'].value) || 0;
+    const phone = form['edit-emp-phone'].value.trim();
+    const email = form['edit-emp-email'].value.trim();
+    const status = form['edit-emp-status'].value || 'presente';
+
+    if (!name || !role) {
+      showToast('Preencha os campos obrigatórios!', '⚠️');
+      return;
+    }
+
+    let emps = this.getEmployees();
+    const idx = emps.findIndex(emp => emp.id === id);
+    if (idx === -1) return;
+
+    const oldStatus = emps[idx].status;
+    emps[idx] = {
+      ...emps[idx],
+      name,
+      role,
+      dept,
+      hours,
+      salary,
+      phone,
+      email,
+      status
+    };
+
+    this.saveEmployees(emps);
+
+    if (status !== oldStatus && (status === 'falta' || status === 'falta_doente')) {
+      this.setStatus(id, status);
+    }
+
+    this.closeModal('modal-edit-employee');
+    showToast(`Funcionário ${name} atualizado com sucesso!`, '✅');
+  },
+
+  updateStats() {
+    const emps = this.getEmployees();
+    const elBadge = document.getElementById('badge-total-colaboradores');
+    if (elBadge) {
+      elBadge.textContent = `${emps.length} ativos`;
+    }
+  },
+
+  openEditPontoModal(logId) {
+    const logs = this.getPontoLogs();
+    const log = logs.find(l => l.id === logId);
+    if (!log) return;
+
+    document.getElementById('edit-pt-id').value = log.id;
+    document.getElementById('edit-pt-emp-name').value = log.empName || '';
+    document.getElementById('edit-pt-date').value = log.date || '';
+    document.getElementById('edit-pt-in1').value = log.in1 || '';
+    document.getElementById('edit-pt-out1').value = log.out1 || '';
+    document.getElementById('edit-pt-in2').value = log.in2 || '';
+    document.getElementById('edit-pt-out2').value = log.out2 || '';
+    document.getElementById('edit-pt-total').value = log.total || '';
+    document.getElementById('edit-pt-status').value = log.status || 'Completo';
+
+    document.getElementById('modal-edit-ponto').style.display = 'flex';
+  },
+
+  updatePontoLog(e) {
+    e.preventDefault();
+    const form = e.target;
+    const id = form['edit-pt-id'].value;
+    const date = form['edit-pt-date'].value;
+    const in1 = form['edit-pt-in1'].value.trim() || '--:--';
+    const out1 = form['edit-pt-out1'].value.trim() || '--:--';
+    const in2 = form['edit-pt-in2'].value.trim() || '--:--';
+    const out2 = form['edit-pt-out2'].value.trim() || '--:--';
+    const total = form['edit-pt-total'].value.trim() || 'Em andamento';
+    const status = form['edit-pt-status'].value;
+
+    let logs = this.getPontoLogs();
+    const idx = logs.findIndex(l => l.id === id);
+    if (idx === -1) return;
+
+    logs[idx] = {
+      ...logs[idx],
+      date,
+      in1,
+      out1,
+      in2,
+      out2,
+      total,
+      status
+    };
+
+    this.savePontoLogs(logs);
+    this.closeModal('modal-edit-ponto');
+    showToast('Registro de ponto atualizado com sucesso!', '✅');
+  },
+
+  deletePontoLog(logId) {
+    let logs = this.getPontoLogs();
+    const log = logs.find(l => l.id === logId);
+    const empName = log ? log.empName : 'selecionado';
+    logs = logs.filter(l => l.id !== logId);
+    this.savePontoLogs(logs);
+    showToast(`Registro de ponto de ${empName} removido.`, 'ℹ️');
+  },
+
+  sendWhatsApp(logId) {
+    const logs = this.getPontoLogs();
+    const log = logs.find(l => l.id === logId);
+    if (!log) return;
+
+    const emps = this.getEmployees();
+    const emp = emps.find(e => e.id === log.empId || e.name === log.empName);
+
+    let rawPhone = emp ? emp.phone : '';
+    let cleanTel = rawPhone ? rawPhone.replace(/\D/g, '') : '';
+    if (cleanTel && (cleanTel.length === 10 || cleanTel.length === 11) && !cleanTel.startsWith('55')) {
+      cleanTel = '55' + cleanTel;
+    }
+
+    const workedMins = this.calculateWorkedMinutes(log.in1, log.out1, log.in2, log.out2);
+    const tempoFmt = (log.status === 'Falta' || log.in1 === 'FALTA') 
+      ? '00h 00m (Falta Injustificada)' 
+      : ((log.status === 'Falta Doente' || log.in1 === 'ATESTADO') ? 'Atestado Médico (Falta Justificada)' : this.formatMinutesToHM(workedMins));
+
+    const sal = emp ? emp.salary : 0;
+    const hoursStr = emp ? emp.hours : '40h/sem';
+    const { valorHora, valorTrabalhado } = this.calculateSalaryValue(sal, hoursStr, workedMins);
+
+    let valorStr = this.formatMoney(valorTrabalhado);
+    if (log.status === 'Falta' || log.in1 === 'FALTA') {
+      valorStr = 'R$ 0,00 (Desconto do dia)';
+    } else if (log.status === 'Falta Doente' || log.in1 === 'ATESTADO') {
+      valorStr = `${this.formatMoney(valorHora * 8)} (Dia Abonado)`;
+    }
+
+    const parts = (log.date || '').split('-');
+    const dataFmt = parts.length === 3 ? `${parts[2]}/${parts[1]}/${parts[0]}` : log.date;
+
+    const msg = 
+`*SD CONSTRUÇÕES — ESPELHO DE PONTO* 📋
+
+👤 *Colaborador:* ${log.empName}
+💼 *Cargo:* ${emp ? emp.role : '--'}
+💵 *Salário Base:* ${this.formatMoney(sal)} (${emp ? emp.hours : '40h/sem'})
+⏰ *Valor da Hora:* ${this.formatMoney(valorHora)}/h
+📅 *Data:* ${dataFmt}
+
+━━━━━━━━━━━━━━━━━━━━
+⏰ *1ª Entrada:* ${log.in1 || '--:--'}
+☕ *Saída Almoço:* ${log.out1 || '--:--'}
+▶️ *Volta Almoço:* ${log.in2 || '--:--'}
+🏁 *Saída Final:* ${log.out2 || '--:--'}
+━━━━━━━━━━━━━━━━━━━━
+⏱️ *Tempo Exato Trabalhado:* ${tempoFmt}
+💰 *Valor Calculado do Salário:* ${valorStr}
+📌 *Status:* ${log.status || 'Registrado'}
+
+_Cálculo eletrônico de ponto gerado via SD Construções._`;
+
+    showToast(`Abrindo WhatsApp para enviar espelho de ${log.empName}...`, '📱');
+    
+    let url = cleanTel ? `https://api.whatsapp.com/send?phone=${cleanTel}&text=${encodeURIComponent(msg)}` : `https://api.whatsapp.com/send?text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank');
+  },
+
+  closeModal(modalId) {
+    const el = document.getElementById(modalId);
+    if (el) el.style.display = 'none';
+  }
+};
+
+window.PontoModule = PontoModule;
+
+</script>
 </head>
 <body>
 
@@ -1710,139 +2928,148 @@
       <!-- ══════════════════════════════════════════════ -->
       <!-- VIEW: FUNCIONÁRIOS & CONTROLE DE PONTO -->
       <!-- ══════════════════════════════════════════════ -->
+            <!-- ══════════════════════════════════════════════ -->
+      <!-- VIEW: FUNCIONÁRIOS & CONTROLE DE PONTO (IMAGENS 1 E 2) -->
+      <!-- ══════════════════════════════════════════════ -->
       <section id="view-funcionarios" class="panel-view">
-        <div class="glass-card" style="border-color: rgba(59,130,246,0.4);">
-          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:18px;">
-            <div>
-              <h2 style="font-family:var(--font-display); font-size:22px; font-weight:800; color:#60a5fa; display:flex; align-items:center; gap:8px;">
-                👷 Controle de Ponto, Frequência & Horas Extras
-              </h2>
-              <p style="font-size:13px; color:var(--text-muted); margin-top:2px;">
-                Registro diário de entrada/saída, faltas justificadas por doença ou faltas normais, e cálculo automático do valor da hora e horas extras.
-              </p>
-            </div>
-            <div style="display:flex; gap:8px;">
-              <button class="btn-action-gold" onclick="carregarExemploFuncionario()">
-                ✨ Preencher Exemplo de Equipe
-              </button>
-            </div>
+        
+        <!-- BARRA SUPERIOR DE FILTROS & AÇÕES (IDÊNTICO À IMAGEM 1) -->
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:20px;">
+          <div>
+            <h2 style="font-family:var(--font-display); font-size:24px; font-weight:800; color:#fff; display:flex; align-items:center; gap:10px;">
+              👷 Funcionários & Ponto
+            </h2>
+            <p style="font-size:13px; color:var(--text-muted); margin-top:2px;">
+              Controle de jornada de trabalho e registro de ponto eletrônico
+            </p>
           </div>
-
-          <!-- 1. DADOS DO FUNCIONÁRIO E VALORES DA HORA -->
-          <div class="grid-3">
-            <div class="form-group">
-              <label>Nome do Funcionário</label>
-              <input id="func-nome" placeholder="Ex: Raimundo Nonato da Silva" value="Raimundo Nonato da Silva" oninput="atualizarTotaisPonto()" />
+          
+          <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+            <div style="display:inline-flex; background:#080d1a; border:1px solid var(--border); border-radius:10px; padding:3px; gap:2px;">
+              <button class="period-btn" onclick="PontoModule.setPeriodo(this, 'Dia')">Dia</button>
+              <button class="period-btn" onclick="PontoModule.setPeriodo(this, 'Semana')">Semana</button>
+              <button class="period-btn active" onclick="PontoModule.setPeriodo(this, 'Mês')">Mês</button>
+              <button class="period-btn" onclick="PontoModule.setPeriodo(this, 'Ano')">Ano</button>
             </div>
-            <div class="form-group">
-              <label>Cargo / Função na Obra</label>
-              <select id="func-cargo" onchange="sugerirDiariaPorCargo()">
-                <option value="Mestre de Obras">Mestre de Obras</option>
-                <option value="Pedreiro">Pedreiro</option>
-                <option value="Servente">Servente de Obras</option>
-                <option value="Armador">Armador</option>
-                <option value="Eletricista">Eletricista</option>
-                <option value="Encanador">Encanador / Bombeiro Hidráulico</option>
-                <option value="Pintor">Pintor</option>
-                <option value="Gesseiro">Gesseiro</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>WhatsApp do Funcionário</label>
-              <input id="func-tel" placeholder="(85) 99888-7777" value="(85) 99888-7777" />
-            </div>
-          </div>
-
-          <div class="grid-4" style="margin-top:10px;">
-            <div class="form-group">
-              <label>Valor da Diária (R$)</label>
-              <input id="func-diaria" value="160,00" onfocus="limparAoFocar(this)" oninput="recalcularValoresHoraFunc()" onblur="formatarCampoDiaria(this)" placeholder="160,00" />
-            </div>
-            <div class="form-group">
-              <label>Jornada Normal (Horas/Dia)</label>
-              <input id="func-horas-dia" value="8" type="number" onfocus="limparAoFocar(this)" oninput="recalcularValoresHoraFunc()" onblur="restaurarJornadaSeVazio(this)" placeholder="8" />
-            </div>
-            <div class="form-group">
-              <label>Valor da Hora Normal (R$)</label>
-              <input id="func-v-hora" value="R$ 20,00" onfocus="limparAoFocar(this)" oninput="recalcularPorHoraNormal()" onblur="formatarCampoValorHora(this)" placeholder="20,00" style="color:#60a5fa; font-weight:800;" />
-            </div>
-            <div class="form-group">
-              <label>Valor da Hora Extra (R$)</label>
-              <input id="func-v-hora-extra" value="R$ 30,00" onfocus="limparAoFocar(this)" oninput="recalcularPorHoraExtra()" onblur="formatarCampoValorHora(this)" placeholder="30,00" style="color:var(--gold-light); font-weight:800;" />
-            </div>
+            <span class="badge-blue-pill">⏱️ Ponto</span>
+            <button class="btn-action-secondary" style="padding:7px 14px; font-size:12px;" onclick="PontoModule.openNewEmployeeModal()">
+              + Lançamento
+            </button>
           </div>
         </div>
 
-        <!-- 2. FOLHA DE PONTO SEMANAL (7 DIAS) -->
-        <div class="glass-card">
-          <div class="glass-card-title" style="color:#60a5fa;">
-            <span>📅 Folha Semanal de Ponto (Entrada, Saída, Faltas e Horas Extras)</span>
-            <span class="badge-count" style="border-color:rgba(59,130,246,0.4); color:#60a5fa; background:rgba(59,130,246,0.12);">7 Dias</span>
+        <!-- 1. TERMINAL CENTRAL DE PONTO ELETRÔNICO (HERO CARD - IMAGEM 1) -->
+        <div class="ponto-clock-card">
+          <span class="live-date-str" id="ponto-live-date">CARREGANDO DATA...</span>
+          <div class="live-digital-clock" id="ponto-live-clock">12:02:19</div>
+          
+          <div style="max-width: 380px; margin: 0 auto 16px auto;">
+            <select id="select-ponto-emp" class="form-control" style="background:#080d1a; border:1px solid rgba(6,182,212,0.4); color:#fff; font-size: 0.95rem; text-align: center; border-radius:8px; padding:10px;">
+              <!-- Preenchido dinamicamente via PontoModule -->
+            </select>
+          </div>
+
+          <div class="ponto-actions-row">
+            <button class="btn-ponto-action btn-ponto-entrada" onclick="PontoModule.registerPontoAction('in1')">
+              <i data-lucide="log-in"></i>
+              <span>1ª Entrada</span>
+            </button>
+            <button class="btn-ponto-action btn-ponto-almoco" onclick="PontoModule.registerPontoAction('out1')">
+              <i data-lucide="coffee"></i>
+              <span>Saída Almoço</span>
+            </button>
+            <button class="btn-ponto-action btn-ponto-entrada" onclick="PontoModule.registerPontoAction('in2')">
+              <i data-lucide="play-circle"></i>
+              <span>Volta Almoço</span>
+            </button>
+            <button class="btn-ponto-action btn-ponto-saida" onclick="PontoModule.registerPontoAction('out2')">
+              <i data-lucide="log-out"></i>
+              <span>Saída Final</span>
+            </button>
+            <button class="btn-ponto-action btn-ponto-falta" onclick="PontoModule.registerPontoAction('falta')">
+              <i data-lucide="user-x"></i>
+              <span>Falta</span>
+            </button>
+            <button class="btn-ponto-action btn-ponto-falta-doente" onclick="PontoModule.registerPontoAction('falta_doente')">
+              <i data-lucide="activity"></i>
+              <span>Falta Doente</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 2. QUADRO DE FUNCIONÁRIOS ATIVOS (IMAGEM 1 & 2) -->
+        <div class="glass-card" style="border-color: rgba(59,130,246,0.35); margin-bottom:24px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:18px;">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <h3 style="font-family:var(--font-display); font-size:18px; font-weight:800; color:#fff; display:flex; align-items:center; gap:8px;">
+                👥 Quadro de Funcionários Ativos
+              </h3>
+              <span class="badge-count" id="badge-total-colaboradores" style="border-color:rgba(59,130,246,0.4); color:#60a5fa; background:rgba(59,130,246,0.12);">0 ativos</span>
+            </div>
+            <div>
+              <button class="btn-action-primary" style="font-size:13px; font-weight:700; padding:8px 16px; background:linear-gradient(135deg, #0284c7, #06b6d4); color:#fff; border:none; border-radius:8px; cursor:pointer;" onclick="PontoModule.openNewEmployeeModal()">
+                + Novo Funcionário
+              </button>
+            </div>
           </div>
 
           <div class="table-container">
             <table class="data-table">
               <thead>
                 <tr>
-                  <th style="min-width:120px;">DIA DA SEMANA</th>
-                  <th style="width:105px;">ENTRADA</th>
-                  <th style="width:105px;">SAÍDA</th>
-                  <th style="width:130px; text-align:center; color:#34d399;">HORAS TRAB. (H : MIN)</th>
-                  <th style="min-width:175px;">SITUAÇÃO / FALTA</th>
-                  <th style="width:80px; text-align:center;">H. EXTRA</th>
-                  <th style="width:105px;">V. HORA</th>
-                  <th style="width:105px;">V. H. EXTRA</th>
-                  <th style="width:120px; text-align:right;">TOTAL DIA (R$)</th>
+                  <th style="min-width:230px;">COLABORADOR</th>
+                  <th style="min-width:160px;">CARGO</th>
+                  <th style="min-width:140px;">DEPARTAMENTO</th>
+                  <th style="min-width:110px;">JORNADA</th>
+                  <th style="min-width:140px;">SALÁRIO</th>
+                  <th style="min-width:130px; text-align:center;">STATUS PRESENÇA</th>
+                  <th style="min-width:120px; text-align:center;">AÇÕES</th>
                 </tr>
               </thead>
-              <tbody id="tabela-ponto-linhas">
-                <!-- Linhas dos 7 dias geradas via JavaScript -->
+              <tbody id="tbody-employees">
+                <!-- Linhas dos colaboradores geradas via PontoModule -->
               </tbody>
             </table>
           </div>
-
-          <!-- RESUMO DO PONTO DA SEMANA -->
-          <div class="margin-stat-box" style="margin-top:18px; grid-template-columns: repeat(5, 1fr);">
-            <div>
-              <div class="margin-item-lbl">Dias Trabalhados</div>
-              <div class="margin-item-val" style="color:#60a5fa;" id="ponto-dias-trab">5 dias</div>
-            </div>
-            <div>
-              <div class="margin-item-lbl" style="color:#34d399;">Total Horas Trabalhadas</div>
-              <div class="margin-item-val" style="color:#34d399;" id="ponto-total-horas">0h 00min</div>
-            </div>
-            <div>
-              <div class="margin-item-lbl" style="color:#f87171;">Faltas (Doente / Injust.)</div>
-              <div class="margin-item-val" style="color:#f87171;" id="ponto-total-faltas">0 faltas</div>
-            </div>
-            <div>
-              <div class="margin-item-lbl" style="color:var(--gold-light);">Total Horas Extras</div>
-              <div class="margin-item-val" id="ponto-total-he">0h (R$ 0,00)</div>
-            </div>
-            <div>
-              <div class="margin-item-lbl" style="color:var(--green-light);">Total a Pagar Funcionário</div>
-              <div class="margin-item-val profit" id="ponto-total-liquido">R$ 0,00</div>
-            </div>
-          </div>
         </div>
 
-        <!-- AÇÕES DO CONTROLE DE PONTO -->
-        <div class="glass-card">
-          <div class="form-group" style="margin-bottom:14px;">
-            <label>Observações do Ponto / Atestados Médicos</label>
-            <input id="ponto-obs" placeholder="Ex: Apresentou atestado médico na quarta-feira; realizou 2h extras na terça para concretagem da laje..." />
+        <!-- 3. ESPELHO DE PONTO ELETRÔNICO (IMAGEM 2) -->
+        <div class="glass-card" style="border-color: rgba(6,182,212,0.3);">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:18px;">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <h3 style="font-family:var(--font-display); font-size:18px; font-weight:800; color:#fff; display:flex; align-items:center; gap:8px;">
+                📄 Espelho de Ponto Eletrônico
+              </h3>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: center; flex-wrap:wrap;">
+              <select id="select-filter-ponto-emp" class="form-control" style="background:#080d1a; border:1px solid var(--border); color:#fff; padding: 6px 12px; font-size: 0.85rem; border-radius:6px;" onchange="PontoModule.renderPontoHistoryTable()">
+                <!-- Filtro por funcionário -->
+              </select>
+              <button class="btn-action-secondary" style="padding: 6px 14px; font-size: 0.85rem; display:inline-flex; align-items:center; gap:6px;" onclick="window.print()">
+                <i data-lucide="printer" style="width:15px; height:15px;"></i> Imprimir Folha
+              </button>
+            </div>
           </div>
 
-          <div class="grid-3">
-            <button class="btn-green-whats" onclick="enviarWhatsAppReciboPonto()">
-              📱 Enviar Extrato de Ponto ao Funcionário (WhatsApp)
-            </button>
-            <button class="btn-dark-pdf" onclick="imprimirPdfPonto()">
-              📄 Imprimir / Baixar Folha de Ponto em PDF
-            </button>
-            <button class="btn-gold-save" onclick="salvarFolhaPonto()">
-              💾 Salvar Registro do Ponto
-            </button>
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>COLABORADOR</th>
+                  <th>DATA</th>
+                  <th>ENTRADA 1</th>
+                  <th>SAÍDA ALMOÇO</th>
+                  <th>VOLTA ALMOÇO</th>
+                  <th>SAÍDA FINAL</th>
+                  <th>TEMPO TRABALHADO</th>
+                  <th>VALOR DO SALÁRIO</th>
+                  <th style="text-align:center;">AÇÕES</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-ponto-logs">
+                <!-- Injetado via PontoModule -->
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
@@ -1891,6 +3118,130 @@
   </div>
 </div>
 
+<!-- MODAL CADASTRO / EDIÇÃO DE FUNCIONÁRIO (IMAGE 1 & 2) -->
+<div id="modal-funcionario" class="modal-backdrop" style="display:none;" onclick="fecharModalFuncionario(event)">
+  <div class="modal-window" onclick="event.stopPropagation()" style="max-width:720px; border-color:rgba(59,130,246,0.5);">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; border-bottom:1px solid var(--border); padding-bottom:12px;">
+      <h3 id="modal-func-titulo" style="font-family:var(--font-display); font-size:19px; color:#60a5fa; display:flex; align-items:center; gap:8px;">
+        👷 Cadastro de Novo Funcionário
+      </h3>
+      <button style="background:transparent; border:none; color:var(--text-muted); font-size:20px; cursor:pointer;" onclick="fecharModalFuncionario()">✕</button>
+    </div>
+
+    <input type="hidden" id="modal-func-id" value="">
+
+    <div class="grid-2">
+      <div class="form-group">
+        <label>Nome Completo do Colaborador *</label>
+        <input id="modal-func-nome" placeholder="Ex: Juliana Costa ou Raimundo Nonato" />
+      </div>
+      <div class="form-group">
+        <label>WhatsApp / Telefone *</label>
+        <input id="modal-func-tel" placeholder="(85) 99888-7777" />
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="form-group">
+        <label>E-mail Corporativo / Pessoal</label>
+        <input id="modal-func-email" placeholder="juliana@sdsolucoes.com.br" />
+      </div>
+      <div class="form-group">
+        <label>Departamento</label>
+        <select id="modal-func-dept">
+          <option value="Obras & Engenharia">Obras & Engenharia</option>
+          <option value="Alvenaria & Estrutura">Alvenaria & Estrutura</option>
+          <option value="Acabamento & Pintura">Acabamento & Pintura</option>
+          <option value="Instalações Elétricas & Hidráulicas">Instalações Elétricas & Hidráulicas</option>
+          <option value="Criação">Criação (Design & Arquitetura)</option>
+          <option value="Administrativo & Financeiro">Administrativo & Financeiro</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="form-group">
+        <label>Cargo / Função na Empresa</label>
+        <select id="modal-func-cargo" onchange="aoMudarCargoModal(this.value)">
+          <option value="Mestre de Obras">Mestre de Obras</option>
+          <option value="Pedreiro">Pedreiro</option>
+          <option value="Servente">Servente de Obras</option>
+          <option value="Armador">Armador</option>
+          <option value="Eletricista">Eletricista</option>
+          <option value="Encanador">Encanador / Bombeiro Hidráulico</option>
+          <option value="Pintor">Pintor</option>
+          <option value="Gesseiro">Gesseiro</option>
+          <option value="Arquiteta & Planejamento">Arquiteta & Planejamento</option>
+          <option value="UI/UX & Design Digital">UI/UX & Design Digital</option>
+          <option value="Engenheiro Civil">Engenheiro Civil</option>
+          <option value="Outro">Outro (digite abaixo)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Jornada de Trabalho</label>
+        <select id="modal-func-jornada">
+          <option value="44h/sem (8h/dia)">44h/sem (8h/dia)</option>
+          <option value="40h/sem (8h/dia)">40h/sem (8h/dia)</option>
+          <option value="40h/sem">40h/sem</option>
+          <option value="30h/sem (6h/dia)">30h/sem (6h/dia)</option>
+          <option value="Diária Avulsa">Diária Avulsa (Sob Demanda)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group" id="modal-box-cargo-outro" style="display:none;">
+      <label>Especifique o Cargo Customizado</label>
+      <input id="modal-func-cargo-custom" placeholder="Digite o nome do cargo..." />
+    </div>
+
+    <div class="grid-3" style="margin-top:4px;">
+      <div class="form-group">
+        <label>Valor da Diária (R$)</label>
+        <input id="modal-func-diaria" placeholder="160,00" value="160,00" oninput="aoDigitarDiariaModal(this.value)" />
+      </div>
+      <div class="form-group">
+        <label>Salário Mensal Estimado (R$)</label>
+        <input id="modal-func-salario" placeholder="3.520,00" value="3.520,00" />
+      </div>
+      <div class="form-group">
+        <label>Status Inicial</label>
+        <select id="modal-func-status">
+          <option value="Presente">🟢 Presente</option>
+          <option value="Almoço">🟡 Em Almoço</option>
+          <option value="Ausente">⚪ Ausente</option>
+          <option value="Férias">🏖️ Em Férias</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group" style="margin-top:6px;">
+      <label>Observações / Dados Bancários / Chave PIX</label>
+      <input id="modal-func-obs" placeholder="Ex: PIX telefone; chave de acesso; encarregado do lote 4..." />
+    </div>
+
+    <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:20px; border-top:1px solid var(--border); padding-top:14px;">
+      <button class="btn-action-secondary" onclick="fecharModalFuncionario()">Cancelar</button>
+      <button class="btn-action-gold" onclick="salvarFuncionarioModal()">💾 Salvar Colaborador</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL DE IMPRESSÃO / RELATÓRIO DO COLABORADOR -->
+<div id="modal-relatorio-funcionario" class="modal-backdrop" style="display:none;" onclick="fecharModalRelatorio(event)">
+  <div class="modal-window" onclick="event.stopPropagation()" style="max-width:850px; border-color:rgba(59,130,246,0.5);">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; border-bottom:1px solid var(--border); padding-bottom:10px;">
+      <h3 style="font-family:var(--font-display); font-size:18px; color:#60a5fa; display:flex; align-items:center; gap:8px;">
+        📄 Relatório & Espelho de Ponto Individual
+      </h3>
+      <div style="display:flex; gap:8px;">
+        <button class="btn-action-gold" style="padding:6px 14px; font-size:12px;" onclick="window.print()">🖨️ Imprimir / Salvar PDF</button>
+        <button style="background:transparent; border:none; color:var(--text-muted); font-size:18px; cursor:pointer;" onclick="fecharModalRelatorio()">✕</button>
+      </div>
+    </div>
+    <div id="modal-relatorio-conteudo"></div>
+  </div>
+</div>
+
 <script>
 // ══════════════════════════════════════════════
 //  DATA STORAGE & STATE
@@ -1903,6 +3254,7 @@ const K = {
   users: 'sdc_users',
   vendedores: 'sdc_vendedores',
   materiais: 'sdc_listas_materiais',
+  funcionarios: 'sdc_funcionarios',
   nextNum: 'sdc_next_num',
   nextTerc: 'sdc_next_terc',
   nextMat: 'sdc_next_mat'
@@ -1918,6 +3270,8 @@ let terceirizados = [];
 let vendedores = [];
 let listasMatSalvas = [];
 let users = [];
+let funcionarios = [];
+let funcionarioSelecionadoId = 1;
 let proxNum = 1;
 let proxTerc = 1;
 let proxMat = 1;
@@ -1928,6 +3282,65 @@ let editandoTerc = null;
 let editandoVend = null;
 let editandoMat = null;
 let modalTarget = 'orcamento';
+
+const FUNCIONARIOS_INICIAIS = [
+  {
+    id: 1,
+    nome: 'Raimundo Nonato da Silva',
+    email: 'raimundo.obras@sdconstrucoes.com.br',
+    tel: '(85) 99888-7777',
+    cargo: 'Mestre de Obras',
+    departamento: 'Obras & Engenharia',
+    jornada: '44h/sem (8h/dia)',
+    horasDia: 8,
+    diaria: 160.00,
+    salario: 3520.00,
+    status: 'Presente',
+    ultimoPonto: '07:00'
+  },
+  {
+    id: 2,
+    nome: 'Juliana Costa',
+    email: 'juliana@sdsolucoes.com.br',
+    tel: '(11) 97654-3210',
+    cargo: 'UI/UX & Design Digital',
+    departamento: 'Criação',
+    jornada: '40h/sem',
+    horasDia: 8,
+    diaria: 236.36,
+    salario: 5200.00,
+    status: 'Presente',
+    ultimoPonto: '08:00'
+  },
+  {
+    id: 3,
+    nome: 'José Ferreira de Souza',
+    email: 'jose.pedreiro@sdconstrucoes.com.br',
+    tel: '(85) 98765-4321',
+    cargo: 'Pedreiro',
+    departamento: 'Alvenaria & Estrutura',
+    jornada: '44h/sem (8h/dia)',
+    horasDia: 8,
+    diaria: 160.00,
+    salario: 3520.00,
+    status: 'Presente',
+    ultimoPonto: '07:05'
+  },
+  {
+    id: 4,
+    nome: 'Marcos Vinícius Santos',
+    email: 'marcos.eletrica@sdconstrucoes.com.br',
+    tel: '(85) 99123-4567',
+    cargo: 'Eletricista',
+    departamento: 'Instalações Elétricas',
+    jornada: '44h/sem (8h/dia)',
+    horasDia: 8,
+    diaria: 180.00,
+    salario: 3960.00,
+    status: 'Almoço',
+    ultimoPonto: '12:00'
+  }
+];
 
 const VENDEDORES_INICIAIS = [
   { id: 1, nome: 'Samuel Dantas', tel: '(85) 99611-9824', cargo: 'Gerente Comercial', comissao: 5, status: 'Ativo', obs: 'Obras de alto padrão e condomínios' },
@@ -2071,6 +3484,9 @@ window.addEventListener('DOMContentLoaded', () => {
   // Set today date
   document.getElementById('data-atual-top').textContent = new Date().toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' });
 
+  funcionarios = load(K.funcionarios, FUNCIONARIOS_INICIAIS);
+  save(K.funcionarios, funcionarios);
+
   updateDisplays();
   renderDashboard();
   renderCli();
@@ -2080,6 +3496,9 @@ window.addEventListener('DOMContentLoaded', () => {
   renderHist();
   renderUsuarios();
   renderListasMatSalvas();
+  renderFuncionarios();
+  iniciarRelogioDigital();
+  PontoModule.init();
   gerarTabelaPontoSemanal();
 
   addItem('Alvenaria de Vedação / Bloco Cerâmico', '1', 'Padrão', '2.80', '6.00', '65', '', 'Acabado');
@@ -2160,9 +3579,7 @@ function goNav(viewId) {
     adicionarKitBasicoObra();
   }
   if (viewId === 'funcionarios') {
-    if (document.querySelectorAll('#tabela-ponto-linhas tr').length === 0) {
-      gerarTabelaPontoSemanal();
-    }
+    PontoModule.init();
   }
 }
 
@@ -2208,6 +3625,607 @@ let dadosPontoSemanal = [
   { dia: 'Sábado', entrada: '07:00', saida: '12:00', status: 'Presente', horasExtras: 0 },
   { dia: 'Domingo', entrada: '', saida: '', status: 'Folga / DSR', horasExtras: 0 }
 ];
+
+let relogioIntervalId = null;
+
+// Relógio Digital em Tempo Real com Data Formatada (Image 1)
+function iniciarRelogioDigital() {
+  if (relogioIntervalId) clearInterval(relogioIntervalId);
+
+  function atualizar() {
+    const agora = new Date();
+    const elHora = document.getElementById('ponto-clock-time');
+    const elData = document.getElementById('ponto-clock-date');
+
+    if (elHora) {
+      const hh = String(agora.getHours()).padStart(2, '0');
+      const mm = String(agora.getMinutes()).padStart(2, '0');
+      const ss = String(agora.getSeconds()).padStart(2, '0');
+      elHora.textContent = `${hh}:${mm}:${ss}`;
+    }
+
+    if (elData) {
+      const diasSemana = ['DOMINGO', 'SEGUNDA-FEIRA', 'TERÇA-FEIRA', 'QUARTA-FEIRA', 'QUINTA-FEIRA', 'SEXTA-FEIRA', 'SÁBADO'];
+      const meses = ['JANEIRO', 'FEVEREIRO', 'MARÇO', 'ABRIL', 'MAIO', 'JUNHO', 'JULHO', 'AGOSTO', 'SETEMBRO', 'OUTUBRO', 'NOVEMBRO', 'DEZEMBRO'];
+      const diaSemana = diasSemana[agora.getDay()];
+      const dia = agora.getDate();
+      const mes = meses[agora.getMonth()];
+      const ano = agora.getFullYear();
+      elData.textContent = `${diaSemana}, ${dia} DE ${mes} DE ${ano}`;
+    }
+  }
+
+  atualizar();
+  relogioIntervalId = setInterval(atualizar, 1000);
+}
+
+// Filtro de Período (Dia, Semana, Mês, Ano)
+function selecionarPeriodoPonto(btn, periodo) {
+  document.querySelectorAll('.period-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  showToast(`Período de visualização: ${periodo}`, '📅');
+}
+
+// Renderiza o Quadro de Funcionários Ativos e o Dropdown do Ponto
+function renderFuncionarios() {
+  const sel = document.getElementById('ponto-select-colaborador');
+  const tbody = document.getElementById('tabela-funcionarios-ativos');
+  const badgeCount = document.getElementById('badge-total-colaboradores');
+
+  if (badgeCount) {
+    badgeCount.textContent = `${funcionarios.length} ativos`;
+  }
+
+  // Preenche Select de Colaboradores
+  if (sel) {
+    if (funcionarios.length === 0) {
+      sel.innerHTML = '<option value="">Nenhum funcionário cadastrado</option><option value="novo">+ Cadastrar Novo Funcionário...</option>';
+    } else {
+      sel.innerHTML = funcionarios.map(f => `
+        <option value="${f.id}" ${f.id === funcionarioSelecionadoId ? 'selected' : ''}>
+          ${f.nome} – ${f.cargo} (${f.departamento || 'Obras'})
+        </option>
+      `).join('') + '<option value="novo">+ Novo Funcionário...</option>';
+    }
+  }
+
+  // Preenche Tabela do Quadro de Funcionários Ativos
+  if (tbody) {
+    if (funcionarios.length === 0) {
+      tbody.innerHTML = `
+        <tr>
+          <td colspan="7" style="text-align:center; padding:24px; color:var(--text-muted);">
+            Nenhum funcionário cadastrado. Clique no botão "<strong>+ Novo Funcionário</strong>" para cadastrar sua equipe.
+          </td>
+        </tr>
+      `;
+      return;
+    }
+
+    tbody.innerHTML = funcionarios.map(f => {
+      // Iniciais do Avatar
+      const partes = f.nome.trim().split(' ');
+      const iniciais = (partes[0]?.[0] || '') + (partes.length > 1 ? partes[partes.length - 1]?.[0] || '' : '');
+
+      // Status Badge
+      let statusClass = 'status-presente';
+      let statusIcon = '🟢';
+      if (f.status === 'Almoço') { statusClass = 'status-almoco'; statusIcon = '🟡'; }
+      else if (f.status === 'Finalizado') { statusClass = 'status-finalizado'; statusIcon = '🔵'; }
+      else if (f.status === 'Ausente' || f.status === 'Férias') { statusClass = 'status-ausente'; statusIcon = '⚪'; }
+
+      const salarioFormatado = f.salario ? formatMoney(f.salario) : formatMoney(f.diaria * 22);
+
+      return `
+        <tr style="transition:background 0.15s; ${f.id === funcionarioSelecionadoId ? 'background:rgba(59,130,246,0.08);' : ''}">
+          <td>
+            <div style="display:flex; align-items:center; gap:12px;">
+              <div class="colab-avatar">${iniciais.toUpperCase()}</div>
+              <div>
+                <strong style="color:#fff; font-size:14px; cursor:pointer;" onclick="selecionarFuncionarioPorId(${f.id})">${f.nome}</strong>
+                <div style="font-size:11.5px; color:var(--text-muted); margin-top:2px;">
+                  ${f.email ? f.email + ' • ' : ''}${f.tel || '(85) 99888-7777'}
+                </div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <span style="font-weight:700; color:#60a5fa; font-size:13px;">${f.cargo}</span>
+          </td>
+          <td>
+            <span style="color:var(--text-muted); font-size:12.5px;">${f.departamento || 'Obras & Engenharia'}</span>
+          </td>
+          <td>
+            <span style="color:#fff; font-size:12.5px;">${f.jornada || '40h/sem'}</span>
+          </td>
+          <td>
+            <strong style="color:var(--gold-light); font-size:13.5px;">${salarioFormatado}</strong>
+            <div style="font-size:11px; color:var(--text-muted);">${formatMoney(f.diaria)}/dia</div>
+          </td>
+          <td style="text-align:center;">
+            <span class="badge-status ${statusClass}">
+              <span>${statusIcon}</span> ${f.status || 'Presente'}
+            </span>
+          </td>
+          <td style="text-align:center;">
+            <div style="display:inline-flex; gap:6px; align-items:center;">
+              <button class="btn-tbl-action" title="Editar Funcionário" onclick="editarFuncionario(${f.id})">
+                ✏️
+              </button>
+              <button class="btn-tbl-action btn-tbl-print" title="Imprimir Relatório Individual" onclick="imprimirRelatorioFuncionario(${f.id})">
+                🖨️
+              </button>
+              <button class="btn-tbl-action btn-tbl-del" title="Excluir Funcionário" onclick="excluirFuncionario(${f.id})">
+                🗑️
+              </button>
+            </div>
+          </td>
+        </tr>
+      `;
+    }).join('');
+  }
+}
+
+// Troca o Funcionário Selecionado via Dropdown
+function aoTrocarFuncionarioPonto(val) {
+  if (val === 'novo') {
+    abrirModalNovoFuncionario();
+    return;
+  }
+  const id = parseInt(val, 10);
+  if (!isNaN(id)) {
+    selecionarFuncionarioPorId(id);
+  }
+}
+
+function selecionarFuncionarioPorId(id) {
+  funcionarioSelecionadoId = id;
+  carregarDadosFuncionarioParaFolha(id);
+  renderFuncionarios();
+}
+
+function carregarDadosFuncionarioParaFolha(id) {
+  const f = funcionarios.find(x => x.id === id);
+  if (!f) return;
+
+  const elNome = document.getElementById('func-nome');
+  const elCargo = document.getElementById('func-cargo');
+  const elTel = document.getElementById('func-tel');
+  const elDiaria = document.getElementById('func-diaria');
+  const elHoras = document.getElementById('func-horas-dia');
+  const elLbl = document.getElementById('lbl-colab-ativo-nome');
+
+  if (elNome) elNome.value = f.nome;
+  if (elCargo) elCargo.value = f.cargo;
+  if (elTel) elTel.value = f.tel || '';
+  if (elDiaria) elDiaria.value = f.diaria ? f.diaria.toFixed(2).replace('.', ',') : '160,00';
+  if (elHoras) elHoras.value = f.horasDia || 8;
+  if (elLbl) elLbl.textContent = f.nome;
+
+  recalcularValoresHoraFunc();
+}
+
+function atualizarNomeFuncionarioAtivo(nome) {
+  const f = funcionarios.find(x => x.id === funcionarioSelecionadoId);
+  if (f) {
+    f.nome = nome;
+    save(K.funcionarios, funcionarios);
+    const elLbl = document.getElementById('lbl-colab-ativo-nome');
+    if (elLbl) elLbl.textContent = nome;
+    renderFuncionarios();
+  }
+  atualizarTotaisPonto();
+}
+
+// REGISTRO DE PONTO ELETRÔNICO (1ª Entrada, Saída Almoço, Volta Almoço, Saída Final)
+function registrarBatidaPonto(tipo) {
+  let func = funcionarios.find(f => f.id === funcionarioSelecionadoId);
+  if (!func && funcionarios.length > 0) {
+    func = funcionarios[0];
+    funcionarioSelecionadoId = func.id;
+  }
+  if (!func) {
+    showToast('Cadastre um funcionário primeiro!', '⚠️');
+    abrirModalNovoFuncionario();
+    return;
+  }
+
+  const agora = new Date();
+  const horaStr = `${String(agora.getHours()).padStart(2, '0')}:${String(agora.getMinutes()).padStart(2, '0')}`;
+
+  // Atualiza status do funcionário
+  if (tipo === '1ª Entrada' || tipo === 'Volta Almoço') {
+    func.status = 'Presente';
+  } else if (tipo === 'Saída Almoço') {
+    func.status = 'Almoço';
+  } else if (tipo === 'Saída Final') {
+    func.status = 'Finalizado';
+  }
+  func.ultimoPonto = horaStr;
+  save(K.funcionarios, funcionarios);
+
+  // Preenche na folha semanal de ponto (dia correspondente de hoje: 0=Segunda até 6=Domingo)
+  const diaSemanaIdx = (agora.getDay() + 6) % 7;
+  if (dadosPontoSemanal[diaSemanaIdx]) {
+    if (tipo === '1ª Entrada') {
+      dadosPontoSemanal[diaSemanaIdx].entrada = horaStr;
+      dadosPontoSemanal[diaSemanaIdx].status = 'Presente';
+    } else if (tipo === 'Saída Final') {
+      dadosPontoSemanal[diaSemanaIdx].saida = horaStr;
+      dadosPontoSemanal[diaSemanaIdx].status = 'Presente';
+    }
+    gerarTabelaPontoSemanal();
+  }
+
+  renderFuncionarios();
+  showToast(`Ponto: ${tipo} registrada às ${horaStr} para ${func.nome}!`, '⏱️');
+}
+
+// MODAL CADASTRO / EDIÇÃO DE FUNCIONÁRIO
+function abrirModalNovoFuncionario() {
+  document.getElementById('modal-func-id').value = '';
+  document.getElementById('modal-func-titulo').innerHTML = '👷 Cadastro de Novo Funcionário';
+  document.getElementById('modal-func-nome').value = '';
+  document.getElementById('modal-func-tel').value = '';
+  document.getElementById('modal-func-email').value = '';
+  document.getElementById('modal-func-dept').value = 'Obras & Engenharia';
+  document.getElementById('modal-func-cargo').value = 'Pedreiro';
+  document.getElementById('modal-func-jornada').value = '44h/sem (8h/dia)';
+  document.getElementById('modal-func-diaria').value = '160,00';
+  document.getElementById('modal-func-salario').value = '3.520,00';
+  document.getElementById('modal-func-status').value = 'Presente';
+  document.getElementById('modal-func-obs').value = '';
+  document.getElementById('modal-box-cargo-outro').style.display = 'none';
+
+  document.getElementById('modal-funcionario').style.display = 'flex';
+  setTimeout(() => document.getElementById('modal-func-nome')?.focus(), 50);
+}
+
+function abrirModalLancamentoRapido() {
+  abrirModalNovoFuncionario();
+}
+
+function fecharModalFuncionario() {
+  document.getElementById('modal-funcionario').style.display = 'none';
+}
+
+function aoMudarCargoModal(cargo) {
+  const boxOutro = document.getElementById('modal-box-cargo-outro');
+  if (cargo === 'Outro') {
+    boxOutro.style.display = 'block';
+  } else {
+    boxOutro.style.display = 'none';
+  }
+
+  const tabelas = {
+    'Mestre de Obras': [220, 4840],
+    'Pedreiro': [160, 3520],
+    'Servente': [100, 2200],
+    'Armador': [170, 3740],
+    'Eletricista': [180, 3960],
+    'Encanador': [180, 3960],
+    'Pintor': [150, 3300],
+    'Gesseiro': [170, 3740],
+    'Arquiteta & Planejamento': [240, 5280],
+    'UI/UX & Design Digital': [236.36, 5200],
+    'Engenheiro Civil': [320, 7040]
+  };
+
+  if (tabelas[cargo]) {
+    document.getElementById('modal-func-diaria').value = tabelas[cargo][0].toFixed(2).replace('.', ',');
+    document.getElementById('modal-func-salario').value = formatMoney(tabelas[cargo][1]).replace('R$', '').trim();
+  }
+}
+
+function aoDigitarDiariaModal(val) {
+  const diaria = parseNum(val);
+  if (diaria > 0) {
+    const mensal = diaria * 22;
+    document.getElementById('modal-func-salario').value = formatMoney(mensal).replace('R$', '').trim();
+  }
+}
+
+function salvarFuncionarioModal() {
+  const nome = document.getElementById('modal-func-nome').value.trim();
+  const tel = document.getElementById('modal-func-tel').value.trim();
+  const email = document.getElementById('modal-func-email').value.trim();
+  const dept = document.getElementById('modal-func-dept').value;
+  let cargo = document.getElementById('modal-func-cargo').value;
+  if (cargo === 'Outro') {
+    const custom = document.getElementById('modal-func-cargo-custom').value.trim();
+    if (custom) cargo = custom;
+  }
+  const jornada = document.getElementById('modal-func-jornada').value;
+  const diaria = parseNum(document.getElementById('modal-func-diaria').value) || 160;
+  const salario = parseNum(document.getElementById('modal-func-salario').value) || (diaria * 22);
+  const status = document.getElementById('modal-func-status').value;
+  const obs = document.getElementById('modal-func-obs').value.trim();
+  const editId = document.getElementById('modal-func-id').value;
+
+  if (!nome) {
+    alert('⚠️ Informe o nome completo do funcionário.');
+    document.getElementById('modal-func-nome').focus();
+    return;
+  }
+
+  if (editId) {
+    // Editando existente
+    const idx = funcionarios.findIndex(f => f.id === parseInt(editId, 10));
+    if (idx !== -1) {
+      funcionarios[idx] = {
+        ...funcionarios[idx],
+        nome, tel, email, departamento: dept, cargo, jornada, diaria, salario, status, obs
+      };
+      showToast('Cadastro do funcionário atualizado!', '✅');
+    }
+  } else {
+    // Criando novo
+    const novoId = funcionarios.length > 0 ? Math.max(...funcionarios.map(f => f.id || 0)) + 1 : 1;
+    const novo = {
+      id: novoId,
+      nome, tel, email, departamento: dept, cargo, jornada,
+      horasDia: 8,
+      diaria, salario, status, obs,
+      ultimoPonto: '--:--'
+    };
+    funcionarios.push(novo);
+    funcionarioSelecionadoId = novoId;
+    showToast('Novo funcionário cadastrado com sucesso!', '👷');
+  }
+
+  save(K.funcionarios, funcionarios);
+  fecharModalFuncionario();
+  renderFuncionarios();
+  carregarDadosFuncionarioParaFolha(funcionarioSelecionadoId);
+}
+
+function editarFuncionario(id) {
+  const f = funcionarios.find(x => x.id === id);
+  if (!f) return;
+
+  document.getElementById('modal-func-id').value = f.id;
+  document.getElementById('modal-func-titulo').innerHTML = `✏️ Editar Funcionário: <span style="color:#fff;">${f.nome}</span>`;
+  document.getElementById('modal-func-nome').value = f.nome;
+  document.getElementById('modal-func-tel').value = f.tel || '';
+  document.getElementById('modal-func-email').value = f.email || '';
+  document.getElementById('modal-func-dept').value = f.departamento || 'Obras & Engenharia';
+
+  const selCargo = document.getElementById('modal-func-cargo');
+  const hasCargo = Array.from(selCargo.options).some(o => o.value === f.cargo);
+  if (hasCargo) {
+    selCargo.value = f.cargo;
+    document.getElementById('modal-box-cargo-outro').style.display = 'none';
+  } else {
+    selCargo.value = 'Outro';
+    document.getElementById('modal-box-cargo-outro').style.display = 'block';
+    document.getElementById('modal-func-cargo-custom').value = f.cargo;
+  }
+
+  document.getElementById('modal-func-jornada').value = f.jornada || '44h/sem (8h/dia)';
+  document.getElementById('modal-func-diaria').value = f.diaria ? f.diaria.toFixed(2).replace('.', ',') : '160,00';
+  document.getElementById('modal-func-salario').value = f.salario ? f.salario.toFixed(2).replace('.', ',') : '3.520,00';
+  document.getElementById('modal-func-status').value = f.status || 'Presente';
+  document.getElementById('modal-func-obs').value = f.obs || '';
+
+  document.getElementById('modal-funcionario').style.display = 'flex';
+}
+
+// ════════════════════════════════════════════════════════════════════
+// EXCLUIR FUNCIONÁRIO: REGRA CRÍTICA DO USUÁRIO:
+// "quando excluir nao precisar de mensagem de confirmaçao, quero que exclua ."
+// NENHUMA MENSAGEM OU POPUP DE CONFIRMAÇÃO É EXIBIDO! EXCLUI DIRETO!
+// ════════════════════════════════════════════════════════════════════
+function excluirFuncionario(id) {
+  funcionarios = funcionarios.filter(f => f.id !== id);
+  save(K.funcionarios, funcionarios);
+
+  if (funcionarioSelecionadoId === id) {
+    funcionarioSelecionadoId = funcionarios.length > 0 ? funcionarios[0].id : null;
+  }
+
+  renderFuncionarios();
+
+  if (funcionarioSelecionadoId) {
+    carregarDadosFuncionarioParaFolha(funcionarioSelecionadoId);
+  } else {
+    document.getElementById('func-nome').value = '';
+    document.getElementById('func-tel').value = '';
+    document.getElementById('func-diaria').value = '0,00';
+    const elLbl = document.getElementById('lbl-colab-ativo-nome');
+    if (elLbl) elLbl.textContent = 'Nenhum Selecionado';
+    atualizarTotaisPonto();
+  }
+
+  showToast('Funcionário excluído!', '🗑️');
+}
+
+// RELATÓRIO INDIVIDUAL DO FUNCIONÁRIO (IMPRIMIR / PDF)
+function imprimirRelatorioFuncionario(id) {
+  const f = funcionarios.find(x => x.id === id) || funcionarios[0];
+  if (!f) {
+    showToast('Nenhum funcionário cadastrado.', '⚠️');
+    return;
+  }
+
+  carregarDadosFuncionarioParaFolha(f.id);
+
+  const agora = new Date();
+  const dataHoje = agora.toLocaleDateString('pt-BR');
+  const horasTot = document.getElementById('ponto-total-horas')?.textContent || '0h 00min';
+  const diasTrab = document.getElementById('ponto-dias-trab')?.textContent || '0 dias';
+  const faltasTot = document.getElementById('ponto-total-faltas')?.textContent || '0 faltas';
+  const heTot = document.getElementById('ponto-total-he')?.textContent || '0h (R$ 0,00)';
+  const totalLiq = document.getElementById('ponto-total-liquido')?.textContent || 'R$ 0,00';
+
+  const html = `
+    <div style="background:#090e1c; border:1px solid rgba(59,130,246,0.3); border-radius:12px; padding:24px; color:#fff; font-family:var(--font);">
+      <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #60a5fa; padding-bottom:14px; margin-bottom:18px;">
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div style="width:50px; height:50px; border-radius:50%; border:2px solid var(--gold); overflow:hidden; background:#000;">
+            <img src="logo_sdconstrucoes_ltda.jpg" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div>
+            <h2 style="font-family:var(--font-display); font-size:19px; color:#fff; margin:0;">SD CONSTRUÇÕES LTDA</h2>
+            <div style="font-size:12px; color:var(--gold-light);">Engenharia, Obras & Serviços Especializados</div>
+          </div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:14px; font-weight:800; color:#60a5fa;">ESPELHO DE PONTO & FREQUÊNCIA</div>
+          <div style="font-size:11px; color:var(--text-muted);">Emissão: ${dataHoje}</div>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; background:#0d1424; padding:14px; border-radius:10px; margin-bottom:18px; border:1px solid var(--border);">
+        <div><strong style="color:var(--text-muted); font-size:11px; text-transform:uppercase; display:block;">Colaborador</strong><span style="font-size:14.5px; font-weight:800; color:#fff;">${f.nome}</span></div>
+        <div><strong style="color:var(--text-muted); font-size:11px; text-transform:uppercase; display:block;">Cargo / Função</strong><span style="font-size:14px; font-weight:700; color:#60a5fa;">${f.cargo}</span></div>
+        <div><strong style="color:var(--text-muted); font-size:11px; text-transform:uppercase; display:block;">Departamento</strong><span style="font-size:14px; font-weight:700; color:#fff;">${f.departamento || 'Obras & Engenharia'}</span></div>
+        <div><strong style="color:var(--text-muted); font-size:11px; text-transform:uppercase; display:block;">Jornada</strong><span style="font-size:14px; font-weight:700; color:#fff;">${f.jornada || '44h/sem (8h/dia)'}</span></div>
+        <div><strong style="color:var(--text-muted); font-size:11px; text-transform:uppercase; display:block;">Valor da Diária</strong><span style="font-size:14px; font-weight:800; color:var(--gold-light);">${formatMoney(f.diaria)}</span></div>
+        <div><strong style="color:var(--text-muted); font-size:11px; text-transform:uppercase; display:block;">Contato</strong><span style="font-size:14px; font-weight:700; color:#fff;">${f.tel || '-'}</span></div>
+      </div>
+
+      <h4 style="color:#60a5fa; margin-bottom:10px; font-size:14px; display:flex; align-items:center; gap:6px;">
+        📅 Registro Semanal de Horas & Frequência
+      </h4>
+      <table style="width:100%; border-collapse:collapse; font-size:12px; margin-bottom:18px; text-align:left;">
+        <thead>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.15); color:var(--text-muted);">
+            <th style="padding:8px 6px;">DIA DA SEMANA</th>
+            <th style="padding:8px 6px;">ENTRADA</th>
+            <th style="padding:8px 6px;">SAÍDA</th>
+            <th style="padding:8px 6px; text-align:center;">HORAS TRAB.</th>
+            <th style="padding:8px 6px;">SITUAÇÃO</th>
+            <th style="padding:8px 6px; text-align:center;">H. EXTRA</th>
+            <th style="padding:8px 6px; text-align:right;">TOTAL DO DIA</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${dadosPontoSemanal.map((d, i) => {
+            const hTrab = (d.horasTrabManual !== null && d.horasTrabManual !== undefined) ? d.horasTrabManual : calcularHorasTrabalhadas(d.entrada, d.saida);
+            const sub = document.getElementById('ponto-subtotal-' + i)?.value || 'R$ 0,00';
+            return `
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+                <td style="padding:8px 6px; font-weight:700;">${d.dia}</td>
+                <td style="padding:8px 6px;">${d.entrada || '--:--'}</td>
+                <td style="padding:8px 6px;">${d.saida || '--:--'}</td>
+                <td style="padding:8px 6px; text-align:center; color:#34d399; font-weight:700;">${formatarHoras(hTrab)}</td>
+                <td style="padding:8px 6px;">${d.status}</td>
+                <td style="padding:8px 6px; text-align:center; color:var(--gold-light); font-weight:700;">${d.horasExtras || 0}h</td>
+                <td style="padding:8px 6px; text-align:right; font-weight:800;">${sub}</td>
+              </tr>
+            `;
+          }).join('')}
+        </tbody>
+      </table>
+
+      <!-- Resumo Financeiro -->
+      <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:10px; background:rgba(59,130,246,0.08); padding:12px 16px; border-radius:10px; margin-bottom:20px; border:1px solid rgba(59,130,246,0.25);">
+        <div><span style="font-size:11px; color:var(--text-muted); display:block;">Dias Trabalhados:</span><strong style="color:#60a5fa;">${diasTrab}</strong></div>
+        <div><span style="font-size:11px; color:var(--text-muted); display:block;">Horas Totais:</span><strong style="color:#34d399;">${horasTot}</strong></div>
+        <div><span style="font-size:11px; color:var(--text-muted); display:block;">Horas Extras:</span><strong style="color:var(--gold-light);">${heTot}</strong></div>
+        <div><span style="font-size:11px; color:var(--text-muted); display:block;">Faltas:</span><strong style="color:#f87171;">${faltasTot}</strong></div>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(16,185,129,0.15); border:1.5px solid rgba(16,185,129,0.4); border-radius:10px; padding:14px 20px; margin-bottom:30px;">
+        <span style="font-size:15px; font-weight:800;">VALOR LÍQUIDO A PAGAR AO COLABORADOR:</span>
+        <span style="font-size:22px; font-weight:900; color:var(--green-light);">${totalLiq}</span>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:50px; margin-top:40px; text-align:center;">
+        <div>
+          <div style="border-top:1.5px solid #fff; padding-top:6px; font-size:12.5px; font-weight:800;">SD CONSTRUÇÕES LTDA</div>
+          <div style="font-size:11px; color:var(--text-muted);">Assinatura do Responsável Legal</div>
+        </div>
+        <div>
+          <div style="border-top:1.5px solid #fff; padding-top:6px; font-size:12.5px; font-weight:800;">${f.nome.toUpperCase()}</div>
+          <div style="font-size:11px; color:var(--text-muted);">Assinatura do Colaborador</div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('modal-relatorio-conteudo').innerHTML = html;
+  document.getElementById('modal-relatorio-funcionario').style.display = 'flex';
+}
+
+function fecharModalRelatorio() {
+  document.getElementById('modal-relatorio-funcionario').style.display = 'none';
+}
+
+// IMPRIMIR RELATÓRIO DO QUADRO GERAL DA EQUIPE
+function imprimirRelatorioGeral() {
+  const agora = new Date();
+  const dataHoje = agora.toLocaleDateString('pt-BR');
+
+  const html = `
+    <div style="background:#090e1c; border:1px solid rgba(59,130,246,0.3); border-radius:12px; padding:24px; color:#fff; font-family:var(--font);">
+      <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid var(--gold); padding-bottom:14px; margin-bottom:18px;">
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div style="width:50px; height:50px; border-radius:50%; border:2px solid var(--gold); overflow:hidden; background:#000;">
+            <img src="logo_sdconstrucoes_ltda.jpg" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div>
+            <h2 style="font-family:var(--font-display); font-size:19px; color:#fff; margin:0;">SD CONSTRUÇÕES LTDA</h2>
+            <div style="font-size:12px; color:var(--gold-light);">Quadro Geral de Funcionários & Controle de Equipe</div>
+          </div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:14px; font-weight:800; color:var(--gold-light);">RELATÓRIO GERAL DA EQUIPE</div>
+          <div style="font-size:11px; color:var(--text-muted);">Data: ${dataHoje}</div>
+        </div>
+      </div>
+
+      <table style="width:100%; border-collapse:collapse; font-size:12px; margin-bottom:24px; text-align:left;">
+        <thead>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.15); color:var(--text-muted);">
+            <th style="padding:10px 8px;">COLABORADOR</th>
+            <th style="padding:10px 8px;">CARGO</th>
+            <th style="padding:10px 8px;">DEPARTAMENTO</th>
+            <th style="padding:10px 8px;">JORNADA</th>
+            <th style="padding:10px 8px;">VALOR DIÁRIA</th>
+            <th style="padding:10px 8px;">SALÁRIO ESTIMADO</th>
+            <th style="padding:10px 8px; text-align:center;">STATUS</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${funcionarios.map(f => `
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+              <td style="padding:8px 6px;">
+                <strong style="color:#fff;">${f.nome}</strong>
+                <div style="font-size:11px; color:var(--text-muted);">${f.tel || '-'}</div>
+              </td>
+              <td style="padding:8px 6px; color:#60a5fa; font-weight:700;">${f.cargo}</td>
+              <td style="padding:8px 6px;">${f.departamento || 'Obras'}</td>
+              <td style="padding:8px 6px;">${f.jornada || '40h/sem'}</td>
+              <td style="padding:8px 6px; color:var(--gold-light); font-weight:700;">${formatMoney(f.diaria)}</td>
+              <td style="padding:8px 6px; font-weight:800;">${f.salario ? formatMoney(f.salario) : formatMoney(f.diaria * 22)}</td>
+              <td style="padding:8px 6px; text-align:center;">
+                <span style="padding:3px 8px; border-radius:999px; font-size:11px; font-weight:700; background:rgba(16,185,129,0.15); color:#34d399;">
+                  ${f.status || 'Ativo'}
+                </span>
+              </td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(59,130,246,0.1); padding:14px 20px; border-radius:10px; margin-bottom:30px; border:1px solid rgba(59,130,246,0.3);">
+        <span style="font-size:14px; font-weight:700;">TOTAL DE COLABORADORES ATIVOS:</span>
+        <span style="font-size:18px; font-weight:900; color:#60a5fa;">${funcionarios.length} PROFISSIONAIS</span>
+      </div>
+
+      <div style="text-align:center; margin-top:40px;">
+        <div style="display:inline-block; border-top:1.5px solid #fff; width:280px; padding-top:6px; font-size:12.5px; font-weight:800;">
+          SD CONSTRUÇÕES LTDA
+        </div>
+        <div style="font-size:11px; color:var(--text-muted);">Diretoria & Recursos Humanos</div>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('modal-relatorio-conteudo').innerHTML = html;
+  document.getElementById('modal-relatorio-funcionario').style.display = 'flex';
+}
 
 // Limpa o campo imediatamente ao focar para facilitar a digitação sem precisar apagar
 function limparAoFocar(el) {
@@ -2624,7 +4642,10 @@ function imprimirPdfPonto() {
 }
 
 function salvarFolhaPonto() {
-  alert('✅ Registro de Ponto do Funcionário salvo com sucesso!');
+  if (funcionarioSelecionadoId) {
+    save('sdc_ponto_semanal_' + funcionarioSelecionadoId, dadosPontoSemanal);
+  }
+  showToast('Registro de Ponto do Funcionário salvo com sucesso!', '💾');
 }
 
 // ══════════════════════════════════════════════
@@ -3832,5 +5853,208 @@ function renderUsuarios() {
   `).join('');
 }
 </script>
+
+<!-- ================= MODAIS DO SISTEMA DE PONTO (IMAGENS 1 E 2) ================= -->
+<!-- Modal: Novo Funcionário -->
+<div id="modal-new-employee" class="modal-backdrop" style="display:none;" onclick="if(event.target===this)PontoModule.closeModal('modal-new-employee')">
+  <div class="modal-window" style="max-width:540px;" onclick="event.stopPropagation()">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+      <h3 style="font-family:var(--font-display); font-size:18px; font-weight:800; color:#fff; display:flex; align-items:center; gap:8px;">
+        <i data-lucide="user-plus" style="width:20px; color:#38bdf8;"></i> Cadastrar Novo Funcionário
+      </h3>
+      <button class="btn-close-modal" onclick="PontoModule.closeModal('modal-new-employee')">✕</button>
+    </div>
+    <form id="form-new-employee" onsubmit="PontoModule.addNewEmployee(event)">
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <div class="form-group">
+          <label>Nome Completo *</label>
+          <input type="text" name="emp-name" class="form-control" required placeholder="Ex: samuel ou davi" />
+        </div>
+        <div class="grid-2">
+          <div class="form-group">
+            <label>Cargo / Função *</label>
+            <input type="text" name="emp-role" class="form-control" required placeholder="Ex: gerente" />
+          </div>
+          <div class="form-group">
+            <label>Departamento</label>
+            <input type="text" name="emp-dept" class="form-control" placeholder="Ex: Operações" />
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="form-group">
+            <label>Carga Horária Semanal</label>
+            <input type="text" name="emp-hours" class="form-control" value="40h/sem" />
+          </div>
+          <div class="form-group">
+            <label>Salário Base (R$)</label>
+            <input type="number" step="any" name="emp-salary" class="form-control" placeholder="5000" />
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="form-group">
+            <label>Telefone / WhatsApp</label>
+            <input type="text" name="emp-phone" class="form-control" placeholder="(85) 99999-9999" />
+          </div>
+          <div class="form-group">
+            <label>E-mail</label>
+            <input type="email" name="emp-email" class="form-control" placeholder="colaborador@sdconstrucoes.com" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Status Inicial</label>
+          <select name="emp-status" class="form-control">
+            <option value="presente">● Presente</option>
+            <option value="almoco">● Em Almoço</option>
+            <option value="folga">● Folga</option>
+            <option value="falta">● Falta</option>
+            <option value="falta_doente">● Falta Doente</option>
+          </select>
+        </div>
+      </div>
+      <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:18px;">
+        <button type="button" class="btn-action-secondary" onclick="PontoModule.closeModal('modal-new-employee')">Cancelar</button>
+        <button type="submit" class="btn-action-primary" style="background:#0284c7; color:#fff; border:none; padding:8px 18px; border-radius:8px; font-weight:700; cursor:pointer;">
+          Cadastrar Funcionário
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Modal: Editar Funcionário -->
+<div id="modal-edit-employee" class="modal-backdrop" style="display:none;" onclick="if(event.target===this)PontoModule.closeModal('modal-edit-employee')">
+  <div class="modal-window" style="max-width:540px;" onclick="event.stopPropagation()">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+      <h3 style="font-family:var(--font-display); font-size:18px; font-weight:800; color:#fff; display:flex; align-items:center; gap:8px;">
+        <i data-lucide="edit" style="width:20px; color:#38bdf8;"></i> Editar Funcionário
+      </h3>
+      <button class="btn-close-modal" onclick="PontoModule.closeModal('modal-edit-employee')">✕</button>
+    </div>
+    <form id="form-edit-employee" onsubmit="PontoModule.updateEmployee(event)">
+      <input type="hidden" name="edit-emp-id" id="edit-emp-id" />
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <div class="form-group">
+          <label>Nome Completo *</label>
+          <input type="text" name="edit-emp-name" id="edit-emp-name" class="form-control" required />
+        </div>
+        <div class="grid-2">
+          <div class="form-group">
+            <label>Cargo / Função *</label>
+            <input type="text" name="edit-emp-role" id="edit-emp-role" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label>Departamento</label>
+            <input type="text" name="edit-emp-dept" id="edit-emp-dept" class="form-control" />
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="form-group">
+            <label>Carga Horária Semanal</label>
+            <input type="text" name="edit-emp-hours" id="edit-emp-hours" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label>Salário Base (R$)</label>
+            <input type="number" step="any" name="edit-emp-salary" id="edit-emp-salary" class="form-control" />
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="form-group">
+            <label>Telefone / WhatsApp</label>
+            <input type="text" name="edit-emp-phone" id="edit-emp-phone" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label>E-mail</label>
+            <input type="email" name="edit-emp-email" id="edit-emp-email" class="form-control" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Status Presença</label>
+          <select name="edit-emp-status" id="edit-emp-status" class="form-control">
+            <option value="presente">● Presente</option>
+            <option value="almoco">● Em Almoço</option>
+            <option value="folga">● Folga</option>
+            <option value="falta">● Falta</option>
+            <option value="falta_doente">● Falta Doente</option>
+          </select>
+        </div>
+      </div>
+      <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:18px;">
+        <button type="button" class="btn-action-secondary" onclick="PontoModule.closeModal('modal-edit-employee')">Cancelar</button>
+        <button type="submit" class="btn-action-primary" style="background:#0284c7; color:#fff; border:none; padding:8px 18px; border-radius:8px; font-weight:700; cursor:pointer;">
+          Salvar Alterações
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Modal: Editar Registro de Ponto -->
+<div id="modal-edit-ponto" class="modal-backdrop" style="display:none;" onclick="if(event.target===this)PontoModule.closeModal('modal-edit-ponto')">
+  <div class="modal-window" style="max-width:540px;" onclick="event.stopPropagation()">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+      <h3 style="font-family:var(--font-display); font-size:18px; font-weight:800; color:#fff; display:flex; align-items:center; gap:8px;">
+        <i data-lucide="clock" style="width:20px; color:#38bdf8;"></i> Editar Registro de Ponto
+      </h3>
+      <button class="btn-close-modal" onclick="PontoModule.closeModal('modal-edit-ponto')">✕</button>
+    </div>
+    <form id="form-edit-ponto" onsubmit="PontoModule.updatePontoLog(event)">
+      <input type="hidden" name="edit-pt-id" id="edit-pt-id" />
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <div class="form-group">
+          <label>Colaborador</label>
+          <input type="text" id="edit-pt-emp-name" class="form-control" readonly style="opacity:0.85; background:rgba(255,255,255,0.03);" />
+        </div>
+        <div class="grid-2">
+          <div class="form-group">
+            <label>Data</label>
+            <input type="date" name="edit-pt-date" id="edit-pt-date" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label>Status / Resumo</label>
+            <select name="edit-pt-status" id="edit-pt-status" class="form-control">
+              <option value="Completo">Completo</option>
+              <option value="Em andamento">Em andamento</option>
+              <option value="Em aberto">Em aberto</option>
+              <option value="Almoço">Almoço</option>
+              <option value="Falta">Falta</option>
+              <option value="Falta Doente">Falta Doente</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="form-group">
+            <label>1ª Entrada</label>
+            <input type="text" name="edit-pt-in1" id="edit-pt-in1" class="form-control" placeholder="08:00" />
+          </div>
+          <div class="form-group">
+            <label>Saída Almoço</label>
+            <input type="text" name="edit-pt-out1" id="edit-pt-out1" class="form-control" placeholder="12:00" />
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="form-group">
+            <label>Volta Almoço</label>
+            <input type="text" name="edit-pt-in2" id="edit-pt-in2" class="form-control" placeholder="13:00" />
+          </div>
+          <div class="form-group">
+            <label>Saída Final</label>
+            <input type="text" name="edit-pt-out2" id="edit-pt-out2" class="form-control" placeholder="17:00" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Total Horas (Exibição)</label>
+          <input type="text" name="edit-pt-total" id="edit-pt-total" class="form-control" placeholder="Ex: 08h 00m (Concluído)" />
+        </div>
+      </div>
+      <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:18px;">
+        <button type="button" class="btn-action-secondary" onclick="PontoModule.closeModal('modal-edit-ponto')">Cancelar</button>
+        <button type="submit" class="btn-action-primary" style="background:#0284c7; color:#fff; border:none; padding:8px 18px; border-radius:8px; font-weight:700; cursor:pointer;">
+          Atualizar Ponto
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
 </body>
 </html>
