@@ -1155,6 +1155,12 @@
       border: 1px solid rgba(244, 63, 94, 0.4);
       color: #fb7185;
     }
+    
+    .status-falta-justificada {
+      background: rgba(59, 130, 246, 0.15) !important;
+      border: 1px solid rgba(59, 130, 246, 0.4) !important;
+      color: #60a5fa !important;
+    }
     .status-falta-doente {
       background: rgba(168, 85, 247, 0.15);
       border: 1px solid rgba(168, 85, 247, 0.4);
@@ -2222,13 +2228,9 @@
               <span style="font-size:20px; font-weight:900; line-height:1; display:flex; align-items:center; gap:4px;"><i data-lucide="log-out" style="width:20px; height:20px;"></i>[➔</span>
               <span>Saída Final</span>
             </button>
-            <button class="btn-ponto-action btn-ponto-falta" onclick="PontoModule.registerPontoAction('falta')" title="Registrar Falta">
+            <button class="btn-ponto-action btn-ponto-falta" onclick="PontoModule.openModalFalta()" title="Registrar Falta ou Justificativa">
               <span style="font-size:20px; line-height:1; display:flex; align-items:center; gap:4px;"><i data-lucide="user-x" style="width:20px; height:20px;"></i>👤</span>
               <span>Falta</span>
-            </button>
-            <button class="btn-ponto-action btn-ponto-falta-doente" onclick="PontoModule.registerPontoAction('falta_doente')" title="Registrar Falta Doente (Atestado)">
-              <span style="font-size:20px; line-height:1; display:flex; align-items:center; gap:4px;"><i data-lucide="activity" style="width:20px; height:20px;"></i>📈</span>
-              <span>Falta Doente</span>
             </button>
           </div>
         </div>
@@ -5055,7 +5057,7 @@ function renderUsuarios() {
             <option value="almoco">● Em Almoço</option>
             <option value="folga">● Folga</option>
             <option value="falta">● Falta</option>
-            <option value="falta_doente">● Falta Doente</option>
+            <option value="falta_justificada">● Falta Justificada</option>
           </select>
         </div>
       </div>
@@ -5122,7 +5124,7 @@ function renderUsuarios() {
             <option value="almoco">● Em Almoço</option>
             <option value="folga">● Folga</option>
             <option value="falta">● Falta</option>
-            <option value="falta_doente">● Falta Doente</option>
+            <option value="falta_justificada">● Falta Justificada</option>
           </select>
         </div>
       </div>
@@ -5165,7 +5167,7 @@ function renderUsuarios() {
               <option value="Em aberto">Em aberto</option>
               <option value="Almoço">Almoço</option>
               <option value="Falta">Falta</option>
-              <option value="Falta Doente">Falta Doente</option>
+              <option value="Falta Justificada">Falta Justificada</option>
             </select>
           </div>
         </div>
@@ -5204,6 +5206,70 @@ function renderUsuarios() {
   </div>
 </div>
 
+
+
+<!-- Modal: Registrar Falta com Opção de Justificar -->
+<div id="modal-registrar-falta" class="modal-backdrop" style="display:none;" onclick="if(event.target===this)PontoModule.closeModal('modal-registrar-falta')">
+  <div class="modal-window" style="max-width:540px; border-color:rgba(239,68,68,0.4);" onclick="event.stopPropagation()">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:12px;">
+      <h3 style="font-family:var(--font-display); font-size:18px; font-weight:800; color:#fff; display:flex; align-items:center; gap:8px;">
+        <span style="font-size:22px;">👤</span> Registrar Falta / Justificativa
+      </h3>
+      <button class="btn-close-modal" onclick="PontoModule.closeModal('modal-registrar-falta')">✕</button>
+    </div>
+    
+    <div style="background:rgba(239,68,68,0.08); border:1px solid rgba(239,68,68,0.25); border-radius:10px; padding:12px 14px; margin-bottom:16px; display:flex; align-items:center; justify-content:space-between;">
+      <div>
+        <div style="font-size:11px; font-weight:800; color:#fca5a5; text-transform:uppercase; letter-spacing:0.06em;">Colaborador Selecionado</div>
+        <div id="falta-emp-nome-display" style="font-size:16px; font-weight:800; color:#fff; margin-top:2px;">samuel</div>
+      </div>
+      <span id="falta-emp-role-display" style="font-size:12px; color:#94a3b8; background:rgba(255,255,255,0.06); padding:4px 10px; border-radius:999px;">gerente</span>
+    </div>
+
+    <form id="form-registrar-falta" onsubmit="PontoModule.confirmarRegistroFalta(event)">
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        <div class="grid-2">
+          <div class="form-group">
+            <label style="color:#cbd5e1; font-weight:700; font-size:12px;">Data da Falta *</label>
+            <input type="date" id="falta-data" class="form-control" required style="background:#080d1a; border:1px solid rgba(255,255,255,0.15); color:#fff;" />
+          </div>
+          <div class="form-group">
+            <label style="color:#cbd5e1; font-weight:700; font-size:12px;">Tipo de Falta *</label>
+            <select id="falta-tipo" class="form-control" style="background:#080d1a; border:1.5px solid rgba(239,68,68,0.4); color:#fff; font-weight:700;" onchange="PontoModule.onFaltaTipoChange(this.value)">
+              <option value="injustificada">❌ Falta Não Justificada (Desconto)</option>
+              <option value="atestado">🩺 Falta Justificada - Atestado Médico</option>
+              <option value="justificada_pessoal">📝 Falta Justificada - Motivo Pessoal / Acordo</option>
+              <option value="justificada_outros">⚖️ Falta Justificada - Outros Motivos</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label style="color:#cbd5e1; font-weight:700; font-size:12px;">Justificativa / Motivo / Observação</label>
+          <input type="text" id="falta-motivo" class="form-control" placeholder="Ex: Apresentou atestado médico de 1 dia, consulta com especialista..." style="background:#080d1a; border:1px solid rgba(255,255,255,0.15); color:#fff;" />
+          <div style="font-size:11px; color:#94a3b8; margin-top:4px;">Deixe registrado o motivo ou número do atestado para controle interno e espelho de ponto.</div>
+        </div>
+
+        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:12px 14px;">
+          <label style="display:flex; align-items:center; gap:10px; cursor:pointer; font-size:13px; font-weight:700; color:#f1f5f9; margin:0;">
+            <input type="checkbox" id="falta-abonar" style="width:18px; height:18px; cursor:pointer; accent-color:#10b981;" />
+            <span>Abonar remuneração deste dia (não descontar do salário)</span>
+          </label>
+          <div id="falta-abonar-desc" style="font-size:11px; color:#94a3b8; margin-top:4px; margin-left:28px;">
+            Faltas não justificadas descontam o dia. Faltas com atestado ou justificadas são abonadas.
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:20px; border-top:1px solid rgba(255,255,255,0.08); padding-top:14px;">
+        <button type="button" class="btn-action-secondary" onclick="PontoModule.closeModal('modal-registrar-falta')">Cancelar</button>
+        <button type="submit" class="btn-action-primary" style="background:linear-gradient(135deg, #ef4444, #dc2626); color:#fff; border:none; padding:10px 22px; border-radius:8px; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(239,68,68,0.35);">
+          💾 Salvar Registro de Falta
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
 
 <script>
 // ════════════════════════════════════════════════════════════════════
@@ -5456,7 +5522,7 @@ var PontoModule = {
       { val: 'almoco', label: 'Em Almoço', class: 'status-almoco' },
       { val: 'folga', label: 'Folga', class: 'status-folga' },
       { val: 'falta', label: 'Falta', class: 'status-falta' },
-      { val: 'falta_doente', label: 'Falta Doente', class: 'status-falta-doente' }
+      { val: 'falta_justificada', label: 'Falta Justificada', class: 'status-falta-justificada' }
     ];
 
     const contentHtml = (!emps.length) ? '<tr><td colspan="7" style="text-align:center; padding: 24px; color: var(--text-muted);">Nenhum funcionário cadastrado.</td></tr>' : emps.map(emp => {
@@ -5541,11 +5607,24 @@ var PontoModule = {
         in1Display = `<span class="status-pill status-falta" style="font-size: 0.74rem; padding: 2px 8px;">❌ FALTA</span>`;
         tempoDisplay = `<span class="status-pill status-falta" style="font-size: 0.74rem; padding: 2px 8px;">00h 00m (Falta)</span>`;
         valorDisplay = `<span style="color: #f43f5e; font-weight: 700;">R$ 0,00</span> <span style="font-size: 0.72rem; color: #f43f5e;">(Desconto)</span>`;
-      } else if (log.status === 'Falta Doente' || log.in1 === 'ATESTADO') {
-        in1Display = `<span class="status-pill status-falta-doente" style="font-size: 0.74rem; padding: 2px 8px;">🩺 ATESTADO</span>`;
-        tempoDisplay = `<span class="status-pill status-falta-doente" style="font-size: 0.74rem; padding: 2px 8px;">Atestado Médico</span>`;
-        const valorAbonado = valorHora * 8;
-        valorDisplay = `<span style="color: #c084fc; font-weight: 700;">${this.formatMoney(valorAbonado)}</span> <span style="font-size: 0.72rem; color: #c084fc;">(Abonado)</span>`;
+      } else if (log.status === 'Falta Justificada' || log.status === 'Falta Doente' || log.in1 === 'ATESTADO' || log.in1 === 'JUSTIFICADA') {
+        const isAtestado = (log.in1 === 'ATESTADO' || (log.total || '').toLowerCase().includes('atestado') || log.status === 'Falta Doente');
+        const badgeLabel = isAtestado ? '🩺 ATESTADO' : '📋 JUSTIFICADA';
+        in1Display = `<span class="status-pill status-falta-justificada" style="font-size: 0.74rem; padding: 2px 8px;">${badgeLabel}</span>`;
+        
+        let descTotal = log.total || (isAtestado ? 'Atestado Médico' : 'Falta Justificada');
+        if (log.justificativa) {
+          tempoDisplay = `<div><span class="status-pill status-falta-justificada" style="font-size: 0.74rem; padding: 2px 8px;">${descTotal}</span><div style="font-size: 0.72rem; color: #94a3b8; margin-top:3px; font-style:italic;">💬 ${log.justificativa}</div></div>`;
+        } else {
+          tempoDisplay = `<span class="status-pill status-falta-justificada" style="font-size: 0.74rem; padding: 2px 8px;">${descTotal}</span>`;
+        }
+
+        if (log.abonado !== false) {
+          const valorAbonado = valorHora * 8;
+          valorDisplay = `<span style="color: #34d399; font-weight: 700;">${this.formatMoney(valorAbonado)}</span> <span style="font-size: 0.72rem; color: #34d399;">(Abonado)</span>`;
+        } else {
+          valorDisplay = `<span style="color: #f43f5e; font-weight: 700;">R$ 0,00</span> <span style="font-size: 0.72rem; color: #f43f5e;">(Desconto)</span>`;
+        }
       } else if (workedMins > 0) {
         tempoDisplay = `<span class="badge-count" style="font-size: 0.82rem; padding: 3px 10px; background: rgba(6, 182, 212, 0.15); border: 1px solid rgba(6,182,212,0.4); color: #38bdf8; font-weight: 700; border-radius:9999px;">${this.formatMinutesToHM(workedMins)}</span>`;
         valorDisplay = (sal === 0) ? `<span style="color: var(--text-muted); font-size: 0.78rem;">Calculando... (${this.formatMoney(0)}/h)</span>` : `<div><b style="color: #34d399; font-size: 0.9rem;">${this.formatMoney(valorTrabalhado)}</b><div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 500;">(${this.formatMoney(valorHora)}/h)</div></div>`;
@@ -5679,7 +5758,7 @@ var PontoModule = {
     const emp = emps.find(e => e.id === empId);
     if (!emp) return;
 
-    const cycle = ['presente', 'almoco', 'folga', 'falta', 'falta_doente'];
+    const cycle = ['presente', 'almoco', 'folga', 'falta', 'falta_justificada'];
     const idx = cycle.indexOf(emp.status);
     const nextStatus = idx === -1 ? 'presente' : cycle[(idx + 1) % cycle.length];
     this.setStatus(empId, nextStatus);
@@ -5698,11 +5777,11 @@ var PontoModule = {
       almoco: 'Em Almoço',
       folga: 'Folga',
       falta: 'Falta',
-      falta_doente: 'Falta Doente'
+      falta_justificada: 'Falta Justificada'
     };
     if (typeof showToast === 'function') showToast(`Status de ${emp.name} alterado para ${labels[newStatus] || newStatus}!`, 'ℹ️');
 
-    if (newStatus === 'falta' || newStatus === 'falta_doente') {
+    if (newStatus === 'falta' || newStatus === 'falta_justificada') {
       const now = new Date();
       const todayStr = now.toISOString().split('T')[0];
       const logs = this.getPontoLogs();
@@ -5845,7 +5924,7 @@ var PontoModule = {
 
     this.saveEmployees(emps);
 
-    if (status !== oldStatus && (status === 'falta' || status === 'falta_doente')) {
+    if (status !== oldStatus && (status === 'falta' || status === 'falta_justificada')) {
       this.setStatus(id, status);
     }
 
@@ -5938,7 +6017,7 @@ var PontoModule = {
     const workedMins = this.calculateWorkedMinutes(log.in1, log.out1, log.in2, log.out2);
     const tempoFmt = (log.status === 'Falta' || log.in1 === 'FALTA') 
       ? '00h 00m (Falta Injustificada)' 
-      : ((log.status === 'Falta Doente' || log.in1 === 'ATESTADO') ? 'Atestado Médico (Falta Justificada)' : this.formatMinutesToHM(workedMins));
+      : ((log.status === 'Falta Justificada' || log.status === 'Falta Doente' || log.in1 === 'ATESTADO' || log.in1 === 'JUSTIFICADA') ? (log.total || 'Falta Justificada') : this.formatMinutesToHM(workedMins));
 
     const sal = emp ? emp.salary : 0;
     const hoursStr = emp ? emp.hours : '40h/sem';
@@ -5947,8 +6026,8 @@ var PontoModule = {
     let valorStr = this.formatMoney(valorTrabalhado);
     if (log.status === 'Falta' || log.in1 === 'FALTA') {
       valorStr = 'R$ 0,00 (Desconto do dia)';
-    } else if (log.status === 'Falta Doente' || log.in1 === 'ATESTADO') {
-      valorStr = `${this.formatMoney(valorHora * 8)} (Dia Abonado)`;
+    } else if (log.status === 'Falta Justificada' || log.status === 'Falta Doente' || log.in1 === 'ATESTADO' || log.in1 === 'JUSTIFICADA') {
+      valorStr = (log.abonado !== false) ? `${this.formatMoney(valorHora * 8)} (Dia Abonado)` : 'R$ 0,00 (Desconto do dia)';
     }
 
     const parts = (log.date || '').split('-');
