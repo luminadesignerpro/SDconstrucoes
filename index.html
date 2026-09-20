@@ -1232,12 +1232,217 @@
       background: rgba(59, 130, 246, 0.6);
     }
 
+  
+    /* ══════════════════════════════════════════════ */
+    /* ESTILOS DE IMPRESSÃO & GERAÇÃO DE PDF OFICIAL   */
+    /* ══════════════════════════════════════════════ */
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 10mm 12mm 10mm 12mm;
+      }
+      
+      html, body {
+        background: #ffffff !important;
+        color: #0f172a !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+        font-family: 'Plus Jakarta Sans', Arial, sans-serif !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      /* Oculta layout do app: sidebar, topbar, cards de edição, botões, modais */
+      .sidebar,
+      .topbar,
+      header.topbar,
+      aside.sidebar,
+      .panel-view,
+      .glass-card,
+      button,
+      .btn-action-secondary,
+      .btn-green-whats,
+      .btn-dark-pdf,
+      .btn-gold-save,
+      .chips-row,
+      .sidebar-card-summary,
+      .sidebar-user-card,
+      .modal-backdrop,
+      .toast,
+      .particles,
+      .brand-header,
+      .nav-list,
+      .nav-group-title,
+      .btn-close-modal,
+      .btn-icon-tbl,
+      .tbl-btn-del {
+        display: none !important;
+      }
+
+      .app-layout {
+        display: block !important;
+      }
+
+      .main-wrapper {
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #ffffff !important;
+        overflow: visible !important;
+        min-height: auto !important;
+      }
+
+      /* Quando estiver imprimindo orçamento de obra */
+      body.imprimindo-orcamento #orcamento-folha-impressao-a4,
+      #orcamento-folha-impressao-a4.active-print {
+        display: block !important;
+        visibility: visible !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        background: #ffffff !important;
+        color: #0f172a !important;
+        box-shadow: none !important;
+        border: none !important;
+      }
+
+      /* Quando estiver imprimindo serviço terceirizado */
+      body.imprimindo-terceirizado #documento-pdf-a4 {
+        display: block !important;
+        visibility: visible !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        background: #ffffff !important;
+        color: #0f172a !important;
+        box-shadow: none !important;
+        border: none !important;
+      }
+    }
+
   </style>
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
 <div class="app-layout">
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- FOLHA OFICIAL A4 DE ORÇAMENTO DE OBRAS (PARA IMPRESSÃO / PDF) -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <div id="orcamento-folha-impressao-a4" style="display:none; background:#ffffff; color:#0f172a; padding:18px 24px; font-family:'Plus Jakarta Sans', Arial, sans-serif; font-size:11.5px; line-height:1.5;">
+
+    <!-- CABEÇALHO DA PROPOSTA COMERCIAL -->
+    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:3px solid #b45309; padding-bottom:12px; margin-bottom:14px;">
+      <div style="display:flex; align-items:center; gap:14px;">
+        <img src="logo_sdconstrucoes_ltda.jpg?v=7" alt="Logo SD Construções" style="width:68px; height:68px; border-radius:50%; border:2px solid #b45309; object-fit:cover;" onerror="this.src='logo.jpg'">
+        <div>
+          <div style="font-size:22px; font-weight:900; color:#0f172a; letter-spacing:-0.02em;">SD CONSTRUÇÕES LTDA</div>
+          <div style="font-size:11px; font-weight:700; color:#b45309; text-transform:uppercase; letter-spacing:0.05em;">Engenharia, Gestão de Obras & Serviços Terceirizados</div>
+          <div style="font-size:11px; color:#475569; margin-top:2px;">Itaitinga - CE · WhatsApp: (85) 99611-9824</div>
+        </div>
+      </div>
+      <div style="text-align:right;">
+        <div style="display:inline-block; background:#fef3c7; border:1px solid #f59e0b; color:#92400e; font-size:11px; font-weight:800; text-transform:uppercase; padding:3px 10px; border-radius:999px; margin-bottom:4px;">
+          Proposta Comercial
+        </div>
+        <div style="font-size:20px; font-weight:900; color:#0f172a;" id="orc-print-num">#0001</div>
+        <div style="font-size:11px; color:#64748b;">Emissão: <strong id="orc-print-data" style="color:#0f172a;">20/09/2026</strong></div>
+        <div style="font-size:10px; color:#64748b;">Validade: <strong>15 dias</strong></div>
+      </div>
+    </div>
+
+    <!-- DADOS DO CLIENTE & OBRA -->
+    <div style="background:#f8fafc; border:1.5px solid #e2e8f0; border-radius:8px; padding:12px 16px; margin-bottom:14px;">
+      <div style="font-size:11px; font-weight:800; text-transform:uppercase; color:#b45309; margin-bottom:6px; letter-spacing:0.04em;">
+        📍 Dados do Cliente & Endereço da Obra
+      </div>
+      <div style="display:grid; grid-template-columns:2fr 1fr; gap:8px 16px; font-size:11.5px;">
+        <div><strong>Cliente / Condomínio:</strong> <span id="orc-print-cliente" style="color:#0f172a; font-weight:700;">-</span></div>
+        <div><strong>CPF / CNPJ:</strong> <span id="orc-print-cnpj">-</span></div>
+        <div><strong>WhatsApp / Telefone:</strong> <span id="orc-print-tel">-</span></div>
+        <div><strong>Bairro / Cidade:</strong> <span id="orc-print-bairro">-</span></div>
+        <div style="grid-column: span 2;"><strong>Endereço da Obra:</strong> <span id="orc-print-end">-</span></div>
+        <div style="grid-column: span 2; border-top:1px dashed #cbd5e1; padding-top:4px; margin-top:2px;">
+          <strong>Consultor / Vendedor:</strong> <span id="orc-print-vendedor" style="color:#0f172a; font-weight:600;">Samuel Dantas</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- TABELA DE ITENS, METRO QUADRADO E VALORES -->
+    <div style="margin-bottom:14px;">
+      <div style="font-size:11px; font-weight:800; text-transform:uppercase; color:#0f172a; margin-bottom:6px; letter-spacing:0.04em;">
+        🛠️ Descrição dos Itens, Serviços & Materiais
+      </div>
+      <table style="width:100%; border-collapse:collapse; font-size:11px; border:1.5px solid #cbd5e1; border-radius:6px; overflow:hidden;">
+        <thead>
+          <tr style="background:#0f172a; color:#ffffff;">
+            <th style="padding:8px 6px; text-align:center; width:40px; border-right:1px solid rgba(255,255,255,0.1);">QTD</th>
+            <th style="padding:8px 8px; text-align:left; border-right:1px solid rgba(255,255,255,0.1);">DESCRIÇÃO DO SERVIÇO / MATERIAL</th>
+            <th style="padding:8px 6px; text-align:center; width:75px; border-right:1px solid rgba(255,255,255,0.1);">COR/TIPO</th>
+            <th style="padding:8px 6px; text-align:center; width:120px; border-right:1px solid rgba(255,255,255,0.1);">MEDIDAS (m²)</th>
+            <th style="padding:8px 6px; text-align:right; width:85px; border-right:1px solid rgba(255,255,255,0.1);">V. UNIT.</th>
+            <th style="padding:8px 8px; text-align:right; width:95px;">TOTAL</th>
+          </tr>
+        </thead>
+        <tbody id="orc-print-itens-tbody">
+          <!-- Linhas dinâmicas -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- RESUMO FINANCEIRO & CONDIÇÕES -->
+    <div style="display:grid; grid-template-columns:1.3fr 1fr; gap:14px; margin-bottom:16px;">
+      <!-- Condições -->
+      <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:12px 14px; font-size:11px;">
+        <div style="font-weight:800; text-transform:uppercase; color:#0f172a; margin-bottom:6px; border-bottom:1px solid #cbd5e1; padding-bottom:3px;">
+          Condições da Proposta
+        </div>
+        <div style="margin-bottom:4px;"><strong>Forma de Pagamento:</strong> <span id="orc-print-forma" style="font-weight:700; color:#0f172a;">À vista</span></div>
+        <div style="margin-bottom:4px;"><strong>Prazo de Execução:</strong> <span id="orc-print-prazo">20 dias úteis</span></div>
+        <div style="margin-bottom:4px;"><strong>Garantia da Obra:</strong> <span id="orc-print-garantia">5 anos estrutural</span></div>
+        <div style="margin-top:6px; border-top:1px dashed #cbd5e1; padding-top:4px;">
+          <strong>Observações:</strong> <span id="orc-print-obs" style="color:#475569;">-</span>
+        </div>
+      </div>
+
+      <!-- Total Grande -->
+      <div style="background:linear-gradient(135deg, #fef3c7 0%, #fffbeb 100%); border:2px solid #f59e0b; border-radius:8px; padding:14px 16px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+        <div style="font-size:11px; font-weight:800; color:#92400e; text-transform:uppercase; letter-spacing:0.06em;">TOTAL GERAL DO ORÇAMENTO</div>
+        <div id="orc-print-total" style="font-size:26px; font-weight:900; color:#b45309; font-family:'Outfit', sans-serif; margin-top:4px;">R$ 0,00</div>
+        <div style="font-size:10px; color:#78350f; margin-top:2px;">Materiais e mão de obra especializada inclusos</div>
+      </div>
+    </div>
+
+    <!-- TERMO DE APROVAÇÃO & ASSINATURAS -->
+    <div style="margin-top:20px; padding-top:12px; border-top:1px solid #cbd5e1;">
+      <div style="font-size:10px; color:#64748b; text-align:center; margin-bottom:24px;">
+        Declaro que estou de acordo com os valores, prazos e especificações descritos nesta proposta para início dos serviços.
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; text-align:center;">
+        <div>
+          <div style="border-top:1.5px solid #0f172a; margin-top:20px; padding-top:4px; font-weight:800; font-size:11px; color:#0f172a;">
+            SD CONSTRUÇÕES LTDA & ENGENHARIA
+          </div>
+          <div style="font-size:10px; color:#64748b;">Responsável Técnico / Comercial</div>
+        </div>
+        <div>
+          <div style="border-top:1.5px solid #0f172a; margin-top:20px; padding-top:4px; font-weight:800; font-size:11px; color:#0f172a;">
+            CLIENTE / CONTRATANTE
+          </div>
+          <div style="font-size:10px; color:#64748b;">De Acordo & Autorização</div>
+        </div>
+      </div>
+      <div style="text-align:center; font-size:9.5px; color:#94a3b8; margin-top:16px;">
+        SD Construções Ltda · CNPJ: 00.000.000/0001-00 · Itaitinga - CE · Proposta gerada pelo SD Construção PRO
+      </div>
+    </div>
+
+  </div>
+
 
   <!-- ══════════════════════════════════════════════ -->
   <!-- SIDEBAR (ESTILO SD FINANCEIRO PRO) -->
@@ -1620,7 +1825,7 @@
 
           <div class="grid-3">
             <button class="btn-green-whats" onclick="enviarWhatsApp()">📄 Enviar SÓ o PDF no WhatsApp (Sem Texto)</button>
-            <button class="btn-dark-pdf" onclick="window.print()">🖨️ Imprimir / PDF</button>
+            <button class="btn-dark-pdf" onclick="imprimirOrcamento()">🖨️ Imprimir / PDF</button>
             <button class="btn-gold-save" id="btn-salvar-os" onclick="salvarOrdem()">✅ Salvar Ordem de Serviço</button>
           </div>
         </div>
@@ -4289,6 +4494,109 @@ function salvarOrdem() {
   showToast(`Ordem de Serviço ${novaOs.numero} salva com sucesso!`, '💾');
 }
 
+
+// ══════════════════════════════════════════════
+//  GERAÇÃO DE PDF & IMPRESSÃO ORGANIZADA (A4)
+// ══════════════════════════════════════════════
+function prepararImpressaoOrcamento() {
+  const nome = document.getElementById('o-nome')?.value || 'Cliente não informado';
+  const cnpj = document.getElementById('o-cnpj')?.value || '-';
+  const tel = document.getElementById('o-tel')?.value || '-';
+  const bairro = document.getElementById('o-bairro')?.value || '-';
+  const end = document.getElementById('o-end')?.value || '-';
+  const vendedor = document.getElementById('o-vendedor')?.value || 'Samuel Dantas';
+  const numOrc = document.getElementById('orc-num-tag')?.textContent || '#0001';
+  const total = document.getElementById('total')?.textContent || 'R$ 0,00';
+  const forma = document.getElementById('forma-outro')?.value || formaAtual || 'À vista';
+  const prazo = document.getElementById('o-prazo')?.value || 'Conforme cronograma';
+  const garantia = document.getElementById('o-garantia')?.value || '5 anos estrutural';
+  const obs = document.getElementById('o-obs')?.value || 'Materiais de primeira qualidade, equipe especializada inclusa.';
+
+  document.getElementById('orc-print-num').textContent = numOrc;
+  document.getElementById('orc-print-data').textContent = new Date().toLocaleDateString('pt-BR');
+  document.getElementById('orc-print-cliente').textContent = nome;
+  document.getElementById('orc-print-cnpj').textContent = cnpj;
+  document.getElementById('orc-print-tel').textContent = tel;
+  document.getElementById('orc-print-bairro').textContent = bairro;
+  document.getElementById('orc-print-end').textContent = end;
+  document.getElementById('orc-print-vendedor').textContent = vendedor;
+  document.getElementById('orc-print-total').textContent = total;
+  document.getElementById('orc-print-forma').textContent = forma;
+  document.getElementById('orc-print-prazo').textContent = prazo;
+  document.getElementById('orc-print-garantia').textContent = garantia;
+  document.getElementById('orc-print-obs').textContent = obs;
+
+  const tbody = document.getElementById('orc-print-itens-tbody');
+  if (tbody) {
+    let htmlItens = '';
+    let count = 0;
+    document.querySelectorAll('#itens-lista tr').forEach(tr => {
+      const ins = tr.querySelectorAll('input');
+      const desc = ins[1]?.value?.trim();
+      if (desc) {
+        count++;
+        const qtd = ins[0]?.value || '1';
+        const cor = ins[2]?.value || '-';
+        const alt = ins[3]?.value || '-';
+        const larg = ins[4]?.value || '-';
+        const m2 = ins[5]?.value || '-';
+        const vm2 = ins[6]?.value ? ('R$ ' + ins[6].value) : '-';
+        const vunit = ins[7]?.value ? ('R$ ' + ins[7].value) : '-';
+        const acab = ins[8]?.value || '-';
+        const itemTot = ins[9]?.value || 'R$ 0,00';
+
+        let dimensoes = '-';
+        if (alt !== '-' && larg !== '-') {
+          dimensoes = `${alt} x ${larg}m (${m2})`;
+        } else if (m2 !== '-' && m2 !== '0,00 m²') {
+          dimensoes = m2;
+        }
+
+        htmlItens += `
+          <tr style="border-bottom:1px solid #e2e8f0; ${count % 2 === 0 ? 'background:#f8fafc;' : ''}">
+            <td style="padding:7px 6px; text-align:center; font-weight:700;">${qtd}</td>
+            <td style="padding:7px 8px; font-weight:600; color:#0f172a;">
+              ${desc}
+              ${acab !== '-' ? `<div style="font-size:10px; color:#64748b; margin-top:2px;">Obs/Acab: ${acab}</div>` : ''}
+            </td>
+            <td style="padding:7px 6px; text-align:center;">${cor}</td>
+            <td style="padding:7px 6px; text-align:center; font-size:10.5px;">${dimensoes}</td>
+            <td style="padding:7px 6px; text-align:right;">${vunit !== '-' ? vunit : vm2}</td>
+            <td style="padding:7px 8px; text-align:right; font-weight:800; color:#0f172a;">${itemTot}</td>
+          </tr>
+        `;
+      }
+    });
+
+    if (!htmlItens) {
+      htmlItens = '<tr><td colspan="6" style="padding:16px; text-align:center; color:#64748b;">Nenhum item adicionado ao orçamento.</td></tr>';
+    }
+    tbody.innerHTML = htmlItens;
+  }
+}
+
+function imprimirOrcamento() {
+  prepararImpressaoOrcamento();
+  document.body.classList.add('imprimindo-orcamento');
+  window.print();
+  setTimeout(() => {
+    document.body.classList.remove('imprimindo-orcamento');
+  }, 1200);
+}
+
+window.addEventListener('beforeprint', () => {
+  const panOrc = document.getElementById('view-orcamento');
+  if (panOrc && panOrc.classList.contains('active')) {
+    prepararImpressaoOrcamento();
+    document.body.classList.add('imprimindo-orcamento');
+  }
+});
+
+window.addEventListener('afterprint', () => {
+  document.body.classList.remove('imprimindo-orcamento');
+  document.body.classList.remove('imprimindo-terceirizado');
+});
+
 function enviarWhatsApp() {
   const telInput = document.getElementById('o-tel')?.value || '';
   let cleanTel = telInput.replace(/\D/g, '');
@@ -4303,13 +4611,18 @@ function enviarWhatsApp() {
     cleanTel = '55' + cleanTel;
   }
 
-  // 1. Aciona o diálogo do navegador para gerar/salvar o PDF oficial
+  // 1. Prepara a folha oficial A4 de Orçamento de Obra e dispara o diálogo do PDF limpo e organizado
+  prepararImpressaoOrcamento();
+  document.body.classList.add('imprimindo-orcamento');
   window.print();
+  setTimeout(() => {
+    document.body.classList.remove('imprimindo-orcamento');
+  }, 1200);
 
-  // 2. Abre direto para o número digitado SEM mensagem escrita (conforme solicitado)
+  // 2. Abre direto para o WhatsApp do cliente SEM texto adicional
   setTimeout(() => {
     window.open(`https://wa.me/${cleanTel}`, '_blank');
-  }, 400);
+  }, 500);
 }
 
 // ══════════════════════════════════════════════
