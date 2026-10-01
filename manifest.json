@@ -1,0 +1,47 @@
+{
+  "id": "/",
+  "name": "SD Construção PRO",
+  "short_name": "SDConstrução",
+  "description": "Sistema completo de gestão de obras, orçamentos, contratos e serviços terceirizados.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#060913",
+  "theme_color": "#f5b300",
+  "orientation": "any",
+  "scope": "/",
+  "lang": "pt-BR",
+  "categories": [
+    "business",
+    "productivity"
+  ],
+  "icons": [
+    {
+      "src": "/logo.jpg",
+      "sizes": "1024x1024",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo.jpg",
+      "sizes": "1024x1024",
+      "type": "image/jpeg",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-narrow.jpg",
+      "sizes": "896x1200",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "SD Construção PRO — Dashboard Mobile"
+    },
+    {
+      "src": "/screenshot-wide.jpg",
+      "sizes": "1376x768",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "SD Construção PRO — Painel Desktop"
+    }
+  ]
+}

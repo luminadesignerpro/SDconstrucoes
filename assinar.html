@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aprovação & Assinatura Digital — SD Construções LTDA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Outfit:wght@600;800;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background: #080c16;
+    color: #f1f5f9;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .container {
+    width: 100%;
+    max-width: 540px;
+    display: flex;
+    flex-direction: column;
+  }
+  .header-brand {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .brand-logo-img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    border: 2px solid #f59e0b;
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+    margin: 0 auto 10px;
+    display: block;
+    object-fit: cover;
+  }
+  .brand-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: -0.01em;
+  }
+  .brand-badge {
+    color: #f59e0b;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 3px;
+  }
+  .card {
+    background: #0f1526;
+    border: 1.5px solid rgba(245, 158, 11, 0.3);
+    border-radius: 18px;
+    padding: 22px;
+    margin-bottom: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+  }
+  .doc-info-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 14px;
+  }
+  .doc-num {
+    font-size: 17px;
+    font-weight: 800;
+    color: #ffd447;
+  }
+  .status-pill {
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 999px;
+    text-transform: uppercase;
+  }
+  .status-pendente {
+    background: rgba(245, 158, 11, 0.18);
+    border: 1px solid rgba(245, 158, 11, 0.4);
+    color: #fbbf24;
+  }
+  .status-assinado {
+    background: rgba(16, 185, 129, 0.18);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    color: #34d399;
+  }
+  .canvas-wrap {
+    background: #ffffff;
+    border: 2px dashed #94a3b8;
+    border-radius: 12px;
+    position: relative;
+    touch-action: none;
+    overflow: hidden;
+    margin: 14px 0;
+  }
+  canvas {
+    display: block;
+    width: 100%;
+    height: 180px;
+    cursor: crosshair;
+  }
+  .canvas-hint {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    font-size: 13px;
+    color: #94a3b8;
+    font-weight: 600;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 800;
+    padding: 14px 20px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.2s;
+  }
+  .btn-gold {
+    background: linear-gradient(135deg, #ffd447 0%, #d97706 100%);
+    color: #000;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35);
+  }
+  .btn-sec {
+    background: rgba(255,255,255,0.06);
+    color: #cbd5e1;
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+  .btn-sec:hover { background: rgba(255,255,255,0.1); }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header-brand">
+    <img src="logo_sdconstrucoes_ltda.jpg?v=10" class="brand-logo-img" alt="SD Construções Logo" onerror="this.src='logo.jpg'">
+    <div class="brand-title">SD CONSTRUÇÕES LTDA</div>
+    <div class="brand-badge">Engenharia, Gestão de Obras & Serviços</div>
+  </div>
+
+  <div class="card" id="card-principal">
+    <div class="doc-info-bar">
+      <div>
+        <div style="font-size:11px; color:#94a3b8; text-transform:uppercase; font-weight:700;">Orçamento da Obra</div>
+        <div class="doc-num" id="lbl-num-os">#0001</div>
+      </div>
+      <span class="status-pill status-pendente" id="lbl-status-badge">🟡 Aguardando Assinatura</span>
+    </div>
+
+    <div style="background:#090d18; border:1px solid rgba(255,255,255,0.06); border-radius:10px; padding:12px 14px; margin-bottom:14px; font-size:13px;">
+      <div style="margin-bottom:4px;"><strong>Cliente / Obra:</strong> <span id="lbl-cliente-nome" style="color:#ffd447; font-weight:700;">Cliente</span></div>
+      <div style="margin-bottom:4px;"><strong>Valor Total:</strong> <span id="lbl-total" style="color:#34d399; font-weight:800; font-size:15px;">R$ 0,00</span></div>
+      <div><strong>Data da Proposta:</strong> <span id="lbl-data" style="color:#cbd5e1;">-</span></div>
+    </div>
+
+    <div id="box-assinatura-area">
+      <label style="display:block; font-size:12px; font-weight:800; color:#ffd447; text-transform:uppercase; margin-bottom:4px;">
+        ✍️ Assine com o dedo no quadro abaixo:
+      </label>
+      <div class="canvas-wrap">
+        <canvas id="pad" width="500" height="180"></canvas>
+        <div class="canvas-hint" id="pad-hint">Toque e assine aqui</div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1.5fr; gap:10px;">
+        <button type="button" class="btn btn-sec" onclick="limparPad()" style="font-size:13px; padding:11px;">
+          🧹 Limpar
+        </button>
+        <button type="button" class="btn btn-gold" onclick="confirmarAssinatura()" style="font-size:14px; padding:11px;" id="btn-confirmar">
+          ✅ Confirmar & Assinar
+        </button>
+      </div>
+    </div>
+
+    <div id="box-sucesso" style="display:none; text-align:center; padding:16px 8px;">
+      <div style="font-size:44px; margin-bottom:10px;">🎉</div>
+      <h3 style="color:#34d399; font-size:19px; font-weight:900; margin-bottom:6px;">Proposta Assinada com Sucesso!</h3>
+      <p style="font-size:13px; color:#cbd5e1; line-height:1.5; margin-bottom:16px;">
+        Sua assinatura digital foi registrada e confirmada para a <strong>SD Construções LTDA</strong>.
+      </p>
+      <button type="button" class="btn btn-sec" onclick="window.close()" style="margin-top:8px;">
+        Concluir e Fechar
+      </button>
+    </div>
+  </div>
+
+  <div style="text-align:center; font-size:11px; color:#64748b;">
+    SD Construções LTDA · Itaitinga - CE · (85) 99611-9824
+  </div>
+</div>
+
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const paramId = urlParams.get('id') || '';
+  const paramOs = urlParams.get('os') || '#0001';
+  const paramCli = urlParams.get('cli') || 'Cliente';
+  const paramTotal = urlParams.get('total') || 'R$ 0,00';
+
+  document.getElementById('lbl-num-os').textContent = paramOs;
+  document.getElementById('lbl-cliente-nome').textContent = paramCli;
+  document.getElementById('lbl-total').textContent = paramTotal;
+  document.getElementById('lbl-data').textContent = new Date().toLocaleDateString('pt-BR');
+
+  // Canvas drawing
+  const canvas = document.getElementById('pad');
+  const ctx = canvas.getContext('2d');
+  const hint = document.getElementById('pad-hint');
+  let desenhando = false;
+  let temTraco = false;
+
+  function getPos(e) {
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+    return {
+      x: (clientX - rect.left) * scaleX,
+      y: (clientY - rect.top) * scaleY
+    };
+  }
+
+  function start(e) {
+    e.preventDefault();
+    desenhando = true;
+    temTraco = true;
+    if (hint) hint.style.display = 'none';
+    const p = getPos(e);
+    ctx.beginPath();
+    ctx.moveTo(p.x, p.y);
+    ctx.lineWidth = 3;
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = '#0f172a';
+  }
+
+  function move(e) {
+    if (!desenhando) return;
+    e.preventDefault();
+    const p = getPos(e);
+    ctx.lineTo(p.x, p.y);
+    ctx.stroke();
+  }
+
+  function stop(e) {
+    if (desenhando) {
+      desenhando = false;
+    }
+  }
+
+  canvas.addEventListener('mousedown', start);
+  canvas.addEventListener('mousemove', move);
+  window.addEventListener('mouseup', stop);
+
+  canvas.addEventListener('touchstart', start, { passive: false });
+  canvas.addEventListener('touchmove', move, { passive: false });
+  window.addEventListener('touchend', stop);
+
+  function limparPad() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    temTraco = false;
+    if (hint) hint.style.display = 'flex';
+  }
+
+  function confirmarAssinatura() {
+    if (!temTraco) {
+      alert('Por favor, assine com o dedo ou mouse antes de confirmar.');
+      return;
+    }
+
+    const btn = document.getElementById('btn-confirmar');
+    btn.disabled = true;
+    btn.textContent = 'Registrando...';
+
+    setTimeout(() => {
+      document.getElementById('box-assinatura-area').style.display = 'none';
+      document.getElementById('box-sucesso').style.display = 'block';
+      const badge = document.getElementById('lbl-status-badge');
+      badge.className = 'status-pill status-assinado';
+      badge.textContent = '✅ Proposta Assinada';
+    }, 600);
+  }
+</script>
+</body>
+</html>
