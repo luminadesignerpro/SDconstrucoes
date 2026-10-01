@@ -792,7 +792,7 @@
       .grid-2, .grid-3 { grid-template-columns: 1fr; }
     }
 
-    /* â•â•â•â• ESTILOS MODERNOS DO PAINEL PONTO & FUNCIONÃRIOS (IMAGE 1 & 2) â•â•â•â• */
+    /* ════ ESTILOS MODERNOS DO PAINEL PONTO & FUNCIONÁRIOS (IMAGE 1 & 2) ════ */
     .ponto-hero-card {
       background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.16) 0%, rgba(9, 14, 28, 0.96) 80%);
       border: 1.5px solid rgba(59, 130, 246, 0.35);
@@ -1037,7 +1037,7 @@
       }
     }
   
-    /* ESTILOS MODERNOS DO PONTO ELETRÃ”NICO (IMAGENS 1 E 2) */
+    /* ESTILOS MODERNOS DO PONTO ELETRÔNICO (IMAGENS 1 E 2) */
     .ponto-clock-card {
       background: radial-gradient(circle at 50% 0%, rgba(6, 182, 212, 0.15) 0%, rgba(12, 19, 36, 0.95) 75%);
       border: 1px solid rgba(6, 182, 212, 0.35);
@@ -1250,9 +1250,9 @@
     }
 
   
-    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
-    /* ESTILOS DE IMPRESSÃƒO & GERAÃ‡ÃƒO DE PDF OFICIAL   */
-    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    /* ══════════════════════════════════════════════ */
+    /* ESTILOS DE IMPRESSÃO & GERAÇÃO DE PDF OFICIAL   */
+    /* ══════════════════════════════════════════════ */
     @media print {
       @page {
         size: A4 portrait;
@@ -1272,7 +1272,7 @@
         print-color-adjust: exact !important;
       }
 
-      /* Oculta layout do app: sidebar, topbar, cards de ediÃ§Ã£o, botÃµes, modais */
+      /* Oculta layout do app: sidebar, topbar, cards de edição, botões, modais */
       .sidebar,
       .topbar,
       header.topbar,
@@ -1312,7 +1312,7 @@
         min-height: auto !important;
       }
 
-      /* Quando estiver imprimindo orÃ§amento de obra */
+      /* Quando estiver imprimindo orçamento de obra */
       body.imprimindo-orcamento #orcamento-folha-impressao-a4,
       #orcamento-folha-impressao-a4.active-print {
         display: block !important;
@@ -1326,7 +1326,7 @@
         border: none !important;
       }
 
-      /* Quando estiver imprimindo serviÃ§o terceirizado */
+      /* Quando estiver imprimindo serviço terceirizado */
       body.imprimindo-terceirizado #documento-pdf-a4 {
         display: block !important;
         visibility: visible !important;
@@ -1347,19 +1347,19 @@
 
 <div class="app-layout">
 
-  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-  <!-- FOLHA OFICIAL A4 DE ORÃ‡AMENTO DE OBRAS (PARA IMPRESSÃƒO / PDF) -->
-  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- FOLHA OFICIAL A4 DE ORÇAMENTO DE OBRAS (PARA IMPRESSÃO / PDF) -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
   <div id="orcamento-folha-impressao-a4" style="display:none; background:#ffffff; color:#0f172a; padding:18px 24px; font-family:'Plus Jakarta Sans', Arial, sans-serif; font-size:11.5px; line-height:1.5;">
 
-    <!-- CABEÃ‡ALHO DA PROPOSTA COMERCIAL -->
+    <!-- CABEÇALHO DA PROPOSTA COMERCIAL -->
     <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:3px solid #b45309; padding-bottom:12px; margin-bottom:14px;">
       <div style="display:flex; align-items:center; gap:14px;">
-        <img src="logo_sdconstrucoes_ltda.jpg?v=10" alt="Logo SD ConstruÃ§Ãµes" style="width:68px; height:68px; border-radius:50%; border:2px solid #b45309; object-fit:cover;" onerror="this.src='logo.jpg?v=10'">
+        <img src="logo_sdconstrucoes_ltda.jpg?v=10" alt="Logo SD Construções" style="width:68px; height:68px; border-radius:50%; border:2px solid #b45309; object-fit:cover;" onerror="this.src='logo.jpg?v=10'">
         <div>
-          <div style="font-size:22px; font-weight:900; color:#0f172a; letter-spacing:-0.02em;">SD CONSTRUÃ‡Ã•ES LTDA</div>
-          <div style="font-size:11px; font-weight:700; color:#b45309; text-transform:uppercase; letter-spacing:0.05em;">Engenharia, GestÃ£o de Obras & ServiÃ§os Terceirizados</div>
-          <div style="font-size:11px; color:#475569; margin-top:2px;">Itaitinga - CE Â· WhatsApp: (85) 99611-9824</div>
+          <div style="font-size:22px; font-weight:900; color:#0f172a; letter-spacing:-0.02em;">SD CONSTRUÇÕES LTDA</div>
+          <div style="font-size:11px; font-weight:700; color:#b45309; text-transform:uppercase; letter-spacing:0.05em;">Engenharia, Gestão de Obras & Serviços Terceirizados</div>
+          <div style="font-size:11px; color:#475569; margin-top:2px;">Itaitinga - CE · WhatsApp: (85) 99611-9824</div>
         </div>
       </div>
       <div style="text-align:right;">
@@ -1367,7 +1367,7 @@
           Proposta Comercial
         </div>
         <div style="font-size:20px; font-weight:900; color:#0f172a;" id="orc-print-num">#0001</div>
-        <div style="font-size:11px; color:#64748b;">EmissÃ£o: <strong id="orc-print-data" style="color:#0f172a;">20/09/2026</strong></div>
+        <div style="font-size:11px; color:#64748b;">Emissão: <strong id="orc-print-data" style="color:#0f172a;">20/09/2026</strong></div>
         <div style="font-size:10px; color:#64748b;">Validade: <strong>15 dias</strong></div>
       </div>
     </div>
@@ -1375,14 +1375,14 @@
     <!-- DADOS DO CLIENTE & OBRA -->
     <div style="background:#f8fafc; border:1.5px solid #e2e8f0; border-radius:8px; padding:12px 16px; margin-bottom:14px;">
       <div style="font-size:11px; font-weight:800; text-transform:uppercase; color:#b45309; margin-bottom:6px; letter-spacing:0.04em;">
-        ðŸ“ Dados do Cliente & EndereÃ§o da Obra
+        📍 Dados do Cliente & Endereço da Obra
       </div>
       <div style="display:grid; grid-template-columns:2fr 1fr; gap:8px 16px; font-size:11.5px;">
-        <div><strong>Cliente / CondomÃ­nio:</strong> <span id="orc-print-cliente" style="color:#0f172a; font-weight:700;">-</span></div>
+        <div><strong>Cliente / Condomínio:</strong> <span id="orc-print-cliente" style="color:#0f172a; font-weight:700;">-</span></div>
         <div><strong>CPF / CNPJ:</strong> <span id="orc-print-cnpj">-</span></div>
         <div><strong>WhatsApp / Telefone:</strong> <span id="orc-print-tel">-</span></div>
         <div><strong>Bairro / Cidade:</strong> <span id="orc-print-bairro">-</span></div>
-        <div style="grid-column: span 2;"><strong>EndereÃ§o da Obra:</strong> <span id="orc-print-end">-</span></div>
+        <div style="grid-column: span 2;"><strong>Endereço da Obra:</strong> <span id="orc-print-end">-</span></div>
         <div style="grid-column: span 2; border-top:1px dashed #cbd5e1; padding-top:4px; margin-top:2px;">
           <strong>Consultor / Vendedor:</strong> <span id="orc-print-vendedor" style="color:#0f172a; font-weight:600;">Samuel Dantas</span>
         </div>
@@ -1392,82 +1392,82 @@
     <!-- TABELA DE ITENS, METRO QUADRADO E VALORES -->
     <div style="margin-bottom:14px;">
       <div style="font-size:11px; font-weight:800; text-transform:uppercase; color:#0f172a; margin-bottom:6px; letter-spacing:0.04em;">
-        ðŸ› ï¸ DescriÃ§Ã£o dos Itens, ServiÃ§os & Materiais
+        🛠️ Descrição dos Itens, Serviços & Materiais
       </div>
       <table style="width:100%; border-collapse:collapse; font-size:11px; border:1.5px solid #cbd5e1; border-radius:6px; overflow:hidden;">
         <thead>
           <tr style="background:#0f172a; color:#ffffff;">
             <th style="padding:8px 6px; text-align:center; width:40px; border-right:1px solid rgba(255,255,255,0.1);">QTD</th>
-            <th style="padding:8px 8px; text-align:left; border-right:1px solid rgba(255,255,255,0.1);">DESCRIÃ‡ÃƒO DO SERVIÃ‡O / MATERIAL</th>
+            <th style="padding:8px 8px; text-align:left; border-right:1px solid rgba(255,255,255,0.1);">DESCRIÇÃO DO SERVIÇO / MATERIAL</th>
             <th style="padding:8px 6px; text-align:center; width:75px; border-right:1px solid rgba(255,255,255,0.1);">COR/TIPO</th>
-            <th style="padding:8px 6px; text-align:center; width:120px; border-right:1px solid rgba(255,255,255,0.1);">MEDIDAS (mÂ²)</th>
+            <th style="padding:8px 6px; text-align:center; width:120px; border-right:1px solid rgba(255,255,255,0.1);">MEDIDAS (m²)</th>
             <th style="padding:8px 6px; text-align:right; width:85px; border-right:1px solid rgba(255,255,255,0.1);">V. UNIT.</th>
             <th style="padding:8px 8px; text-align:right; width:95px;">TOTAL</th>
           </tr>
         </thead>
         <tbody id="orc-print-itens-tbody">
-          <!-- Linhas dinÃ¢micas -->
+          <!-- Linhas dinâmicas -->
         </tbody>
       </table>
     </div>
 
-    <!-- RESUMO FINANCEIRO & CONDIÃ‡Ã•ES -->
+    <!-- RESUMO FINANCEIRO & CONDIÇÕES -->
     <div style="display:grid; grid-template-columns:1.3fr 1fr; gap:14px; margin-bottom:16px;">
-      <!-- CondiÃ§Ãµes -->
+      <!-- Condições -->
       <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:12px 14px; font-size:11px;">
         <div style="font-weight:800; text-transform:uppercase; color:#0f172a; margin-bottom:6px; border-bottom:1px solid #cbd5e1; padding-bottom:3px;">
-          CondiÃ§Ãµes da Proposta
+          Condições da Proposta
         </div>
-        <div style="margin-bottom:4px;"><strong>Forma de Pagamento:</strong> <span id="orc-print-forma" style="font-weight:700; color:#0f172a;">Ã€ vista</span></div>
-        <div style="margin-bottom:4px;"><strong>Prazo de ExecuÃ§Ã£o:</strong> <span id="orc-print-prazo">20 dias Ãºteis</span></div>
+        <div style="margin-bottom:4px;"><strong>Forma de Pagamento:</strong> <span id="orc-print-forma" style="font-weight:700; color:#0f172a;">À vista</span></div>
+        <div style="margin-bottom:4px;"><strong>Prazo de Execução:</strong> <span id="orc-print-prazo">20 dias úteis</span></div>
         <div style="margin-bottom:4px;"><strong>Garantia da Obra:</strong> <span id="orc-print-garantia">5 anos estrutural</span></div>
         <div style="margin-top:6px; border-top:1px dashed #cbd5e1; padding-top:4px;">
-          <strong>ObservaÃ§Ãµes:</strong> <span id="orc-print-obs" style="color:#475569;">-</span>
+          <strong>Observações:</strong> <span id="orc-print-obs" style="color:#475569;">-</span>
         </div>
       </div>
 
       <!-- Total Grande -->
       <div style="background:linear-gradient(135deg, #fef3c7 0%, #fffbeb 100%); border:2px solid #f59e0b; border-radius:8px; padding:14px 16px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
-        <div style="font-size:11px; font-weight:800; color:#92400e; text-transform:uppercase; letter-spacing:0.06em;">TOTAL GERAL DO ORÃ‡AMENTO</div>
+        <div style="font-size:11px; font-weight:800; color:#92400e; text-transform:uppercase; letter-spacing:0.06em;">TOTAL GERAL DO ORÇAMENTO</div>
         <div id="orc-print-total" style="font-size:26px; font-weight:900; color:#b45309; font-family:'Outfit', sans-serif; margin-top:4px;">R$ 0,00</div>
-        <div style="font-size:10px; color:#78350f; margin-top:2px;">Materiais e mÃ£o de obra especializada inclusos</div>
+        <div style="font-size:10px; color:#78350f; margin-top:2px;">Materiais e mão de obra especializada inclusos</div>
       </div>
     </div>
 
-    <!-- TERMO DE APROVAÃ‡ÃƒO & ASSINATURAS -->
+    <!-- TERMO DE APROVAÇÃO & ASSINATURAS -->
     <div style="margin-top:20px; padding-top:12px; border-top:1px solid #cbd5e1;">
       <div style="font-size:10px; color:#64748b; text-align:center; margin-bottom:24px;">
-        Declaro que estou de acordo com os valores, prazos e especificaÃ§Ãµes descritos nesta proposta para inÃ­cio dos serviÃ§os.
+        Declaro que estou de acordo com os valores, prazos e especificações descritos nesta proposta para início dos serviços.
       </div>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; text-align:center;">
         <div>
           <div style="border-top:1.5px solid #0f172a; margin-top:20px; padding-top:4px; font-weight:800; font-size:11px; color:#0f172a;">
-            SD CONSTRUÃ‡Ã•ES LTDA & ENGENHARIA
+            SD CONSTRUÇÕES LTDA & ENGENHARIA
           </div>
-          <div style="font-size:10px; color:#64748b;">ResponsÃ¡vel TÃ©cnico / Comercial</div>
+          <div style="font-size:10px; color:#64748b;">Responsável Técnico / Comercial</div>
         </div>
         <div>
           <div style="border-top:1.5px solid #0f172a; margin-top:20px; padding-top:4px; font-weight:800; font-size:11px; color:#0f172a;">
             CLIENTE / CONTRATANTE
           </div>
-          <div style="font-size:10px; color:#64748b;">De Acordo & AutorizaÃ§Ã£o</div>
+          <div style="font-size:10px; color:#64748b;">De Acordo & Autorização</div>
         </div>
       </div>
       <div style="text-align:center; font-size:9.5px; color:#94a3b8; margin-top:16px;">
-        SD ConstruÃ§Ãµes Ltda Â· CNPJ: 00.000.000/0001-00 Â· Itaitinga - CE Â· Proposta gerada pelo SD ConstruÃ§Ã£o PRO
+        SD Construções Ltda · CNPJ: 00.000.000/0001-00 · Itaitinga - CE · Proposta gerada pelo SD Construção PRO
       </div>
     </div>
 
   </div>
 
 
-  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+  <!-- ══════════════════════════════════════════════ -->
   <!-- SIDEBAR (ESTILO SD FINANCEIRO PRO) -->
   <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
   <aside class="sidebar">
     <div class="brand-header" onclick="goNav('dashboard')">
       <div class="brand-logo-badge">
-        <img src="logo_sdconstrucoes_ltda.jpg?v=10" alt="SD ConstruÃ§Ãµes Ltda Logo">
+        <img src="logo_sdconstrucoes_ltda.jpg?v=10" alt="SD Construções Ltda Logo">
       </div>
       <div class="brand-info">
         <div class="brand-title">SD ConstruÃ§Ãµes <span class="brand-tag">LTDA</span></div>
@@ -1840,41 +1840,41 @@
             <input id="o-obs" placeholder="Ex: Materiais de primeira qualidade, equipe especializada inclusa..." />
           </div>
 
-          <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-          <!-- CARD DA PRIMEIRA IMAGEM: ENVIAR / SALVAR ORÃ‡AMENTO        -->
-          <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+          <!-- ══════════════════════════════════════════════════════════ -->
+          <!-- CARD DA PRIMEIRA IMAGEM: ENVIAR / SALVAR ORÇAMENTO        -->
+          <!-- ══════════════════════════════════════════════════════════ -->
           <div style="background:#090d18; border:1.5px solid rgba(245, 179, 0, 0.35); border-radius:22px; padding:22px 24px; margin-top:20px; box-shadow:0 12px 35px rgba(0,0,0,0.6);">
             <div style="font-family:var(--font-display); font-size:18px; font-weight:800; color:#ffd447; display:flex; align-items:center; gap:8px; margin-bottom:18px;">
-              <span style="font-size:20px;">ðŸ“¤</span> Enviar / Salvar OrÃ§amento
+              <span style="font-size:20px;">📤</span> Enviar / Salvar Orçamento
             </div>
 
             <!-- Linha 1: Enviar PDF e Visualizar PDF -->
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px;">
               <button type="button" onclick="enviarWhatsApp()" style="background:rgba(255,255,255,0.04); border:1.5px solid rgba(245, 179, 0, 0.35); color:#ffffff; padding:15px 18px; border-radius:12px; font-weight:700; font-size:15px; display:flex; align-items:center; justify-content:center; gap:8px; cursor:pointer; transition:all 0.2s;" onmouseover="this.style.background='rgba(245,179,0,0.1)'; this.style.borderColor='#ffd447';" onmouseout="this.style.background='rgba(255,255,255,0.04)'; this.style.borderColor='rgba(245,179,0,0.35)';">
-                <span style="font-size:18px;">ðŸ“„</span>
+                <span style="font-size:18px;">📄</span>
                 <span>Enviar PDF</span>
               </button>
               <button type="button" onclick="visualizarPdfOrcamentoAtual()" style="background:rgba(255,255,255,0.04); border:1.5px solid #f59e0b; color:#ffffff; padding:15px 18px; border-radius:12px; font-weight:700; font-size:15px; display:flex; align-items:center; justify-content:center; gap:8px; cursor:pointer; transition:all 0.2s;" onmouseover="this.style.background='rgba(245,158,11,0.15)'; this.style.borderColor='#ffd447';" onmouseout="this.style.background='rgba(255,255,255,0.04)'; this.style.borderColor='#f59e0b';">
-                <span style="font-size:18px;">ðŸ‘ï¸</span>
+                <span style="font-size:18px;">👁️</span>
                 <span>Visualizar PDF</span>
               </button>
             </div>
 
             <!-- Linha 2: Enviar para Assinatura Digital -->
             <button type="button" onclick="enviarOrcamentoParaAssinaturaDigital()" style="width:100%; background:rgba(245, 179, 0, 0.08); border:1.5px solid rgba(245, 179, 0, 0.45); color:#fef08a; padding:16px 20px; border-radius:12px; font-weight:800; font-size:16px; display:flex; align-items:center; justify-content:center; gap:10px; cursor:pointer; transition:all 0.2s; margin-bottom:12px;" onmouseover="this.style.background='rgba(245,179,0,0.18)'; this.style.borderColor='#ffd447';" onmouseout="this.style.background='rgba(245,179,0,0.08)'; this.style.borderColor='rgba(245,179,0,0.45)';">
-              <span style="font-size:20px;">âœï¸</span>
+              <span style="font-size:20px;">✍️</span>
               <span>Enviar para Assinatura Digital</span>
             </button>
 
-            <!-- Linha 3: Salvar Ordem de ServiÃ§o -->
+            <!-- Linha 3: Salvar Ordem de Serviço -->
             <button type="button" id="btn-salvar-os" onclick="salvarOrdem()" style="width:100%; background:linear-gradient(135deg, #ffd447 0%, #d97706 100%); border:none; color:#000000; padding:16px 20px; border-radius:12px; font-weight:900; font-size:16.5px; display:flex; align-items:center; justify-content:center; gap:10px; cursor:pointer; box-shadow:0 4px 18px rgba(245, 179, 0, 0.35); transition:all 0.2s;" onmouseover="this.style.transform='translateY(-1px)'; this.style.boxShadow='0 6px 22px rgba(245,179,0,0.5)';" onmouseout="this.style.transform='none'; this.style.boxShadow='0 4px 18px rgba(245,179,0,0.35)';">
-              <span style="font-size:18px;">âœ…</span>
-              <span>Salvar Ordem de ServiÃ§o</span>
+              <span style="font-size:18px;">✅</span>
+              <span>Salvar Ordem de Serviço</span>
             </button>
 
-            <!-- RodapÃ© da Empresa -->
+            <!-- Rodapé da Empresa -->
             <div style="text-align:center; margin-top:16px; font-size:12px; color:#64748b; font-weight:600; letter-spacing:0.03em;">
-              SD ConstruÃ§Ãµes Â· Itaitinga - CE Â· (85) 99611-9824
+              SD Construções · Itaitinga - CE · (85) 99611-9824
             </div>
           </div>
         </div>
@@ -1986,14 +1986,14 @@
           </div>
         </div>
 
-        <!-- â•â• LISTAS DE MATERIAIS SALVAS â•â• -->
+        <!-- ══ LISTAS DE MATERIAIS SALVAS ══ -->
         <div class="glass-card" style="border-color: rgba(249,115,22,0.3);">
           <div class="glass-card-title" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
             <div style="display:flex; align-items:center; gap:8px;">
-              <span style="color:#fb923c;">ðŸ“‚ Listas de Materiais Salvas</span>
+              <span style="color:#fb923c;">📂 Listas de Materiais Salvas</span>
               <span class="badge-count" style="border-color:rgba(249,115,22,0.4); color:#fb923c; background:rgba(249,115,22,0.12);" id="mat-saved-count">0 listas salvas</span>
             </div>
-            <button class="btn-action-secondary" style="padding:7px 14px; font-size:12px;" onclick="renderListasMatSalvas()">ðŸ”„ Atualizar</button>
+            <button class="btn-action-secondary" style="padding:7px 14px; font-size:12px;" onclick="renderListasMatSalvas()">🔄 Atualizar</button>
           </div>
           <div id="mat-saved-list" style="margin-top:12px;"></div>
         </div>
@@ -2376,14 +2376,14 @@
           <div id="vend-list-container" style="margin-top:14px;"></div>
         </div>
 
-        <!-- â•â• RELATÃ“RIO DE COMISSÃƒO POR VENDEDOR â•â• -->
+        <!-- ══ RELATÓRIO DE COMISSÃO POR VENDEDOR ══ -->
         <div class="glass-card" style="border-color: rgba(234,179,8,0.4);">
           <div class="glass-card-title" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
             <div style="display:flex; align-items:center; gap:8px;">
-              <span style="color:#facc15;">ðŸ’° RelatÃ³rio de ComissÃµes por Vendedor</span>
+              <span style="color:#facc15;">💰 Relatório de Comissões por Vendedor</span>
               <span class="badge-count" style="border-color:rgba(234,179,8,0.4); color:#facc15; background:rgba(234,179,8,0.12);" id="rel-com-periodo">Todas as O.S.</span>
             </div>
-            <button class="btn-action-secondary" style="padding:7px 14px; font-size:12px;" onclick="renderRelatorioComissao()">ðŸ”„ Atualizar</button>
+            <button class="btn-action-secondary" style="padding:7px 14px; font-size:12px;" onclick="renderRelatorioComissao()">🔄 Atualizar</button>
           </div>
           <div id="rel-comissao-container" style="margin-top:14px;"></div>
         </div>
@@ -2420,22 +2420,22 @@
         </div>
       </section>
 
-      <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-      <!-- VIEW: FUNCIONÃRIOS & CONTROLE DE PONTO -->
-      <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-            <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-      <!-- VIEW: FUNCIONÃRIOS & CONTROLE DE PONTO (IMAGENS 1 E 2) -->
-      <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+      <!-- ══════════════════════════════════════════════ -->
+      <!-- VIEW: FUNCIONÁRIOS & CONTROLE DE PONTO -->
+      <!-- ══════════════════════════════════════════════ -->
+            <!-- ══════════════════════════════════════════════ -->
+      <!-- VIEW: FUNCIONÁRIOS & CONTROLE DE PONTO (IMAGENS 1 E 2) -->
+      <!-- ══════════════════════════════════════════════ -->
       <section id="view-funcionarios" class="panel-view">
         
-        <!-- BARRA SUPERIOR DE FILTROS & AÃ‡Ã•ES (IDÃŠNTICO Ã€ IMAGEM 1) -->
+        <!-- BARRA SUPERIOR DE FILTROS & AÇÕES (IDÊNTICO À IMAGEM 1) -->
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:20px;">
           <div>
             <h2 style="font-family:var(--font-display); font-size:24px; font-weight:800; color:#fff; display:flex; align-items:center; gap:10px;">
-              ðŸ‘· FuncionÃ¡rios & Ponto
+              👷 Funcionários & Ponto
             </h2>
             <p style="font-size:13px; color:var(--text-muted); margin-top:2px;">
-              Controle de jornada de trabalho e registro de ponto eletrÃ´nico
+              Controle de jornada de trabalho e registro de ponto eletrônico
             </p>
           </div>
           
@@ -2443,17 +2443,17 @@
             <div style="display:inline-flex; background:#080d1a; border:1px solid var(--border); border-radius:10px; padding:3px; gap:2px;">
               <button class="period-btn" onclick="PontoModule.setPeriodo(this, 'Dia')">Dia</button>
               <button class="period-btn" onclick="PontoModule.setPeriodo(this, 'Semana')">Semana</button>
-              <button class="period-btn active" onclick="PontoModule.setPeriodo(this, 'MÃªs')">MÃªs</button>
+              <button class="period-btn active" onclick="PontoModule.setPeriodo(this, 'Mês')">Mês</button>
               <button class="period-btn" onclick="PontoModule.setPeriodo(this, 'Ano')">Ano</button>
             </div>
-            <span class="badge-blue-pill">â±ï¸ Ponto</span>
+            <span class="badge-blue-pill">⏱️ Ponto</span>
             <button class="btn-action-secondary" style="padding:7px 14px; font-size:12px;" onclick="PontoModule.openNewEmployeeModal()">
-              + LanÃ§amento
+              + Lançamento
             </button>
           </div>
         </div>
 
-        <!-- 1. TERMINAL CENTRAL DE PONTO ELETRÃ”NICO (HERO CARD - IMAGEM 1) -->
+        <!-- 1. TERMINAL CENTRAL DE PONTO ELETRÔNICO (HERO CARD - IMAGEM 1) -->
         <div class="ponto-clock-card">
           <span class="live-date-str" id="ponto-live-date">CARREGANDO DATA...</span>
           <div class="live-digital-clock" id="ponto-live-clock">12:02:19</div>
@@ -2466,41 +2466,41 @@
           </div>
 
           <div class="ponto-actions-row">
-            <button class="btn-ponto-action btn-ponto-entrada" onclick="PontoModule.registerPontoAction('in1')" title="Registrar 1Âª Entrada">
-              <span style="font-size:20px; font-weight:900; line-height:1; display:flex; align-items:center; gap:4px;"><i data-lucide="log-in" style="width:20px; height:20px;"></i>âž”]</span>
-              <span>1Âª Entrada</span>
+            <button class="btn-ponto-action btn-ponto-entrada" onclick="PontoModule.registerPontoAction('in1')" title="Registrar 1ª Entrada">
+              <span style="font-size:20px; font-weight:900; line-height:1; display:flex; align-items:center; gap:4px;"><i data-lucide="log-in" style="width:20px; height:20px;"></i>➔]</span>
+              <span>1ª Entrada</span>
             </button>
-            <button class="btn-ponto-action btn-ponto-almoco" onclick="PontoModule.registerPontoAction('out1')" title="Registrar SaÃ­da AlmoÃ§o">
-              <span style="font-size:20px; line-height:1; display:flex; align-items:center; gap:4px;"><i data-lucide="coffee" style="width:20px; height:20px;"></i>â˜•</span>
-              <span>SaÃ­da AlmoÃ§o</span>
+            <button class="btn-ponto-action btn-ponto-almoco" onclick="PontoModule.registerPontoAction('out1')" title="Registrar Saída Almoço">
+              <span style="font-size:20px; line-height:1; display:flex; align-items:center; gap:4px;"><i data-lucide="coffee" style="width:20px; height:20px;"></i>☕</span>
+              <span>Saída Almoço</span>
             </button>
-            <button class="btn-ponto-action btn-ponto-entrada" onclick="PontoModule.registerPontoAction('in2')" title="Registrar Retorno AlmoÃ§o">
-              <span style="font-size:20px; line-height:1; display:flex; align-items:center; gap:4px;"><i data-lucide="play-circle" style="width:20px; height:20px;"></i>â–¶</span>
-              <span>Volta AlmoÃ§o</span>
+            <button class="btn-ponto-action btn-ponto-entrada" onclick="PontoModule.registerPontoAction('in2')" title="Registrar Retorno Almoço">
+              <span style="font-size:20px; line-height:1; display:flex; align-items:center; gap:4px;"><i data-lucide="play-circle" style="width:20px; height:20px;"></i>▶</span>
+              <span>Volta Almoço</span>
             </button>
-            <button class="btn-ponto-action btn-ponto-saida" onclick="PontoModule.registerPontoAction('out2')" title="Registrar SaÃ­da Final">
-              <span style="font-size:20px; font-weight:900; line-height:1; display:flex; align-items:center; gap:4px;"><i data-lucide="log-out" style="width:20px; height:20px;"></i>[âž”</span>
-              <span>SaÃ­da Final</span>
+            <button class="btn-ponto-action btn-ponto-saida" onclick="PontoModule.registerPontoAction('out2')" title="Registrar Saída Final">
+              <span style="font-size:20px; font-weight:900; line-height:1; display:flex; align-items:center; gap:4px;"><i data-lucide="log-out" style="width:20px; height:20px;"></i>[➔</span>
+              <span>Saída Final</span>
             </button>
             <button class="btn-ponto-action btn-ponto-falta" onclick="PontoModule.openModalFalta()" title="Registrar Falta ou Justificativa">
-              <span style="font-size:20px; line-height:1; display:flex; align-items:center; gap:4px;"><i data-lucide="user-x" style="width:20px; height:20px;"></i>ðŸ‘¤</span>
+              <span style="font-size:20px; line-height:1; display:flex; align-items:center; gap:4px;"><i data-lucide="user-x" style="width:20px; height:20px;"></i>👤</span>
               <span>Falta</span>
             </button>
           </div>
         </div>
 
-        <!-- 2. QUADRO DE FUNCIONÃRIOS ATIVOS (IMAGEM 1 & 2) -->
+        <!-- 2. QUADRO DE FUNCIONÁRIOS ATIVOS (IMAGEM 1 & 2) -->
         <div class="glass-card" style="border-color: rgba(59,130,246,0.35); margin-bottom:24px;">
           <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:18px;">
             <div style="display:flex; align-items:center; gap:10px;">
               <h3 style="font-family:var(--font-display); font-size:18px; font-weight:800; color:#fff; display:flex; align-items:center; gap:8px;">
-                ðŸ‘¥ Quadro de FuncionÃ¡rios Ativos
+                👥 Quadro de Funcionários Ativos
               </h3>
               <span class="badge-count" id="badge-total-colaboradores" style="border-color:rgba(59,130,246,0.4); color:#60a5fa; background:rgba(59,130,246,0.12);">0 ativos</span>
             </div>
             <div>
               <button class="btn-action-primary" style="font-size:13px; font-weight:700; padding:8px 16px; background:linear-gradient(135deg, #0284c7, #06b6d4); color:#fff; border:none; border-radius:8px; cursor:pointer;" onclick="PontoModule.openNewEmployeeModal()">
-                + Novo FuncionÃ¡rio
+                + Novo Funcionário
               </button>
             </div>
           </div>
@@ -2513,9 +2513,9 @@
                   <th style="min-width:160px;">CARGO</th>
                   <th style="min-width:140px;">DEPARTAMENTO</th>
                   <th style="min-width:110px;">JORNADA</th>
-                  <th style="min-width:140px;">SALÃRIO</th>
-                  <th style="min-width:130px; text-align:center;">STATUS PRESENÃ‡A</th>
-                  <th style="min-width:120px; text-align:center;">AÃ‡Ã•ES</th>
+                  <th style="min-width:140px;">SALÁRIO</th>
+                  <th style="min-width:130px; text-align:center;">STATUS PRESENÇA</th>
+                  <th style="min-width:120px; text-align:center;">AÇÕES</th>
                 </tr>
               </thead>
               <tbody id="tbody-employees">
@@ -2525,17 +2525,17 @@
           </div>
         </div>
 
-        <!-- 3. ESPELHO DE PONTO ELETRÃ”NICO (IMAGEM 2) -->
+        <!-- 3. ESPELHO DE PONTO ELETRÔNICO (IMAGEM 2) -->
         <div class="glass-card" style="border-color: rgba(6,182,212,0.3);">
           <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:18px;">
             <div style="display:flex; align-items:center; gap:10px;">
               <h3 style="font-family:var(--font-display); font-size:18px; font-weight:800; color:#fff; display:flex; align-items:center; gap:8px;">
-                ðŸ“„ Espelho de Ponto EletrÃ´nico
+                📄 Espelho de Ponto Eletrônico
               </h3>
             </div>
             <div style="display: flex; gap: 10px; align-items: center; flex-wrap:wrap;">
               <select id="select-filter-ponto-emp" class="form-control" style="background:#080d1a; border:1px solid var(--border); color:#fff; padding: 6px 12px; font-size: 0.85rem; border-radius:6px;" onchange="PontoModule.renderPontoHistoryTable()">
-                <!-- Filtro por funcionÃ¡rio -->
+                <!-- Filtro por funcionário -->
               </select>
               <button class="btn-action-secondary" style="padding: 6px 14px; font-size: 0.85rem; display:inline-flex; align-items:center; gap:6px;" onclick="window.print()">
                 <i data-lucide="printer" style="width:15px; height:15px;"></i> Imprimir Folha
@@ -2550,12 +2550,12 @@
                   <th>COLABORADOR</th>
                   <th>DATA</th>
                   <th>ENTRADA 1</th>
-                  <th>SAÃDA ALMOÃ‡O</th>
-                  <th>VOLTA ALMOÃ‡O</th>
-                  <th>SAÃDA FINAL</th>
+                  <th>SAÍDA ALMOÇO</th>
+                  <th>VOLTA ALMOÇO</th>
+                  <th>SAÍDA FINAL</th>
                   <th>TEMPO TRABALHADO</th>
-                  <th>VALOR DO SALÃRIO</th>
-                  <th style="text-align:center;">AÃ‡Ã•ES</th>
+                  <th>VALOR DO SALÁRIO</th>
+                  <th style="text-align:center;">AÇÕES</th>
                 </tr>
               </thead>
               <tbody id="tbody-ponto-logs">
@@ -2610,14 +2610,14 @@
   </div>
 </div>
 
-<!-- MODAL CADASTRO / EDIÃ‡ÃƒO DE FUNCIONÃRIO (IMAGE 1 & 2) -->
+<!-- MODAL CADASTRO / EDIÇÃO DE FUNCIONÁRIO (IMAGE 1 & 2) -->
 <div id="modal-funcionario" class="modal-backdrop" style="display:none;" onclick="fecharModalFuncionario(event)">
   <div class="modal-window" onclick="event.stopPropagation()" style="max-width:720px; border-color:rgba(59,130,246,0.5);">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; border-bottom:1px solid var(--border); padding-bottom:12px;">
       <h3 id="modal-func-titulo" style="font-family:var(--font-display); font-size:19px; color:#60a5fa; display:flex; align-items:center; gap:8px;">
-        ðŸ‘· Cadastro de Novo FuncionÃ¡rio
+        👷 Cadastro de Novo Funcionário
       </h3>
-      <button style="background:transparent; border:none; color:var(--text-muted); font-size:20px; cursor:pointer;" onclick="fecharModalFuncionario()">âœ•</button>
+      <button style="background:transparent; border:none; color:var(--text-muted); font-size:20px; cursor:pointer;" onclick="fecharModalFuncionario()">✕</button>
     </div>
 
     <input type="hidden" id="modal-func-id" value="">
@@ -2644,8 +2644,8 @@
           <option value="Obras & Engenharia">Obras & Engenharia</option>
           <option value="Alvenaria & Estrutura">Alvenaria & Estrutura</option>
           <option value="Acabamento & Pintura">Acabamento & Pintura</option>
-          <option value="InstalaÃ§Ãµes ElÃ©tricas & HidrÃ¡ulicas">InstalaÃ§Ãµes ElÃ©tricas & HidrÃ¡ulicas</option>
-          <option value="CriaÃ§Ã£o">CriaÃ§Ã£o (Design & Arquitetura)</option>
+          <option value="Instalações Elétricas & Hidráulicas">Instalações Elétricas & Hidráulicas</option>
+          <option value="Criação">Criação (Design & Arquitetura)</option>
           <option value="Administrativo & Financeiro">Administrativo & Financeiro</option>
         </select>
       </div>
@@ -2653,14 +2653,14 @@
 
     <div class="grid-2">
       <div class="form-group">
-        <label>Cargo / FunÃ§Ã£o na Empresa</label>
+        <label>Cargo / Função na Empresa</label>
         <select id="modal-func-cargo" onchange="aoMudarCargoModal(this.value)">
           <option value="Mestre de Obras">Mestre de Obras</option>
           <option value="Pedreiro">Pedreiro</option>
           <option value="Servente">Servente de Obras</option>
           <option value="Armador">Armador</option>
           <option value="Eletricista">Eletricista</option>
-          <option value="Encanador">Encanador / Bombeiro HidrÃ¡ulico</option>
+          <option value="Encanador">Encanador / Bombeiro Hidráulico</option>
           <option value="Pintor">Pintor</option>
           <option value="Gesseiro">Gesseiro</option>
           <option value="Arquiteta & Planejamento">Arquiteta & Planejamento</option>
@@ -2676,7 +2676,7 @@
           <option value="40h/sem (8h/dia)">40h/sem (8h/dia)</option>
           <option value="40h/sem">40h/sem</option>
           <option value="30h/sem (6h/dia)">30h/sem (6h/dia)</option>
-          <option value="DiÃ¡ria Avulsa">DiÃ¡ria Avulsa (Sob Demanda)</option>
+          <option value="Diária Avulsa">Diária Avulsa (Sob Demanda)</option>
         </select>
       </div>
     </div>
@@ -2688,46 +2688,46 @@
 
     <div class="grid-3" style="margin-top:4px;">
       <div class="form-group">
-        <label>Valor da DiÃ¡ria (R$)</label>
+        <label>Valor da Diária (R$)</label>
         <input id="modal-func-diaria" placeholder="160,00" value="160,00" oninput="aoDigitarDiariaModal(this.value)" />
       </div>
       <div class="form-group">
-        <label>SalÃ¡rio Mensal Estimado (R$)</label>
+        <label>Salário Mensal Estimado (R$)</label>
         <input id="modal-func-salario" placeholder="3.520,00" value="3.520,00" />
       </div>
       <div class="form-group">
         <label>Status Inicial</label>
         <select id="modal-func-status">
-          <option value="Presente">ðŸŸ¢ Presente</option>
-          <option value="AlmoÃ§o">ðŸŸ¡ Em AlmoÃ§o</option>
-          <option value="Ausente">âšª Ausente</option>
-          <option value="FÃ©rias">ðŸ–ï¸ Em FÃ©rias</option>
+          <option value="Presente">🟢 Presente</option>
+          <option value="Almoço">🟡 Em Almoço</option>
+          <option value="Ausente">⚪ Ausente</option>
+          <option value="Férias">🏖️ Em Férias</option>
         </select>
       </div>
     </div>
 
     <div class="form-group" style="margin-top:6px;">
-      <label>ObservaÃ§Ãµes / Dados BancÃ¡rios / Chave PIX</label>
+      <label>Observações / Dados Bancários / Chave PIX</label>
       <input id="modal-func-obs" placeholder="Ex: PIX telefone; chave de acesso; encarregado do lote 4..." />
     </div>
 
     <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:20px; border-top:1px solid var(--border); padding-top:14px;">
       <button class="btn-action-secondary" onclick="fecharModalFuncionario()">Cancelar</button>
-      <button class="btn-action-gold" onclick="salvarFuncionarioModal()">ðŸ’¾ Salvar Colaborador</button>
+      <button class="btn-action-gold" onclick="salvarFuncionarioModal()">💾 Salvar Colaborador</button>
     </div>
   </div>
 </div>
 
-<!-- MODAL DE IMPRESSÃƒO / RELATÃ“RIO DO COLABORADOR -->
+<!-- MODAL DE IMPRESSÃO / RELATÓRIO DO COLABORADOR -->
 <div id="modal-relatorio-funcionario" class="modal-backdrop" style="display:none;" onclick="fecharModalRelatorio(event)">
   <div class="modal-window" onclick="event.stopPropagation()" style="max-width:850px; border-color:rgba(59,130,246,0.5);">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; border-bottom:1px solid var(--border); padding-bottom:10px;">
       <h3 style="font-family:var(--font-display); font-size:18px; color:#60a5fa; display:flex; align-items:center; gap:8px;">
-        ðŸ“„ RelatÃ³rio & Espelho de Ponto Individual
+        📄 Relatório & Espelho de Ponto Individual
       </h3>
       <div style="display:flex; gap:8px;">
-        <button class="btn-action-gold" style="padding:6px 14px; font-size:12px;" onclick="window.print()">ðŸ–¨ï¸ Imprimir / Salvar PDF</button>
-        <button style="background:transparent; border:none; color:var(--text-muted); font-size:18px; cursor:pointer;" onclick="fecharModalRelatorio()">âœ•</button>
+        <button class="btn-action-gold" style="padding:6px 14px; font-size:12px;" onclick="window.print()">🖨️ Imprimir / Salvar PDF</button>
+        <button style="background:transparent; border:none; color:var(--text-muted); font-size:18px; cursor:pointer;" onclick="fecharModalRelatorio()">✕</button>
       </div>
     </div>
     <div id="modal-relatorio-conteudo"></div>
@@ -2737,7 +2737,7 @@
 <script>
 
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ══════════════════════════════════════════════
 //  DATA STORAGE & STATE
 // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 const K = {
@@ -2769,7 +2769,7 @@ let funcionarioSelecionadoId = 1;
 let proxNum = 1;
 let proxTerc = 1;
 let proxMat = 1;
-let formaAtual = 'Ã€ vista';
+let formaAtual = 'À vista';
 let itemId = 0;
 let editandoOs = null;
 let editandoTerc = null;
@@ -2798,7 +2798,7 @@ const FUNCIONARIOS_INICIAIS = [
     email: 'juliana@sdsolucoes.com.br',
     tel: '(11) 97654-3210',
     cargo: 'UI/UX & Design Digital',
-    departamento: 'CriaÃ§Ã£o',
+    departamento: 'Criação',
     jornada: '40h/sem',
     horasDia: 8,
     diaria: 236.36,
@@ -2808,7 +2808,7 @@ const FUNCIONARIOS_INICIAIS = [
   },
   {
     id: 3,
-    nome: 'JosÃ© Ferreira de Souza',
+    nome: 'José Ferreira de Souza',
     email: 'jose.pedreiro@sdconstrucoes.com.br',
     tel: '(85) 98765-4321',
     cargo: 'Pedreiro',
@@ -2822,18 +2822,24 @@ const FUNCIONARIOS_INICIAIS = [
   },
   {
     id: 4,
-    nome: 'Marcos VinÃ­cius Santos',
+    nome: 'Marcos Vinícius Santos',
     email: 'marcos.eletrica@sdconstrucoes.com.br',
     tel: '(85) 99123-4567',
     cargo: 'Eletricista',
-    departamento: 'InstalaÃ§Ãµes ElÃ©tricas',
+    departamento: 'Instalações Elétricas',
     jornada: '44h/sem (8h/dia)',
     horasDia: 8,
     diaria: 180.00,
     salario: 3960.00,
-    status: 'AlmoÃ§o',
+    status: 'Almoço',
     ultimoPonto: '12:00'
   }
+];
+
+const VENDEDORES_INICIAIS = [
+  { id: 1, nome: 'Samuel Dantas', tel: '(85) 99611-9824', cargo: 'Gerente Comercial', comissao: 5, status: 'Ativo', obs: 'Obras de alto padrão e condomínios' },
+  { id: 2, nome: 'Carlos Eduardo', tel: '(85) 98888-1111', cargo: 'Consultor de Obras', comissao: 4, status: 'Ativo', obs: 'Reformas e reformas residenciais' },
+  { id: 3, nome: 'Mariana Souza', tel: '(85) 98777-2222', cargo: 'Executiva de Vendas', comissao: 4.5, status: 'Ativo', obs: 'Prospecção corporativa e comercial' }
 ];
 
 const VENDEDORES_INICIAIS = [
@@ -3112,17 +3118,17 @@ function enviarSoPdfWhatsAppTerceirizado() {
 // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 let dadosPontoSemanal = [
   { dia: 'Segunda-feira', entrada: '07:00', saida: '15:00', status: 'Presente', horasExtras: 0 },
-  { dia: 'TerÃ§a-feira', entrada: '07:00', saida: '17:00', status: 'Presente', horasExtras: 2 },
+  { dia: 'Terça-feira', entrada: '07:00', saida: '17:00', status: 'Presente', horasExtras: 2 },
   { dia: 'Quarta-feira', entrada: '07:00', saida: '13:00', status: 'Presente', horasExtras: 0 },
   { dia: 'Quinta-feira', entrada: '', saida: '', status: 'Falta - Doente', horasExtras: 0 },
   { dia: 'Sexta-feira', entrada: '07:00', saida: '15:00', status: 'Presente', horasExtras: 0 },
-  { dia: 'SÃ¡bado', entrada: '07:00', saida: '12:00', status: 'Presente', horasExtras: 0 },
+  { dia: 'Sábado', entrada: '07:00', saida: '12:00', status: 'Presente', horasExtras: 0 },
   { dia: 'Domingo', entrada: '', saida: '', status: 'Folga / DSR', horasExtras: 0 }
 ];
 
 let relogioIntervalId = null;
 
-// RelÃ³gio Digital em Tempo Real com Data Formatada (Image 1)
+// Relógio Digital em Tempo Real com Data Formatada (Image 1)
 function iniciarRelogioDigital() {
   if (relogioIntervalId) clearInterval(relogioIntervalId);
 
@@ -3139,8 +3145,8 @@ function iniciarRelogioDigital() {
     }
 
     if (elData) {
-      const diasSemana = ['DOMINGO', 'SEGUNDA-FEIRA', 'TERÃ‡A-FEIRA', 'QUARTA-FEIRA', 'QUINTA-FEIRA', 'SEXTA-FEIRA', 'SÃBADO'];
-      const meses = ['JANEIRO', 'FEVEREIRO', 'MARÃ‡O', 'ABRIL', 'MAIO', 'JUNHO', 'JULHO', 'AGOSTO', 'SETEMBRO', 'OUTUBRO', 'NOVEMBRO', 'DEZEMBRO'];
+      const diasSemana = ['DOMINGO', 'SEGUNDA-FEIRA', 'TERÇA-FEIRA', 'QUARTA-FEIRA', 'QUINTA-FEIRA', 'SEXTA-FEIRA', 'SÁBADO'];
+      const meses = ['JANEIRO', 'FEVEREIRO', 'MARÇO', 'ABRIL', 'MAIO', 'JUNHO', 'JULHO', 'AGOSTO', 'SETEMBRO', 'OUTUBRO', 'NOVEMBRO', 'DEZEMBRO'];
       const diaSemana = diasSemana[agora.getDay()];
       const dia = agora.getDate();
       const mes = meses[agora.getMonth()];
@@ -3153,14 +3159,14 @@ function iniciarRelogioDigital() {
   relogioIntervalId = setInterval(atualizar, 1000);
 }
 
-// Filtro de PerÃ­odo (Dia, Semana, MÃªs, Ano)
+// Filtro de Período (Dia, Semana, Mês, Ano)
 function selecionarPeriodoPonto(btn, periodo) {
   document.querySelectorAll('.period-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  showToast(`PerÃ­odo de visualizaÃ§Ã£o: ${periodo}`, 'ðŸ“…');
+  showToast(`Período de visualização: ${periodo}`, '📅');
 }
 
-// Renderiza o Quadro de FuncionÃ¡rios Ativos e o Dropdown do Ponto
+// Renderiza o Quadro de Funcionários Ativos e o Dropdown do Ponto
 function renderFuncionarios() {
   if (window.PontoModule) {
     PontoModule.renderEmployeesTable();
@@ -3170,7 +3176,7 @@ function renderFuncionarios() {
   }
 }
 
-// Troca o FuncionÃ¡rio Selecionado via Dropdown
+// Troca o Funcionário Selecionado via Dropdown
 function aoTrocarFuncionarioPonto(val) {
   if (val === 'novo') {
     abrirModalNovoFuncionario();
@@ -3221,7 +3227,7 @@ function atualizarNomeFuncionarioAtivo(nome) {
   atualizarTotaisPonto();
 }
 
-// REGISTRO DE PONTO ELETRÃ”NICO (1Âª Entrada, SaÃ­da AlmoÃ§o, Volta AlmoÃ§o, SaÃ­da Final)
+// REGISTRO DE PONTO ELETRÔNICO (1ª Entrada, Saída Almoço, Volta Almoço, Saída Final)
 function registrarBatidaPonto(tipo) {
   let func = funcionarios.find(f => f.id === funcionarioSelecionadoId);
   if (!func && funcionarios.length > 0) {
@@ -3229,7 +3235,7 @@ function registrarBatidaPonto(tipo) {
     funcionarioSelecionadoId = func.id;
   }
   if (!func) {
-    showToast('Cadastre um funcionÃ¡rio primeiro!', 'âš ï¸');
+    showToast('Cadastre um funcionário primeiro!', '⚠️');
     abrirModalNovoFuncionario();
     return;
   }
@@ -3237,24 +3243,24 @@ function registrarBatidaPonto(tipo) {
   const agora = new Date();
   const horaStr = `${String(agora.getHours()).padStart(2, '0')}:${String(agora.getMinutes()).padStart(2, '0')}`;
 
-  // Atualiza status do funcionÃ¡rio
-  if (tipo === '1Âª Entrada' || tipo === 'Volta AlmoÃ§o') {
+  // Atualiza status do funcionário
+  if (tipo === '1ª Entrada' || tipo === 'Volta Almoço') {
     func.status = 'Presente';
-  } else if (tipo === 'SaÃ­da AlmoÃ§o') {
-    func.status = 'AlmoÃ§o';
-  } else if (tipo === 'SaÃ­da Final') {
+  } else if (tipo === 'Saída Almoço') {
+    func.status = 'Almoço';
+  } else if (tipo === 'Saída Final') {
     func.status = 'Finalizado';
   }
   func.ultimoPonto = horaStr;
   save(K.funcionarios, funcionarios);
 
-  // Preenche na folha semanal de ponto (dia correspondente de hoje: 0=Segunda atÃ© 6=Domingo)
+  // Preenche na folha semanal de ponto (dia correspondente de hoje: 0=Segunda até 6=Domingo)
   const diaSemanaIdx = (agora.getDay() + 6) % 7;
   if (dadosPontoSemanal[diaSemanaIdx]) {
-    if (tipo === '1Âª Entrada') {
+    if (tipo === '1ª Entrada') {
       dadosPontoSemanal[diaSemanaIdx].entrada = horaStr;
       dadosPontoSemanal[diaSemanaIdx].status = 'Presente';
-    } else if (tipo === 'SaÃ­da Final') {
+    } else if (tipo === 'Saída Final') {
       dadosPontoSemanal[diaSemanaIdx].saida = horaStr;
       dadosPontoSemanal[diaSemanaIdx].status = 'Presente';
     }
@@ -3262,13 +3268,13 @@ function registrarBatidaPonto(tipo) {
   }
 
   renderFuncionarios();
-  showToast(`Ponto: ${tipo} registrada Ã s ${horaStr} para ${func.nome}!`, 'â±ï¸');
+  showToast(`Ponto: ${tipo} registrada às ${horaStr} para ${func.nome}!`, '⏱️');
 }
 
-// MODAL CADASTRO / EDIÃ‡ÃƒO DE FUNCIONÃRIO
+// MODAL CADASTRO / EDIÇÃO DE FUNCIONÁRIO
 function abrirModalNovoFuncionario() {
   document.getElementById('modal-func-id').value = '';
-  document.getElementById('modal-func-titulo').innerHTML = 'ðŸ‘· Cadastro de Novo FuncionÃ¡rio';
+  document.getElementById('modal-func-titulo').innerHTML = '👷 Cadastro de Novo Funcionário';
   document.getElementById('modal-func-nome').value = '';
   document.getElementById('modal-func-tel').value = '';
   document.getElementById('modal-func-email').value = '';
@@ -3347,7 +3353,7 @@ function salvarFuncionarioModal() {
   const editId = document.getElementById('modal-func-id').value;
 
   if (!nome) {
-    alert('âš ï¸ Informe o nome completo do funcionÃ¡rio.');
+    alert('⚠️ Informe o nome completo do funcionário.');
     document.getElementById('modal-func-nome').focus();
     return;
   }
@@ -3360,7 +3366,7 @@ function salvarFuncionarioModal() {
         ...funcionarios[idx],
         nome, tel, email, departamento: dept, cargo, jornada, diaria, salario, status, obs
       };
-      showToast('Cadastro do funcionÃ¡rio atualizado!', 'âœ…');
+      showToast('Cadastro do funcionário atualizado!', '✅');
     }
   } else {
     // Criando novo
@@ -3374,7 +3380,7 @@ function salvarFuncionarioModal() {
     };
     funcionarios.push(novo);
     funcionarioSelecionadoId = novoId;
-    showToast('Novo funcionÃ¡rio cadastrado com sucesso!', 'ðŸ‘·');
+    showToast('Novo funcionário cadastrado com sucesso!', '👷');
   }
 
   save(K.funcionarios, funcionarios);
@@ -3388,7 +3394,7 @@ function editarFuncionario(id) {
   if (!f) return;
 
   document.getElementById('modal-func-id').value = f.id;
-  document.getElementById('modal-func-titulo').innerHTML = `âœï¸ Editar FuncionÃ¡rio: <span style="color:#fff;">${f.nome}</span>`;
+  document.getElementById('modal-func-titulo').innerHTML = `✏️ Editar Funcionário: <span style="color:#fff;">${f.nome}</span>`;
   document.getElementById('modal-func-nome').value = f.nome;
   document.getElementById('modal-func-tel').value = f.tel || '';
   document.getElementById('modal-func-email').value = f.email || '';
@@ -3414,11 +3420,11 @@ function editarFuncionario(id) {
   document.getElementById('modal-funcionario').style.display = 'flex';
 }
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-// EXCLUIR FUNCIONÃRIO: REGRA CRÃTICA DO USUÃRIO:
-// "quando excluir nao precisar de mensagem de confirmaÃ§ao, quero que exclua ."
-// NENHUMA MENSAGEM OU POPUP DE CONFIRMAÃ‡ÃƒO Ã‰ EXIBIDO! EXCLUI DIRETO!
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ════════════════════════════════════════════════════════════════════
+// EXCLUIR FUNCIONÁRIO: REGRA CRÍTICA DO USUÁRIO:
+// "quando excluir nao precisar de mensagem de confirmaçao, quero que exclua ."
+// NENHUMA MENSAGEM OU POPUP DE CONFIRMAÇÃO É EXIBIDO! EXCLUI DIRETO!
+// ════════════════════════════════════════════════════════════════════
 function excluirFuncionario(id) {
   funcionarios = funcionarios.filter(f => f.id !== id);
   save(K.funcionarios, funcionarios);
@@ -3440,14 +3446,14 @@ function excluirFuncionario(id) {
     atualizarTotaisPonto();
   }
 
-  showToast('FuncionÃ¡rio excluÃ­do!', 'ðŸ—‘ï¸');
+  showToast('Funcionário excluído!', '🗑️');
 }
 
-// RELATÃ“RIO INDIVIDUAL DO FUNCIONÃRIO (IMPRIMIR / PDF)
+// RELATÓRIO INDIVIDUAL DO FUNCIONÁRIO (IMPRIMIR / PDF)
 function imprimirRelatorioFuncionario(id) {
   const f = funcionarios.find(x => x.id === id) || funcionarios[0];
   if (!f) {
-    showToast('Nenhum funcionÃ¡rio cadastrado.', 'âš ï¸');
+    showToast('Nenhum funcionário cadastrado.', '⚠️');
     return;
   }
 
@@ -3469,36 +3475,36 @@ function imprimirRelatorioFuncionario(id) {
             <img src="logo_sdconstrucoes_ltda.jpg?v=10" style="width:100%; height:100%; object-fit:cover;">
           </div>
           <div>
-            <h2 style="font-family:var(--font-display); font-size:19px; color:#fff; margin:0;">SD CONSTRUÃ‡Ã•ES LTDA</h2>
-            <div style="font-size:12px; color:var(--gold-light);">Engenharia, Obras & ServiÃ§os Especializados</div>
+            <h2 style="font-family:var(--font-display); font-size:19px; color:#fff; margin:0;">SD CONSTRUÇÕES LTDA</h2>
+            <div style="font-size:12px; color:var(--gold-light);">Engenharia, Obras & Serviços Especializados</div>
           </div>
         </div>
         <div style="text-align:right;">
-          <div style="font-size:14px; font-weight:800; color:#60a5fa;">ESPELHO DE PONTO & FREQUÃŠNCIA</div>
-          <div style="font-size:11px; color:var(--text-muted);">EmissÃ£o: ${dataHoje}</div>
+          <div style="font-size:14px; font-weight:800; color:#60a5fa;">ESPELHO DE PONTO & FREQUÊNCIA</div>
+          <div style="font-size:11px; color:var(--text-muted);">Emissão: ${dataHoje}</div>
         </div>
       </div>
 
       <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; background:#0d1424; padding:14px; border-radius:10px; margin-bottom:18px; border:1px solid var(--border);">
         <div><strong style="color:var(--text-muted); font-size:11px; text-transform:uppercase; display:block;">Colaborador</strong><span style="font-size:14.5px; font-weight:800; color:#fff;">${f.nome}</span></div>
-        <div><strong style="color:var(--text-muted); font-size:11px; text-transform:uppercase; display:block;">Cargo / FunÃ§Ã£o</strong><span style="font-size:14px; font-weight:700; color:#60a5fa;">${f.cargo}</span></div>
+        <div><strong style="color:var(--text-muted); font-size:11px; text-transform:uppercase; display:block;">Cargo / Função</strong><span style="font-size:14px; font-weight:700; color:#60a5fa;">${f.cargo}</span></div>
         <div><strong style="color:var(--text-muted); font-size:11px; text-transform:uppercase; display:block;">Departamento</strong><span style="font-size:14px; font-weight:700; color:#fff;">${f.departamento || 'Obras & Engenharia'}</span></div>
         <div><strong style="color:var(--text-muted); font-size:11px; text-transform:uppercase; display:block;">Jornada</strong><span style="font-size:14px; font-weight:700; color:#fff;">${f.jornada || '44h/sem (8h/dia)'}</span></div>
-        <div><strong style="color:var(--text-muted); font-size:11px; text-transform:uppercase; display:block;">Valor da DiÃ¡ria</strong><span style="font-size:14px; font-weight:800; color:var(--gold-light);">${formatMoney(f.diaria)}</span></div>
+        <div><strong style="color:var(--text-muted); font-size:11px; text-transform:uppercase; display:block;">Valor da Diária</strong><span style="font-size:14px; font-weight:800; color:var(--gold-light);">${formatMoney(f.diaria)}</span></div>
         <div><strong style="color:var(--text-muted); font-size:11px; text-transform:uppercase; display:block;">Contato</strong><span style="font-size:14px; font-weight:700; color:#fff;">${f.tel || '-'}</span></div>
       </div>
 
       <h4 style="color:#60a5fa; margin-bottom:10px; font-size:14px; display:flex; align-items:center; gap:6px;">
-        ðŸ“… Registro Semanal de Horas & FrequÃªncia
+        📅 Registro Semanal de Horas & Frequência
       </h4>
       <table style="width:100%; border-collapse:collapse; font-size:12px; margin-bottom:18px; text-align:left;">
         <thead>
           <tr style="border-bottom:1px solid rgba(255,255,255,0.15); color:var(--text-muted);">
             <th style="padding:8px 6px;">DIA DA SEMANA</th>
             <th style="padding:8px 6px;">ENTRADA</th>
-            <th style="padding:8px 6px;">SAÃDA</th>
+            <th style="padding:8px 6px;">SAÍDA</th>
             <th style="padding:8px 6px; text-align:center;">HORAS TRAB.</th>
-            <th style="padding:8px 6px;">SITUAÃ‡ÃƒO</th>
+            <th style="padding:8px 6px;">SITUAÇÃO</th>
             <th style="padding:8px 6px; text-align:center;">H. EXTRA</th>
             <th style="padding:8px 6px; text-align:right;">TOTAL DO DIA</th>
           </tr>
@@ -3531,14 +3537,14 @@ function imprimirRelatorioFuncionario(id) {
       </div>
 
       <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(16,185,129,0.15); border:1.5px solid rgba(16,185,129,0.4); border-radius:10px; padding:14px 20px; margin-bottom:30px;">
-        <span style="font-size:15px; font-weight:800;">VALOR LÃQUIDO A PAGAR AO COLABORADOR:</span>
+        <span style="font-size:15px; font-weight:800;">VALOR LÍQUIDO A PAGAR AO COLABORADOR:</span>
         <span style="font-size:22px; font-weight:900; color:var(--green-light);">${totalLiq}</span>
       </div>
 
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:50px; margin-top:40px; text-align:center;">
         <div>
-          <div style="border-top:1.5px solid #fff; padding-top:6px; font-size:12.5px; font-weight:800;">SD CONSTRUÃ‡Ã•ES LTDA</div>
-          <div style="font-size:11px; color:var(--text-muted);">Assinatura do ResponsÃ¡vel Legal</div>
+          <div style="border-top:1.5px solid #fff; padding-top:6px; font-size:12.5px; font-weight:800;">SD CONSTRUÇÕES LTDA</div>
+          <div style="font-size:11px; color:var(--text-muted);">Assinatura do Responsável Legal</div>
         </div>
         <div>
           <div style="border-top:1.5px solid #fff; padding-top:6px; font-size:12.5px; font-weight:800;">${f.nome.toUpperCase()}</div>
@@ -3556,7 +3562,7 @@ function fecharModalRelatorio() {
   document.getElementById('modal-relatorio-funcionario').style.display = 'none';
 }
 
-// IMPRIMIR RELATÃ“RIO DO QUADRO GERAL DA EQUIPE
+// IMPRIMIR RELATÓRIO DO QUADRO GERAL DA EQUIPE
 function imprimirRelatorioGeral() {
   const agora = new Date();
   const dataHoje = agora.toLocaleDateString('pt-BR');
@@ -3569,12 +3575,12 @@ function imprimirRelatorioGeral() {
             <img src="logo_sdconstrucoes_ltda.jpg?v=10" style="width:100%; height:100%; object-fit:cover;">
           </div>
           <div>
-            <h2 style="font-family:var(--font-display); font-size:19px; color:#fff; margin:0;">SD CONSTRUÃ‡Ã•ES LTDA</h2>
-            <div style="font-size:12px; color:var(--gold-light);">Quadro Geral de FuncionÃ¡rios & Controle de Equipe</div>
+            <h2 style="font-family:var(--font-display); font-size:19px; color:#fff; margin:0;">SD CONSTRUÇÕES LTDA</h2>
+            <div style="font-size:12px; color:var(--gold-light);">Quadro Geral de Funcionários & Controle de Equipe</div>
           </div>
         </div>
         <div style="text-align:right;">
-          <div style="font-size:14px; font-weight:800; color:var(--gold-light);">RELATÃ“RIO GERAL DA EQUIPE</div>
+          <div style="font-size:14px; font-weight:800; color:var(--gold-light);">RELATÓRIO GERAL DA EQUIPE</div>
           <div style="font-size:11px; color:var(--text-muted);">Data: ${dataHoje}</div>
         </div>
       </div>
@@ -3586,8 +3592,8 @@ function imprimirRelatorioGeral() {
             <th style="padding:10px 8px;">CARGO</th>
             <th style="padding:10px 8px;">DEPARTAMENTO</th>
             <th style="padding:10px 8px;">JORNADA</th>
-            <th style="padding:10px 8px;">VALOR DIÃRIA</th>
-            <th style="padding:10px 8px;">SALÃRIO ESTIMADO</th>
+            <th style="padding:10px 8px;">VALOR DIÁRIA</th>
+            <th style="padding:10px 8px;">SALÁRIO ESTIMADO</th>
             <th style="padding:10px 8px; text-align:center;">STATUS</th>
           </tr>
         </thead>
@@ -3620,7 +3626,7 @@ function imprimirRelatorioGeral() {
 
       <div style="text-align:center; margin-top:40px;">
         <div style="display:inline-block; border-top:1.5px solid #fff; width:280px; padding-top:6px; font-size:12.5px; font-weight:800;">
-          SD CONSTRUÃ‡Ã•ES LTDA
+          SD CONSTRUÇÕES LTDA
         </div>
         <div style="font-size:11px; color:var(--text-muted);">Diretoria & Recursos Humanos</div>
       </div>
@@ -3631,7 +3637,7 @@ function imprimirRelatorioGeral() {
   document.getElementById('modal-relatorio-funcionario').style.display = 'flex';
 }
 
-// Limpa o campo imediatamente ao focar para facilitar a digitaÃ§Ã£o sem precisar apagar
+// Limpa o campo imediatamente ao focar para facilitar a digitação sem precisar apagar
 function limparAoFocar(el) {
   if (el.readOnly) return;
   if (el.value && el.value.trim() !== '') {
@@ -3668,7 +3674,7 @@ function restaurarJornadaSeVazio(el) {
   recalcularValoresHoraFunc();
 }
 
-// Recalcula DiÃ¡ria e Hora Extra quando o usuÃ¡rio digita na HORA NORMAL (ex: 20,00 -> DiÃ¡ria 160,00)
+// Recalcula Diária e Hora Extra quando o usuário digita na HORA NORMAL (ex: 20,00 -> Diária 160,00)
 function recalcularPorHoraNormal() {
   const vHoraInput = document.getElementById('func-v-hora');
   const vHora = parseNum(vHoraInput?.value);
@@ -3698,7 +3704,7 @@ function recalcularPorHoraNormal() {
   }
 }
 
-// Recalcula Hora Normal e DiÃ¡ria quando o usuÃ¡rio digita na HORA EXTRA
+// Recalcula Hora Normal e Diária quando o usuário digita na HORA EXTRA
 function recalcularPorHoraExtra() {
   const vHoraExtra = parseNum(document.getElementById('func-v-hora-extra')?.value);
   const horasDia = parseNum(document.getElementById('func-horas-dia')?.value) || 8;
@@ -3727,7 +3733,7 @@ function recalcularPorHoraExtra() {
   }
 }
 
-// Recalcula Hora Normal e Hora Extra quando o usuÃ¡rio digita na DIÃRIA ou na JORNADA
+// Recalcula Hora Normal e Hora Extra quando o usuário digita na DIÁRIA ou na JORNADA
 function recalcularValoresHoraFunc() {
   const diaria = parseNum(document.getElementById('func-diaria')?.value) || 0;
   const horasDia = parseNum(document.getElementById('func-horas-dia')?.value) || 8;
@@ -3785,17 +3791,17 @@ function carregarExemploFuncionario() {
   document.getElementById('func-horas-dia').value = '8';
   dadosPontoSemanal = [
     { dia: 'Segunda-feira', entrada: '07:00', saida: '15:00', status: 'Presente', horasExtras: 0 },
-    { dia: 'TerÃ§a-feira', entrada: '07:00', saida: '17:00', status: 'Presente', horasExtras: 2 },
+    { dia: 'Terça-feira', entrada: '07:00', saida: '17:00', status: 'Presente', horasExtras: 2 },
     { dia: 'Quarta-feira', entrada: '07:00', saida: '13:00', status: 'Presente', horasExtras: 0 },
     { dia: 'Quinta-feira', entrada: '', saida: '', status: 'Falta - Doente', horasExtras: 0 },
     { dia: 'Sexta-feira', entrada: '07:00', saida: '15:00', status: 'Presente', horasExtras: 0 },
-    { dia: 'SÃ¡bado', entrada: '07:00', saida: '12:00', status: 'Presente', horasExtras: 0 },
+    { dia: 'Sábado', entrada: '07:00', saida: '12:00', status: 'Presente', horasExtras: 0 },
     { dia: 'Domingo', entrada: '', saida: '', status: 'Folga / DSR', horasExtras: 0 }
   ];
   recalcularValoresHoraFunc();
 }
 
-// Calcula a diferenÃ§a em horas entre dois horÃ¡rios no formato HH:MM
+// Calcula a diferença em horas entre dois horários no formato HH:MM
 function calcularHorasTrabalhadas(entrada, saida) {
   if (!entrada || !saida) return 0;
   const [hE, mE] = entrada.split(':').map(Number);
@@ -3803,7 +3809,7 @@ function calcularHorasTrabalhadas(entrada, saida) {
   if (isNaN(hE) || isNaN(mE) || isNaN(hS) || isNaN(mS)) return 0;
   const minEntrada = hE * 60 + mE;
   let minSaida = hS * 60 + mS;
-  // Se saÃ­da for antes da entrada (virada de meia-noite)
+  // Se saída for antes da entrada (virada de meia-noite)
   if (minSaida < minEntrada) minSaida += 24 * 60;
   return (minSaida - minEntrada) / 60;
 }
@@ -3830,7 +3836,7 @@ function gerarTabelaPontoSemanal() {
   const vHoraExtra = vHoraExtraField > 0 ? vHoraExtraField : (vHora * 1.5);
 
   tbody.innerHTML = dadosPontoSemanal.map((d, i) => {
-    // Horas trabalhadas: se o usuÃ¡rio digitou manualmente ou calculadas de entrada/saÃ­da
+    // Horas trabalhadas: se o usuário digitou manualmente ou calculadas de entrada/saída
     let horasDec = (d.horasTrabManual !== null && d.horasTrabManual !== undefined)
       ? d.horasTrabManual
       : calcularHorasTrabalhadas(d.entrada, d.saida);
@@ -3964,7 +3970,7 @@ function atualizarTotaisPonto() {
       ? d.horasTrabManual
       : calcularHorasTrabalhadas(d.entrada, d.saida);
 
-    // Horas extras: manual se digitado pelo usuÃ¡rio, senÃ£o calculado automaticamente
+    // Horas extras: manual se digitado pelo usuário, senão calculado automaticamente
     const horasExtraAuto = Math.max(0, horasTrab - horasDia);
     const he = (d.horasExtrasManual !== null && d.horasExtrasManual !== undefined)
       ? d.horasExtrasManual
@@ -3985,7 +3991,7 @@ function atualizarTotaisPonto() {
       totalHorasTrab += horasTrab > 0 ? horasTrab : horasDia;
     } else if (d.status === 'Falta - Doente') {
       faltas++;
-      subtotalDia = diaria; // Atestado mÃ©dico
+      subtotalDia = diaria; // Atestado médico
     } else if (d.status === 'Falta Injustificada') {
       faltas++;
       subtotalDia = 0;
@@ -3998,7 +4004,7 @@ function atualizarTotaisPonto() {
     const elSub = document.getElementById('ponto-subtotal-' + i);
     if (elSub) elSub.value = formatMoney(subtotalDia);
 
-    // Atualiza campo de hora extra da linha caso nÃ£o esteja sendo editado no momento
+    // Atualiza campo de hora extra da linha caso não esteja sendo editado no momento
     const elHe = document.getElementById('ponto-he-' + i);
     if (elHe && document.activeElement !== elHe) {
       elHe.value = he > 0 ? Number(he.toFixed(2)) : 0;
@@ -4049,7 +4055,7 @@ function salvarFolhaPonto() {
   if (funcionarioSelecionadoId) {
     save('sdc_ponto_semanal_' + funcionarioSelecionadoId, dadosPontoSemanal);
   }
-  showToast('Registro de Ponto do FuncionÃ¡rio salvo com sucesso!', 'ðŸ’¾');
+  showToast('Registro de Ponto do Funcionário salvo com sucesso!', '💾');
 }
 
 // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
@@ -4337,7 +4343,7 @@ function imprimirPdfMateriais() {
 function salvarListaMateriais() {
   const nomeCliente = document.getElementById('mat-cli-nome').value.trim();
   if (!nomeCliente) {
-    showToast('Informe o nome do cliente antes de salvar.', 'âš ï¸');
+    showToast('Informe o nome do cliente antes de salvar.', '⚠️');
     document.getElementById('mat-cli-nome').focus();
     return;
   }
@@ -4350,7 +4356,7 @@ function salvarListaMateriais() {
     if (nomeItem) {
       itens.push({
         item: nomeItem,
-        cat: sels[0]?.value || 'BÃ¡sico',
+        cat: sels[0]?.value || 'Básico',
         qtd: ins[1]?.value || '1',
         un: sels[1]?.value || 'Unidade',
         vunit: ins[2]?.value || '0',
@@ -4362,7 +4368,7 @@ function salvarListaMateriais() {
   });
 
   if (itens.length === 0) {
-    showToast('Adicione ao menos um material antes de salvar.', 'âš ï¸');
+    showToast('Adicione ao menos um material antes de salvar.', '⚠️');
     return;
   }
 
@@ -4387,12 +4393,12 @@ function salvarListaMateriais() {
     const idx = listasMatSalvas.findIndex(m => m.numero === editandoMat);
     if (idx !== -1) listasMatSalvas[idx] = novaLista;
     editandoMat = null;
-    showToast(`Lista de Materiais ${numero} atualizada com sucesso!`, 'ðŸ’¾');
+    showToast(`Lista de Materiais ${numero} atualizada com sucesso!`, '💾');
   } else {
     listasMatSalvas.unshift(novaLista);
     proxMat++;
     localStorage.setItem(K.nextMat, proxMat);
-    showToast(`Lista de Materiais ${numero} salva com sucesso!`, 'ðŸ’¾');
+    showToast(`Lista de Materiais ${numero} salva com sucesso!`, '💾');
   }
 
   save(K.materiais, listasMatSalvas);
@@ -4409,7 +4415,7 @@ function renderListasMatSalvas() {
   document.getElementById('mat-saved-count').textContent = listasMatSalvas.length + ' listas salvas';
 
   if (listasMatSalvas.length === 0) {
-    div.innerHTML = '<div style="text-align:center; padding:24px; color:var(--text-muted); font-size:13px;">ðŸ§± Nenhuma lista de materiais salva ainda. Preencha os dados acima e clique em "Salvar Lista de Materiais da Obra".</div>';
+    div.innerHTML = '<div style="text-align:center; padding:24px; color:var(--text-muted); font-size:13px;">🧱 Nenhuma lista de materiais salva ainda. Preencha os dados acima e clique em "Salvar Lista de Materiais da Obra".</div>';
     return;
   }
 
@@ -4421,20 +4427,20 @@ function renderListasMatSalvas() {
           <span class="rec-tag" style="background:rgba(249,115,22,0.15); color:#fb923c; border:1px solid rgba(249,115,22,0.3);">Lista de Materiais</span>
           <span style="font-size:11.5px; color:var(--text-muted);">${m.data}</span>
         </div>
-        <div style="font-size:14.5px; color:#fff; font-weight:700;">ðŸ‘¤ ${m.cliente?.nome || 'NÃ£o informado'}</div>
-        ${m.cliente?.tel ? `<div style="font-size:12.5px; color:#60a5fa; margin-top:2px;">ðŸ“± ${m.cliente.tel}</div>` : ''}
-        ${m.cliente?.end ? `<div style="font-size:12px; color:var(--text-muted); margin-top:1px;">ðŸ“ ${m.cliente.end}</div>` : ''}
+        <div style="font-size:14.5px; color:#fff; font-weight:700;">👤 ${m.cliente?.nome || 'Não informado'}</div>
+        ${m.cliente?.tel ? `<div style="font-size:12.5px; color:#60a5fa; margin-top:2px;">📱 ${m.cliente.tel}</div>` : ''}
+        ${m.cliente?.end ? `<div style="font-size:12px; color:var(--text-muted); margin-top:1px;">📍 ${m.cliente.end}</div>` : ''}
         <div style="display:flex; gap:16px; margin-top:8px; flex-wrap:wrap;">
-          <span style="font-size:12px; color:var(--gold-light); font-weight:700;">ðŸ’° Total: ${m.totalGeral || 'R$ 0,00'}</span>
-          <span style="font-size:12px; color:#fb923c;">ðŸ‘¤ Cliente: ${m.totalCliente || 'R$ 0,00'}</span>
-          <span style="font-size:12px; color:var(--text-muted);">ðŸ“¦ ${m.itens?.length || 0} itens</span>
+          <span style="font-size:12px; color:var(--gold-light); font-weight:700;">💰 Total: ${m.totalGeral || 'R$ 0,00'}</span>
+          <span style="font-size:12px; color:#fb923c;">👤 Cliente: ${m.totalCliente || 'R$ 0,00'}</span>
+          <span style="font-size:12px; color:var(--text-muted);">📦 ${m.itens?.length || 0} itens</span>
         </div>
-        ${m.obs ? `<div style="font-size:11.5px; color:var(--text-muted); margin-top:4px; font-style:italic;">ðŸ“ ${m.obs}</div>` : ''}
+        ${m.obs ? `<div style="font-size:11.5px; color:var(--text-muted); margin-top:4px; font-style:italic;">📝 ${m.obs}</div>` : ''}
       </div>
       <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-left:12px;">
-        <button class="btn-action-gold" style="padding:7px 14px; font-size:12px; font-weight:800;" onclick="carregarListaMat('${m.numero}')">âœï¸ Carregar / Editar</button>
-        <button class="btn-dark-pdf" style="padding:7px 12px; font-size:12px;" onclick="imprimirListaMat('${m.numero}')">ðŸ–¨ï¸ Imprimir</button>
-        <button class="btn-action-secondary" style="padding:7px 10px; font-size:12px;" onclick="excluirListaMat('${m.numero}')" title="Excluir">ðŸ—‘ï¸</button>
+        <button class="btn-action-gold" style="padding:7px 14px; font-size:12px; font-weight:800;" onclick="carregarListaMat('${m.numero}')">✏️ Carregar / Editar</button>
+        <button class="btn-dark-pdf" style="padding:7px 12px; font-size:12px;" onclick="imprimirListaMat('${m.numero}')">🖨️ Imprimir</button>
+        <button class="btn-action-secondary" style="padding:7px 10px; font-size:12px;" onclick="excluirListaMat('${m.numero}')" title="Excluir">🗑️</button>
       </div>
     </div>
   `).join('');
@@ -4458,7 +4464,7 @@ function carregarListaMat(numero) {
   }
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
-  showToast(`Lista ${numero} carregada para ediÃ§Ã£o!`, 'âœï¸');
+  showToast(`Lista ${numero} carregada para edição!`, '✏️');
 }
 
 function imprimirListaMat(numero) {
@@ -4471,7 +4477,7 @@ function excluirListaMat(numero) {
     listasMatSalvas = listasMatSalvas.filter(m => m.numero !== numero);
     save(K.materiais, listasMatSalvas);
     renderListasMatSalvas();
-    showToast(`Lista ${numero} excluÃ­da.`, 'ðŸ—‘ï¸');
+    showToast(`Lista ${numero} excluída.`, '🗑️');
   }
 }
 
@@ -4540,15 +4546,15 @@ function salvarOrdem() {
   renderDashboard();
   renderHist();
   renderRelatorioComissao();
-  showToast(`Ordem de ServiÃ§o ${novaOs.numero} salva com sucesso!`, 'ðŸ’¾');
+  showToast(`Ordem de Serviço ${novaOs.numero} salva com sucesso!`, '💾');
 }
 
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-//  GERAÃ‡ÃƒO DE PDF & IMPRESSÃƒO ORGANIZADA (A4)
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ══════════════════════════════════════════════
+//  GERAÇÃO DE PDF & IMPRESSÃO ORGANIZADA (A4)
+// ══════════════════════════════════════════════
 function prepararImpressaoOrcamento() {
-  const nome = document.getElementById('o-nome')?.value || 'Cliente nÃ£o informado';
+  const nome = document.getElementById('o-nome')?.value || 'Cliente não informado';
   const cnpj = document.getElementById('o-cnpj')?.value || '-';
   const tel = document.getElementById('o-tel')?.value || '-';
   const bairro = document.getElementById('o-bairro')?.value || '-';
@@ -4556,7 +4562,7 @@ function prepararImpressaoOrcamento() {
   const vendedor = document.getElementById('o-vendedor')?.value || 'Samuel Dantas';
   const numOrc = document.getElementById('orc-num-tag')?.textContent || '#0001';
   const total = document.getElementById('total')?.textContent || 'R$ 0,00';
-  const forma = document.getElementById('forma-outro')?.value || formaAtual || 'Ã€ vista';
+  const forma = document.getElementById('forma-outro')?.value || formaAtual || 'À vista';
   const prazo = document.getElementById('o-prazo')?.value || 'Conforme cronograma';
   const garantia = document.getElementById('o-garantia')?.value || '5 anos estrutural';
   const obs = document.getElementById('o-obs')?.value || 'Materiais de primeira qualidade, equipe especializada inclusa.';
@@ -4597,7 +4603,7 @@ function prepararImpressaoOrcamento() {
         let dimensoes = '-';
         if (alt !== '-' && larg !== '-') {
           dimensoes = `${alt} x ${larg}m (${m2})`;
-        } else if (m2 !== '-' && m2 !== '0,00 mÂ²') {
+        } else if (m2 !== '-' && m2 !== '0,00 m²') {
           dimensoes = m2;
         }
 
@@ -4618,7 +4624,7 @@ function prepararImpressaoOrcamento() {
     });
 
     if (!htmlItens) {
-      htmlItens = '<tr><td colspan="6" style="padding:16px; text-align:center; color:#64748b;">Nenhum item adicionado ao orÃ§amento.</td></tr>';
+      htmlItens = '<tr><td colspan="6" style="padding:16px; text-align:center; color:#64748b;">Nenhum item adicionado ao orçamento.</td></tr>';
     }
     tbody.innerHTML = htmlItens;
   }
@@ -4660,7 +4666,7 @@ function enviarWhatsApp() {
     cleanTel = '55' + cleanTel;
   }
 
-  // 1. Prepara a folha oficial A4 de OrÃ§amento de Obra e dispara o diÃ¡logo do PDF limpo e organizado
+  // 1. Prepara a folha oficial A4 de Orçamento de Obra e dispara o diálogo do PDF limpo e organizado
   prepararImpressaoOrcamento();
   document.body.classList.add('imprimindo-orcamento');
   window.print();
@@ -5022,9 +5028,9 @@ function renderVendedores() {
   renderRelatorioComissao();
 }
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-//  RELATÃ“RIO DE COMISSÃ•ES POR VENDEDOR
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ══════════════════════════════════════════════
+//  RELATÓRIO DE COMISSÕES POR VENDEDOR
+// ══════════════════════════════════════════════
 function renderRelatorioComissao() {
   const div = document.getElementById('rel-comissao-container');
   if (!div) return;
@@ -5034,7 +5040,7 @@ function renderRelatorioComissao() {
     return;
   }
 
-  // Calcula comissÃ£o de cada vendedor com base nas ordens salvas
+  // Calcula comissão de cada vendedor com base nas ordens salvas
   const relatorio = vendedores.map(v => {
     const ordensVend = ordens.filter(o => (o.vendedor || '') === v.nome);
     const totalVendido = ordensVend.reduce((acc, o) => acc + parseNum(o.total), 0);
@@ -5049,9 +5055,9 @@ function renderRelatorioComissao() {
     <div class="record-card" style="padding:16px 20px; margin-bottom:12px; border-color:rgba(234,179,8,0.3);">
       <div style="flex:1;">
         <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:8px;">
-          <strong style="color:#facc15; font-size:15px;">ðŸ‘” ${r.nome}</strong>
+          <strong style="color:#facc15; font-size:15px;">👔 ${r.nome}</strong>
           <span class="rec-tag tag-obra" style="font-size:10.5px;">${r.cargo}</span>
-          <span class="rec-tag" style="background:rgba(234,179,8,0.12); color:#facc15; border:1px solid rgba(234,179,8,0.3); font-size:10.5px;">${r.comissao}% comissÃ£o</span>
+          <span class="rec-tag" style="background:rgba(234,179,8,0.12); color:#facc15; border:1px solid rgba(234,179,8,0.3); font-size:10.5px;">${r.comissao}% comissão</span>
           ${r.status === 'Inativo' ? '<span class="rec-tag" style="background:rgba(239,68,68,0.12); color:#f87171; border:1px solid rgba(239,68,68,0.3);">Inativo</span>' : ''}
         </div>
         <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px,1fr)); gap:12px; margin-bottom:10px;">
@@ -5064,27 +5070,27 @@ function renderRelatorioComissao() {
             <div style="font-size:20px; font-weight:900; color:#fff;">${formatMoney(r.totalVendido)}</div>
           </div>
           <div style="background:linear-gradient(135deg,rgba(245,179,0,0.12),rgba(245,179,0,0.06)); border:1px solid rgba(245,179,0,0.3); border-radius:10px; padding:12px 14px;">
-            <div style="font-size:11px; font-weight:700; text-transform:uppercase; color:var(--gold-light); margin-bottom:4px;">ðŸ’° ComissÃ£o a Pagar</div>
+            <div style="font-size:11px; font-weight:700; text-transform:uppercase; color:var(--gold-light); margin-bottom:4px;">💰 Comissão a Pagar</div>
             <div style="font-size:22px; font-weight:900; color:var(--gold-light);">${formatMoney(r.valorComissao)}</div>
           </div>
         </div>
         ${r.ordensVend.length > 0 ? `
         <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">
-          ðŸ“„ O.S.: ${r.ordensVend.map(o => `<span style="color:#facc15; font-weight:700;">${o.numero}</span> (${o.total})`).join(' Â· ')}
-        </div>` : '<div style="font-size:12px; color:var(--text-muted);">Nenhuma O.S. atribuÃ­da ainda.</div>'}
+          📄 O.S.: ${r.ordensVend.map(o => `<span style="color:#facc15; font-weight:700;">${o.numero}</span> (${o.total})`).join(' · ')}
+        </div>` : '<div style="font-size:12px; color:var(--text-muted);">Nenhuma O.S. atribuída ainda.</div>'}
       </div>
       <div style="display:flex; flex-direction:column; gap:8px; margin-left:16px; min-width:120px;">
         <button class="btn-dark-pdf" style="padding:9px 14px; font-size:12px;" onclick="imprimirRelComissao('${r.nome}', '${formatMoney(r.valorComissao)}')">
-          ðŸ–¨ï¸ Imprimir
+          🖨️ Imprimir
         </button>
       </div>
     </div>
   `).join('');
 
-  // RodapÃ© com total geral
+  // Rodapé com total geral
   div.innerHTML += `
     <div style="background:linear-gradient(135deg,rgba(245,179,0,0.15),rgba(245,179,0,0.05)); border:1.5px solid rgba(245,179,0,0.4); border-radius:12px; padding:16px 20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:4px;">
-      <div style="font-size:13px; font-weight:800; color:#fff;">ðŸ“Š Total Geral de ComissÃµes (${relatorio.filter(r => r.status !== 'Inativo').length} vendedores ativos)</div>
+      <div style="font-size:13px; font-weight:800; color:#fff;">📊 Total Geral de Comissões (${relatorio.filter(r => r.status !== 'Inativo').length} vendedores ativos)</div>
       <div style="font-size:24px; font-weight:900; color:var(--gold-light);">${formatMoney(totalGeralComissoes)}</div>
     </div>
   `;
@@ -5092,16 +5098,16 @@ function renderRelatorioComissao() {
 
 function passarAdiante(nome, tel, comissao, qtdOs, totalVendido) {
   const msg = [
-    '*SD CONSTRUÃ‡Ã•ES LTDA* ðŸ—ï¸',
-    '*RELATÃ“RIO DE COMISSÃƒO INDIVIDUAL*',
+    '*SD CONSTRUÇÕES LTDA* 🏗️',
+    '*RELATÓRIO DE COMISSÃO INDIVIDUAL*',
     '',
-    `ðŸ‘” *Vendedor/Consultor:* ${nome}`,
-    `ðŸ“„ *O.S. Fechadas no PerÃ­odo:* ${qtdOs}`,
-    `ðŸ’µ *Total Vendido:* ${totalVendido}`,
-    `ðŸ’° *ComissÃ£o a Receber:* ${comissao}`,
+    `👔 *Vendedor/Consultor:* ${nome}`,
+    `📄 *O.S. Fechadas no Período:* ${qtdOs}`,
+    `💵 *Total Vendido:* ${totalVendido}`,
+    `💰 *Comissão a Receber:* ${comissao}`,
     '',
     '_Verifique os detalhes junto ao departamento financeiro._',
-    '_SD ConstruÃ§Ãµes Ltda Â· Itaitinga - CE Â· (85) 99611-9824_'
+    '_SD Construções Ltda · Itaitinga - CE · (85) 99611-9824_'
   ].join('\n');
 
   let cleanTel = (tel || '').replace(/\D/g, '');
@@ -5114,11 +5120,11 @@ function passarAdiante(nome, tel, comissao, qtdOs, totalVendido) {
     : `https://wa.me/?text=${encodeURIComponent(msg)}`;
 
   window.open(url, '_blank');
-  showToast(`RelatÃ³rio de comissÃ£o enviado para ${nome}!`, 'ðŸš€');
+  showToast(`Relatório de comissão enviado para ${nome}!`, '🚀');
 }
 
 function imprimirRelComissao(nome, comissao) {
-  showToast(`Imprimindo relatÃ³rio de ${nome}...`, 'ðŸ–¨ï¸');
+  showToast(`Imprimindo relatório de ${nome}...`, '🖨️');
   setTimeout(() => window.print(), 300);
 }
 
@@ -5367,14 +5373,14 @@ function renderUsuarios() {
 </script>
 
 <!-- ================= MODAIS DO SISTEMA DE PONTO (IMAGENS 1 E 2) ================= -->
-<!-- Modal: Novo FuncionÃ¡rio -->
+<!-- Modal: Novo Funcionário -->
 <div id="modal-new-employee" class="modal-backdrop" style="display:none;" onclick="if(event.target===this)PontoModule.closeModal('modal-new-employee')">
   <div class="modal-window" style="max-width:540px;" onclick="event.stopPropagation()">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
       <h3 style="font-family:var(--font-display); font-size:18px; font-weight:800; color:#fff; display:flex; align-items:center; gap:8px;">
-        <i data-lucide="user-plus" style="width:20px; color:#38bdf8;"></i> Cadastrar Novo FuncionÃ¡rio
+        <i data-lucide="user-plus" style="width:20px; color:#38bdf8;"></i> Cadastrar Novo Funcionário
       </h3>
-      <button class="btn-close-modal" onclick="PontoModule.closeModal('modal-new-employee')">âœ•</button>
+      <button class="btn-close-modal" onclick="PontoModule.closeModal('modal-new-employee')">✕</button>
     </div>
     <form id="form-new-employee" onsubmit="PontoModule.addNewEmployee(event)">
       <div style="display:flex; flex-direction:column; gap:12px;">
@@ -5384,21 +5390,21 @@ function renderUsuarios() {
         </div>
         <div class="grid-2">
           <div class="form-group">
-            <label>Cargo / FunÃ§Ã£o *</label>
+            <label>Cargo / Função *</label>
             <input type="text" name="emp-role" class="form-control" required placeholder="Ex: gerente" />
           </div>
           <div class="form-group">
             <label>Departamento</label>
-            <input type="text" name="emp-dept" class="form-control" placeholder="Ex: OperaÃ§Ãµes" />
+            <input type="text" name="emp-dept" class="form-control" placeholder="Ex: Operações" />
           </div>
         </div>
         <div class="grid-2">
           <div class="form-group">
-            <label>Carga HorÃ¡ria Semanal</label>
+            <label>Carga Horária Semanal</label>
             <input type="text" name="emp-hours" class="form-control" value="40h/sem" />
           </div>
           <div class="form-group">
-            <label>SalÃ¡rio Base (R$)</label>
+            <label>Salário Base (R$)</label>
             <input type="number" step="any" name="emp-salary" class="form-control" placeholder="5000" />
           </div>
         </div>
@@ -5415,32 +5421,32 @@ function renderUsuarios() {
         <div class="form-group">
           <label>Status Inicial</label>
           <select name="emp-status" class="form-control">
-            <option value="presente">â— Presente</option>
-            <option value="almoco">â— Em AlmoÃ§o</option>
-            <option value="folga">â— Folga</option>
-            <option value="falta">â— Falta</option>
-            <option value="falta_justificada">â— Falta Justificada</option>
+            <option value="presente">● Presente</option>
+            <option value="almoco">● Em Almoço</option>
+            <option value="folga">● Folga</option>
+            <option value="falta">● Falta</option>
+            <option value="falta_justificada">● Falta Justificada</option>
           </select>
         </div>
       </div>
       <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:18px;">
         <button type="button" class="btn-action-secondary" onclick="PontoModule.closeModal('modal-new-employee')">Cancelar</button>
         <button type="submit" class="btn-action-primary" style="background:#0284c7; color:#fff; border:none; padding:8px 18px; border-radius:8px; font-weight:700; cursor:pointer;">
-          Cadastrar FuncionÃ¡rio
+          Cadastrar Funcionário
         </button>
       </div>
     </form>
   </div>
 </div>
 
-<!-- Modal: Editar FuncionÃ¡rio -->
+<!-- Modal: Editar Funcionário -->
 <div id="modal-edit-employee" class="modal-backdrop" style="display:none;" onclick="if(event.target===this)PontoModule.closeModal('modal-edit-employee')">
   <div class="modal-window" style="max-width:540px;" onclick="event.stopPropagation()">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
       <h3 style="font-family:var(--font-display); font-size:18px; font-weight:800; color:#fff; display:flex; align-items:center; gap:8px;">
-        <i data-lucide="edit" style="width:20px; color:#38bdf8;"></i> Editar FuncionÃ¡rio
+        <i data-lucide="edit" style="width:20px; color:#38bdf8;"></i> Editar Funcionário
       </h3>
-      <button class="btn-close-modal" onclick="PontoModule.closeModal('modal-edit-employee')">âœ•</button>
+      <button class="btn-close-modal" onclick="PontoModule.closeModal('modal-edit-employee')">✕</button>
     </div>
     <form id="form-edit-employee" onsubmit="PontoModule.updateEmployee(event)">
       <input type="hidden" name="edit-emp-id" id="edit-emp-id" />
@@ -5451,7 +5457,7 @@ function renderUsuarios() {
         </div>
         <div class="grid-2">
           <div class="form-group">
-            <label>Cargo / FunÃ§Ã£o *</label>
+            <label>Cargo / Função *</label>
             <input type="text" name="edit-emp-role" id="edit-emp-role" class="form-control" required />
           </div>
           <div class="form-group">
@@ -5461,11 +5467,11 @@ function renderUsuarios() {
         </div>
         <div class="grid-2">
           <div class="form-group">
-            <label>Carga HorÃ¡ria Semanal</label>
+            <label>Carga Horária Semanal</label>
             <input type="text" name="edit-emp-hours" id="edit-emp-hours" class="form-control" />
           </div>
           <div class="form-group">
-            <label>SalÃ¡rio Base (R$)</label>
+            <label>Salário Base (R$)</label>
             <input type="number" step="any" name="edit-emp-salary" id="edit-emp-salary" class="form-control" />
           </div>
         </div>
@@ -5480,20 +5486,20 @@ function renderUsuarios() {
           </div>
         </div>
         <div class="form-group">
-          <label>Status PresenÃ§a</label>
+          <label>Status Presença</label>
           <select name="edit-emp-status" id="edit-emp-status" class="form-control">
-            <option value="presente">â— Presente</option>
-            <option value="almoco">â— Em AlmoÃ§o</option>
-            <option value="folga">â— Folga</option>
-            <option value="falta">â— Falta</option>
-            <option value="falta_justificada">â— Falta Justificada</option>
+            <option value="presente">● Presente</option>
+            <option value="almoco">● Em Almoço</option>
+            <option value="folga">● Folga</option>
+            <option value="falta">● Falta</option>
+            <option value="falta_justificada">● Falta Justificada</option>
           </select>
         </div>
       </div>
       <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:18px;">
         <button type="button" class="btn-action-secondary" onclick="PontoModule.closeModal('modal-edit-employee')">Cancelar</button>
         <button type="submit" class="btn-action-primary" style="background:#0284c7; color:#fff; border:none; padding:8px 18px; border-radius:8px; font-weight:700; cursor:pointer;">
-          Salvar AlteraÃ§Ãµes
+          Salvar Alterações
         </button>
       </div>
     </form>
@@ -5507,7 +5513,7 @@ function renderUsuarios() {
       <h3 style="font-family:var(--font-display); font-size:18px; font-weight:800; color:#fff; display:flex; align-items:center; gap:8px;">
         <i data-lucide="clock" style="width:20px; color:#38bdf8;"></i> Editar Registro de Ponto
       </h3>
-      <button class="btn-close-modal" onclick="PontoModule.closeModal('modal-edit-ponto')">âœ•</button>
+      <button class="btn-close-modal" onclick="PontoModule.closeModal('modal-edit-ponto')">✕</button>
     </div>
     <form id="form-edit-ponto" onsubmit="PontoModule.updatePontoLog(event)">
       <input type="hidden" name="edit-pt-id" id="edit-pt-id" />
@@ -5527,7 +5533,7 @@ function renderUsuarios() {
               <option value="Completo">Completo</option>
               <option value="Em andamento">Em andamento</option>
               <option value="Em aberto">Em aberto</option>
-              <option value="AlmoÃ§o">AlmoÃ§o</option>
+              <option value="Almoço">Almoço</option>
               <option value="Falta">Falta</option>
               <option value="Falta Justificada">Falta Justificada</option>
             </select>
@@ -5535,27 +5541,27 @@ function renderUsuarios() {
         </div>
         <div class="grid-2">
           <div class="form-group">
-            <label>1Âª Entrada</label>
+            <label>1ª Entrada</label>
             <input type="text" name="edit-pt-in1" id="edit-pt-in1" class="form-control" placeholder="08:00" />
           </div>
           <div class="form-group">
-            <label>SaÃ­da AlmoÃ§o</label>
+            <label>Saída Almoço</label>
             <input type="text" name="edit-pt-out1" id="edit-pt-out1" class="form-control" placeholder="12:00" />
           </div>
         </div>
         <div class="grid-2">
           <div class="form-group">
-            <label>Volta AlmoÃ§o</label>
+            <label>Volta Almoço</label>
             <input type="text" name="edit-pt-in2" id="edit-pt-in2" class="form-control" placeholder="13:00" />
           </div>
           <div class="form-group">
-            <label>SaÃ­da Final</label>
+            <label>Saída Final</label>
             <input type="text" name="edit-pt-out2" id="edit-pt-out2" class="form-control" placeholder="17:00" />
           </div>
         </div>
         <div class="form-group">
-          <label>Total Horas (ExibiÃ§Ã£o)</label>
-          <input type="text" name="edit-pt-total" id="edit-pt-total" class="form-control" placeholder="Ex: 08h 00m (ConcluÃ­do)" />
+          <label>Total Horas (Exibição)</label>
+          <input type="text" name="edit-pt-total" id="edit-pt-total" class="form-control" placeholder="Ex: 08h 00m (Concluído)" />
         </div>
       </div>
       <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:18px;">
@@ -5571,38 +5577,38 @@ function renderUsuarios() {
 
 
 
-<!-- Modal: PrÃ©-visualizar PDF do OrÃ§amento na Tela -->
+<!-- Modal: Pré-visualizar PDF do Orçamento na Tela -->
 <div id="modal-preview-pdf-orcamento" class="modal-backdrop" style="display:none; z-index:10000080;" onclick="if(event.target===this)fecharPreviewPdfOrcamento()">
   <div class="modal-window" style="max-width:880px; width:95%; max-height:92vh; background:#0b0f19; border:1.5px solid rgba(245,179,0,0.4); padding:20px;" onclick="event.stopPropagation()">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:10px; flex-wrap:wrap; gap:10px;">
       <div style="display:flex; align-items:center; gap:8px;">
-        <span style="font-size:20px;">ðŸ‘ï¸</span>
-        <h3 style="margin:0; font-size:17px; font-weight:800; color:#fff;">PrÃ©-visualizaÃ§Ã£o do OrÃ§amento Oficial A4</h3>
+        <span style="font-size:20px;">👁️</span>
+        <h3 style="margin:0; font-size:17px; font-weight:800; color:#fff;">Pré-visualização do Orçamento Oficial A4</h3>
       </div>
       <div style="display:flex; gap:8px;">
         <button type="button" class="btn-action-primary" onclick="imprimirOrcamento()" style="background:#f59e0b; color:#000; font-weight:800; padding:8px 14px; border-radius:8px; border:none; cursor:pointer; font-size:13px;">
-          ðŸ–¨ï¸ Imprimir / Baixar PDF
+          🖨️ Imprimir / Baixar PDF
         </button>
         <button type="button" class="btn-action-primary" onclick="enviarWhatsApp()" style="background:#10b981; color:#fff; font-weight:800; padding:8px 14px; border-radius:8px; border:none; cursor:pointer; font-size:13px;">
-          ðŸ’¬ Enviar WhatsApp
+          💬 Enviar WhatsApp
         </button>
-        <button type="button" class="btn-close-modal" onclick="fecharPreviewPdfOrcamento()">âœ•</button>
+        <button type="button" class="btn-close-modal" onclick="fecharPreviewPdfOrcamento()">✕</button>
       </div>
     </div>
     <div id="preview-pdf-content-container" style="max-height:75vh; overflow-y:auto; border-radius:10px; box-shadow:0 8px 25px rgba(0,0,0,0.6); padding:4px; background:#fff;">
-      <!-- ConteÃºdo do orÃ§amento A4 clonado -->
+      <!-- Conteúdo do orçamento A4 clonado -->
     </div>
   </div>
 </div>
 
-<!-- Modal: Registrar Falta com OpÃ§Ã£o de Justificar -->
+<!-- Modal: Registrar Falta com Opção de Justificar -->
 <div id="modal-registrar-falta" class="modal-backdrop" style="display:none;" onclick="if(event.target===this)PontoModule.closeModal('modal-registrar-falta')">
   <div class="modal-window" style="max-width:540px; border-color:rgba(239,68,68,0.4);" onclick="event.stopPropagation()">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:12px;">
       <h3 style="font-family:var(--font-display); font-size:18px; font-weight:800; color:#fff; display:flex; align-items:center; gap:8px;">
-        <span style="font-size:22px;">ðŸ‘¤</span> Registrar Falta / Justificativa
+        <span style="font-size:22px;">👤</span> Registrar Falta / Justificativa
       </h3>
-      <button class="btn-close-modal" onclick="PontoModule.closeModal('modal-registrar-falta')">âœ•</button>
+      <button class="btn-close-modal" onclick="PontoModule.closeModal('modal-registrar-falta')">✕</button>
     </div>
     
     <div style="background:rgba(239,68,68,0.08); border:1px solid rgba(239,68,68,0.25); border-radius:10px; padding:12px 14px; margin-bottom:16px; display:flex; align-items:center; justify-content:space-between;">
@@ -5623,27 +5629,27 @@ function renderUsuarios() {
           <div class="form-group">
             <label style="color:#cbd5e1; font-weight:700; font-size:12px;">Tipo de Falta *</label>
             <select id="falta-tipo" class="form-control" style="background:#080d1a; border:1.5px solid rgba(239,68,68,0.4); color:#fff; font-weight:700;" onchange="PontoModule.onFaltaTipoChange(this.value)">
-              <option value="injustificada">âŒ Falta NÃ£o Justificada (Desconto)</option>
-              <option value="atestado">ðŸ©º Falta Justificada - Atestado MÃ©dico</option>
-              <option value="justificada_pessoal">ðŸ“ Falta Justificada - Motivo Pessoal / Acordo</option>
-              <option value="justificada_outros">âš–ï¸ Falta Justificada - Outros Motivos</option>
+              <option value="injustificada">❌ Falta Não Justificada (Desconto)</option>
+              <option value="atestado">🩺 Falta Justificada - Atestado Médico</option>
+              <option value="justificada_pessoal">📝 Falta Justificada - Motivo Pessoal / Acordo</option>
+              <option value="justificada_outros">⚖️ Falta Justificada - Outros Motivos</option>
             </select>
           </div>
         </div>
 
         <div class="form-group">
-          <label style="color:#cbd5e1; font-weight:700; font-size:12px;">Justificativa / Motivo / ObservaÃ§Ã£o</label>
-          <input type="text" id="falta-motivo" class="form-control" placeholder="Ex: Apresentou atestado mÃ©dico de 1 dia, consulta com especialista..." style="background:#080d1a; border:1px solid rgba(255,255,255,0.15); color:#fff;" />
-          <div style="font-size:11px; color:#94a3b8; margin-top:4px;">Deixe registrado o motivo ou nÃºmero do atestado para controle interno e espelho de ponto.</div>
+          <label style="color:#cbd5e1; font-weight:700; font-size:12px;">Justificativa / Motivo / Observação</label>
+          <input type="text" id="falta-motivo" class="form-control" placeholder="Ex: Apresentou atestado médico de 1 dia, consulta com especialista..." style="background:#080d1a; border:1px solid rgba(255,255,255,0.15); color:#fff;" />
+          <div style="font-size:11px; color:#94a3b8; margin-top:4px;">Deixe registrado o motivo ou número do atestado para controle interno e espelho de ponto.</div>
         </div>
 
         <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:12px 14px;">
           <label style="display:flex; align-items:center; gap:10px; cursor:pointer; font-size:13px; font-weight:700; color:#f1f5f9; margin:0;">
             <input type="checkbox" id="falta-abonar" style="width:18px; height:18px; cursor:pointer; accent-color:#10b981;" />
-            <span>Abonar remuneraÃ§Ã£o deste dia (nÃ£o descontar do salÃ¡rio)</span>
+            <span>Abonar remuneração deste dia (não descontar do salário)</span>
           </label>
           <div id="falta-abonar-desc" style="font-size:11px; color:#94a3b8; margin-top:4px; margin-left:28px;">
-            Faltas nÃ£o justificadas descontam o dia. Faltas com atestado ou justificadas sÃ£o abonadas.
+            Faltas não justificadas descontam o dia. Faltas com atestado ou justificadas são abonadas.
           </div>
         </div>
       </div>
@@ -5651,7 +5657,7 @@ function renderUsuarios() {
       <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:20px; border-top:1px solid rgba(255,255,255,0.08); padding-top:14px;">
         <button type="button" class="btn-action-secondary" onclick="PontoModule.closeModal('modal-registrar-falta')">Cancelar</button>
         <button type="submit" class="btn-action-primary" style="background:linear-gradient(135deg, #ef4444, #dc2626); color:#fff; border:none; padding:10px 22px; border-radius:8px; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(239,68,68,0.35);">
-          ðŸ’¾ Salvar Registro de Falta
+          💾 Salvar Registro de Falta
         </button>
       </div>
     </form>
@@ -5659,9 +5665,9 @@ function renderUsuarios() {
 </div>
 
 <script>
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-// MÃ“DULO DE PONTO ELETRÃ”NICO & FUNCIONÃRIOS (IMAGENS 1 E 2)
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ════════════════════════════════════════════════════════════════════
+// MÓDULO DE PONTO ELETRÔNICO & FUNCIONÁRIOS (IMAGENS 1 E 2)
+// ════════════════════════════════════════════════════════════════════
 const STORAGE_KEYS_PONTO = {
   EMPLOYEES: 'sdc_funcionarios_v2',
   LOGS: 'sdc_ponto_logs_v2'
@@ -5736,7 +5742,7 @@ var PontoModule = {
   setPeriodo(btn, periodo) {
     document.querySelectorAll('#view-funcionarios .period-btn').forEach(b => b.classList.remove('active'));
     if (btn) btn.classList.add('active');
-    if (typeof showToast === 'function') showToast('Filtro de perÃ­odo alterado para ' + periodo, 'ðŸ“…');
+    if (typeof showToast === 'function') showToast('Filtro de período alterado para ' + periodo, '📅');
   },
 
   startDigitalClock() {
@@ -5807,7 +5813,7 @@ var PontoModule = {
       const el = document.getElementById(id);
       if (!el) return;
       const currentVal = el.value;
-      let opts = id.includes('filter') ? '<option value="all">Todos os FuncionÃ¡rios</option>' : '';
+      let opts = id.includes('filter') ? '<option value="all">Todos os Funcionários</option>' : '';
       emps.forEach(emp => {
         opts += `<option value="${emp.id}">${emp.name} (${emp.dept && emp.dept !== '-' ? emp.dept + ' - ' : ''}${emp.role})</option>`;
       });
@@ -5821,7 +5827,7 @@ var PontoModule = {
   },
 
   onSelectEmployeeChange(val) {
-    // sincroniza seletor secundÃ¡rio se houver
+    // sincroniza seletor secundário se houver
     const s2 = document.getElementById('ponto-select-colaborador');
     if (s2 && s2.value !== val) s2.value = val;
   },
@@ -5906,13 +5912,13 @@ var PontoModule = {
 
     const statusOptions = [
       { val: 'presente', label: 'Presente', class: 'status-presente' },
-      { val: 'almoco', label: 'Em AlmoÃ§o', class: 'status-almoco' },
+      { val: 'almoco', label: 'Em Almoço', class: 'status-almoco' },
       { val: 'folga', label: 'Folga', class: 'status-folga' },
       { val: 'falta', label: 'Falta', class: 'status-falta' },
       { val: 'falta_justificada', label: 'Falta Justificada', class: 'status-falta-justificada' }
     ];
 
-    const contentHtml = (!emps.length) ? '<tr><td colspan="7" style="text-align:center; padding: 24px; color: var(--text-muted);">Nenhum funcionÃ¡rio cadastrado.</td></tr>' : emps.map(emp => {
+    const contentHtml = (!emps.length) ? '<tr><td colspan="7" style="text-align:center; padding: 24px; color: var(--text-muted);">Nenhum funcionário cadastrado.</td></tr>' : emps.map(emp => {
       const currentStatus = statusOptions.find(s => s.val === emp.status) || statusOptions[0];
       const statusClass = currentStatus.class;
       const { valorHora } = this.calculateSalaryValue(emp.salary, emp.hours, 0);
@@ -5921,7 +5927,7 @@ var PontoModule = {
         <tr>
           <td>
             <div style="font-weight: 700; color: #fff; font-size: 14.5px;">${emp.name}</div>
-            <div style="font-size: 11.5px; color: var(--text-muted); margin-top:2px;">${emp.email || ''} ${emp.phone ? 'â€¢ ' + emp.phone : ''}</div>
+            <div style="font-size: 11.5px; color: var(--text-muted); margin-top:2px;">${emp.email || ''} ${emp.phone ? '• ' + emp.phone : ''}</div>
           </td>
           <td><span style="color: #38bdf8; font-weight: 600; font-size: 13.5px;">${emp.role}</span></td>
           <td style="color: var(--text-muted); font-size: 13px;">${emp.dept || '-'}</td>
@@ -5931,20 +5937,20 @@ var PontoModule = {
             <div style="font-size: 11px; color: #34d399; font-weight: 600;">${this.formatMoney(valorHora)}/h</div>
           </td>
           <td style="text-align:center;">
-            <select class="status-select ${statusClass}" onchange="PontoModule.setStatus('${emp.id}', this.value)" title="Alterar status de presenÃ§a">
-              ${statusOptions.map(opt => `<option value="${opt.val}" ${emp.status === opt.val ? 'selected' : ''}>â— ${opt.label}</option>`).join('')}
+            <select class="status-select ${statusClass}" onchange="PontoModule.setStatus('${emp.id}', this.value)" title="Alterar status de presença">
+              ${statusOptions.map(opt => `<option value="${opt.val}" ${emp.status === opt.val ? 'selected' : ''}>● ${opt.label}</option>`).join('')}
             </select>
           </td>
           <td style="text-align:center;">
             <div style="display: flex; gap: 6px; justify-content:center;">
-              <button class="btn-icon-tbl" onclick="PontoModule.openEditModal('${emp.id}')" title="Editar FuncionÃ¡rio" style="color: #38bdf8;">
-                âœï¸
+              <button class="btn-icon-tbl" onclick="PontoModule.openEditModal('${emp.id}')" title="Editar Funcionário" style="color: #38bdf8;">
+                ✏️
               </button>
               <button class="btn-icon-tbl" onclick="PontoModule.toggleStatus('${emp.id}')" title="Alternar Status">
-                ðŸ”„
+                🔄
               </button>
               <button class="btn-icon-tbl" onclick="PontoModule.deleteEmployee('${emp.id}')" title="Remover" style="color: #f43f5e;">
-                ðŸ—‘ï¸
+                🗑️
               </button>
             </div>
           </td>
@@ -5991,17 +5997,17 @@ var PontoModule = {
       let valorDisplay = '';
 
       if (log.status === 'Falta' || log.in1 === 'FALTA') {
-        in1Display = `<span class="status-pill status-falta" style="font-size: 0.74rem; padding: 2px 8px;">âŒ FALTA</span>`;
+        in1Display = `<span class="status-pill status-falta" style="font-size: 0.74rem; padding: 2px 8px;">❌ FALTA</span>`;
         tempoDisplay = `<span class="status-pill status-falta" style="font-size: 0.74rem; padding: 2px 8px;">00h 00m (Falta)</span>`;
         valorDisplay = `<span style="color: #f43f5e; font-weight: 700;">R$ 0,00</span> <span style="font-size: 0.72rem; color: #f43f5e;">(Desconto)</span>`;
       } else if (log.status === 'Falta Justificada' || log.status === 'Falta Doente' || log.in1 === 'ATESTADO' || log.in1 === 'JUSTIFICADA') {
         const isAtestado = (log.in1 === 'ATESTADO' || (log.total || '').toLowerCase().includes('atestado') || log.status === 'Falta Doente');
-        const badgeLabel = isAtestado ? 'ðŸ©º ATESTADO' : 'ðŸ“‹ JUSTIFICADA';
+        const badgeLabel = isAtestado ? '🩺 ATESTADO' : '📋 JUSTIFICADA';
         in1Display = `<span class="status-pill status-falta-justificada" style="font-size: 0.74rem; padding: 2px 8px;">${badgeLabel}</span>`;
         
-        let descTotal = log.total || (isAtestado ? 'Atestado MÃ©dico' : 'Falta Justificada');
+        let descTotal = log.total || (isAtestado ? 'Atestado Médico' : 'Falta Justificada');
         if (log.justificativa) {
-          tempoDisplay = `<div><span class="status-pill status-falta-justificada" style="font-size: 0.74rem; padding: 2px 8px;">${descTotal}</span><div style="font-size: 0.72rem; color: #94a3b8; margin-top:3px; font-style:italic;">ðŸ’¬ ${log.justificativa}</div></div>`;
+          tempoDisplay = `<div><span class="status-pill status-falta-justificada" style="font-size: 0.74rem; padding: 2px 8px;">${descTotal}</span><div style="font-size: 0.72rem; color: #94a3b8; margin-top:3px; font-style:italic;">💬 ${log.justificativa}</div></div>`;
         } else {
           tempoDisplay = `<span class="status-pill status-falta-justificada" style="font-size: 0.74rem; padding: 2px 8px;">${descTotal}</span>`;
         }
@@ -6016,7 +6022,7 @@ var PontoModule = {
         tempoDisplay = `<span class="badge-count" style="font-size: 0.82rem; padding: 3px 10px; background: rgba(6, 182, 212, 0.15); border: 1px solid rgba(6,182,212,0.4); color: #38bdf8; font-weight: 700; border-radius:9999px;">${this.formatMinutesToHM(workedMins)}</span>`;
         valorDisplay = (sal === 0) ? `<span style="color: var(--text-muted); font-size: 0.78rem;">Calculando... (${this.formatMoney(0)}/h)</span>` : `<div><b style="color: #34d399; font-size: 0.9rem;">${this.formatMoney(valorTrabalhado)}</b><div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 500;">(${this.formatMoney(valorHora)}/h)</div></div>`;
       } else {
-        const fallbackLabel = (log.total && log.total !== '08:00 (ConcluÃ­do)') ? log.total : 'Em andamento';
+        const fallbackLabel = (log.total && log.total !== '08:00 (Concluído)') ? log.total : 'Em andamento';
         tempoDisplay = `<span class="badge-count" style="font-size: 0.8rem; padding: 2px 10px; border-radius:9999px;">${fallbackLabel}</span>`;
         valorDisplay = `<span style="color: var(--text-muted); font-size: 0.78rem;">Calculando... (${this.formatMoney(valorHora)}/h)</span>`;
       }
@@ -6037,13 +6043,13 @@ var PontoModule = {
           <td style="text-align:center;">
             <div style="display: flex; gap: 6px; justify-content:center;">
               <button class="btn-icon-tbl" onclick="PontoModule.sendWhatsApp('${log.id}')" title="Enviar Comprovante no WhatsApp" style="color: #25d366;">
-                ðŸ’¬
+                💬
               </button>
               <button class="btn-icon-tbl" onclick="PontoModule.openEditPontoModal('${log.id}')" title="Editar Registro de Ponto" style="color: #38bdf8;">
-                âœï¸
+                ✏️
               </button>
               <button class="btn-icon-tbl" onclick="PontoModule.deletePontoLog('${log.id}')" title="Excluir Registro de Ponto" style="color: #f43f5e;">
-                ðŸ—‘ï¸
+                🗑️
               </button>
             </div>
           </td>
@@ -6059,7 +6065,7 @@ var PontoModule = {
   registerPontoAction(actionType) {
     const empSelect = document.getElementById('select-ponto-emp') || document.getElementById('ponto-select-colaborador');
     if (!empSelect || !empSelect.value) {
-      if (typeof showToast === 'function') showToast('Selecione um funcionÃ¡rio antes de registrar a aÃ§Ã£o!', 'âš ï¸');
+      if (typeof showToast === 'function') showToast('Selecione um funcionário antes de registrar a ação!', '⚠️');
       return;
     }
 
@@ -6094,28 +6100,28 @@ var PontoModule = {
     if (actionType === 'in1') {
       todayLog.in1 = timeStr;
       emp.status = 'presente';
-      if (typeof showToast === 'function') showToast(`Ponto: 1Âª Entrada registrada Ã s ${timeStr} para ${emp.name}!`, 'ðŸŸ¢');
+      if (typeof showToast === 'function') showToast(`Ponto: 1ª Entrada registrada às ${timeStr} para ${emp.name}!`, '🟢');
     } else if (actionType === 'out1') {
       todayLog.out1 = timeStr;
       emp.status = 'almoco';
       const workedMins = this.calculateWorkedMinutes(todayLog.in1, todayLog.out1, todayLog.in2, todayLog.out2);
       todayLog.total = this.formatMinutesToHM(workedMins);
-      if (typeof showToast === 'function') showToast(`Ponto: SaÃ­da AlmoÃ§o registrada Ã s ${timeStr} para ${emp.name}!`, 'â˜•');
+      if (typeof showToast === 'function') showToast(`Ponto: Saída Almoço registrada às ${timeStr} para ${emp.name}!`, '☕');
     } else if (actionType === 'in2') {
       todayLog.in2 = timeStr;
       emp.status = 'presente';
-      if (typeof showToast === 'function') showToast(`Ponto: Retorno AlmoÃ§o registrado Ã s ${timeStr} para ${emp.name}!`, 'â–¶ï¸');
+      if (typeof showToast === 'function') showToast(`Ponto: Retorno Almoço registrado às ${timeStr} para ${emp.name}!`, '▶️');
     } else if (actionType === 'out2') {
       todayLog.out2 = timeStr;
       emp.status = 'folga';
       const workedMins = this.calculateWorkedMinutes(todayLog.in1, todayLog.out1, todayLog.in2, todayLog.out2);
       const formattedTime = this.formatMinutesToHM(workedMins);
       const { valorTrabalhado } = this.calculateSalaryValue(emp.salary, emp.hours, workedMins);
-      todayLog.total = `${formattedTime} (ConcluÃ­do)`;
+      todayLog.total = `${formattedTime} (Concluído)`;
       todayLog.status = 'Completo';
       todayLog.workedMinutes = workedMins;
       todayLog.valorTrabalhado = valorTrabalhado;
-      if (typeof showToast === 'function') showToast(`Ponto: SaÃ­da Final Ã s ${timeStr} (${emp.name})! Tempo: ${formattedTime}`, 'ðŸ');
+      if (typeof showToast === 'function') showToast(`Ponto: Saída Final às ${timeStr} (${emp.name})! Tempo: ${formattedTime}`, '🏁');
     } else if (actionType === 'falta') {
       todayLog.in1 = 'FALTA';
       todayLog.out1 = '--:--';
@@ -6124,7 +6130,7 @@ var PontoModule = {
       todayLog.total = '00:00 (Falta)';
       todayLog.status = 'Falta';
       emp.status = 'falta';
-      if (typeof showToast === 'function') showToast(`Falta registrada para ${emp.name}!`, 'âŒ');
+      if (typeof showToast === 'function') showToast(`Falta registrada para ${emp.name}!`, '❌');
     } else if (actionType === 'falta_doente') {
       todayLog.in1 = 'ATESTADO';
       todayLog.out1 = '--:--';
@@ -6133,7 +6139,7 @@ var PontoModule = {
       todayLog.total = 'Justificada (Atestado)';
       todayLog.status = 'Falta Doente';
       emp.status = 'falta_doente';
-      if (typeof showToast === 'function') showToast(`Falta Doente (Atestado) registrada para ${emp.name}!`, 'ðŸ©º');
+      if (typeof showToast === 'function') showToast(`Falta Doente (Atestado) registrada para ${emp.name}!`, '🩺');
     }
 
     this.saveEmployees(emps);
@@ -6161,12 +6167,12 @@ var PontoModule = {
 
     const labels = {
       presente: 'Presente',
-      almoco: 'Em AlmoÃ§o',
+      almoco: 'Em Almoço',
       folga: 'Folga',
       falta: 'Falta',
       falta_justificada: 'Falta Justificada'
     };
-    if (typeof showToast === 'function') showToast(`Status de ${emp.name} alterado para ${labels[newStatus] || newStatus}!`, 'â„¹ï¸');
+    if (typeof showToast === 'function') showToast(`Status de ${emp.name} alterado para ${labels[newStatus] || newStatus}!`, 'ℹ️');
 
     if (newStatus === 'falta' || newStatus === 'falta_justificada') {
       const now = new Date();
@@ -6207,7 +6213,7 @@ var PontoModule = {
     let emps = this.getEmployees();
     emps = emps.filter(e => e.id !== id);
     this.saveEmployees(emps);
-    if (typeof showToast === 'function') showToast('FuncionÃ¡rio excluÃ­do com sucesso.', 'ðŸ—‘ï¸');
+    if (typeof showToast === 'function') showToast('Funcionário excluído com sucesso.', '🗑️');
   },
 
   openNewEmployeeModal() {
@@ -6230,7 +6236,7 @@ var PontoModule = {
     const status = form['emp-status']?.value || 'presente';
 
     if (!name || !role) {
-      if (typeof showToast === 'function') showToast('Preencha os campos obrigatÃ³rios!', 'âš ï¸');
+      if (typeof showToast === 'function') showToast('Preencha os campos obrigatórios!', '⚠️');
       return;
     }
 
@@ -6252,7 +6258,7 @@ var PontoModule = {
 
     this.closeModal('modal-new-employee');
     form.reset();
-    if (typeof showToast === 'function') showToast(`FuncionÃ¡rio ${name} cadastrado com sucesso!`, 'ðŸ‘·');
+    if (typeof showToast === 'function') showToast(`Funcionário ${name} cadastrado com sucesso!`, '👷');
   },
 
   openEditModal(empId) {
@@ -6288,7 +6294,7 @@ var PontoModule = {
     const status = form['edit-emp-status'].value || 'presente';
 
     if (!name || !role) {
-      if (typeof showToast === 'function') showToast('Preencha os campos obrigatÃ³rios!', 'âš ï¸');
+      if (typeof showToast === 'function') showToast('Preencha os campos obrigatórios!', '⚠️');
       return;
     }
 
@@ -6316,7 +6322,7 @@ var PontoModule = {
     }
 
     this.closeModal('modal-edit-employee');
-    if (typeof showToast === 'function') showToast(`FuncionÃ¡rio ${name} atualizado com sucesso!`, 'âœ…');
+    if (typeof showToast === 'function') showToast(`Funcionário ${name} atualizado com sucesso!`, '✅');
   },
 
   updateStats() {
@@ -6375,7 +6381,7 @@ var PontoModule = {
 
     this.savePontoLogs(logs);
     this.closeModal('modal-edit-ponto');
-    if (typeof showToast === 'function') showToast('Registro de ponto atualizado com sucesso!', 'âœ…');
+    if (typeof showToast === 'function') showToast('Registro de ponto atualizado com sucesso!', '✅');
   },
 
   deletePontoLog(logId) {
@@ -6384,7 +6390,7 @@ var PontoModule = {
     const empName = log ? log.empName : 'selecionado';
     logs = logs.filter(l => l.id !== logId);
     this.savePontoLogs(logs);
-    if (typeof showToast === 'function') showToast(`Registro de ponto de ${empName} removido.`, 'â„¹ï¸');
+    if (typeof showToast === 'function') showToast(`Registro de ponto de ${empName} removido.`, 'ℹ️');
   },
 
   sendWhatsApp(logId) {
@@ -6421,27 +6427,27 @@ var PontoModule = {
     const dataFmt = parts.length === 3 ? `${parts[2]}/${parts[1]}/${parts[0]}` : log.date;
 
     const msg = 
-`*SD CONSTRUÃ‡Ã•ES â€” ESPELHO DE PONTO* ðŸ“‹
+`*SD CONSTRUÇÕES — ESPELHO DE PONTO* 📋
 
-ðŸ‘¤ *Colaborador:* ${log.empName}
-ðŸ’¼ *Cargo:* ${emp ? emp.role : '--'}
-ðŸ’µ *SalÃ¡rio Base:* ${this.formatMoney(sal)} (${emp ? emp.hours : '40h/sem'})
-â° *Valor da Hora:* ${this.formatMoney(valorHora)}/h
-ðŸ“… *Data:* ${dataFmt}
+👤 *Colaborador:* ${log.empName}
+💼 *Cargo:* ${emp ? emp.role : '--'}
+💵 *Salário Base:* ${this.formatMoney(sal)} (${emp ? emp.hours : '40h/sem'})
+⏰ *Valor da Hora:* ${this.formatMoney(valorHora)}/h
+📅 *Data:* ${dataFmt}
 
-â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
-â° *1Âª Entrada:* ${log.in1 || '--:--'}
-â˜• *SaÃ­da AlmoÃ§o:* ${log.out1 || '--:--'}
-â–¶ï¸ *Volta AlmoÃ§o:* ${log.in2 || '--:--'}
-ðŸ *SaÃ­da Final:* ${log.out2 || '--:--'}
-â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
-â±ï¸ *Tempo Exato Trabalhado:* ${tempoFmt}
-ðŸ’° *Valor Calculado do SalÃ¡rio:* ${valorStr}
-ðŸ“Œ *Status:* ${log.status || 'Registrado'}
+━━━━━━━━━━━━━━━━━━━━
+⏰ *1ª Entrada:* ${log.in1 || '--:--'}
+☕ *Saída Almoço:* ${log.out1 || '--:--'}
+▶️ *Volta Almoço:* ${log.in2 || '--:--'}
+🏁 *Saída Final:* ${log.out2 || '--:--'}
+━━━━━━━━━━━━━━━━━━━━
+⏱️ *Tempo Exato Trabalhado:* ${tempoFmt}
+💰 *Valor Calculado do Salário:* ${valorStr}
+📌 *Status:* ${log.status || 'Registrado'}
 
-_CÃ¡lculo eletrÃ´nico de ponto gerado via SD ConstruÃ§Ãµes._`;
+_Cálculo eletrônico de ponto gerado via SD Construções._`;
 
-    if (typeof showToast === 'function') showToast(`Abrindo WhatsApp para enviar espelho de ${log.empName}...`, 'ðŸ“±');
+    if (typeof showToast === 'function') showToast(`Abrindo WhatsApp para enviar espelho de ${log.empName}...`, '📱');
     
     let url = cleanTel ? `https://api.whatsapp.com/send?phone=${cleanTel}&text=${encodeURIComponent(msg)}` : `https://api.whatsapp.com/send?text=${encodeURIComponent(msg)}`;
     window.open(url, '_blank');
@@ -6455,7 +6461,7 @@ _CÃ¡lculo eletrÃ´nico de ponto gerado via SD ConstruÃ§Ãµes._`;
 
 window.PontoModule = PontoModule;
 
-// InicializaÃ§Ã£o imediata automÃ¡tica assim que o script Ã© carregado
+// Inicialização imediata automática assim que o script é carregado
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => PontoModule.init());
 } else {
