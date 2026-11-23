@@ -2,6 +2,26 @@
   "buildCommand": null,
   "outputDirectory": ".",
   "cleanUrls": true,
+  "headers": [
+    {
+      "source": "/((?!.*\\.(?:jpg|jpeg|png|gif|svg|ico|webp|css|js|json|pdf|woff|woff2|ttf|eot)).*)",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/(.*\\.html)",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        }
+      ]
+    }
+  ],
   "rewrites": [
     { "source": "/", "destination": "/login.html" }
   ]

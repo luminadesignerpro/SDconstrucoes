@@ -1,11 +1,12 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SD Construção PRO – Gestão de Obras &amp; Serviços Terceirizados</title>
+  <title>SD Construção PRO – Gestão de Obras & Serviços Terceirizados</title>
   <meta name="description" content="SD Construção PRO – Sistema completo de gestão de obras, orçamentos, contratos e serviços terceirizados.">
-    <!-- PWA: Manifest + Service Worker -->
+  <!-- PWA: Manifest + Service Worker -->
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#f5b300">
   <meta name="mobile-web-app-capable" content="yes">
@@ -75,14 +76,14 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* â”€â”€ LAYOUT SHELL â”€â”€ */
+    /* ── LAYOUT SHELL ── */
     .app-layout {
       display: flex;
       width: 100vw;
       min-height: 100vh;
     }
 
-    /* â”€â”€ SIDEBAR â”€â”€ */
+    /* ── SIDEBAR ── */
     .sidebar {
       width: 260px;
       background: var(--bg-sidebar);
@@ -263,7 +264,7 @@
     }
     .btn-logout-icon:hover { color: var(--red); background: rgba(239, 68, 68, 0.1); }
 
-    /* â”€â”€ MAIN CONTENT â”€â”€ */
+    /* ── MAIN CONTENT ── */
     .main-wrapper {
       flex: 1;
       display: flex;
@@ -273,7 +274,7 @@
       background: radial-gradient(circle at 40% 10%, rgba(245, 179, 0, 0.04) 0%, transparent 40%), var(--bg-main);
     }
 
-    /* â”€â”€ TOPBAR HEADER (DASHBOARD STYLE) â”€â”€ */
+    /* ── TOPBAR HEADER (DASHBOARD STYLE) ── */
     .topbar {
       padding: 22px 32px;
       display: flex;
@@ -380,13 +381,13 @@
     }
     .btn-action-secondary:hover { background: #15223f; border-color: rgba(255,255,255,0.15); }
 
-    /* â”€â”€ CONTENT BODY â”€â”€ */
+    /* ── CONTENT BODY ── */
     .content-body {
       padding: 24px 32px 60px;
       flex: 1;
     }
 
-    /* â”€â”€ KPI STATS CARDS (4 COLS LIKE SD FINANCEIRO) â”€â”€ */
+    /* ── KPI STATS CARDS (4 COLS LIKE SD FINANCEIRO) ── */
     .kpi-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -430,7 +431,7 @@
     .kpi-label { font-size: 11.5px; font-weight: 600; color: var(--text-muted); }
     .kpi-value { font-family: var(--font-display); font-size: 22px; font-weight: 800; color: #fff; margin-top: 2px; }
 
-    /* â”€â”€ DASHBOARD CHARTS ROW â”€â”€ */
+    /* ── DASHBOARD CHARTS ROW ── */
     .dashboard-charts-grid {
       display: grid;
       grid-template-columns: 2fr 1fr;
@@ -514,12 +515,12 @@
       margin-top: 16px;
     }
 
-    /* â”€â”€ VIEWS / PANELS â”€â”€ */
+    /* ── VIEWS / PANELS ── */
     .panel-view { display: none; }
     .panel-view.active { display: block; animation: fadeIn 0.2s ease; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
 
-    /* â”€â”€ CARDS, FORMS & TABLES â”€â”€ */
+    /* ── CARDS, FORMS & TABLES ── */
     .glass-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
@@ -1463,14 +1464,14 @@
 
   <!-- ══════════════════════════════════════════════ -->
   <!-- SIDEBAR (ESTILO SD FINANCEIRO PRO) -->
-  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+  <!-- ══════════════════════════════════════════════ -->
   <aside class="sidebar">
     <div class="brand-header" onclick="goNav('dashboard')">
       <div class="brand-logo-badge">
         <img src="logo_sdconstrucoes_ltda.jpg?v=10" alt="SD Construções Ltda Logo">
       </div>
       <div class="brand-info">
-        <div class="brand-title">SD ConstruÃ§Ãµes <span class="brand-tag">LTDA</span></div>
+        <div class="brand-title">SD Construções <span class="brand-tag">LTDA</span></div>
         <div class="brand-sub">Engenharia, Obras & Terceirizados</div>
       </div>
     </div>
@@ -1479,148 +1480,148 @@
     <ul class="nav-list">
       <li class="nav-item active" id="nav-dashboard" onclick="goNav('dashboard')">
         <div class="nav-item-left">
-          <span class="nav-item-icon">ðŸ“Š</span>
+          <span class="nav-item-icon">📊</span>
           <span>Dashboard Geral</span>
         </div>
       </li>
       <li class="nav-item" id="nav-orcamento" onclick="goNav('orcamento')">
         <div class="nav-item-left">
-          <span class="nav-item-icon">ðŸ“‹</span>
-          <span>OrÃ§amento & Obras</span>
+          <span class="nav-item-icon">📋</span>
+          <span>Orçamento & Obras</span>
         </div>
       </li>
       <li class="nav-item" id="nav-materiais" onclick="goNav('materiais')">
         <div class="nav-item-left">
-          <span class="nav-item-icon">ðŸ§±</span>
+          <span class="nav-item-icon">🧱</span>
           <span>Lista de Materiais</span>
         </div>
         <span class="nav-badge" style="background:rgba(249,115,22,0.18); color:#fb923c; border:1px solid rgba(249,115,22,0.3);" id="badge-mat-count">0</span>
       </li>
       <li class="nav-item" id="nav-terceirizado" onclick="goNav('terceirizado')">
         <div class="nav-item-left">
-          <span class="nav-item-icon">ðŸ¤</span>
-          <span>ServiÃ§o Terceirizado</span>
+          <span class="nav-item-icon">🤝</span>
+          <span>Serviço Terceirizado</span>
         </div>
         <span class="nav-badge gold" id="badge-terc-count">0</span>
       </li>
       <li class="nav-item" id="nav-funcionarios" onclick="goNav('funcionarios')">
         <div class="nav-item-left">
-          <span class="nav-item-icon">ðŸ‘·</span>
-          <span>FuncionÃ¡rios & Ponto</span>
+          <span class="nav-item-icon">👷</span>
+          <span>Funcionários & Ponto</span>
         </div>
         <span class="nav-badge" style="background:rgba(59,130,246,0.18); color:#60a5fa; border:1px solid rgba(59,130,246,0.3);">Ponto</span>
       </li>
       <li class="nav-item" id="nav-historico" onclick="goNav('historico')">
         <div class="nav-item-left">
-          <span class="nav-item-icon">ðŸ“</span>
-          <span>HistÃ³rico de O.S.</span>
+          <span class="nav-item-icon">📁</span>
+          <span>Histórico de O.S.</span>
         </div>
         <span class="nav-badge" id="badge-hist-count">0</span>
       </li>
       <li class="nav-item" id="nav-produtos" onclick="goNav('produtos')">
         <div class="nav-item-left">
-          <span class="nav-item-icon">ðŸ“¦</span>
-          <span>Produtos & ServiÃ§os</span>
+          <span class="nav-item-icon">📦</span>
+          <span>Produtos & Serviços</span>
         </div>
       </li>
       <li class="nav-item" id="nav-clientes" onclick="goNav('clientes')">
         <div class="nav-item-left">
-          <span class="nav-item-icon">ðŸ‘¤</span>
+          <span class="nav-item-icon">👤</span>
           <span>Clientes & Obras</span>
         </div>
       </li>
       <li class="nav-item" id="nav-vendedores" onclick="goNav('vendedores')">
         <div class="nav-item-left">
-          <span class="nav-item-icon">ðŸ‘”</span>
+          <span class="nav-item-icon">👔</span>
           <span>Cadastro de Vendedores</span>
         </div>
         <span class="nav-badge" style="background:rgba(234,179,8,0.18); color:#facc15; border:1px solid rgba(234,179,8,0.3);" id="badge-vend-count">3</span>
       </li>
       <li class="nav-item" id="nav-contratos" onclick="goNav('contratos')">
         <div class="nav-item-left">
-          <span class="nav-item-icon">ðŸ“„</span>
+          <span class="nav-item-icon">📄</span>
           <span>Gerador Contratos</span>
         </div>
       </li>
       <li class="nav-item" id="nav-usuarios" onclick="goNav('usuarios')">
         <div class="nav-item-left">
-          <span class="nav-item-icon">ðŸ‘¥</span>
-          <span>Equipe & UsuÃ¡rios</span>
+          <span class="nav-item-icon">👥</span>
+          <span>Equipe & Usuários</span>
         </div>
       </li>
     </ul>
 
     <!-- Bottom KPI Widget -->
     <div class="sidebar-card-summary">
-      <div class="sb-sum-title">TOTAL EM OBRAS / ORÃ‡AMENTOS</div>
+      <div class="sb-sum-title">TOTAL EM OBRAS / ORÇAMENTOS</div>
       <div class="sb-sum-val" id="sb-total-obras">R$ 0,00</div>
-      <div class="sb-sum-sub">Margem mÃ©dia estimada: <strong id="sb-margem-perc" style="color:var(--gold-light)">35%</strong></div>
+      <div class="sb-sum-sub">Margem média estimada: <strong id="sb-margem-perc" style="color:var(--gold-light)">35%</strong></div>
     </div>
 
     <!-- User Profile Pill -->
     <div class="sidebar-user-card">
       <div class="user-avatar-badge">SD</div>
       <div class="user-info-text">
-        <div class="user-name-title" id="sb-username">SÃ©rgio Dantas</div>
+        <div class="user-name-title" id="sb-username">Sérgio Dantas</div>
         <div class="user-role-sub">Administrador</div>
       </div>
-      <button class="btn-logout-icon" title="Encerrar SessÃ£o" onclick="sair()">ðŸšª</button>
+      <button class="btn-logout-icon" title="Encerrar Sessão" onclick="sair()">🚪</button>
     </div>
   </aside>
 
-  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+  <!-- ══════════════════════════════════════════════ -->
   <!-- MAIN APPLICATION WRAPPER -->
-  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+  <!-- ══════════════════════════════════════════════ -->
   <main class="main-wrapper">
 
     <!-- Topbar Header -->
     <header class="topbar">
       <div class="topbar-titles">
         <h1 class="topbar-main-title" id="page-title">Dashboard Geral</h1>
-        <p class="topbar-sub-title" id="page-sub-title">VisÃ£o consolidada das suas obras, orÃ§amentos e serviÃ§os terceirizados</p>
+        <p class="topbar-sub-title" id="page-sub-title">Visão consolidada das suas obras, orçamentos e serviços terceirizados</p>
       </div>
 
       <div class="topbar-actions">
         <div class="period-filter">
           <button class="period-btn" onclick="setPeriodo(this)">Dia</button>
           <button class="period-btn" onclick="setPeriodo(this)">Semana</button>
-          <button class="period-btn active" onclick="setPeriodo(this)">MÃªs</button>
+          <button class="period-btn active" onclick="setPeriodo(this)">Mês</button>
           <button class="period-btn" onclick="setPeriodo(this)">Ano</button>
         </div>
 
         <div class="date-badge">
-          ðŸ“… <span id="data-atual-top">Hoje</span>
+          📅 <span id="data-atual-top">Hoje</span>
         </div>
 
         <button class="btn-action-secondary" onclick="goNav('terceirizado')">
-          ðŸ¤ Novo Terceirizado
+          🤝 Novo Terceirizado
         </button>
 
         <button class="btn-action-gold" onclick="goNav('orcamento')">
-          âž• Novo OrÃ§amento
+          ➕ Novo Orçamento
         </button>
       </div>
     </header>
 
     <div class="content-body">
 
-      <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+      <!-- ══════════════════════════════════════════════ -->
       <!-- VIEW 1: DASHBOARD GERAL -->
-      <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+      <!-- ══════════════════════════════════════════════ -->
       <section id="view-dashboard" class="panel-view active">
         
         <!-- 4 KPI CARDS (MATCHING SD FINANCEIRO EXACT LAYOUT) -->
         <div class="kpi-grid">
           <div class="kpi-card">
-            <div class="kpi-icon-wrap kpi-icon-blue">ðŸ“‹</div>
+            <div class="kpi-icon-wrap kpi-icon-blue">📋</div>
             <div class="kpi-data">
-              <span class="kpi-label">Total OrÃ§ado (Obras)</span>
+              <span class="kpi-label">Total Orçado (Obras)</span>
               <span class="kpi-value" id="kpi-total-orcado">R$ 0,00</span>
             </div>
           </div>
 
           <div class="kpi-card">
-            <div class="kpi-icon-wrap kpi-icon-gold">ðŸ—ï¸</div>
+            <div class="kpi-icon-wrap kpi-icon-gold">🏗️</div>
             <div class="kpi-data">
               <span class="kpi-label">Obras em Andamento</span>
               <span class="kpi-value" id="kpi-obras-ativas">0 ativas</span>
@@ -1628,23 +1629,23 @@
           </div>
 
           <div class="kpi-card">
-            <div class="kpi-icon-wrap kpi-icon-purple">ðŸ¤</div>
+            <div class="kpi-icon-wrap kpi-icon-purple">🤝</div>
             <div class="kpi-data">
-              <span class="kpi-label">ServiÃ§os Terceirizados</span>
+              <span class="kpi-label">Serviços Terceirizados</span>
               <span class="kpi-value" id="kpi-total-terceirizados">R$ 0,00</span>
             </div>
           </div>
 
           <div class="kpi-card">
-            <div class="kpi-icon-wrap kpi-icon-green">ðŸ’°</div>
+            <div class="kpi-icon-wrap kpi-icon-green">💰</div>
             <div class="kpi-data">
-              <span class="kpi-label">Lucro / Margem LÃ­quida</span>
+              <span class="kpi-label">Lucro / Margem Líquida</span>
               <span class="kpi-value" id="kpi-lucro-liquido" style="color:var(--green-light)">R$ 0,00</span>
             </div>
           </div>
         </div>
 
-        <!-- CHARTS SECTION (FLUXO + DISTRIBUIÃ‡ÃƒO) -->
+        <!-- CHARTS SECTION (FLUXO + DISTRIBUIÇÃO) -->
         <div class="dashboard-charts-grid">
           
           <!-- Bar Chart -->
@@ -1710,8 +1711,8 @@
           <div class="chart-box">
             <div class="chart-header">
               <div class="chart-title-group">
-                <h3>ServiÃ§os por Especialidade</h3>
-                <p>DistribuiÃ§Ã£o das atividades</p>
+                <h3>Serviços por Especialidade</h3>
+                <p>Distribuição das atividades</p>
               </div>
             </div>
 
@@ -1726,7 +1727,7 @@
 
               <div class="donut-legend-grid">
                 <div class="legend-item"><span class="legend-dot" style="background:#3b82f6"></span> Alvenaria (40%)</div>
-                <div class="legend-item"><span class="legend-dot" style="background:#f5b300"></span> ElÃ©trica (25%)</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#f5b300"></span> Elétrica (25%)</div>
                 <div class="legend-item"><span class="legend-dot" style="background:#10b981"></span> Pintura (20%)</div>
                 <div class="legend-item"><span class="legend-dot" style="background:#8b5cf6"></span> Vidros/Gesso (15%)</div>
               </div>
@@ -1738,30 +1739,30 @@
         <!-- Recent Records Box -->
         <div class="glass-card">
           <div class="glass-card-title">
-            <span>Ãšltimas Ordens de ServiÃ§o e Contratos</span>
-            <button class="btn-action-secondary" style="margin-left:auto;padding:6px 12px;font-size:12px;" onclick="goNav('historico')">Ver HistÃ³rico Completo âžœ</button>
+            <span>Últimas Ordens de Serviço e Contratos</span>
+            <button class="btn-action-secondary" style="margin-left:auto;padding:6px 12px;font-size:12px;" onclick="goNav('historico')">Ver Histórico Completo ➜</button>
           </div>
           <div id="dash-recent-list"></div>
         </div>
       </section>
 
-      <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-      <!-- VIEW 2: ORÃ‡AMENTO & OBRAS (PLANILHA POR MÂ²) -->
-      <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+      <!-- ══════════════════════════════════════════════ -->
+      <!-- VIEW 2: ORÇAMENTO & OBRAS (PLANILHA POR M²) -->
+      <!-- ══════════════════════════════════════════════ -->
       <section id="view-orcamento" class="panel-view">
         <div class="glass-card">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;">
             <div style="font-family:var(--font-display); font-size:18px; font-weight:800; color:var(--gold-light);">
-              OrÃ§amento de Obra <span id="orc-num-tag" style="background:rgba(245,179,0,0.15); padding:4px 10px; border-radius:6px; font-size:14px;">#0001</span>
+              Orçamento de Obra <span id="orc-num-tag" style="background:rgba(245,179,0,0.15); padding:4px 10px; border-radius:6px; font-size:14px;">#0001</span>
             </div>
             <button class="btn-action-secondary" onclick="abrirModalCliente('orcamento')">
-              ðŸ” Buscar Cliente Cadastrado
+              🔍 Buscar Cliente Cadastrado
             </button>
           </div>
 
           <!-- Cliente -->
           <div class="grid-2">
-            <div class="form-group"><label>Cliente / CondomÃ­nio / Obra</label><input id="o-nome" placeholder="Nome completo" /></div>
+            <div class="form-group"><label>Cliente / Condomínio / Obra</label><input id="o-nome" placeholder="Nome completo" /></div>
             <div class="form-group"><label>CPF / CNPJ</label><input id="o-cnpj" placeholder="000.000.000-00" /></div>
           </div>
           <div class="grid-2">
@@ -1769,19 +1770,19 @@
             <div class="form-group"><label>Bairro / Cidade</label><input id="o-bairro" placeholder="Bairro, Itaitinga - CE" /></div>
           </div>
           <div class="grid-1">
-            <div class="form-group"><label>EndereÃ§o da Obra</label><input id="o-end" placeholder="Rua, nÃºmero, complemento" /></div>
+            <div class="form-group"><label>Endereço da Obra</label><input id="o-end" placeholder="Rua, número, complemento" /></div>
           </div>
           <div class="grid-2" style="margin-top:6px;">
             <div class="form-group">
-              <label style="color:#facc15; font-weight:800;">ðŸ‘” Vendedor / Consultor Comercial</label>
+              <label style="color:#facc15; font-weight:800;">👔 Vendedor / Consultor Comercial</label>
               <select id="o-vendedor" onchange="atualizarComissaoVendedorOrcamento()" style="background:#070c18; border:1.5px solid rgba(250,204,21,0.4); color:#fff; font-weight:700; padding:12px; border-radius:10px;">
                 <option value="Samuel Dantas">Samuel Dantas (Gerente Comercial - 5%)</option>
-                <option value="Carlos Eduardo">Carlos Eduardo (Consultor TÃ©cnico - 4%)</option>
+                <option value="Carlos Eduardo">Carlos Eduardo (Consultor Técnico - 4%)</option>
                 <option value="Mariana Souza">Mariana Souza (Executiva de Vendas - 4.5%)</option>
               </select>
             </div>
             <div class="form-group">
-              <label>ComissÃ£o Estimada do Vendedor</label>
+              <label>Comissão Estimada do Vendedor</label>
               <input id="o-comissao" readonly value="5%" style="background:#04070f; color:#facc15; font-weight:800; padding:12px;" />
             </div>
           </div>
@@ -1789,23 +1790,23 @@
 
         <!-- Tabela de Itens -->
         <div class="glass-card">
-          <div class="glass-card-title">ðŸ”§ Itens da ConstruÃ§Ã£o, Metro Quadrado (mÂ²) e Valores</div>
+          <div class="glass-card-title">🔧 Itens da Construção, Metro Quadrado (m²) e Valores</div>
           
           <div class="table-container">
             <table class="data-table">
               <thead>
                 <tr>
                   <th style="width:50px; text-align:center;">QTD</th>
-                  <th style="min-width:200px;">DESCRIÃ‡ÃƒO (PRODUTO / SERVIÃ‡O)</th>
+                  <th style="min-width:200px;">DESCRIÇÃO (PRODUTO / SERVIÇO)</th>
                   <th style="width:100px;">COR/TIPO</th>
                   <th style="width:75px;">ALT.(m)</th>
                   <th style="width:75px;">LARG.(m)</th>
-                  <th style="width:85px;">MÂ² (ÃREA)</th>
-                  <th style="width:95px;">V. MÂ² (R$)</th>
+                  <th style="width:85px;">M² (ÁREA)</th>
+                  <th style="width:95px;">V. M² (R$)</th>
                   <th style="width:95px;">V. UNIT.(R$)</th>
                   <th style="width:100px;">ACAB./OBS</th>
                   <th style="width:110px;">TOTAL (R$)</th>
-                  <th style="width:70px; text-align:center;">AÃ‡Ã•ES</th>
+                  <th style="width:70px; text-align:center;">AÇÕES</th>
                 </tr>
               </thead>
               <tbody id="itens-lista"></tbody>
@@ -1816,27 +1817,27 @@
 
           <div class="summary-total-bar">
             <div>
-              <div class="tot-lbl">Total do OrÃ§amento</div>
+              <div class="tot-lbl">Total do Orçamento</div>
               <div class="tot-val" id="total">R$ 0,00</div>
             </div>
             <div class="chips-row">
-              <button class="chip-btn active" onclick="selForma(this, 'Ã€ vista')">Ã€ vista</button>
+              <button class="chip-btn active" onclick="selForma(this, 'À vista')">À vista</button>
               <button class="chip-btn" onclick="selForma(this, '50% + 50%')">50% + 50%</button>
-              <button class="chip-btn" onclick="selForma(this, '3x cartÃ£o')">3x cartÃ£o</button>
+              <button class="chip-btn" onclick="selForma(this, '3x cartão')">3x cartão</button>
               <button class="chip-btn" onclick="selForma(this, '30% + 70%')">30% + 70%</button>
             </div>
           </div>
         </div>
 
-        <!-- CondiÃ§Ãµes e AÃ§Ãµes -->
+        <!-- Condições e Ações -->
         <div class="glass-card">
           <div class="grid-3">
             <div class="form-group"><label>Outra Forma de Pagamento</label><input id="forma-outro" placeholder="Ex: 30/60/90 dias" /></div>
-            <div class="form-group"><label>Prazo de ExecuÃ§Ã£o</label><input id="o-prazo" placeholder="Ex: 20 dias Ãºteis" /></div>
+            <div class="form-group"><label>Prazo de Execução</label><input id="o-prazo" placeholder="Ex: 20 dias úteis" /></div>
             <div class="form-group"><label>Garantia da Obra</label><input id="o-garantia" placeholder="Ex: 5 anos estrutural" /></div>
           </div>
           <div class="form-group" style="margin-bottom:18px;">
-            <label>ObservaÃ§Ãµes Gerais</label>
+            <label>Observações Gerais</label>
             <input id="o-obs" placeholder="Ex: Materiais de primeira qualidade, equipe especializada inclusa..." />
           </div>
 
@@ -1880,44 +1881,44 @@
         </div>
       </section>
 
-      <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+      <!-- ══════════════════════════════════════════════ -->
       <!-- VIEW NOVA: LISTA DE MATERIAIS DO CLIENTE -->
-      <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+      <!-- ══════════════════════════════════════════════ -->
       <section id="view-materiais" class="panel-view">
         <div class="glass-card" style="border-color: rgba(249,115,22,0.4);">
           <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:18px;">
             <div>
               <h2 style="font-family:var(--font-display); font-size:22px; font-weight:800; color:#fb923c; display:flex; align-items:center; gap:8px;">
-                ðŸ§± Lista de Materiais & Insumos do Cliente / Obra
+                🧱 Lista de Materiais & Insumos do Cliente / Obra
               </h2>
               <p style="font-size:13px; color:var(--text-muted); margin-top:2px;">
-                OrganizaÃ§Ã£o detalhada de materiais necessÃ¡rios para a obra, divisÃ£o de quem compra e controle de entregas.
+                Organização detalhada de materiais necessários para a obra, divisão de quem compra e controle de entregas.
               </p>
             </div>
             <div style="display:flex; gap:8px;">
               <button class="btn-action-gold" onclick="puxarClienteParaMateriais()">
-                âš¡ Puxar Dados do Cliente
+                ⚡ Puxar Dados do Cliente
               </button>
               <button class="btn-action-secondary" onclick="abrirModalCliente('materiais')">
-                ðŸ” Buscar Cliente
+                🔍 Buscar Cliente
               </button>
             </div>
           </div>
 
           <!-- Dados do Cliente da Obra -->
           <div class="grid-2">
-            <div class="form-group"><label>Cliente / Obra</label><input id="mat-cli-nome" placeholder="Nome completo do cliente ou condomÃ­nio" /></div>
+            <div class="form-group"><label>Cliente / Obra</label><input id="mat-cli-nome" placeholder="Nome completo do cliente ou condomínio" /></div>
             <div class="form-group"><label>WhatsApp do Cliente</label><input id="mat-cli-tel" placeholder="(85) 99999-9999" /></div>
           </div>
           <div class="grid-1">
-            <div class="form-group"><label>Local da Entrega dos Materiais</label><input id="mat-cli-end" placeholder="EndereÃ§o completo da obra..." /></div>
+            <div class="form-group"><label>Local da Entrega dos Materiais</label><input id="mat-cli-end" placeholder="Endereço completo da obra..." /></div>
           </div>
         </div>
 
         <!-- Tabela de Materiais -->
         <div class="glass-card">
           <div class="glass-card-title" style="color:#fb923c;">
-            <span>ðŸ“¦ RelaÃ§Ã£o de Materiais, Insumos e Quantidades</span>
+            <span>📦 Relação de Materiais, Insumos e Quantidades</span>
             <span class="badge-count" style="border-color:rgba(249,115,22,0.4); color:#fb923c; background:rgba(249,115,22,0.12);" id="mat-total-itens">0 itens</span>
           </div>
 
@@ -1942,7 +1943,7 @@
 
           <div style="display:flex; gap:8px; margin-top:8px;">
             <button class="btn-action-secondary" onclick="addLinhaMaterial()">+ Adicionar Material</button>
-            <button class="btn-action-secondary" style="font-size:12px;" onclick="adicionarKitBasicoObra()">âœ¨ Inserir Kit BÃ¡sico de Obra</button>
+            <button class="btn-action-secondary" style="font-size:12px;" onclick="adicionarKitBasicoObra()">✨ Inserir Kit Básico de Obra</button>
           </div>
 
           <!-- Totalizadores de Materiais -->
@@ -1966,22 +1967,22 @@
           </div>
         </div>
 
-        <!-- AÃ§Ãµes da Lista de Materiais -->
+        <!-- Ações da Lista de Materiais -->
         <div class="glass-card">
           <div class="form-group" style="margin-bottom:16px;">
-            <label>ObservaÃ§Ãµes para o Cliente ou Loja de Materiais</label>
-            <input id="mat-obs" placeholder="Ex: Priorizar cimento de secagem rÃ¡pida; entrega permitida das 8h Ã s 17h no condomÃ­nio..." />
+            <label>Observações para o Cliente ou Loja de Materiais</label>
+            <input id="mat-obs" placeholder="Ex: Priorizar cimento de secagem rápida; entrega permitida das 8h às 17h no condomínio..." />
           </div>
 
           <div class="grid-3">
             <button class="btn-green-whats" onclick="enviarWhatsAppListaMateriais()">
-              ðŸ“± Enviar Lista ao Cliente no WhatsApp
+              📱 Enviar Lista ao Cliente no WhatsApp
             </button>
             <button class="btn-dark-pdf" onclick="imprimirPdfMateriais()">
-              ðŸ“„ Imprimir / Baixar Lista em PDF
+              📄 Imprimir / Baixar Lista em PDF
             </button>
             <button class="btn-gold-save" onclick="salvarListaMateriais()">
-              ðŸ’¾ Salvar Lista de Materiais da Obra
+              💾 Salvar Lista de Materiais da Obra
             </button>
           </div>
         </div>
@@ -1999,27 +2000,27 @@
         </div>
       </section>
 
-      <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-      <!-- VIEW 3: SERVIÃ‡O TERCEIRIZADO (SOLICITADA) -->
-      <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+      <!-- ══════════════════════════════════════════════ -->
+      <!-- VIEW 3: SERVIÇO TERCEIRIZADO (SOLICITADA) -->
+      <!-- ══════════════════════════════════════════════ -->
       <section id="view-terceirizado" class="panel-view">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
           <div>
             <h2 style="font-family:var(--font-display); font-size:20px; font-weight:800; color:var(--gold-light);">
-              GestÃ£o de ServiÃ§os Terceirizados & Subempreiteiros
+              Gestão de Serviços Terceirizados & Subempreiteiros
             </h2>
             <p style="font-size:13px; color:var(--text-muted);">Controle de prestadores, valores acordados e margem da construtora</p>
           </div>
           <button class="btn-action-gold" onclick="puxarDadosDoOrcamentoAtual()">
-            âš¡ Puxar Dados do OrÃ§amento Aberto
+            ⚡ Puxar Dados do Orçamento Aberto
           </button>
         </div>
 
         <!-- 1. DADOS DO CLIENTE -->
         <div class="glass-card" style="border-color: rgba(59,130,246,0.3);">
-          <div class="glass-card-title" style="color:#60a5fa;">ðŸ‘¤ 1. Dados do Cliente e Local da Obra</div>
+          <div class="glass-card-title" style="color:#60a5fa;">👤 1. Dados do Cliente e Local da Obra</div>
           <div class="grid-2">
-            <div class="form-group"><label>Cliente / CondomÃ­nio / Obra</label><input id="t-cli-nome" placeholder="Nome completo" /></div>
+            <div class="form-group"><label>Cliente / Condomínio / Obra</label><input id="t-cli-nome" placeholder="Nome completo" /></div>
             <div class="form-group"><label>CPF / CNPJ do Cliente</label><input id="t-cli-cnpj" placeholder="000.000.000-00" /></div>
           </div>
           <div class="grid-2">
@@ -2027,15 +2028,15 @@
             <div class="form-group"><label>Bairro / Cidade da Obra</label><input id="t-cli-bairro" placeholder="Bairro, Cidade" /></div>
           </div>
           <div class="grid-1">
-            <div class="form-group"><label>EndereÃ§o Completo</label><input id="t-cli-end" placeholder="Rua, nÃºmero, complemento" /></div>
+            <div class="form-group"><label>Endereço Completo</label><input id="t-cli-end" placeholder="Rua, número, complemento" /></div>
           </div>
         </div>
 
         <!-- 2. DADOS DO CONTRATADO -->
         <div class="glass-card" style="border-color: rgba(245,179,0,0.3);">
-          <div class="glass-card-title">ðŸ‘·â€â™‚ï¸ 2. Dados do Contratado (Prestador Terceirizado)</div>
+          <div class="glass-card-title">👷‍♂️ 2. Dados do Contratado (Prestador Terceirizado)</div>
           <div class="grid-2">
-            <div class="form-group"><label>RazÃ£o Social / Nome do Terceirizado</label><input id="t-contr-nome" placeholder="Ex: Silva InstalaÃ§Ãµes ElÃ©tricas ME" /></div>
+            <div class="form-group"><label>Razão Social / Nome do Terceirizado</label><input id="t-contr-nome" placeholder="Ex: Silva Instalações Elétricas ME" /></div>
             <div class="form-group"><label>CPF / CNPJ do Contratado</label><input id="t-contr-cnpj" placeholder="00.000.000/0001-00" /></div>
           </div>
           <div class="grid-2">
@@ -2043,22 +2044,22 @@
             <div class="form-group">
               <label>Especialidade / Categoria</label>
               <select id="t-contr-especialidade">
-                <option value="Alvenaria e Estrutura">ðŸ§± Alvenaria e Estrutura</option>
-                <option value="InstalaÃ§Ãµes ElÃ©tricas">âš¡ InstalaÃ§Ãµes ElÃ©tricas</option>
-                <option value="InstalaÃ§Ãµes HidrÃ¡ulicas">ðŸš° InstalaÃ§Ãµes HidrÃ¡ulicas</option>
-                <option value="Pintura e Textura">ðŸŽ¨ Pintura e Acabamento</option>
-                <option value="Gesso e Drywall">ðŸ“ Gesso e Drywall</option>
-                <option value="VidraÃ§aria e Esquadrias">ðŸªŸ VidraÃ§aria e Esquadrias</option>
-                <option value="Pisos e Porcelanatos">âœ¨ Pisos e Porcelanatos</option>
-                <option value="Telhados e Coberturas">ðŸ  Telhados e Coberturas</option>
-                <option value="Serralheria">âš™ï¸ Serralheria</option>
-                <option value="Outros ServiÃ§os">ðŸ› ï¸ Outros ServiÃ§os</option>
+                <option value="Alvenaria e Estrutura">🧱 Alvenaria e Estrutura</option>
+                <option value="Instalações Elétricas">⚡ Instalações Elétricas</option>
+                <option value="Instalações Hidráulicas">🚰 Instalações Hidráulicas</option>
+                <option value="Pintura e Textura">🎨 Pintura e Acabamento</option>
+                <option value="Gesso e Drywall">📐 Gesso e Drywall</option>
+                <option value="Vidraçaria e Esquadrias">🪟 Vidraçaria e Esquadrias</option>
+                <option value="Pisos e Porcelanatos">✨ Pisos e Porcelanatos</option>
+                <option value="Telhados e Coberturas">🏠 Telhados e Coberturas</option>
+                <option value="Serralheria">⚙️ Serralheria</option>
+                <option value="Outros Serviços">🛠️ Outros Serviços</option>
               </select>
             </div>
           </div>
 
           <div class="form-group" style="margin-bottom:14px;">
-            <label>DescriÃ§Ã£o Detalhada do Escopo Terceirizado</label>
+            <label>Descrição Detalhada do Escopo Terceirizado</label>
             <textarea id="t-contr-escopo" placeholder="Descreva tudo o que o prestador terceirizado deve realizar..."></textarea>
           </div>
 
@@ -2074,7 +2075,7 @@
             </div>
             <div class="form-group">
               <label>Prazo Limite de Entrega</label>
-              <input id="t-contr-prazo" placeholder="Ex: 10 dias Ãºteis" />
+              <input id="t-contr-prazo" placeholder="Ex: 10 dias úteis" />
             </div>
           </div>
 
@@ -2088,50 +2089,50 @@
               <div class="margin-item-val" id="disp-fat-cliente">R$ 0,00</div>
             </div>
             <div>
-              <div class="margin-item-lbl">Lucro LÃ­quido / Margem</div>
+              <div class="margin-item-lbl">Lucro Líquido / Margem</div>
               <div class="margin-item-val profit" id="disp-lucro-margem">R$ 0,00 (0%)</div>
             </div>
           </div>
 
           <div class="grid-2" style="margin-top:14px;">
             <div class="form-group"><label>Forma de Pagamento ao Prestador</label><input id="t-contr-pagamento" placeholder="Ex: 50% entrada + 50% vistoria final" /></div>
-            <div class="form-group"><label>Garantia e Normas de SeguranÃ§a (EPI)</label><input id="t-contr-obs" placeholder="Ex: Uso obrigatÃ³rio de EPIs e cumprimento das normas tÃ©cnicas" /></div>
+            <div class="form-group"><label>Garantia e Normas de Segurança (EPI)</label><input id="t-contr-obs" placeholder="Ex: Uso obrigatório de EPIs e cumprimento das normas técnicas" /></div>
           </div>
         </div>
 
-        <!-- AÃ§Ãµes do Terceirizado: Envio SÃ“ de PDF no WhatsApp Diretamente para o NÃºmero Digitado -->
+        <!-- Ações do Terceirizado: Envio SÓ de PDF no WhatsApp Diretamente para o Número Digitado -->
         <div class="grid-3">
           <button class="btn-green-whats" onclick="enviarPdfDiretoWhatsAppTerceirizado()">
-            ðŸ“± Enviar PDF no WhatsApp (Direto ao NÃºmero Digitado)
+            📱 Enviar PDF no WhatsApp (Direto ao Número Digitado)
           </button>
           <button class="btn-dark-pdf" onclick="imprimirContratoDiretoPdf()">
-            ðŸ–¨ï¸ Imprimir / Baixar Contrato PDF
+            🖨️ Imprimir / Baixar Contrato PDF
           </button>
           <button class="btn-gold-save" id="btn-salvar-terceirizado" onclick="salvarServicoTerceirizado()">
-            âœ… Salvar Registro Terceirizado
+            ✅ Salvar Registro Terceirizado
           </button>
         </div>
       </section>
 
-      <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-      <!-- DOCUMENTO FORMAL EM PDF: SD CONSTRUÃ‡Ã•ES LTDA -->
-      <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+      <!-- ══════════════════════════════════════════════ -->
+      <!-- DOCUMENTO FORMAL EM PDF: SD CONSTRUÇÕES LTDA -->
+      <!-- ══════════════════════════════════════════════ -->
       <section id="view-whats-pdf" class="panel-view" style="display:none;">
         <div class="glass-card" style="border-color: rgba(56, 189, 248, 0.4); background: linear-gradient(180deg, rgba(13,20,36,0.98) 0%, rgba(8,13,24,0.99) 100%);">
           <!-- Card de Controles de Envio -->
           <div style="background:#070c18; border:1.5px solid rgba(56,189,248,0.25); border-radius:var(--radius-md); padding:18px 20px; margin-bottom:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
             <div>
-              <div style="font-size:11px; font-weight:800; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.06em;">DestinatÃ¡rio (Terceirizado)</div>
+              <div style="font-size:11px; font-weight:800; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.06em;">Destinatário (Terceirizado)</div>
               <div style="font-size:17px; font-weight:800; color:#fff; margin-top:3px;" id="pdf-whats-nome-dest">Prestador Selecionado</div>
-              <div style="font-size:13px; color:#38bdf8;" id="pdf-whats-tel-dest">WhatsApp: NÃ£o informado</div>
+              <div style="font-size:13px; color:#38bdf8;" id="pdf-whats-tel-dest">WhatsApp: Não informado</div>
             </div>
 
             <div style="display:flex; gap:10px; flex-wrap:wrap;">
               <button class="btn-dark-pdf" style="padding:11px 18px;" onclick="baixarImprimirPdf()">
-                ðŸ“¥ 1. Baixar / Imprimir PDF Oficial
+                📥 1. Baixar / Imprimir PDF Oficial
               </button>
               <button class="btn-green-whats" style="padding:11px 22px; font-size:14px;" onclick="enviarPdfDiretoWhatsAppTerceirizado()">
-                ðŸ“„ 2. Enviar SÃ“ o PDF no WhatsApp (Sem Texto)
+                📄 2. Enviar SÓ o PDF no WhatsApp (Sem Texto)
               </button>
             </div>
           </div>
@@ -2139,14 +2140,14 @@
           <!-- FOLHA DE DOCUMENTO FORMAL (A4 PREVIEW) -->
           <div style="background:#ffffff; color:#0f172a; border-radius:12px; padding:36px 40px; box-shadow:0 12px 35px rgba(0,0,0,0.5); font-family:'Plus Jakarta Sans', sans-serif; max-width:850px; margin:0 auto; line-height:1.6;" id="documento-pdf-a4">
             
-            <!-- CabeÃ§alho do Documento -->
+            <!-- Cabeçalho do Documento -->
             <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2.5px solid #0f172a; padding-bottom:18px; margin-bottom:22px;">
               <div style="display:flex; align-items:center; gap:14px;">
                 <img src="logo_sdconstrucoes_ltda.jpg?v=10" alt="Logo" style="width:68px; height:68px; border-radius:50%; border:2px solid #b45309; object-fit:cover;" onerror="this.src='logo.jpg?v=10'">
                 <div>
-                  <div style="font-size:20px; font-weight:900; color:#0f172a; letter-spacing:-0.01em;">SD CONSTRUÃ‡Ã•ES LTDA & ENGENHARIA</div>
-                  <div style="font-size:11px; font-weight:700; color:#475569; text-transform:uppercase;">GestÃ£o de Obras Civis, Reformas & Contratos Terceirizados</div>
-                  <div style="font-size:11px; color:#64748b;">Itaitinga - CE Â· Tel/WhatsApp: (85) 99611-9824</div>
+                  <div style="font-size:20px; font-weight:900; color:#0f172a; letter-spacing:-0.01em;">SD CONSTRUÇÕES LTDA & ENGENHARIA</div>
+                  <div style="font-size:11px; font-weight:700; color:#475569; text-transform:uppercase;">Gestão de Obras Civis, Reformas & Contratos Terceirizados</div>
+                  <div style="font-size:11px; color:#64748b;">Itaitinga - CE · Tel/WhatsApp: (85) 99611-9824</div>
                 </div>
               </div>
               <div style="text-align:right;">
@@ -2156,22 +2157,22 @@
               </div>
             </div>
 
-            <!-- TÃ­tulo do Contrato -->
+            <!-- Título do Contrato -->
             <div style="text-align:center; margin-bottom:20px;">
               <h3 style="font-size:15px; font-weight:900; text-transform:uppercase; color:#0f172a; letter-spacing:0.04em;">
-                ORDEM DE SERVIÃ‡O & CONTRATO DE PRESTAÃ‡ÃƒO DE SERVIÃ‡OS TERCEIRIZADOS
+                ORDEM DE SERVIÇO & CONTRATO DE PRESTAÇÃO DE SERVIÇOS TERCEIRIZADOS
               </h3>
             </div>
 
             <!-- 1. DADOS DAS PARTES -->
             <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:14px 16px; margin-bottom:16px;">
               <div style="font-size:12px; font-weight:800; text-transform:uppercase; color:#0f172a; margin-bottom:8px; border-bottom:1px solid #cbd5e1; padding-bottom:4px;">
-                1. QUALIFICAÃ‡ÃƒO DAS PARTES & LOCAL DA OBRA
+                1. QUALIFICAÇÃO DAS PARTES & LOCAL DA OBRA
               </div>
               <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:12.5px;">
-                <div><strong>CONTRATANTE:</strong> SD ConstruÃ§Ãµes Ltda & Engenharia</div>
+                <div><strong>CONTRATANTE:</strong> SD Construções Ltda & Engenharia</div>
                 <div><strong>LOCAL / CLIENTE:</strong> <span id="doc-cli-nome">Residencial / Cliente</span></div>
-                <div><strong>ENDEREÃ‡O DA OBRA:</strong> <span id="doc-cli-end">Rua da Obra, Itaitinga</span></div>
+                <div><strong>ENDEREÇO DA OBRA:</strong> <span id="doc-cli-end">Rua da Obra, Itaitinga</span></div>
                 <div><strong>CONTATO DA OBRA:</strong> <span id="doc-cli-tel">(85) 99999-9999</span></div>
               </div>
             </div>
@@ -2182,42 +2183,42 @@
                 2. DADOS DO CONTRATADO (PRESTADOR TERCEIRIZADO)
               </div>
               <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:12.5px;">
-                <div><strong>RAZÃƒO / NOME:</strong> <span id="doc-terc-nome">Prestador de ServiÃ§o</span></div>
+                <div><strong>RAZÃO / NOME:</strong> <span id="doc-terc-nome">Prestador de Serviço</span></div>
                 <div><strong>CPF / CNPJ:</strong> <span id="doc-terc-cnpj">00.000.000/0001-00</span></div>
                 <div><strong>WHATSAPP / TEL:</strong> <span id="doc-terc-tel">(85) 98888-8888</span></div>
-                <div><strong>ESPECIALIDADE:</strong> <span id="doc-terc-esp">Alvenaria / ElÃ©trica</span></div>
+                <div><strong>ESPECIALIDADE:</strong> <span id="doc-terc-esp">Alvenaria / Elétrica</span></div>
               </div>
             </div>
 
-            <!-- 3. ESCOPO DOS SERVIÃ‡OS -->
+            <!-- 3. ESCOPO DOS SERVIÇOS -->
             <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:14px 16px; margin-bottom:16px;">
               <div style="font-size:12px; font-weight:800; text-transform:uppercase; color:#0f172a; margin-bottom:8px; border-bottom:1px solid #cbd5e1; padding-bottom:4px;">
-                3. ESCOPO DETALHADO DOS SERVIÃ‡OS A EXECUTAR
+                3. ESCOPO DETALHADO DOS SERVIÇOS A EXECUTAR
               </div>
               <p style="font-size:12.5px; color:#334155; white-space:pre-wrap;" id="doc-terc-escopo">
-                ExecuÃ§Ã£o completa e especializada dos serviÃ§os contratados conforme especificaÃ§Ãµes tÃ©cnicas e projetos executivos da obra.
+                Execução completa e especializada dos serviços contratados conforme especificações técnicas e projetos executivos da obra.
               </p>
             </div>
 
             <!-- 4. VALORES E PRAZOS -->
             <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:14px 16px; margin-bottom:16px;">
               <div style="font-size:12px; font-weight:800; text-transform:uppercase; color:#0f172a; margin-bottom:8px; border-bottom:1px solid #cbd5e1; padding-bottom:4px;">
-                4. VALORES ACORDADOS & CONDIÃ‡Ã•ES DE PAGAMENTO
+                4. VALORES ACORDADOS & CONDIÇÕES DE PAGAMENTO
               </div>
               <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:12.5px;">
                 <div><strong>VALOR FECHADO:</strong> <span style="font-size:14px; font-weight:900; color:#15803d;" id="doc-terc-valor">R$ 0,00</span></div>
-                <div><strong>PRAZO DE ENTREGA:</strong> <span id="doc-terc-prazo">10 dias Ãºteis</span></div>
-                <div style="grid-column:1 / -1;"><strong>FORMA DE PAGAMENTO:</strong> <span id="doc-terc-pagto">50% entrada + 50% apÃ³s mediÃ§Ã£o e vistoria final</span></div>
+                <div><strong>PRAZO DE ENTREGA:</strong> <span id="doc-terc-prazo">10 dias úteis</span></div>
+                <div style="grid-column:1 / -1;"><strong>FORMA DE PAGAMENTO:</strong> <span id="doc-terc-pagto">50% entrada + 50% após medição e vistoria final</span></div>
               </div>
             </div>
 
-            <!-- 5. SEGURANÃ‡A E EPI -->
+            <!-- 5. SEGURANÇA E EPI -->
             <div style="background:#fffbeb; border:1px solid #fef3c7; border-radius:8px; padding:12px 14px; margin-bottom:28px;">
               <div style="font-size:11.5px; font-weight:800; color:#b45309; text-transform:uppercase; margin-bottom:4px;">
-                âš ï¸ 5. SEGURANÃ‡A DO TRABALHO, USO DE EPI & OBRIGAÃ‡Ã•ES
+                ⚠️ 5. SEGURANÇA DO TRABALHO, USO DE EPI & OBRIGAÇÕES
               </div>
               <p style="font-size:11.5px; color:#78350f; line-height:1.5;" id="doc-terc-epi">
-                Ã‰ estritamente obrigatÃ³rio o uso contÃ­nuo de Equipamentos de ProteÃ§Ã£o Individual (EPIs) adequados Ã  funÃ§Ã£o (capacete, botas, Ã³culos e luvas), bem como manter o local da obra limpo e organizado.
+                É estritamente obrigatório o uso contínuo de Equipamentos de Proteção Individual (EPIs) adequados à função (capacete, botas, óculos e luvas), bem como manter o local da obra limpo e organizado.
               </p>
             </div>
 
@@ -2225,7 +2226,7 @@
             <div style="display:flex; justify-content:space-around; text-align:center; margin-top:40px; padding-top:20px; font-size:12px;">
               <div>
                 <div style="border-top:1.5px solid #0f172a; width:220px; margin-bottom:6px;"></div>
-                <strong>SD CONSTRUÃ‡Ã•ES LTDA</strong>
+                <strong>SD CONSTRUÇÕES LTDA</strong>
                 <div style="color:#64748b; font-size:11px;">CONTRATANTE</div>
               </div>
               <div>
@@ -2239,60 +2240,60 @@
         </div>
       </section>
 
-      <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-      <!-- VIEW 4: HISTÃ“RICO -->
-      <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+      <!-- ══════════════════════════════════════════════ -->
+      <!-- VIEW 4: HISTÓRICO -->
+      <!-- ══════════════════════════════════════════════ -->
       <section id="view-historico" class="panel-view">
         <div class="glass-card">
           <div class="glass-card-title" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
             <div style="display:flex; align-items:center; gap:8px;">
-              <span>HistÃ³rico de Ordens de ServiÃ§o e Terceirizados</span>
+              <span>Histórico de Ordens de Serviço e Terceirizados</span>
               <span class="badge-count" id="hist-total-count">0 registros</span>
             </div>
             <button class="btn-action-gold" onclick="imprimirRelatorioCompleto()" style="padding:8px 16px; font-size:12.5px; display:flex; align-items:center; gap:6px;">
-              ðŸ“Š Imprimir RelatÃ³rio Completo
+              📊 Imprimir Relatório Completo
             </button>
           </div>
 
           <div class="grid-1">
-            <input id="busca-hist" placeholder="ðŸ” Pesquisar por cliente, vendedor, terceirizado ou nÃºmero de O.S..." oninput="renderHist()" style="padding:12px; background:#060a14; border:1px solid var(--border); border-radius:8px; color:#fff;" />
+            <input id="busca-hist" placeholder="🔍 Pesquisar por cliente, vendedor, terceirizado ou número de O.S..." oninput="renderHist()" style="padding:12px; background:#060a14; border:1px solid var(--border); border-radius:8px; color:#fff;" />
           </div>
 
           <div id="hist-list-container" style="margin-top:16px;"></div>
         </div>
       </section>
 
-      <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-      <!-- VIEW 5: PRODUTOS & SERVIÃ‡OS -->
-      <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+      <!-- ══════════════════════════════════════════════ -->
+      <!-- VIEW 5: PRODUTOS & SERVIÇOS -->
+      <!-- ══════════════════════════════════════════════ -->
       <section id="view-produtos" class="panel-view">
         <div class="glass-card">
-          <div class="glass-card-title">âž• Cadastrar / Editar Produto ou ServiÃ§o</div>
+          <div class="glass-card-title">➕ Cadastrar / Editar Produto ou Serviço</div>
           <div class="grid-2">
-            <div class="form-group"><label>Nome do ServiÃ§o/Material</label><input id="p-nome" placeholder="Ex: Assentamento Porcelanato / Reboco" /></div>
-            <div class="form-group"><label>Categoria</label><input id="p-cat" placeholder="Ex: Alvenaria, Pintura, ElÃ©trica..." /></div>
+            <div class="form-group"><label>Nome do Serviço/Material</label><input id="p-nome" placeholder="Ex: Assentamento Porcelanato / Reboco" /></div>
+            <div class="form-group"><label>Categoria</label><input id="p-cat" placeholder="Ex: Alvenaria, Pintura, Elétrica..." /></div>
           </div>
           <div class="grid-2">
-            <div class="form-group"><label>Valor PadrÃ£o mÂ² (R$)</label><input id="p-vm2" placeholder="0,00" /></div>
-            <div class="form-group"><label>Valor UnitÃ¡rio (R$)</label><input id="p-vunit" placeholder="0,00" /></div>
+            <div class="form-group"><label>Valor Padrão m² (R$)</label><input id="p-vm2" placeholder="0,00" /></div>
+            <div class="form-group"><label>Valor Unitário (R$)</label><input id="p-vunit" placeholder="0,00" /></div>
           </div>
-          <button class="btn-action-gold" onclick="salvarProduto()">ðŸ’¾ Salvar no CatÃ¡logo</button>
+          <button class="btn-action-gold" onclick="salvarProduto()">💾 Salvar no Catálogo</button>
         </div>
 
         <div class="glass-card">
-          <div class="glass-card-title">CatÃ¡logo de ServiÃ§os da ConstruÃ§Ã£o</div>
+          <div class="glass-card-title">Catálogo de Serviços da Construção</div>
           <div id="prod-list-container"></div>
         </div>
       </section>
 
-      <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+      <!-- ══════════════════════════════════════════════ -->
       <!-- VIEW 6: CLIENTES -->
-      <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+      <!-- ══════════════════════════════════════════════ -->
       <section id="view-clientes" class="panel-view">
         <div class="glass-card">
-          <div class="glass-card-title">âž• Novo Cliente / Obra</div>
+          <div class="glass-card-title">➕ Novo Cliente / Obra</div>
           <div class="grid-2">
-            <div class="form-group"><label>Nome / CondomÃ­nio</label><input id="c-nome" placeholder="Nome completo" /></div>
+            <div class="form-group"><label>Nome / Condomínio</label><input id="c-nome" placeholder="Nome completo" /></div>
             <div class="form-group"><label>CPF / CNPJ</label><input id="c-cnpj" placeholder="000.000.000-00" /></div>
           </div>
           <div class="grid-2">
@@ -2300,9 +2301,9 @@
             <div class="form-group"><label>Bairro / Cidade</label><input id="c-bairro" placeholder="Bairro, Cidade" /></div>
           </div>
           <div class="grid-1">
-            <div class="form-group"><label>EndereÃ§o da Obra</label><input id="c-end" placeholder="Rua, nÃºmero, complemento" /></div>
+            <div class="form-group"><label>Endereço da Obra</label><input id="c-end" placeholder="Rua, número, complemento" /></div>
           </div>
-          <button class="btn-action-gold" onclick="salvarCliente()">ðŸ’¾ Salvar Cliente</button>
+          <button class="btn-action-gold" onclick="salvarCliente()">💾 Salvar Cliente</button>
         </div>
 
         <div class="glass-card">
@@ -2311,22 +2312,22 @@
         </div>
       </section>
 
-      <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+      <!-- ══════════════════════════════════════════════ -->
       <!-- VIEW: CADASTRO DE VENDEDORES -->
-      <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+      <!-- ══════════════════════════════════════════════ -->
       <section id="view-vendedores" class="panel-view">
         <div class="glass-card" style="border-color: rgba(234,179,8,0.4);">
           <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:18px;">
             <div>
               <h2 style="font-family:var(--font-display); font-size:22px; font-weight:800; color:#facc15; display:flex; align-items:center; gap:8px;">
-                ðŸ‘” Cadastro de Vendedores & Consultores Comerciais
+                👔 Cadastro de Vendedores & Consultores Comerciais
               </h2>
               <p style="font-size:13px; color:var(--text-muted); margin-top:2px;">
-                Gerencie sua equipe de vendas, comissÃµes por orÃ§amento fechado e acompanhamento de propostas.
+                Gerencie sua equipe de vendas, comissões por orçamento fechado e acompanhamento de propostas.
               </p>
             </div>
             <button class="btn-action-secondary" onclick="limparFormVendedor()">
-              ðŸ”„ Limpar FormulÃ¡rio
+              🔄 Limpar Formulário
             </button>
           </div>
 
@@ -2342,35 +2343,35 @@
           </div>
           <div class="grid-3">
             <div class="form-group">
-              <label>Cargo / FunÃ§Ã£o</label>
+              <label>Cargo / Função</label>
               <input id="vend-cargo" placeholder="Ex: Gerente Comercial / Consultor de Obras" />
             </div>
             <div class="form-group">
-              <label>ComissÃ£o PadrÃ£o (%)</label>
+              <label>Comissão Padrão (%)</label>
               <input id="vend-comissao" type="number" step="0.5" placeholder="5" value="5" />
             </div>
             <div class="form-group">
               <label>Status do Vendedor</label>
               <select id="vend-status">
-                <option value="Ativo">âœ… Ativo na Empresa</option>
-                <option value="Inativo">â¸ï¸ Inativo / LicenÃ§a</option>
+                <option value="Ativo">✅ Ativo na Empresa</option>
+                <option value="Inativo">⏸️ Inativo / Licença</option>
               </select>
             </div>
           </div>
           <div class="grid-1" style="margin-top:4px;">
             <div class="form-group">
-              <label>ObservaÃ§Ãµes Comerciais / Metas</label>
-              <input id="vend-obs" placeholder="Ex: ResponsÃ¡vel por obras comerciais e residenciais de alto padrÃ£o..." />
+              <label>Observações Comerciais / Metas</label>
+              <input id="vend-obs" placeholder="Ex: Responsável por obras comerciais e residenciais de alto padrão..." />
             </div>
           </div>
           <button class="btn-action-gold" onclick="salvarVendedor()" style="margin-top:10px;">
-            ðŸ’¾ Salvar Cadastro do Vendedor
+            💾 Salvar Cadastro do Vendedor
           </button>
         </div>
 
         <div class="glass-card">
           <div class="glass-card-title">
-            <span>ðŸ‘” Equipe de Vendedores Cadastrados</span>
+            <span>👔 Equipe de Vendedores Cadastrados</span>
             <span class="badge-count" id="vend-total-count">0 vendedores</span>
           </div>
           <div id="vend-list-container" style="margin-top:14px;"></div>
@@ -2389,18 +2390,18 @@
         </div>
       </section>
 
-      <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+      <!-- ══════════════════════════════════════════════ -->
       <!-- VIEW 7: CONTRATOS -->
-      <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+      <!-- ══════════════════════════════════════════════ -->
       <section id="view-contratos" class="panel-view">
         <div class="glass-card">
-          <div class="glass-card-title">ðŸ“„ EmissÃ£o de Contratos Formais</div>
+          <div class="glass-card-title">📄 Emissão de Contratos Formais</div>
           <div class="grid-2">
             <div class="form-group">
               <label>Tipo de Contrato</label>
               <select id="sel-tipo-contrato" onchange="renderSelectContratos()">
-                <option value="cliente">ðŸ“‹ Contrato com o Cliente (Empreitada de Obra)</option>
-                <option value="terceirizado">ðŸ¤ Contrato com Prestador Terceirizado (SubcontrataÃ§Ã£o)</option>
+                <option value="cliente">📋 Contrato com o Cliente (Empreitada de Obra)</option>
+                <option value="terceirizado">🤝 Contrato com Prestador Terceirizado (Subcontratação)</option>
               </select>
             </div>
             <div class="form-group">
@@ -2408,13 +2409,13 @@
               <select id="sel-orc-contrato"></select>
             </div>
           </div>
-          <button class="btn-action-gold" onclick="gerarContratoFormal()">âœ¨ Gerar Minuta do Contrato</button>
+          <button class="btn-action-gold" onclick="gerarContratoFormal()">✨ Gerar Minuta do Contrato</button>
 
           <div id="contrato-box-result" style="display:none; margin-top:20px;">
             <div style="background:#060a14; border:1px solid var(--border-gold); padding:20px; border-radius:8px; font-family:'Courier New', monospace; font-size:13px; line-height:1.8; color:#cbd5e1; white-space:pre-wrap; max-height:55vh; overflow-y:auto;" id="txt-contrato-preview"></div>
             <div style="display:flex; gap:10px; margin-top:14px;">
-              <button class="btn-action-secondary" onclick="copiarContrato()">ðŸ“‹ Copiar Texto</button>
-              <button class="btn-action-gold" onclick="window.print()">ðŸ–¨ï¸ Imprimir / Salvar PDF</button>
+              <button class="btn-action-secondary" onclick="copiarContrato()">📋 Copiar Texto</button>
+              <button class="btn-action-gold" onclick="window.print()">🖨️ Imprimir / Salvar PDF</button>
             </div>
           </div>
         </div>
@@ -2566,31 +2567,31 @@
         </div>
       </section>
 
-      <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-      <!-- VIEW 8: USUÃRIOS -->
-      <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+      <!-- ══════════════════════════════════════════════ -->
+      <!-- VIEW 8: USUÁRIOS -->
+      <!-- ══════════════════════════════════════════════ -->
       <section id="view-usuarios" class="panel-view">
         <div class="glass-card">
-          <div class="glass-card-title">ðŸ‘¥ Equipe do Sistema</div>
+          <div class="glass-card-title">👥 Equipe do Sistema</div>
           <div class="grid-2">
-            <div class="form-group"><label>UsuÃ¡rio (Login)</label><input id="u-login" placeholder="ex: sergio" /></div>
-            <div class="form-group"><label>Nome Completo</label><input id="u-nome" placeholder="ex: SÃ©rgio Dantas" /></div>
+            <div class="form-group"><label>Usuário (Login)</label><input id="u-login" placeholder="ex: sergio" /></div>
+            <div class="form-group"><label>Nome Completo</label><input id="u-nome" placeholder="ex: Sérgio Dantas" /></div>
           </div>
           <div class="grid-2">
-            <div class="form-group"><label>Senha</label><input id="u-pass" type="password" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" /></div>
+            <div class="form-group"><label>Senha</label><input id="u-pass" type="password" placeholder="••••••••" /></div>
             <div class="form-group">
-              <label>FunÃ§Ã£o</label>
+              <label>Função</label>
               <select id="u-role">
                 <option value="Administrador">Administrador</option>
                 <option value="Engenheiro">Engenheiro / Fiscal</option>
-                <option value="OrÃ§amentista">OrÃ§amentista</option>
+                <option value="Orçamentista">Orçamentista</option>
               </select>
             </div>
           </div>
-          <button class="btn-action-gold" onclick="salvarUsuario()">ðŸ’¾ Salvar UsuÃ¡rio</button>
+          <button class="btn-action-gold" onclick="salvarUsuario()">💾 Salvar Usuário</button>
         </div>
         <div class="glass-card">
-          <div class="glass-card-title">UsuÃ¡rios Ativos</div>
+          <div class="glass-card-title">Usuários Ativos</div>
           <div id="user-list-container"></div>
         </div>
       </section>
@@ -2603,8 +2604,8 @@
 <div id="modal-cliente" class="modal-backdrop" style="display:none;" onclick="fecharModal(event)">
   <div class="modal-window" onclick="event.stopPropagation()">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-      <h3 style="font-family:var(--font-display); font-size:18px; color:var(--gold-light);">ðŸ” Selecionar Cliente</h3>
-      <button style="background:transparent; border:none; color:var(--text-muted); font-size:18px; cursor:pointer;" onclick="fecharModal()">âœ•</button>
+      <h3 style="font-family:var(--font-display); font-size:18px; color:var(--gold-light);">🔍 Selecionar Cliente</h3>
+      <button style="background:transparent; border:none; color:var(--text-muted); font-size:18px; cursor:pointer;" onclick="fecharModal()">✕</button>
     </div>
     <div id="modal-cli-lista"></div>
   </div>
@@ -2739,7 +2740,7 @@
 
 // ══════════════════════════════════════════════
 //  DATA STORAGE & STATE
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ══════════════════════════════════════════════
 const K = {
   clients: 'sdc_clientes',
   orders: 'sdc_ordens',
@@ -2842,14 +2843,8 @@ const VENDEDORES_INICIAIS = [
   { id: 3, nome: 'Mariana Souza', tel: '(85) 98777-2222', cargo: 'Executiva de Vendas', comissao: 4.5, status: 'Ativo', obs: 'Prospecção corporativa e comercial' }
 ];
 
-const VENDEDORES_INICIAIS = [
-  { id: 1, nome: 'Samuel Dantas', tel: '(85) 99611-9824', cargo: 'Gerente Comercial', comissao: 5, status: 'Ativo', obs: 'Obras de alto padrÃ£o e condomÃ­nios' },
-  { id: 2, nome: 'Carlos Eduardo', tel: '(85) 98888-1111', cargo: 'Consultor de Obras', comissao: 4, status: 'Ativo', obs: 'Reformas e reformas residenciais' },
-  { id: 3, nome: 'Mariana Souza', tel: '(85) 98777-2222', cargo: 'Executiva de Vendas', comissao: 4.5, status: 'Ativo', obs: 'ProspecÃ§Ã£o corporativa e comercial' }
-];
-
-// NotificaÃ§Ã£o suave na tela sem travar a navegaÃ§Ã£o (substitui alerts intrusivos)
-function showToast(msg, icon='âœ…') {
+// Notificação suave na tela sem travar a navegação (substitui alerts intrusivos)
+function showToast(msg, icon='✅') {
   let container = document.getElementById('toast-container');
   if (!container) {
     container = document.createElement('div');
@@ -2887,7 +2882,7 @@ function showToast(msg, icon='âœ…') {
   }, 2500);
 }
 
-// Limpa valor ao clicar se for zero/padrÃ£o ou seleciona o texto para sobrescrever direto
+// Limpa valor ao clicar se for zero/padrão ou seleciona o texto para sobrescrever direto
 function handleInputFocus(el) {
   if (el.readOnly) return;
   const val = el.value.trim();
@@ -2898,7 +2893,7 @@ function handleInputFocus(el) {
   }
 }
 
-// Ao clicar Enter passa automaticamente para o prÃ³ximo campo da tabela
+// Ao clicar Enter passa automaticamente para o próximo campo da tabela
 function handleTableNav(e, el) {
   if (e.key === 'Enter') {
     e.preventDefault();
@@ -2949,22 +2944,22 @@ function handleTableNav(e, el) {
 }
 
 const PRODUTOS_INICIAIS = [
-  { id: 1, nome: 'Alvenaria de VedaÃ§Ã£o / Bloco CerÃ¢mico', cat: 'Alvenaria', vm2: 65, vunit: 0 },
+  { id: 1, nome: 'Alvenaria de Vedação / Bloco Cerâmico', cat: 'Alvenaria', vm2: 65, vunit: 0 },
   { id: 2, nome: 'Reboco Paulista Interno / Externo', cat: 'Alvenaria', vm2: 38, vunit: 0 },
   { id: 3, nome: 'Contrapiso Regularizado e Nivelado', cat: 'Alvenaria', vm2: 28, vunit: 0 },
   { id: 4, nome: 'Pintura Completa com Massa Corrida', cat: 'Pintura', vm2: 32, vunit: 0 },
   { id: 5, nome: 'Textura Projetada / Grafiato', cat: 'Pintura', vm2: 45, vunit: 0 },
-  { id: 6, nome: 'InstalaÃ§Ã£o de Porcelanato Polido', cat: 'Acabamento', vm2: 60, vunit: 0 },
+  { id: 6, nome: 'Instalação de Porcelanato Polido', cat: 'Acabamento', vm2: 60, vunit: 0 },
   { id: 7, nome: 'Forro de Gesso Acartonado / Drywall', cat: 'Gesso', vm2: 75, vunit: 0 },
-  { id: 8, nome: 'Ponto ElÃ©trico Completo (Tomada/Luz)', cat: 'ElÃ©trica', vm2: 0, vunit: 65 },
-  { id: 9, nome: 'Quadro de DistribuiÃ§Ã£o TrifÃ¡sico', cat: 'ElÃ©trica', vm2: 0, vunit: 450 },
-  { id: 10, nome: 'Fechamento de Fachada em Vidro 8mm', cat: 'VidraÃ§aria', vm2: 290, vunit: 0 }
+  { id: 8, nome: 'Ponto Elétrico Completo (Tomada/Luz)', cat: 'Elétrica', vm2: 0, vunit: 65 },
+  { id: 9, nome: 'Quadro de Distribuição Trifásico', cat: 'Elétrica', vm2: 0, vunit: 450 },
+  { id: 10, nome: 'Fechamento de Fachada em Vidro 8mm', cat: 'Vidraçaria', vm2: 290, vunit: 0 }
 ];
 
 window.addEventListener('DOMContentLoaded', () => {
   clientes = load(K.clients, [
-    { id: 1, nome: 'Residencial Alphaville Fortaleza', cnpj: '23.456.789/0001-10', tel: '(85) 99876-5432', bairro: 'EusÃ©bio', end: 'Av. Alpha, 1200' },
-    { id: 2, nome: 'SÃ©rgio Dantas Empreendimentos', cnpj: '11.222.333/0001-44', tel: '(85) 99611-9824', bairro: 'Itaitinga', end: 'Rua Principal, 55' }
+    { id: 1, nome: 'Residencial Alphaville Fortaleza', cnpj: '23.456.789/0001-10', tel: '(85) 99876-5432', bairro: 'Eusébio', end: 'Av. Alpha, 1200' },
+    { id: 2, nome: 'Sérgio Dantas Empreendimentos', cnpj: '11.222.333/0001-44', tel: '(85) 99611-9824', bairro: 'Itaitinga', end: 'Rua Principal, 55' }
   ]);
   save(K.clients, clientes);
 
@@ -3001,7 +2996,7 @@ window.addEventListener('DOMContentLoaded', () => {
   PontoModule.init();
   gerarTabelaPontoSemanal();
 
-  addItem('Alvenaria de VedaÃ§Ã£o / Bloco CerÃ¢mico', '1', 'PadrÃ£o', '2.80', '6.00', '65', '', 'Acabado');
+  addItem('Alvenaria de Vedação / Bloco Cerâmico', '1', 'Padrão', '2.80', '6.00', '65', '', 'Acabado');
 });
 
 function parseNum(val) {
@@ -3010,9 +3005,9 @@ function parseNum(val) {
   let s = String(val).replace(/R\$|\s/g, '').trim();
   if (!s) return 0;
 
-  // FormataÃ§Ã£o correta para padrÃ£o Real Brasileiro (ex: 1.092,00 ou 1092,00 ou 1092.00)
+  // Formatação correta para padrão Real Brasileiro (ex: 1.092,00 ou 1092,00 ou 1092.00)
   if (s.includes('.') && s.includes(',')) {
-    // Ex: "1.092,00" -> remove o ponto de milhar e troca vÃ­rgula por ponto
+    // Ex: "1.092,00" -> remove o ponto de milhar e troca vírgula por ponto
     s = s.replace(/\./g, '').replace(',', '.');
   } else if (s.includes(',')) {
     // Ex: "1092,00" -> "1092.00"
@@ -3038,23 +3033,23 @@ function updateDisplays() {
   if (badgeMat) badgeMat.textContent = matRows;
 }
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ══════════════════════════════════════════════
 //  NAVIGATION
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ══════════════════════════════════════════════
 function goNav(viewId) {
   const titles = {
-    dashboard: ['Dashboard Geral', 'VisÃ£o consolidada das suas obras, orÃ§amentos e serviÃ§os terceirizados'],
-    orcamento: ['OrÃ§amento & Obras', 'CÃ¡lculo de orÃ§amento detalhado por mÂ², acabamentos e formas de pagamento'],
+    dashboard: ['Dashboard Geral', 'Visão consolidada das suas obras, orçamentos e serviços terceirizados'],
+    orcamento: ['Orçamento & Obras', 'Cálculo de orçamento detalhado por m², acabamentos e formas de pagamento'],
     materiais: ['Lista de Materiais do Cliente', 'Planejamento e controle de compra de insumos, materiais e entregas na obra'],
-    terceirizado: ['ServiÃ§o Terceirizado', 'Controle e formalizaÃ§Ã£o de prestadores de serviÃ§o terceirizados'],
-    'whats-pdf': ['WhatsApp PDF Terceirizado', 'EmissÃ£o e envio de contrato formal em PDF diretamente para o prestador terceirizado'],
-    funcionarios: ['FuncionÃ¡rios & Controle de Ponto', 'Registro diÃ¡rio de ponto, faltas, atestados por doenÃ§a e cÃ¡lculo de horas extras'],
-    historico: ['HistÃ³rico de O.S.', 'Acompanhamento completo de ordens de serviÃ§o e serviÃ§os executados'],
-    produtos: ['Produtos & ServiÃ§os', 'CatÃ¡logo de preÃ§os e serviÃ§os da construÃ§Ã£o civil'],
-    clientes: ['Clientes & Obras', 'Cadastro e localizaÃ§Ã£o das obras'],
-    vendedores: ['Cadastro de Vendedores', 'Gerenciamento da equipe comercial, metas e comissÃµes por orÃ§amento'],
-    contratos: ['Gerador de Contratos', 'GeraÃ§Ã£o de minutas formais para clientes e prestadores terceirizados'],
-    usuarios: ['Equipe & UsuÃ¡rios', 'Gerenciamento de acessos do sistema']
+    terceirizado: ['Serviço Terceirizado', 'Controle e formalização de prestadores de serviço terceirizados'],
+    'whats-pdf': ['WhatsApp PDF Terceirizado', 'Emissão e envio de contrato formal em PDF diretamente para o prestador terceirizado'],
+    funcionarios: ['Funcionários & Controle de Ponto', 'Registro diário de ponto, faltas, atestados por doença e cálculo de horas extras'],
+    historico: ['Histórico de O.S.', 'Acompanhamento completo de ordens de serviço e serviços executados'],
+    produtos: ['Produtos & Serviços', 'Catálogo de preços e serviços da construção civil'],
+    clientes: ['Clientes & Obras', 'Cadastro e localização das obras'],
+    vendedores: ['Cadastro de Vendedores', 'Gerenciamento da equipe comercial, metas e comissões por orçamento'],
+    contratos: ['Gerador de Contratos', 'Geração de minutas formais para clientes e prestadores terceirizados'],
+    usuarios: ['Equipe & Usuários', 'Gerenciamento de acessos do sistema']
   };
 
   document.querySelectorAll('.panel-view').forEach(p => p.classList.remove('active'));
@@ -3089,21 +3084,21 @@ function setPeriodo(btn) {
 }
 
 function sair() {
-  alert('SessÃ£o encerrada com sucesso!');
+  alert('Sessão encerrada com sucesso!');
   window.location.reload();
 }
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-//  ENVIO SÃ“ DO PDF NO WHATSAPP (SEM MENSAGEM DE TEXTO)
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ══════════════════════════════════════════════
+//  ENVIO SÓ DO PDF NO WHATSAPP (SEM MENSAGEM DE TEXTO)
+// ══════════════════════════════════════════════
 function enviarSoPdfWhatsAppTerceirizado() {
   const tel = document.getElementById('t-contr-tel')?.value || document.getElementById('doc-terc-tel')?.textContent || '';
   const cleanTel = tel.replace(/\D/g, '');
 
-  // 1. Aciona o diÃ¡logo de impressÃ£o / salvar em PDF
+  // 1. Aciona o diálogo de impressão / salvar em PDF
   window.print();
 
-  // 2. Abre diretamente o WhatsApp para o nÃºmero cadastrado SEM mensagem de texto (conforme solicitado)
+  // 2. Abre diretamente o WhatsApp para o número cadastrado SEM mensagem de texto (conforme solicitado)
   const url = cleanTel.length >= 10
     ? `https://wa.me/55${cleanTel}`
     : `https://web.whatsapp.com/`;
@@ -3113,9 +3108,9 @@ function enviarSoPdfWhatsAppTerceirizado() {
   }, 400);
 }
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-//  GESTÃƒO DE FUNCIONÃRIOS & CONTROLE DE PONTO
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ══════════════════════════════════════════════
+//  GESTÃO DE FUNCIONÁRIOS & CONTROLE DE PONTO
+// ══════════════════════════════════════════════
 let dadosPontoSemanal = [
   { dia: 'Segunda-feira', entrada: '07:00', saida: '15:00', status: 'Presente', horasExtras: 0 },
   { dia: 'Terça-feira', entrada: '07:00', saida: '17:00', status: 'Presente', horasExtras: 2 },
@@ -3876,10 +3871,10 @@ function gerarTabelaPontoSemanal() {
         </td>
         <td>
           <select onchange="atualizarLinhaPonto(${i}, 'status', this.value)" style="padding:6px; border-radius:6px; background:#060a14; color:#fff; border:1px solid var(--border); width:100%;">
-            <option value="Presente" ${d.status==='Presente'?'selected':''}>âœ… Presente (Normal)</option>
-            <option value="Falta - Doente" ${d.status==='Falta - Doente'?'selected':''}>ðŸ¤’ Falta - Doente (Atestado)</option>
-            <option value="Falta Injustificada" ${d.status==='Falta Injustificada'?'selected':''}>âŒ Falta Injustificada</option>
-            <option value="Folga / DSR" ${d.status==='Folga / DSR'?'selected':''}>ðŸ–ï¸ Folga / Domingo</option>
+            <option value="Presente" ${d.status==='Presente'?'selected':''}>✅ Presente (Normal)</option>
+            <option value="Falta - Doente" ${d.status==='Falta - Doente'?'selected':''}>🤒 Falta - Doente (Atestado)</option>
+            <option value="Falta Injustificada" ${d.status==='Falta Injustificada'?'selected':''}>❌ Falta Injustificada</option>
+            <option value="Folga / DSR" ${d.status==='Folga / DSR'?'selected':''}>🏖️ Folga / Domingo</option>
           </select>
         </td>
         <td style="text-align:center;">
@@ -4029,7 +4024,7 @@ function enviarWhatsAppReciboPonto() {
   let cleanTel = tel.replace(/\D/g, '');
 
   if (!cleanTel) {
-    alert('âš ï¸ Digite o nÃºmero de WhatsApp do funcionÃ¡rio.');
+    alert('⚠️ Digite o número de WhatsApp do funcionário.');
     document.getElementById('func-tel')?.focus();
     return;
   }
@@ -4041,7 +4036,7 @@ function enviarWhatsAppReciboPonto() {
   // 1. Gera / salva em PDF
   window.print();
 
-  // 2. Abre direto para o nÃºmero digitado sem mensagem escrita
+  // 2. Abre direto para o número digitado sem mensagem escrita
   setTimeout(() => {
     window.open(`https://wa.me/${cleanTel}`, '_blank');
   }, 400);
@@ -4058,9 +4053,9 @@ function salvarFolhaPonto() {
   showToast('Registro de Ponto do Funcionário salvo com sucesso!', '💾');
 }
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ══════════════════════════════════════════════
 //  DASHBOARD METRICS
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ══════════════════════════════════════════════
 function renderDashboard() {
   let totalOrcado = 0;
   ordens.forEach(o => { totalOrcado += parseNum(o.total); });
@@ -4087,7 +4082,7 @@ function renderDashboard() {
   const all = [...ordens.map(o => ({...o, type:'obra'})), ...terceirizados.map(t => ({...t, type:'terc'}))];
   
   if (all.length === 0) {
-    div.innerHTML = '<p style="color:var(--text-muted); font-size:13px; text-align:center; padding:18px;">Nenhuma ordem de serviÃ§o cadastrada ainda. Clique em "+ Novo OrÃ§amento" para comeÃ§ar.</p>';
+    div.innerHTML = '<p style="color:var(--text-muted); font-size:13px; text-align:center; padding:18px;">Nenhuma ordem de serviço cadastrada ainda. Clique em "+ Novo Orçamento" para começar.</p>';
     return;
   }
 
@@ -4096,9 +4091,9 @@ function renderDashboard() {
       <div>
         <div style="display:flex; align-items:center; gap:8px;">
           <strong style="color:var(--gold-light); font-size:14px;">${r.numero}</strong>
-          <span class="rec-tag ${r.type==='obra'?'tag-obra':'tag-terc'}">${r.type==='obra'?'OrÃ§amento Obra':'Terceirizado'}</span>
+          <span class="rec-tag ${r.type==='obra'?'tag-obra':'tag-terc'}">${r.type==='obra'?'Orçamento Obra':'Terceirizado'}</span>
         </div>
-        <div style="font-size:13px; color:#fff; margin-top:4px;">ðŸ‘¤ ${r.cliente?.nome || 'Cliente'}</div>
+        <div style="font-size:13px; color:#fff; margin-top:4px;">👤 ${r.cliente?.nome || 'Cliente'}</div>
       </div>
       <div style="text-align:right;">
         <div style="font-size:15px; font-weight:800; color:${r.type==='obra'?'var(--gold-light)':'#60a5fa'};">${r.type==='obra'?r.total:formatMoney(r.contratado?.valorPago)}</div>
@@ -4108,26 +4103,26 @@ function renderDashboard() {
   `).join('');
 }
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-//  SPREADSHEET TABLE (ORÃ‡AMENTO) - CORREÃ‡ÃƒO DE VALORES
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ══════════════════════════════════════════════
+//  SPREADSHEET TABLE (ORÇAMENTO) - CORREÇÃO DE VALORES
+// ══════════════════════════════════════════════
 function addItem(desc='', qtd='1', cor='', alt='', larg='', vm2='', vunit='', acab='') {
   const id = ++itemId;
   const tr = document.createElement('tr');
   tr.id = 'item-' + id;
   tr.innerHTML = `
     <td style="text-align:center"><input type="text" value="${qtd}" onfocus="handleInputFocus(this)" onkeydown="handleTableNav(event, this)" oninput="calcRow(${id})" style="text-align:center; font-weight:700;"></td>
-    <td><input value="${desc}" placeholder="DescriÃ§Ã£o do serviÃ§o/material..." onfocus="handleInputFocus(this)" onkeydown="handleTableNav(event, this)"></td>
-    <td><input value="${cor}" placeholder="Ex: PadrÃ£o" onfocus="handleInputFocus(this)" onkeydown="handleTableNav(event, this)"></td>
+    <td><input value="${desc}" placeholder="Descrição do serviço/material..." onfocus="handleInputFocus(this)" onkeydown="handleTableNav(event, this)"></td>
+    <td><input value="${cor}" placeholder="Ex: Padrão" onfocus="handleInputFocus(this)" onkeydown="handleTableNav(event, this)"></td>
     <td><input type="text" placeholder="1,00" value="${alt}" onfocus="handleInputFocus(this)" onkeydown="handleTableNav(event, this)" oninput="calcRow(${id})"></td>
     <td><input type="text" placeholder="1,00" value="${larg}" onfocus="handleInputFocus(this)" onkeydown="handleTableNav(event, this)" oninput="calcRow(${id})"></td>
-    <td><input type="text" readonly placeholder="0,00 mÂ²" style="background:#04070f; color:var(--gold-light); font-weight:700;"></td>
+    <td><input type="text" readonly placeholder="0,00 m²" style="background:#04070f; color:var(--gold-light); font-weight:700;"></td>
     <td><input type="text" placeholder="0,00" value="${vm2}" onfocus="handleInputFocus(this)" onkeydown="handleTableNav(event, this)" oninput="calcRow(${id})"></td>
     <td><input type="text" placeholder="0,00" value="${vunit}" onfocus="handleInputFocus(this)" onkeydown="handleTableNav(event, this)" oninput="calcRow(${id})"></td>
     <td><input value="${acab}" placeholder="Obs/Acab" onfocus="handleInputFocus(this)" onkeydown="handleTableNav(event, this)"></td>
     <td><input type="text" readonly placeholder="R$ 0,00" style="background:#04070f; color:var(--gold-light); font-weight:800; text-align:right;"></td>
     <td style="text-align:center;">
-      <button class="tbl-btn-del" onclick="delRow(${id})">âœ•</button>
+      <button class="tbl-btn-del" onclick="delRow(${id})">✕</button>
     </td>
   `;
   document.getElementById('itens-lista').appendChild(tr);
@@ -4155,7 +4150,7 @@ function calcRow(id) {
 
   if (alt > 0 && larg > 0) {
     m2 = alt * larg;
-    ins[5].value = m2.toFixed(2) + ' mÂ²';
+    ins[5].value = m2.toFixed(2) + ' m²';
     sub = vm2 > 0 ? (qtd * m2 * vm2) : (qtd * vun);
   } else {
     ins[5].value = '-';
@@ -4180,26 +4175,26 @@ function recalcTotal() {
   document.getElementById('total').textContent = formatMoney(tot);
 }
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ══════════════════════════════════════════════
 //  LISTA DE MATERIAIS DO CLIENTE
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ══════════════════════════════════════════════
 let matItemId = 0;
 
 const MATERIAIS_KIT_BASICO = [
-  { item: 'Cimento CP II-E-32 50kg', cat: 'BÃ¡sico', qtd: 40, un: 'Saco 50kg', vunit: 36.50, resp: 'Cliente Compra', status: 'Pendente' },
-  { item: 'Areia MÃ©dia Lavada', cat: 'BÃ¡sico', qtd: 6, un: 'Metro (mÂ³)', vunit: 110.00, resp: 'Cliente Compra', status: 'Pendente' },
-  { item: 'Brita 1 para Concreto', cat: 'Estrutura', qtd: 4, un: 'Metro (mÂ³)', vunit: 125.00, resp: 'Cliente Compra', status: 'Pendente' },
-  { item: 'Tijolo CerÃ¢mico 8 Furos (9x19x19)', cat: 'Alvenaria', qtd: 2, un: 'Milheiro', vunit: 680.00, resp: 'Cliente Compra', status: 'Pendente' },
-  { item: 'VergalhÃ£o de AÃ§o CA-50 5/16 (8mm)', cat: 'Estrutura', qtd: 15, un: 'Barra 12m', vunit: 48.00, resp: 'Construtora Fornece', status: 'Comprado' },
+  { item: 'Cimento CP II-E-32 50kg', cat: 'Básico', qtd: 40, un: 'Saco 50kg', vunit: 36.50, resp: 'Cliente Compra', status: 'Pendente' },
+  { item: 'Areia Média Lavada', cat: 'Básico', qtd: 6, un: 'Metro (m³)', vunit: 110.00, resp: 'Cliente Compra', status: 'Pendente' },
+  { item: 'Brita 1 para Concreto', cat: 'Estrutura', qtd: 4, un: 'Metro (m³)', vunit: 125.00, resp: 'Cliente Compra', status: 'Pendente' },
+  { item: 'Tijolo Cerâmico 8 Furos (9x19x19)', cat: 'Alvenaria', qtd: 2, un: 'Milheiro', vunit: 680.00, resp: 'Cliente Compra', status: 'Pendente' },
+  { item: 'Vergalhão de Aço CA-50 5/16 (8mm)', cat: 'Estrutura', qtd: 15, un: 'Barra 12m', vunit: 48.00, resp: 'Construtora Fornece', status: 'Comprado' },
   { item: 'Argamassa Colante AC-III Branca 20kg', cat: 'Acabamento', qtd: 12, un: 'Saco 20kg', vunit: 32.00, resp: 'Cliente Compra', status: 'Pendente' },
-  { item: 'Tinta AcrÃ­lica Premium Fosca 18L Branco', cat: 'Pintura', qtd: 3, un: 'Lata 18L', vunit: 340.00, resp: 'Cliente Compra', status: 'Pendente' }
+  { item: 'Tinta Acrílica Premium Fosca 18L Branco', cat: 'Pintura', qtd: 3, un: 'Lata 18L', vunit: 340.00, resp: 'Cliente Compra', status: 'Pendente' }
 ];
 
 function puxarClienteParaMateriais() {
   document.getElementById('mat-cli-nome').value = document.getElementById('o-nome').value || document.getElementById('t-cli-nome').value;
   document.getElementById('mat-cli-tel').value = document.getElementById('o-tel').value || document.getElementById('t-cli-tel').value;
   document.getElementById('mat-cli-end').value = document.getElementById('o-end').value || document.getElementById('t-cli-end').value;
-  alert('âœ… Dados do cliente puxados com sucesso para a Lista de Materiais!');
+  alert('✅ Dados do cliente puxados com sucesso para a Lista de Materiais!');
 }
 
 function adicionarKitBasicoObra() {
@@ -4209,7 +4204,7 @@ function adicionarKitBasicoObra() {
   });
 }
 
-function addLinhaMaterial(item='', cat='BÃ¡sico', qtd='1', un='Unidade', vunit='', resp='Cliente Compra', status='Pendente') {
+function addLinhaMaterial(item='', cat='Básico', qtd='1', un='Unidade', vunit='', resp='Cliente Compra', status='Pendente') {
   const id = ++matItemId;
   const tr = document.createElement('tr');
   tr.id = 'mat-item-' + id;
@@ -4217,11 +4212,11 @@ function addLinhaMaterial(item='', cat='BÃ¡sico', qtd='1', un='Unidade', vunit
     <td><input value="${item}" placeholder="Ex: Cimento CP II 50kg" onfocus="handleInputFocus(this)" onkeydown="handleTableNav(event, this)" oninput="calcLinhaMaterial(${id})" style="width:100%; height:38px; padding:6px 10px; border-radius:8px; background:#060a14; color:#fff; border:1px solid var(--border);"></td>
     <td>
       <select onchange="calcLinhaMaterial(${id})" style="width:100%; height:38px; padding:6px 8px; border-radius:8px; background:#060a14; color:#fff; border:1px solid var(--border);">
-        <option value="BÃ¡sico" ${cat==='BÃ¡sico'?'selected':''}>BÃ¡sico</option>
+        <option value="Básico" ${cat==='Básico'?'selected':''}>Básico</option>
         <option value="Estrutura" ${cat==='Estrutura'?'selected':''}>Estrutura</option>
         <option value="Alvenaria" ${cat==='Alvenaria'?'selected':''}>Alvenaria</option>
-        <option value="HidrÃ¡ulica" ${cat==='HidrÃ¡ulica'?'selected':''}>HidrÃ¡ulica</option>
-        <option value="ElÃ©trica" ${cat==='ElÃ©trica'?'selected':''}>ElÃ©trica</option>
+        <option value="Hidráulica" ${cat==='Hidráulica'?'selected':''}>Hidráulica</option>
+        <option value="Elétrica" ${cat==='Elétrica'?'selected':''}>Elétrica</option>
         <option value="Pintura" ${cat==='Pintura'?'selected':''}>Pintura</option>
         <option value="Acabamento" ${cat==='Acabamento'?'selected':''}>Acabamento</option>
       </select>
@@ -4230,12 +4225,12 @@ function addLinhaMaterial(item='', cat='BÃ¡sico', qtd='1', un='Unidade', vunit
     <td>
       <select onchange="calcLinhaMaterial(${id})" style="width:100%; height:38px; padding:6px 8px; border-radius:8px; background:#060a14; color:#fff; border:1px solid var(--border);">
         <option value="Saco 50kg" ${un==='Saco 50kg'?'selected':''}>Saco 50kg</option>
-        <option value="Metro (mÂ³)" ${un==='Metro (mÂ³)'?'selected':''}>Metro (mÂ³)</option>
+        <option value="Metro (m³)" ${un==='Metro (m³)'?'selected':''}>Metro (m³)</option>
         <option value="Milheiro" ${un==='Milheiro'?'selected':''}>Milheiro</option>
         <option value="Barra 12m" ${un==='Barra 12m'?'selected':''}>Barra 12m</option>
         <option value="Saco 20kg" ${un==='Saco 20kg'?'selected':''}>Saco 20kg</option>
         <option value="Lata 18L" ${un==='Lata 18L'?'selected':''}>Lata 18L</option>
-        <option value="GalÃ£o 3.6L" ${un==='GalÃ£o 3.6L'?'selected':''}>GalÃ£o 3.6L</option>
+        <option value="Galão 3.6L" ${un==='Galão 3.6L'?'selected':''}>Galão 3.6L</option>
         <option value="Caixa" ${un==='Caixa'?'selected':''}>Caixa</option>
         <option value="Metro Linear" ${un==='Metro Linear'?'selected':''}>Metro Linear</option>
         <option value="Unidade" ${un==='Unidade'?'selected':''}>Unidade</option>
@@ -4245,19 +4240,19 @@ function addLinhaMaterial(item='', cat='BÃ¡sico', qtd='1', un='Unidade', vunit
     <td><input type="text" readonly placeholder="R$ 0,00" style="width:100%; height:38px; padding:6px 8px; border-radius:8px; background:#030712; color:var(--gold-light); font-weight:800; border:1px solid rgba(245,179,0,0.25); text-align:right;"></td>
     <td>
       <select onchange="calcLinhaMaterial(${id})" style="width:100%; height:38px; padding:6px 8px; border-radius:8px; background:#060a14; color:#fff; border:1px solid var(--border);">
-        <option value="Cliente Compra" ${resp==='Cliente Compra'?'selected':''}>ðŸ‘¤ Cliente Compra</option>
-        <option value="Construtora Fornece" ${resp==='Construtora Fornece'?'selected':''}>ðŸ—ï¸ Construtora Fornece</option>
+        <option value="Cliente Compra" ${resp==='Cliente Compra'?'selected':''}>👤 Cliente Compra</option>
+        <option value="Construtora Fornece" ${resp==='Construtora Fornece'?'selected':''}>🏗️ Construtora Fornece</option>
       </select>
     </td>
     <td>
       <select onchange="calcLinhaMaterial(${id})" style="width:100%; height:38px; padding:6px 8px; border-radius:8px; background:#060a14; color:#fff; border:1px solid var(--border);">
-        <option value="Pendente" ${status==='Pendente'?'selected':''}>â³ Pendente</option>
-        <option value="Comprado" ${status==='Comprado'?'selected':''}>ðŸ›’ Comprado</option>
-        <option value="Entregue na Obra" ${status==='Entregue na Obra'?'selected':''}>ðŸšš Entregue</option>
+        <option value="Pendente" ${status==='Pendente'?'selected':''}>⏳ Pendente</option>
+        <option value="Comprado" ${status==='Comprado'?'selected':''}>🛒 Comprado</option>
+        <option value="Entregue na Obra" ${status==='Entregue na Obra'?'selected':''}>🚚 Entregue</option>
       </select>
     </td>
     <td style="text-align:center;">
-      <button class="tbl-btn-del" onclick="delLinhaMaterial(${id})" style="height:36px; width:36px; border-radius:8px; font-size:14px;">âœ•</button>
+      <button class="tbl-btn-del" onclick="delLinhaMaterial(${id})" style="height:36px; width:36px; border-radius:8px; font-size:14px;">✕</button>
     </td>
   `;
   document.getElementById('lista-materiais-linhas').appendChild(tr);
@@ -4318,7 +4313,7 @@ function enviarWhatsAppListaMateriais() {
   let cleanTel = telInput.replace(/\D/g, '');
 
   if (!cleanTel) {
-    alert('âš ï¸ Digite o nÃºmero de WhatsApp do cliente no campo "WhatsApp do Cliente".');
+    alert('⚠️ Digite o número de WhatsApp do cliente no campo "WhatsApp do Cliente".');
     document.getElementById('mat-cli-tel')?.focus();
     return;
   }
@@ -4330,7 +4325,7 @@ function enviarWhatsAppListaMateriais() {
   // 1. Ao enviar, gera/salva em PDF
   window.print();
 
-  // 2. Abre direto para o nÃºmero que digitar sem mensagem de texto
+  // 2. Abre direto para o número que digitar sem mensagem de texto
   setTimeout(() => {
     window.open(`https://wa.me/${cleanTel}`, '_blank');
   }, 400);
@@ -4490,7 +4485,7 @@ function selForma(btn, f) {
 
 function salvarOrdem() {
   const nome = document.getElementById('o-nome').value.trim();
-  if (!nome) { showToast('Informe o nome do cliente antes de salvar.', 'âš ï¸'); return; }
+  if (!nome) { showToast('Informe o nome do cliente antes de salvar.', '⚠️'); return; }
 
   const itens = [];
   document.querySelectorAll('#itens-lista tr').forEach(tr => {
@@ -4657,7 +4652,7 @@ function enviarWhatsApp() {
   let cleanTel = telInput.replace(/\D/g, '');
 
   if (!cleanTel) {
-    showToast('Digite o WhatsApp do cliente antes de enviar.', 'âš ï¸');
+    showToast('Digite o WhatsApp do cliente antes de enviar.', '⚠️');
     document.getElementById('o-tel')?.focus();
     return;
   }
@@ -4680,9 +4675,9 @@ function enviarWhatsApp() {
   }, 500);
 }
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-//  SERVIÃ‡O TERCEIRIZADO
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ══════════════════════════════════════════════
+//  SERVIÇO TERCEIRIZADO
+// ══════════════════════════════════════════════
 function puxarDadosDoOrcamentoAtual() {
   document.getElementById('t-cli-nome').value = document.getElementById('o-nome').value;
   document.getElementById('t-cli-cnpj').value = document.getElementById('o-cnpj').value;
@@ -4695,7 +4690,7 @@ function puxarDadosDoOrcamentoAtual() {
     document.getElementById('t-contr-valor-cliente').value = totOrc.replace('R$', '').trim();
     calcularMargemTerc();
   }
-  showToast('Dados do cliente puxados com sucesso!', 'âš¡');
+  showToast('Dados do cliente puxados com sucesso!', '⚡');
 }
 
 function calcularMargemTerc() {
@@ -4712,7 +4707,7 @@ function calcularMargemTerc() {
 function salvarServicoTerceirizado() {
   const cliNome = document.getElementById('t-cli-nome').value;
   const tercNome = document.getElementById('t-contr-nome').value;
-  if (!cliNome || !tercNome) { showToast('Preencha os dados do cliente e do prestador terceirizado.', 'âš ï¸'); return; }
+  if (!cliNome || !tercNome) { showToast('Preencha os dados do cliente e do prestador terceirizado.', '⚠️'); return; }
 
   const terc = {
     numero: editandoTerc || ('#TERC-' + String(proxTerc).padStart(4, '0')),
@@ -4752,7 +4747,7 @@ function salvarServicoTerceirizado() {
   updateDisplays();
   renderDashboard();
   renderHist();
-  showToast(`Registro Terceirizado ${terc.numero} salvo com sucesso!`, 'ðŸ¤');
+  showToast(`Registro Terceirizado ${terc.numero} salvo com sucesso!`, '🤝');
 }
 
 function enviarWhatsAppTerceirizado() {
@@ -4762,7 +4757,7 @@ function enviarWhatsAppTerceirizado() {
   const escopo = document.getElementById('t-contr-escopo').value || 'Conforme projeto';
   const tel = document.getElementById('t-contr-tel').value || '';
 
-  let msg = `*SD CONSTRUÃ‡Ã•ES LTDA*\n*ORDEM DE SERVIÃ‡O TERCEIRIZADA (O.S.)*\n\nðŸ‘·â€â™‚ï¸ *Contratado:* ${tNome}\nðŸ‘¤ *Obra / Cliente:* ${cNome}\nðŸ’° *Valor Acordado:* R$ ${valor}\nðŸ› ï¸ *Escopo:* ${escopo}\n\n_Favor confirmar o recebimento e inÃ­cio dos serviÃ§os._`;
+  let msg = `*SD CONSTRUÇÕES LTDA*\n*ORDEM DE SERVIÇO TERCEIRIZADA (O.S.)*\n\n👷‍♂️ *Contratado:* ${tNome}\n👤 *Obra / Cliente:* ${cNome}\n💰 *Valor Acordado:* R$ ${valor}\n🛠️ *Escopo:* ${escopo}\n\n_Favor confirmar o recebimento e início dos serviços._`;
   
   const cleanTel = tel.replace(/\D/g, '');
   const url = cleanTel.length >= 10
@@ -4771,31 +4766,31 @@ function enviarWhatsAppTerceirizado() {
   window.open(url, '_blank');
 }
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-//  ENVIO DIRETO EM PDF PARA O NÃšMERO DIGITADO
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ══════════════════════════════════════════════
+//  ENVIO DIRETO EM PDF PARA O NÚMERO DIGITADO
+// ══════════════════════════════════════════════
 function enviarPdfDiretoWhatsAppTerceirizado() {
   const telInput = document.getElementById('t-contr-tel')?.value || document.getElementById('t-cli-tel')?.value || '';
   let cleanTel = telInput.replace(/\D/g, '');
 
   if (!cleanTel) {
-    showToast('âš ï¸ Digite o nÃºmero de WhatsApp do contratado no campo correspondente antes de enviar.', 'âš ï¸');
+    showToast('⚠️ Digite o número de WhatsApp do contratado no campo correspondente antes de enviar.', '⚠️');
     document.getElementById('t-contr-tel')?.focus();
     return;
   }
 
-  // Se nÃ£o tiver o 55 do Brasil e tiver DDD (10 ou 11 dÃ­gitos), adiciona automaticamente
+  // Se não tiver o 55 do Brasil e tiver DDD (10 ou 11 dígitos), adiciona automaticamente
   if (!cleanTel.startsWith('55') && (cleanTel.length === 10 || cleanTel.length === 11)) {
     cleanTel = '55' + cleanTel;
   }
 
-  // Preenche a folha oficial A4 com todos os dados da SD ConstruÃ§Ãµes Ltda
+  // Preenche a folha oficial A4 com todos os dados da SD Construções Ltda
   carregarDadosParaPdf();
 
-  // 1. Aciona o diÃ¡logo do navegador para gerar/salvar o PDF
+  // 1. Aciona o diálogo do navegador para gerar/salvar o PDF
   window.print();
 
-  // 2. Abre diretamente o WhatsApp para o nÃºmero que o usuÃ¡rio digitou, sem mensagem de texto
+  // 2. Abre diretamente o WhatsApp para o número que o usuário digitou, sem mensagem de texto
   setTimeout(() => {
     window.open(`https://wa.me/${cleanTel}`, '_blank');
   }, 400);
@@ -4807,23 +4802,23 @@ function imprimirContratoDiretoPdf() {
 }
 
 function carregarDadosParaPdf() {
-  const cliNome = document.getElementById('t-cli-nome').value || 'CondomÃ­nio Residencial Bougainville';
-  const cliEnd = document.getElementById('t-cli-end').value || 'Av. das AcÃ¡cias, 500 - Itaitinga - CE';
+  const cliNome = document.getElementById('t-cli-nome').value || 'Condomínio Residencial Bougainville';
+  const cliEnd = document.getElementById('t-cli-end').value || 'Av. das Acácias, 500 - Itaitinga - CE';
   const cliTel = document.getElementById('t-cli-tel').value || '(85) 99876-5432';
 
-  const tercNome = document.getElementById('t-contr-nome').value || 'EletroInstalaÃ§Ãµes Silva ME';
+  const tercNome = document.getElementById('t-contr-nome').value || 'EletroInstalações Silva ME';
   const tercCnpj = document.getElementById('t-contr-cnpj').value || '12.345.678/0001-90';
   const tercTel = document.getElementById('t-contr-tel').value || '(85) 98888-8888';
   const tercEsp = document.getElementById('t-contr-especialidade').value;
-  const tercEscopo = document.getElementById('t-contr-escopo').value || 'ExecuÃ§Ã£o completa das instalaÃ§Ãµes elÃ©tricas, quadros de distribuiÃ§Ã£o e passagens de tubulaÃ§Ã£o conforme projeto executivo da obra.';
+  const tercEscopo = document.getElementById('t-contr-escopo').value || 'Execução completa das instalações elétricas, quadros de distribuição e passagens de tubulação conforme projeto executivo da obra.';
   const tercValor = parseNum(document.getElementById('t-contr-valor-pago').value);
-  const tercPrazo = document.getElementById('t-contr-prazo').value || '15 dias Ãºteis';
-  const tercPagto = document.getElementById('t-contr-pagamento').value || '50% na entrada + 50% apÃ³s mediÃ§Ã£o e vistoria final';
-  const tercObs = document.getElementById('t-contr-obs').value || 'Uso obrigatÃ³rio de capacete, botas com biqueira e cinto de seguranÃ§a. Limpeza diÃ¡ria do posto de trabalho.';
+  const tercPrazo = document.getElementById('t-contr-prazo').value || '15 dias úteis';
+  const tercPagto = document.getElementById('t-contr-pagamento').value || '50% na entrada + 50% após medição e vistoria final';
+  const tercObs = document.getElementById('t-contr-obs').value || 'Uso obrigatório de capacete, botas com biqueira e cinto de segurança. Limpeza diária do posto de trabalho.';
 
   const numOs = editandoTerc || ('#TERC-' + String(proxTerc).padStart(4, '0'));
 
-  // Preenche documento A4 com SD ConstruÃ§Ãµes Ltda
+  // Preenche documento A4 com SD Construções Ltda
   document.getElementById('doc-num-os').textContent = 'O.S. ' + numOs;
   document.getElementById('doc-data-emissao').textContent = 'Data: ' + new Date().toLocaleDateString('pt-BR');
   document.getElementById('doc-cli-nome').textContent = cliNome;
@@ -4845,7 +4840,7 @@ function carregarDadosParaPdf() {
   const elNome = document.getElementById('pdf-whats-nome-dest');
   if (elNome) elNome.textContent = tercNome + ' (' + tercEsp + ')';
   const elTel = document.getElementById('pdf-whats-tel-dest');
-  if (elTel) elTel.textContent = 'WhatsApp: ' + (tercTel || 'NÃ£o informado');
+  if (elTel) elTel.textContent = 'WhatsApp: ' + (tercTel || 'Não informado');
 }
 
 function baixarImprimirPdf() {
@@ -4853,9 +4848,9 @@ function baixarImprimirPdf() {
   window.print();
 }
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-//  HISTÃ“RICO, CLIENTES, PRODUTOS, CONTRATOS
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ══════════════════════════════════════════════
+//  HISTÓRICO, CLIENTES, PRODUTOS, CONTRATOS
+// ══════════════════════════════════════════════
 function renderHist() {
   const div = document.getElementById('hist-list-container');
   const q = (document.getElementById('busca-hist')?.value || '').toLowerCase();
@@ -4878,18 +4873,18 @@ function renderHist() {
       <div>
         <div style="display:flex; align-items:center; gap:8px;">
           <strong style="color:var(--gold-light); font-size:15px;">${r.numero}</strong>
-          <span class="rec-tag ${r.type==='obra'?'tag-obra':'tag-terc'}">${r.type==='obra'?'OrÃ§amento Obra':'ServiÃ§o Terceirizado'}</span>
+          <span class="rec-tag ${r.type==='obra'?'tag-obra':'tag-terc'}">${r.type==='obra'?'Orçamento Obra':'Serviço Terceirizado'}</span>
           <span style="font-size:11.5px; color:var(--text-muted);">${r.data}</span>
         </div>
-        <div style="font-size:14.5px; color:#fff; font-weight:700; margin-top:4px;">ðŸ‘¤ Cliente: ${r.cliente?.nome || 'NÃ£o informado'}</div>
-        ${r.type==='obra' ? `<div style="font-size:13px; color:#facc15; font-weight:600; margin-top:2px;">ðŸ‘” Vendedor: <strong>${r.vendedor || 'Samuel Dantas'}</strong> (${r.comissao || '5%'})</div>` : ''}
-        ${r.type==='terc' ? `<div style="font-size:12.5px; color:#60a5fa; margin-top:2px;">ðŸ‘·â€â™‚ï¸ Contratado: <strong>${r.contratado?.nome}</strong> (${r.contratado?.especialidade})</div>` : ''}
+        <div style="font-size:14.5px; color:#fff; font-weight:700; margin-top:4px;">👤 Cliente: ${r.cliente?.nome || 'Não informado'}</div>
+        ${r.type==='obra' ? `<div style="font-size:13px; color:#facc15; font-weight:600; margin-top:2px;">👔 Vendedor: <strong>${r.vendedor || 'Samuel Dantas'}</strong> (${r.comissao || '5%'})</div>` : ''}
+        ${r.type==='terc' ? `<div style="font-size:12.5px; color:#60a5fa; margin-top:2px;">👷‍♂️ Contratado: <strong>${r.contratado?.nome}</strong> (${r.contratado?.especialidade})</div>` : ''}
       </div>
       <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; justify-content:flex-end;">
         <span style="font-size:17px; font-weight:900; color:var(--gold-light); margin-right:6px;">${r.type==='obra'?r.total:formatMoney(r.contratado?.valorPago)}</span>
-        <button class="btn-action-gold" style="padding:6px 12px; font-size:12px; font-weight:800;" onclick="editarRegistro('${r.numero}', '${r.type}')">âœï¸ Editar</button>
-        <button class="btn-dark-pdf" style="padding:6px 12px; font-size:12px; font-weight:800;" onclick="imprimirRegistroIndividual('${r.numero}', '${r.type}')">ðŸ–¨ï¸ Imprimir</button>
-        <button class="btn-action-secondary" style="padding:6px 10px; font-size:12px;" onclick="excluirReg('${r.numero}', '${r.type}')" title="Excluir">ðŸ—‘ï¸</button>
+        <button class="btn-action-gold" style="padding:6px 12px; font-size:12px; font-weight:800;" onclick="editarRegistro('${r.numero}', '${r.type}')">✏️ Editar</button>
+        <button class="btn-dark-pdf" style="padding:6px 12px; font-size:12px; font-weight:800;" onclick="imprimirRegistroIndividual('${r.numero}', '${r.type}')">🖨️ Imprimir</button>
+        <button class="btn-action-secondary" style="padding:6px 10px; font-size:12px;" onclick="excluirReg('${r.numero}', '${r.type}')" title="Excluir">🗑️</button>
       </div>
     </div>
   `).join('');
@@ -4920,7 +4915,7 @@ function editarRegistro(num, type) {
       addItem();
     }
     goNav('orcamento');
-    showToast(`Editando OrÃ§amento ${num}`, 'âœï¸');
+    showToast(`Editando Orçamento ${num}`, '✏️');
   } else {
     const t = terceirizados.find(x => x.numero === num);
     if (!t) return;
@@ -4943,7 +4938,7 @@ function editarRegistro(num, type) {
     document.getElementById('t-contr-obs').value = t.contratado?.obs || '';
     calcularMargemTerc();
     goNav('terceirizado');
-    showToast(`Editando Terceirizado ${num}`, 'âœï¸');
+    showToast(`Editando Terceirizado ${num}`, '✏️');
   }
 }
 
@@ -4968,13 +4963,13 @@ function excluirReg(num, type) {
     updateDisplays();
     renderDashboard();
     renderHist();
-    showToast(`Registro ${num} excluÃ­do.`, 'ðŸ—‘ï¸');
+    showToast(`Registro ${num} excluído.`, '🗑️');
   }
 }
 
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-//  CADASTRO E GESTÃƒO DE VENDEDORES
-// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ══════════════════════════════════════════════
+//  CADASTRO E GESTÃO DE VENDEDORES
+// ══════════════════════════════════════════════
 function carregarSelectVendedores() {
   const sel = document.getElementById('o-vendedor');
   if (!sel) return;
@@ -5009,18 +5004,18 @@ function renderVendedores() {
     <div class="record-card" style="padding:14px 18px; margin-bottom:10px;">
       <div>
         <div style="display:flex; align-items:center; gap:8px;">
-          <strong style="color:#facc15; font-size:16px;">ðŸ‘” ${v.nome}</strong>
+          <strong style="color:#facc15; font-size:16px;">👔 ${v.nome}</strong>
           <span class="rec-tag tag-obra">${v.status || 'Ativo'}</span>
         </div>
         <div style="font-size:13px; color:#fff; margin-top:4px;">
-          ðŸ’¼ <strong>Cargo:</strong> ${v.cargo} | ðŸ“± <strong>WhatsApp:</strong> ${v.tel || 'NÃ£o informado'}
+          💼 <strong>Cargo:</strong> ${v.cargo} | 📱 <strong>WhatsApp:</strong> ${v.tel || 'Não informado'}
         </div>
-        ${v.obs ? `<div style="font-size:12px; color:var(--text-muted); margin-top:2px;">ðŸ“ ${v.obs}</div>` : ''}
+        ${v.obs ? `<div style="font-size:12px; color:var(--text-muted); margin-top:2px;">📝 ${v.obs}</div>` : ''}
       </div>
       <div style="display:flex; align-items:center; gap:12px;">
-        <span style="font-size:15px; font-weight:800; color:var(--gold-light);">ComissÃ£o: ${v.comissao}%</span>
-        <button class="btn-action-gold" style="padding:6px 12px; font-size:11.5px;" onclick="editarVendedor(${v.id})">âœï¸ Editar</button>
-        <button class="btn-action-secondary" style="padding:6px 10px; font-size:11.5px;" onclick="excluirVendedor(${v.id})">ðŸ—‘ï¸</button>
+        <span style="font-size:15px; font-weight:800; color:var(--gold-light);">Comissão: ${v.comissao}%</span>
+        <button class="btn-action-gold" style="padding:6px 12px; font-size:11.5px;" onclick="editarVendedor(${v.id})">✏️ Editar</button>
+        <button class="btn-action-secondary" style="padding:6px 10px; font-size:11.5px;" onclick="excluirVendedor(${v.id})">🗑️</button>
       </div>
     </div>
   `).join('');
@@ -5137,7 +5132,7 @@ function salvarVendedor() {
   const obs = document.getElementById('vend-obs').value.trim();
 
   if (!nome) {
-    showToast('Informe o nome do vendedor', 'âš ï¸');
+    showToast('Informe o nome do vendedor', '⚠️');
     document.getElementById('vend-nome').focus();
     return;
   }
@@ -5148,7 +5143,7 @@ function salvarVendedor() {
       vendedores[idx] = { id: editandoVend, nome, tel, cargo, comissao, status, obs };
     }
     editandoVend = null;
-    showToast('Vendedor atualizado com sucesso!', 'ðŸ‘”');
+    showToast('Vendedor atualizado com sucesso!', '👔');
   } else {
     const novoVend = {
       id: Date.now(),
@@ -5160,7 +5155,7 @@ function salvarVendedor() {
       obs
     };
     vendedores.push(novoVend);
-    showToast('Vendedor cadastrado com sucesso!', 'ðŸ‘”');
+    showToast('Vendedor cadastrado com sucesso!', '👔');
   }
 
   save(K.vendedores, vendedores);
@@ -5179,7 +5174,7 @@ function editarVendedor(id) {
   document.getElementById('vend-comissao').value = v.comissao || 5;
   document.getElementById('vend-status').value = v.status || 'Ativo';
   document.getElementById('vend-obs').value = v.obs || '';
-  showToast(`Editando vendedor: ${v.nome}`, 'âœï¸');
+  showToast(`Editando vendedor: ${v.nome}`, '✏️');
   document.getElementById('vend-nome').focus();
 }
 
@@ -5188,7 +5183,7 @@ function excluirVendedor(id) {
     vendedores = vendedores.filter(v => v.id !== id);
     save(K.vendedores, vendedores);
     renderVendedores();
-    showToast('Vendedor removido.', 'ðŸ—‘ï¸');
+    showToast('Vendedor removido.', '🗑️');
   }
 }
 
@@ -5208,10 +5203,10 @@ function renderCli() {
   div.innerHTML = clientes.map(c => `
     <div class="record-card">
       <div>
-        <strong>ðŸ‘¤ ${c.nome}</strong>
-        <div style="font-size:12px; color:var(--text-muted);">${c.tel || 'Sem tel'} Â· ${c.bairro || ''}</div>
+        <strong>👤 ${c.nome}</strong>
+        <div style="font-size:12px; color:var(--text-muted);">${c.tel || 'Sem tel'} · ${c.bairro || ''}</div>
       </div>
-      <button class="btn-action-secondary" style="padding:6px 12px; font-size:12px;" onclick="excluirCli(${c.id})">ðŸ—‘ï¸</button>
+      <button class="btn-action-secondary" style="padding:6px 12px; font-size:12px;" onclick="excluirCli(${c.id})">🗑️</button>
     </div>
   `).join('');
 }
@@ -5222,14 +5217,14 @@ function salvarCliente() {
   clientes.unshift({ id: Date.now(), nome, cnpj: document.getElementById('c-cnpj').value, tel: document.getElementById('c-tel').value, bairro: document.getElementById('c-bairro').value, end: document.getElementById('c-end').value });
   save(K.clients, clientes);
   renderCli();
-  showToast('Cliente cadastrado com sucesso!', 'ðŸ‘¤');
+  showToast('Cliente cadastrado com sucesso!', '👤');
 }
 
 function excluirCli(id) {
   clientes = clientes.filter(c => c.id !== id);
   save(K.clients, clientes);
   renderCli();
-  showToast('Cliente excluÃ­do.', 'ðŸ—‘ï¸');
+  showToast('Cliente excluído.', '🗑️');
 }
 
 function abrirModalCliente(target) {
@@ -5237,10 +5232,10 @@ function abrirModalCliente(target) {
   document.getElementById('modal-cli-lista').innerHTML = clientes.map(c => `
     <div class="record-card" style="cursor:pointer;" onclick="selCliModal(${c.id})">
       <div>
-        <strong>ðŸ‘¤ ${c.nome}</strong>
-        <div style="font-size:12px; color:var(--text-muted);">${c.tel || ''} Â· ${c.bairro || ''}</div>
+        <strong>👤 ${c.nome}</strong>
+        <div style="font-size:12px; color:var(--text-muted);">${c.tel || ''} · ${c.bairro || ''}</div>
       </div>
-      <button class="btn-action-gold" style="padding:4px 10px; font-size:11px;">Selecionar âžœ</button>
+      <button class="btn-action-gold" style="padding:4px 10px; font-size:11px;">Selecionar ➜</button>
     </div>
   `).join('');
   document.getElementById('modal-cliente').style.display = 'flex';
@@ -5277,12 +5272,12 @@ function renderProdutos() {
   div.innerHTML = produtos.map(p => `
     <div class="record-card">
       <div>
-        <strong>ðŸ“¦ ${p.nome}</strong>
-        <div style="font-size:12px; color:var(--text-muted);">Categoria: ${p.cat} Â· ${p.vm2 ? 'R$ '+p.vm2+'/mÂ²' : 'R$ '+p.vunit+' un'}</div>
+        <strong>📦 ${p.nome}</strong>
+        <div style="font-size:12px; color:var(--text-muted);">Categoria: ${p.cat} · ${p.vm2 ? 'R$ '+p.vm2+'/m²' : 'R$ '+p.vunit+' un'}</div>
       </div>
       <div style="display:flex; align-items:center; gap:8px;">
         <button class="btn-action-gold" style="padding:5px 12px; font-size:11px;" onclick="usarProduto(${p.id})">+ Usar</button>
-        <button class="btn-action-secondary" style="padding:5px 10px; font-size:11px;" onclick="excluirProd(${p.id})">ðŸ—‘ï¸</button>
+        <button class="btn-action-secondary" style="padding:5px 10px; font-size:11px;" onclick="excluirProd(${p.id})">🗑️</button>
       </div>
     </div>
   `).join('');
@@ -5291,9 +5286,9 @@ function renderProdutos() {
 function usarProduto(id) {
   const p = produtos.find(x => x.id === id);
   if (!p) return;
-  addItem(p.nome, '1', 'PadrÃ£o', '1.00', '1.00', p.vm2 > 0 ? String(p.vm2) : '', p.vunit > 0 ? String(p.vunit) : '', 'Acabado');
+  addItem(p.nome, '1', 'Padrão', '1.00', '1.00', p.vm2 > 0 ? String(p.vm2) : '', p.vunit > 0 ? String(p.vunit) : '', 'Acabado');
   goNav('orcamento');
-  showToast(`Item "${p.nome}" inserido no orÃ§amento!`, 'ðŸ”§');
+  showToast(`Item "${p.nome}" inserido no orçamento!`, '🔧');
 }
 
 function salvarProduto() {
@@ -5302,14 +5297,14 @@ function salvarProduto() {
   produtos.unshift({ id: Date.now(), nome, cat: document.getElementById('p-cat').value || 'Geral', vm2: parseNum(document.getElementById('p-vm2').value), vunit: parseNum(document.getElementById('p-vunit').value) });
   save(K.products, produtos);
   renderProdutos();
-  showToast('Produto salvo no catÃ¡logo com sucesso!', 'ðŸ“¦');
+  showToast('Produto salvo no catálogo com sucesso!', '📦');
 }
 
 function excluirProd(id) {
   produtos = produtos.filter(p => p.id !== id);
   save(K.products, produtos);
   renderProdutos();
-  showToast('Produto removido.', 'ðŸ—‘ï¸');
+  showToast('Produto removido.', '🗑️');
 }
 
 function renderSelectContratos() {
@@ -5325,16 +5320,16 @@ function renderSelectContratos() {
 
 function gerarContratoFormal() {
   const num = document.getElementById('sel-orc-contrato').value;
-  if (!num) { showToast('Selecione uma O.S. na lista.', 'âš ï¸'); return; }
+  if (!num) { showToast('Selecione uma O.S. na lista.', '⚠️'); return; }
   const tipo = document.getElementById('sel-tipo-contrato').value;
   let txt = '';
 
   if (tipo === 'cliente') {
     const o = ordens.find(x => x.numero === num);
-    txt = `CONTRATO DE PRESTAÃ‡ÃƒO DE SERVIÃ‡OS DE CONSTRUÃ‡ÃƒO CIVIL E REFORMA\nCONTRATADA: SD CONSTRUÃ‡Ã•ES LTDA (Itaitinga - CE)\nCONTRATANTE: ${(o?.cliente?.nome||'').toUpperCase()}\nVENDEDOR: ${(o?.vendedor||'Samuel Dantas').toUpperCase()}\nENDEREÃ‡O DA OBRA: ${o?.cliente?.end||''}\n\nOBJETO: ExecuÃ§Ã£o dos serviÃ§os descritos na O.S. ${o?.numero||''}\nVALOR TOTAL: ${o?.total||'R$ 0,00'} (${o?.forma||'Ã€ vista'})\nPRAZO: ${o?.prazo||'30 dias Ãºteis'}\nGARANTIA: ${o?.garantia||'5 anos estrutural'}\n\nItaitinga - CE, ${o?.data||''}\n\n_________________________      _________________________\n   SD CONSTRUÃ‡Ã•ES LTDA                   CLIENTE`;
+    txt = `CONTRATO DE PRESTAÇÃO DE SERVIÇOS DE CONSTRUÇÃO CIVIL E REFORMA\nCONTRATADA: SD CONSTRUÇÕES LTDA (Itaitinga - CE)\nCONTRATANTE: ${(o?.cliente?.nome||'').toUpperCase()}\nVENDEDOR: ${(o?.vendedor||'Samuel Dantas').toUpperCase()}\nENDEREÇO DA OBRA: ${o?.cliente?.end||''}\n\nOBJETO: Execução dos serviços descritos na O.S. ${o?.numero||''}\nVALOR TOTAL: ${o?.total||'R$ 0,00'} (${o?.forma||'À vista'})\nPRAZO: ${o?.prazo||'30 dias úteis'}\nGARANTIA: ${o?.garantia||'5 anos estrutural'}\n\nItaitinga - CE, ${o?.data||''}\n\n_________________________      _________________________\n   SD CONSTRUÇÕES LTDA                   CLIENTE`;
   } else {
     const t = terceirizados.find(x => x.numero === num);
-    txt = `CONTRATO DE SUBCONTRATAÃ‡ÃƒO E SERVIÃ‡O TERCEIRIZADO\nCONTRATANTE: SD CONSTRUÃ‡Ã•ES LTDA\nPRESTADOR TERCEIRIZADO: ${(t?.contratado?.nome||'').toUpperCase()} (${t?.contratado?.especialidade||''})\nOBRA / CLIENTE FINAL: ${t?.cliente?.nome||''}\n\nESCOPO: ${t?.contratado?.escopo||''}\nVALOR ACORDADO: R$ ${t?.contratado?.valorPago||'0,00'}\nPAGAMENTO: ${t?.contratado?.pagamento||'MediÃ§Ã£o'}\nPRAZO: ${t?.contratado?.prazo||'Conforme cronograma'}\n\nItaitinga - CE, ${t?.data||''}\n\n_________________________      _________________________\n   SD CONSTRUÃ‡Ã•ES LTDA            PRESTADOR TERCEIRIZADO`;
+    txt = `CONTRATO DE SUBCONTRATAÇÃO E SERVIÇO TERCEIRIZADO\nCONTRATANTE: SD CONSTRUÇÕES LTDA\nPRESTADOR TERCEIRIZADO: ${(t?.contratado?.nome||'').toUpperCase()} (${t?.contratado?.especialidade||''})\nOBRA / CLIENTE FINAL: ${t?.cliente?.nome||''}\n\nESCOPO: ${t?.contratado?.escopo||''}\nVALOR ACORDADO: R$ ${t?.contratado?.valorPago||'0,00'}\nPAGAMENTO: ${t?.contratado?.pagamento||'Medição'}\nPRAZO: ${t?.contratado?.prazo||'Conforme cronograma'}\n\nItaitinga - CE, ${t?.data||''}\n\n_________________________      _________________________\n   SD CONSTRUÇÕES LTDA            PRESTADOR TERCEIRIZADO`;
   }
 
   document.getElementById('txt-contrato-preview').textContent = txt;
@@ -5342,7 +5337,7 @@ function gerarContratoFormal() {
 }
 
 function copiarContrato() {
-  navigator.clipboard.writeText(document.getElementById('txt-contrato-preview').textContent).then(() => showToast('Contrato copiado para a Ã¡rea de transferÃªncia!', 'ðŸ“‹'));
+  navigator.clipboard.writeText(document.getElementById('txt-contrato-preview').textContent).then(() => showToast('Contrato copiado para a área de transferência!', '📋'));
 }
 
 function salvarUsuario() {
@@ -5352,18 +5347,18 @@ function salvarUsuario() {
   users.push({ login, nome, role: document.getElementById('u-role').value });
   save(K.users, users);
   renderUsuarios();
-  showToast('UsuÃ¡rio cadastrado com sucesso!', 'ðŸ‘¤');
+  showToast('Usuário cadastrado com sucesso!', '👤');
 }
 
 function renderUsuarios() {
   users = load(K.users, [
-    { login: 'sergio', nome: 'SÃ©rgio Dantas', role: 'Administrador' },
+    { login: 'sergio', nome: 'Sérgio Dantas', role: 'Administrador' },
     { login: 'samuel', nome: 'Samuel', role: 'Engenheiro' }
   ]);
   document.getElementById('user-list-container').innerHTML = users.map(u => `
     <div class="record-card">
       <div>
-        <strong>ðŸ‘¤ ${u.nome} (@${u.login})</strong>
+        <strong>👤 ${u.nome} (@${u.login})</strong>
         <div style="font-size:12px; color:var(--text-muted);">Cargo: ${u.role}</div>
       </div>
       <span style="color:var(--green-light); font-size:12px; font-weight:700;">Ativo</span>
