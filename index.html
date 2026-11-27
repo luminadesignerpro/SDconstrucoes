@@ -1341,12 +1341,186 @@
       }
     }
 
+  
+    /* ════ MOBILE RESPONSIVE DRAWER & TOPBAR ════ */
+    .mobile-menu-toggle {
+      display: none;
+      align-items: center;
+      gap: 7px;
+      background: linear-gradient(135deg, rgba(245, 179, 0, 0.25), rgba(245, 179, 0, 0.08));
+      border: 1.5px solid #f5b300;
+      color: #ffd447;
+      font-family: var(--font);
+      font-size: 13.5px;
+      font-weight: 800;
+      padding: 8px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 14px rgba(245, 179, 0, 0.2);
+    }
+    .mobile-menu-toggle:hover, .mobile-menu-toggle:active {
+      background: rgba(245, 179, 0, 0.35);
+      transform: scale(0.97);
+    }
+    .sidebar-close-btn {
+      display: none;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #cbd5e1;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 800;
+      cursor: pointer;
+      margin-left: auto;
+    }
+    .sidebar-close-btn:hover {
+      background: rgba(239, 68, 68, 0.2);
+      color: #ef4444;
+      border-color: #ef4444;
+    }
+    .sidebar-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      z-index: 99998;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .sidebar-backdrop.active {
+      display: block;
+      opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu-toggle {
+        display: inline-flex !important;
+      }
+      .sidebar-close-btn {
+        display: flex !important;
+      }
+      .app-layout {
+        flex-direction: column !important;
+        width: 100vw !important;
+        min-height: 100vh !important;
+        position: relative !important;
+      }
+      .sidebar {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        bottom: 0 !important;
+        width: 300px !important;
+        max-width: 86vw !important;
+        height: 100vh !important;
+        height: 100dvh !important;
+        z-index: 99999 !important;
+        background: #090e1c !important;
+        border-right: 1.5px solid rgba(245, 179, 0, 0.3) !important;
+        box-shadow: 10px 0 40px rgba(0, 0, 0, 0.85) !important;
+        transform: translateX(-100%) !important;
+        transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        overflow-y: auto !important;
+        padding: 18px 14px 24px !important;
+      }
+      .sidebar.mobile-open {
+        transform: translateX(0) !important;
+      }
+      .main-wrapper {
+        width: 100% !important;
+        min-height: 100vh !important;
+        display: flex !important;
+        flex-direction: column !important;
+        overflow-x: hidden !important;
+      }
+      .topbar {
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 1000 !important;
+        background: rgba(6, 9, 19, 0.96) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+        border-bottom: 1px solid var(--border) !important;
+        padding: 12px 16px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+      }
+      .topbar-header-row {
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        width: 100% !important;
+      }
+      .topbar-titles {
+        flex: 1 !important;
+        min-width: 0 !important;
+      }
+      .topbar-main-title {
+        font-size: 17px !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+      }
+      .topbar-sub-title {
+        display: none !important;
+      }
+      .topbar-actions {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+        width: 100% !important;
+      }
+      .topbar-actions .btn-action-gold,
+      .topbar-actions .btn-action-secondary {
+        padding: 9px 12px !important;
+        font-size: 12.5px !important;
+        flex: 1 1 auto !important;
+        justify-content: center !important;
+      }
+      .topbar-actions .period-filter {
+        width: 100% !important;
+        justify-content: space-between !important;
+      }
+      .topbar-actions .period-btn {
+        flex: 1 !important;
+        text-align: center !important;
+        padding: 7px 4px !important;
+        font-size: 12px !important;
+      }
+      .content-body {
+        padding: 14px 12px 60px !important;
+      }
+      .kpi-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+      }
+      .dashboard-charts-grid {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+      }
+      .grid-2, .grid-3 {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+      }
+    }
+
   </style>
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
 <div class="app-layout">
+  <div id="sidebar-backdrop" class="sidebar-backdrop" onclick="closeSidebarMobile()"></div>
+
 
   <!-- ═══════════════════════════════════════════════════════════════ -->
   <!-- FOLHA OFICIAL A4 DE ORÇAMENTO DE OBRAS (PARA IMPRESSÃO / PDF) -->
@@ -1576,9 +1750,15 @@
 
     <!-- Topbar Header -->
     <header class="topbar">
-      <div class="topbar-titles">
+      <div class="topbar-header-row">
+        <button type="button" id="btn-toggle-menu" class="mobile-menu-toggle" onclick="toggleSidebarMobile()" aria-label="Abrir Menu do Sistema">
+          <span style="font-size:16px;">☰</span>
+          <span>Menu</span>
+        </button>
+        <div class="topbar-titles">
         <h1 class="topbar-main-title" id="page-title">Dashboard Geral</h1>
         <p class="topbar-sub-title" id="page-sub-title">Visão consolidada das suas obras, orçamentos e serviços terceirizados</p>
+        </div>
       </div>
 
       <div class="topbar-actions">
@@ -3036,6 +3216,32 @@ function updateDisplays() {
 // ══════════════════════════════════════════════
 //  NAVIGATION
 // ══════════════════════════════════════════════
+function toggleSidebarMobile() {
+  const sb = document.querySelector('.sidebar');
+  const bd = document.getElementById('sidebar-backdrop');
+  if (!sb) return;
+  const isOpen = sb.classList.contains('mobile-open');
+  if (isOpen) {
+    closeSidebarMobile();
+  } else {
+    openSidebarMobile();
+  }
+}
+
+function openSidebarMobile() {
+  const sb = document.querySelector('.sidebar');
+  const bd = document.getElementById('sidebar-backdrop');
+  if (sb) sb.classList.add('mobile-open');
+  if (bd) bd.classList.add('active');
+}
+
+function closeSidebarMobile() {
+  const sb = document.querySelector('.sidebar');
+  const bd = document.getElementById('sidebar-backdrop');
+  if (sb) sb.classList.remove('mobile-open');
+  if (bd) bd.classList.remove('active');
+}
+
 function goNav(viewId) {
   const titles = {
     dashboard: ['Dashboard Geral', 'Visão consolidada das suas obras, orçamentos e serviços terceirizados'],
@@ -3061,21 +3267,32 @@ function goNav(viewId) {
   if (nav) nav.classList.add('active');
 
   if (titles[viewId]) {
-    document.getElementById('page-title').textContent = titles[viewId][0];
-    document.getElementById('page-sub-title').textContent = titles[viewId][1];
+    const elTitle = document.getElementById('page-title');
+    const elSub = document.getElementById('page-sub-title');
+    if (elTitle) elTitle.textContent = titles[viewId][0];
+    if (elSub) elSub.textContent = titles[viewId][1];
   }
 
-  if (viewId === 'dashboard') renderDashboard();
-  if (viewId === 'historico') renderHist();
-  if (viewId === 'vendedores') renderVendedores();
-  if (viewId === 'contratos') renderSelectContratos();
-  if (viewId === 'whats-pdf') carregarDadosParaPdf();
-  if (viewId === 'materiais' && document.querySelectorAll('#lista-materiais-linhas tr').length === 0) {
-    adicionarKitBasicoObra();
+  // Safe invocation of panel renders
+  try {
+    if (viewId === 'dashboard' && typeof renderDashboard === 'function') renderDashboard();
+    if (viewId === 'historico' && typeof renderHist === 'function') renderHist();
+    if (viewId === 'vendedores' && typeof renderVendedores === 'function') renderVendedores();
+    if (viewId === 'contratos' && typeof renderSelectContratos === 'function') renderSelectContratos();
+    if (viewId === 'whats-pdf' && typeof carregarDadosParaPdf === 'function') carregarDadosParaPdf();
+    if (viewId === 'materiais' && document.querySelectorAll('#lista-materiais-linhas tr').length === 0 && typeof adicionarKitBasicoObra === 'function') {
+      adicionarKitBasicoObra();
+    }
+    if (viewId === 'funcionarios' && window.PontoModule && typeof PontoModule.init === 'function') {
+      PontoModule.init();
+    }
+  } catch (err) {
+    console.warn('Erro ao atualizar tela:', err);
   }
-  if (viewId === 'funcionarios') {
-    PontoModule.init();
-  }
+
+  // Close mobile sidebar and smoothly scroll to active view
+  closeSidebarMobile();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function setPeriodo(btn) {
@@ -5660,6 +5877,56 @@ function renderUsuarios() {
 </div>
 
 <script>
+
+// ══════════════════════════════════════════════
+// PRÉ-VISUALIZAÇÃO DE PDF & ASSINATURA DIGITAL
+// ══════════════════════════════════════════════
+function visualizarPdfOrcamentoAtual() {
+  if (typeof prepararImpressaoOrcamento === 'function') {
+    prepararImpressaoOrcamento();
+  }
+  const folha = document.getElementById('orcamento-folha-impressao-a4');
+  const container = document.getElementById('preview-pdf-content-container');
+  if (folha && container) {
+    container.innerHTML = folha.innerHTML;
+  }
+  const modal = document.getElementById('modal-preview-pdf-orcamento');
+  if (modal) {
+    modal.style.display = 'flex';
+  }
+}
+
+function fecharPreviewPdfOrcamento() {
+  const modal = document.getElementById('modal-preview-pdf-orcamento');
+  if (modal) {
+    modal.style.display = 'none';
+  }
+}
+
+function enviarOrcamentoParaAssinaturaDigital() {
+  const numOs = document.getElementById('o-num')?.textContent?.trim() || '#0001';
+  const cli = document.getElementById('o-cliente')?.value?.trim() || 'Cliente';
+  const total = document.getElementById('o-total')?.textContent?.trim() || 'R$ 0,00';
+  const tel = document.getElementById('o-tel')?.value || '';
+  let cleanTel = tel.replace(/\D/g, '');
+  if (cleanTel && !cleanTel.startsWith('55') && (cleanTel.length === 10 || cleanTel.length === 11)) {
+    cleanTel = '55' + cleanTel;
+  }
+
+  const signUrl = `${window.location.origin}/assinar.html?os=${encodeURIComponent(numOs)}&cli=${encodeURIComponent(cli)}&total=${encodeURIComponent(total)}`;
+  const msg = `Olá, ${cli}! Segue o link para conferência e assinatura digital da Proposta Oficial (${numOs}) da SD Construções:\n\n${signUrl}\n\nVocê pode assinar diretamente na tela do seu celular.`;
+
+  if (cleanTel) {
+    window.open(`https://api.whatsapp.com/send?phone=${cleanTel}&text=${encodeURIComponent(msg)}`, '_blank');
+  } else {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(signUrl);
+      if (typeof showToast === 'function') showToast('Link de assinatura digital copiado!', '📋');
+    }
+    window.open(signUrl, '_blank');
+  }
+}
+
 // ════════════════════════════════════════════════════════════════════
 // MÓDULO DE PONTO ELETRÔNICO & FUNCIONÁRIOS (IMAGENS 1 E 2)
 // ════════════════════════════════════════════════════════════════════
